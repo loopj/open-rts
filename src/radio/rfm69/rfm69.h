@@ -16,6 +16,7 @@ typedef struct rfm69_t {
 } rfm69_t;
 
 void rfm69_init(rfm69_t *radio, spi_module_t *spi, bool use_pa_boost);
+void rfm69_configure_for_rts(rfm69_t *radio);
 void rfm69_set_data_mode(rfm69_t *radio, int mode);
 void rfm69_set_modulation_type(rfm69_t *radio, int modulation);
 void rfm69_set_frequency(rfm69_t *radio, int freq);

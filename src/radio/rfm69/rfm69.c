@@ -10,6 +10,15 @@ void rfm69_init(rfm69_t *radio, spi_module_t *spi, bool use_pa_boost) {
     spi->read_mask = 0x00;
 }
 
+void rfm69_configure_for_rts(rfm69_t *radio) {
+    rfm69_set_data_mode(&radio, RFM69_DATA_MODE_CONTINUOUS);
+    rfm69_set_modulation_type(&radio, RFM69_MODULATION_TYPE_OOK);
+    rfm69_set_frequency(&radio, 433420000);
+    rfm69_set_bitrate(&radio, 1200);
+    rfm69_set_rx_bandwidth(&radio, 83300);
+    rfm69_set_transmit_power(&radio, 20);
+}
+
 void rfm69_set_data_mode(rfm69_t *radio, int mode) {
     spi_write_masked(radio->spi_module, RFM69_REG_DATA_MODUL, RFM69_DATA_MODE, mode);
 }

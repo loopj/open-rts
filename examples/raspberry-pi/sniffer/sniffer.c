@@ -37,13 +37,7 @@ void init_radio() {
     spi_init(&spi);
 
     rfm69_init(&radio, &spi, true);
-    rfm69_set_data_mode(&radio, RFM69_DATA_MODE_CONTINUOUS);
-    rfm69_set_modulation_type(&radio, RFM69_MODULATION_TYPE_OOK);
-    rfm69_set_frequency(&radio, 433420000);
-    rfm69_set_bitrate(&radio, 1200);
-    rfm69_set_rx_bandwidth(&radio, 83300);
-    rfm69_set_transmit_power(&radio, 20);
-
+    rfm69_configure_for_rts(&radio);
     rfm69_set_mode(&radio, RFM69_MODE_RX);
 }
 
