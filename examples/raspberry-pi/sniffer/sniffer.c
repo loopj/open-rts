@@ -4,6 +4,7 @@
 #include <bcm2835.h>
 
 #include "hal/spi.h"
+#include "hal/timing.h"
 #include "radio/rfm69/rfm69.h"
 #include "rts_frame_builder.h"
 
@@ -51,10 +52,7 @@ void print_frame(rts_frame_t *frame, uint8_t repeat_count, uint32_t repeat_durat
 void check_for_pulses() {
     bool state = !bcm2835_gpio_lev(DATA_PIN);
     if(state != last_state) {
-        struct timespec ts;
-        clock_gettime(CLOCK_MONOTONIC, &ts);
-        uint64_t now = 1000000 * ts.tv_sec + ts.tv_nsec/1000;
-
+        uint64_t now = hal_micros();
         uint32_t time_in_state = now - last_updated;
 
         rts_frame_builder_handle_pulse(&frame_builder, state, time_in_state);
