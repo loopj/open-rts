@@ -10,6 +10,10 @@ void sx1278_init(sx1278_t *radio, spi_module_t *spi, bool use_pa_boost) {
     spi->read_mask = 0x00;
 }
 
+void sx1278_configure_for_rts(sx1278_t *radio) {
+    // TODO
+}
+
 void sx1278_set_long_range_mode(sx1278_t *radio, bool long_range_mode) {
     spi_write_masked(radio->spi_module, RFM95_REG_OP_MODE, RFM95_LONG_RANGE_MODE, long_range_mode ? RFM95_LONG_RANGE_MODE_ON : RFM95_LONG_RANGE_MODE_OFF);
 }

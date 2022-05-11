@@ -16,6 +16,7 @@ typedef struct sx1278_t {
 } sx1278_t;
 
 void sx1278_init(sx1278_t *radio, spi_module_t *spi, bool use_pa_boost);
+void sx1278_configure_for_rts(sx1278_t *radio);
 void sx1278_set_long_range_mode(sx1278_t *radio, bool long_range_mode);
 void sx1278_set_data_mode(sx1278_t *radio, int mode);
 void sx1278_set_modulation_type(sx1278_t *radio, int modulation);
