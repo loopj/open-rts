@@ -3,7 +3,8 @@
 
 #include <bcm2835.h>
 
-#include "ook_radio.h"
+#include "hal/spi.h"
+#include "radio/rfm69/rfm69.h"
 #include "rts_frame_builder.h"
 
 #define DATA_PIN 24
@@ -13,7 +14,7 @@ rts_frame_builder_t frame_builder;
 bool last_state = false;
 uint64_t last_updated = 0;
 
-void spi_init_bcm2835(struct spi_module_t *spi) {
+void hal_spi_init(struct spi_module_t *spi) {
     bcm2835_init();
     bcm2835_spi_begin();
 
@@ -22,7 +23,7 @@ void spi_init_bcm2835(struct spi_module_t *spi) {
     bcm2835_spi_chipSelect(BCM2835_SPI_CS1);
 }
 
-void spi_transfer_bcm2835(struct spi_module_t *spi, uint8_t *tx_buffer, uint8_t *rx_buffer, uint8_t length) {
+void hal_spi_transfer(struct spi_module_t *spi, uint8_t *tx_buffer, uint8_t *rx_buffer, uint8_t length) {
     uint8_t tmp[2];
     if(rx_buffer == NULL) {
         rx_buffer = tmp;
@@ -32,10 +33,7 @@ void spi_transfer_bcm2835(struct spi_module_t *spi, uint8_t *tx_buffer, uint8_t 
 }
 
 void init_radio() {
-    spi_module_t spi = {
-        .init = &spi_init_bcm2835,
-        .transfer = &spi_transfer_bcm2835,
-    };
+    spi_module_t spi = {};
     spi_init(&spi);
 
     rfm69_init(&radio, &spi, true);
@@ -75,7 +73,7 @@ void check_for_pulses() {
 int main(int argc, char **argv) {
     // Initialize the radio
     init_radio();
-    
+
     // Set up the radio data pin for reading
     bcm2835_gpio_fsel(DATA_PIN, BCM2835_GPIO_FSEL_INPT);
 

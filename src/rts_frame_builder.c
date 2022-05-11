@@ -2,7 +2,7 @@
 
 #include <string.h>
 
-#include "hal.h"
+#include "hal/timing.h"
 #include "rts_frame.h"
 
 static inline bool _matches_timing(uint32_t time, uint32_t target, uint16_t tolerance) {

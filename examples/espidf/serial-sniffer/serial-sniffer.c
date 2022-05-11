@@ -5,7 +5,7 @@
 #include "driver/spi_master.h"
 #include "driver/gpio.h"
 
-#include "ook_radio.h"
+#include "radio/rfm69/rfm69.h"
 #include "rts_frame_builder.h"
 
 // Feather ESP32 + RFM69
@@ -41,8 +41,6 @@ void init_spi() {
 
 void init_radio() {
     spi_module_t spi = {
-        .init = &spi_init_espidf,
-        .transfer = &spi_transfer_espidf,
         .cs_pin = SPI_SS,
         .clock = 1000000,
         .mode = 0,

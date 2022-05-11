@@ -1,6 +1,6 @@
 #include "rts_receiver.h"
 
-#include "hal.h"
+#include "hal/timing.h"
 
 static bool _valid_rolling_code(rts_receiver_t *receiver, uint32_t remote_address, uint16_t rolling_code) {
     // Do we even know this remote?
