@@ -5,6 +5,7 @@
 #include "driver/spi_master.h"
 #include "driver/gpio.h"
 
+#include "hal/timing.h"
 #include "radio/rfm69/rfm69.h"
 #include "rts_frame_builder.h"
 
@@ -25,6 +26,7 @@
 rfm69_t radio;
 rts_frame_builder_t frame_builder;
 TaskHandle_t check_for_pulses_task;
+bool last_state = false;
 uint64_t last_updated = 0;
 
 void init_spi() {
@@ -71,12 +73,15 @@ void check_for_pulses(void *params) {
 
         // Get state and time since last state change
         bool state = !gpio_get_level(DATA_PIN);
-        uint64_t now = esp_timer_get_time();
-        uint32_t time_in_state = now - last_updated;
-        last_updated = now;
+        if(state != last_state) {
+            uint64_t now = hal_micros();
+            uint32_t time_in_state = now - last_updated;
 
-        // Send pulse to pulse builder
-        rts_frame_builder_handle_pulse(&frame_builder, state, time_in_state);
+            rts_frame_builder_handle_pulse(&frame_builder, state, time_in_state);
+
+            last_state = state;
+            last_updated = now;
+        }
     }
 }
 
