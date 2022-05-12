@@ -25,11 +25,6 @@ void hal_spi_init(struct spi_module_t *spi) {
 }
 
 void hal_spi_transfer(struct spi_module_t *spi, uint8_t *tx_buffer, uint8_t *rx_buffer, uint8_t length) {
-    uint8_t tmp[2];
-    if(rx_buffer == NULL) {
-        rx_buffer = tmp;
-    }
-
     bcm2835_spi_transfernb(tx_buffer, rx_buffer, length);
 }
 

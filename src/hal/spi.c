@@ -11,7 +11,8 @@ void spi_write(spi_module_t *spi, uint8_t reg, uint8_t val) {
     buf[0] = reg | spi->write_mask;
     buf[1] = val;
 
-    hal_spi_transfer(spi, buf, NULL, 2);
+    uint8_t read_buf[2];
+    hal_spi_transfer(spi, buf, read_buf, 2);
 }
 
 void spi_write_masked(spi_module_t *spi, uint8_t reg, uint8_t mask, uint8_t val) {
