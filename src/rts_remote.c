@@ -4,6 +4,12 @@
 
 #include "rts_pulse_output.h"
 
+void rts_remote_init(rts_remote_t *remote, rts_pulse_output_t *pulse_output, rts_remote_store_t *remote_store, rts_timings_t *timings) {
+    remote->pulse_output = pulse_output;
+    remote->remote_store = remote_store;
+    remote->timings = timings;
+}
+
 void rts_remote_send_command(rts_remote_t *remote, uint32_t address, rts_command_t command, bool repeated) {
     if(remote->remote_store == NULL) {
         return;

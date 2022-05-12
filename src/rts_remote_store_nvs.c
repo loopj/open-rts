@@ -3,6 +3,7 @@
 #include "rts_remote_store_nvs.h"
 
 #include <nvs.h>
+#include <nvs_flash.h>
 
 #define NVS_KEY_LENGTH 16
 
@@ -12,7 +13,8 @@ void rts_remote_store_init_nvs(rts_remote_store_t *store) {
     store->forget_fn = &rts_remote_store_forget_nvs;
     store->clear_fn = &rts_remote_store_clear_nvs;
 
-    nvs_open("somfysuite", NVS_READWRITE, (nvs_handle *)(&store->user_data_int));
+    nvs_flash_init();
+    nvs_open("openrts", NVS_READWRITE, (nvs_handle *)(&store->user_data_int));
 }
 
 error_t rts_remote_store_get_code_nvs(rts_remote_store_t *store, uint32_t remote_address, uint16_t *rolling_code) {
