@@ -14,7 +14,7 @@ void hal_spi_init(struct spi_module_t *spi) {
         .queue_size = 1,
     };
 
-    spi_bus_add_device(HSPI_HOST, &devcfg, &spi->user_data);
+    spi_bus_add_device(HSPI_HOST, &devcfg, (spi_device_handle_t *)(&spi->user_data));
 }
 
 void hal_spi_transfer(struct spi_module_t *spi, uint8_t *tx_buffer, uint8_t *rx_buffer, uint8_t length) {
