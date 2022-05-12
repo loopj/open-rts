@@ -3,3 +3,4 @@ docs
 sdkconfig.*
 CMakeLists.txt
 .vscode
+*.swp

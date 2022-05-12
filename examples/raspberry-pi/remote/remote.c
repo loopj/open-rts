@@ -1,13 +1,18 @@
 #include <stdio.h>
 #include <time.h>
+#include <unistd.h>
 
 #include <bcm2835.h>
 
 #include "hal/spi.h"
-#include "hal/timing.h"
 #include "radio/rfm69/rfm69.h"
-#include "rts_frame_builder.h"
+#include "rts_remote.h"
 #include "rts_remote_store_memory.h"
+
+#define BUTTON_PIN_MY   5
+#define BUTTON_PIN_UP   6
+#define BUTTON_PIN_DOWN 12
+#define BUTTON_PIN_PROG 13
 
 #define DATA_PIN 24
 
@@ -75,10 +80,10 @@ int main(int argc, char **argv) {
     bcm2835_gpio_fsel(BUTTON_PIN_MY, BCM2835_GPIO_FSEL_INPT);
     bcm2835_gpio_fsel(BUTTON_PIN_PROG, BCM2835_GPIO_FSEL_INPT);
 
-    bcm2835_gpio_pud(BUTTON_PIN_UP, BCM2835_GPIO_PUD_UP);
-    bcm2835_gpio_pud(BUTTON_PIN_DOWN, BCM2835_GPIO_PUD_UP);
-    bcm2835_gpio_pud(BUTTON_PIN_MY, BCM2835_GPIO_PUD_UP);
-    bcm2835_gpio_pud(BUTTON_PIN_PROG, BCM2835_GPIO_PUD_UP);
+    bcm2835_gpio_set_pud(BUTTON_PIN_UP, BCM2835_GPIO_PUD_UP);
+    bcm2835_gpio_set_pud(BUTTON_PIN_DOWN, BCM2835_GPIO_PUD_UP);
+    bcm2835_gpio_set_pud(BUTTON_PIN_MY, BCM2835_GPIO_PUD_UP);
+    bcm2835_gpio_set_pud(BUTTON_PIN_PROG, BCM2835_GPIO_PUD_UP);
 
     // Set up pulse output
     rts_pulse_output_init_gpio(&pulse_output, DATA_PIN);
