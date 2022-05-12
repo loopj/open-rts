@@ -26,8 +26,7 @@ static void _test_recorded_pulses(const recorded_pulse_t *pulses, size_t size, r
 
     rts_frame_builder_t frame_builder;
     rts_frame_builder_init(&frame_builder, RTS_TIMINGS_DEFAULT);
-    frame_builder.callback = &_frame_callback_expected_frame;
-    frame_builder.callback_user_data = expected;
+    rts_frame_builder_set_callback(&frame_builder, _frame_callback_expected_frame, expected);
 
     // Replay recorded pulses
     for(size_t i=0; i<size; i++) {
@@ -93,19 +92,15 @@ static void test_remote_loopback() {
 
     rts_frame_builder_t frame_builder;
     rts_frame_builder_init(&frame_builder, RTS_TIMINGS_DEFAULT);
-
-    frame_builder.callback = &_frame_callback_expected_frame;
-    frame_builder.callback_user_data = &frame;
+    rts_frame_builder_set_callback(&frame_builder, _frame_callback_expected_frame, &frame);
 
     rts_pulse_output_t pulse_output = {
-        .send_pulse_fn = &_send_pulse_to_frame_builder,
+        .send_pulse_fn = _send_pulse_to_frame_builder,
         .user_data_ptr = &frame_builder,
     };
 
-    rts_remote_t remote = {
-        .pulse_output = &pulse_output,
-        .timings = RTS_TIMINGS_DEFAULT,
-    };
+    rts_remote_t remote;
+    rts_remote_init(&remote, &pulse_output, NULL, RTS_TIMINGS_DEFAULT);
     rts_remote_send_frame(&remote, &frame, false);
 
     TEST_ASSERT_EQUAL(1, callback_count);
@@ -119,20 +114,15 @@ static void test_remote_loopback_repeated() {
 
     rts_frame_builder_t frame_builder;
     rts_frame_builder_init(&frame_builder, RTS_TIMINGS_DEFAULT);
-
-    frame_builder.callback = &_frame_callback_expected_frame;
-    frame_builder.callback_user_data = &frame;
+    rts_frame_builder_set_callback(&frame_builder, _frame_callback_expected_frame, &frame);
 
     rts_pulse_output_t pulse_output = {
-        .send_pulse_fn = &_send_pulse_to_frame_builder,
+        .send_pulse_fn = _send_pulse_to_frame_builder,
         .user_data_ptr = &frame_builder,
     };
 
-    rts_remote_t remote = {
-        .pulse_output = &pulse_output,
-        .timings = RTS_TIMINGS_DEFAULT,
-    };
-
+    rts_remote_t remote;
+    rts_remote_init(&remote, &pulse_output, NULL, RTS_TIMINGS_DEFAULT);
     rts_remote_send_frame(&remote, &frame, false);
     rts_remote_send_frame(&remote, &frame, true);
 
@@ -148,20 +138,15 @@ static void test_remote_loopback_zero_key() {
 
     rts_frame_builder_t frame_builder;
     rts_frame_builder_init(&frame_builder, RTS_TIMINGS_DEFAULT);
-
-    frame_builder.callback = &_frame_callback_expected_frame;
-    frame_builder.callback_user_data = &frame;
+    rts_frame_builder_set_callback(&frame_builder, _frame_callback_expected_frame, &frame);
 
     rts_pulse_output_t pulse_output = {
-        .send_pulse_fn = &_send_pulse_to_frame_builder,
+        .send_pulse_fn = _send_pulse_to_frame_builder,
         .user_data_ptr = &frame_builder,
     };
 
-    rts_remote_t remote = {
-        .pulse_output = &pulse_output,
-        .timings = RTS_TIMINGS_DEFAULT,
-    };
-
+    rts_remote_t remote;
+    rts_remote_init(&remote, &pulse_output, NULL, RTS_TIMINGS_DEFAULT);
     rts_remote_send_frame(&remote, &frame, false);
 
     TEST_ASSERT_EQUAL(1, callback_count);

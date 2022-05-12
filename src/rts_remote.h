@@ -27,7 +27,7 @@ typedef struct rts_remote_t {
     rts_timings_t *timings;
 } rts_remote_t;
 
-// void rts_remote_init(rts_remote_t *remote);
+void rts_remote_init(rts_remote_t *remote, rts_pulse_output_t *pulse_output, rts_remote_store_t *remote_store, rts_timings_t *timings);
 void rts_remote_send_command(rts_remote_t *remote, uint32_t address, rts_command_t command, bool repeated);
 void rts_remote_send_frame(rts_remote_t *remote, rts_frame_t *frame, bool repeated);
 void rts_remote_send_pulse(rts_remote_t *remote, bool state, uint32_t micros);
