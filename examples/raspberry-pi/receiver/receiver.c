@@ -1,5 +1,6 @@
 #include <gpiod.h>
 #include <stdio.h>
+#include <time.h>
 
 #include "open_rts.h"
 
@@ -20,6 +21,24 @@ void event_callback(enum rts_receiver_event event, struct rts_frame *frame,
                     void *user_data)
 {
     printf("Got an RTS event!\n");
+
+    switch (event) {
+    case RTS_RECEIVER_EVENT_PRESS:
+        printf("Button Pressed\n");
+        break;
+    case RTS_RECEIVER_EVENT_HOLD:
+        printf("Button Held\n");
+        break;
+    case RTS_RECEIVER_EVENT_HOLD_2:
+        printf("Button Held (Double)\n");
+        break;
+    case RTS_RECEIVER_EVENT_HOLD_3:
+        printf("Button Held (Triple)\n");
+        break;
+    default:
+        break;
+    }
+
     printf("Command: %X\n", frame->command);
     printf("Remote: 0x%06X\n", frame->remote_address);
     printf("Rolling Code: 0x%04X\n\n", frame->rolling_code);
@@ -27,7 +46,24 @@ void event_callback(enum rts_receiver_event event, struct rts_frame *frame,
 
 void mode_callback(enum rts_receiver_mode mode, void *user_data)
 {
-    printf("Receiver mode changed\n");
+    switch (mode) {
+    case RTS_RECEIVER_MODE_OFF:
+        printf("[Mode Changed] Receiver Off\n");
+        break;
+    case RTS_RECEIVER_MODE_PROGRAMMING:
+        printf("[Mode Changed] Programming Mode\n");
+        break;
+    case RTS_RECEIVER_MODE_COMMAND:
+        printf("[Mode Changed] Command Mode\n");
+        break;
+    }
+}
+
+uint32_t millis()
+{
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return (ts.tv_sec * 1000) + ts.tv_nsec / 1000000;
 }
 
 int main(int argc, char **argv)
@@ -41,7 +77,7 @@ int main(int argc, char **argv)
     struct gpiod_chip *gpio_chip = gpiod_chip_open("/dev/gpiochip0");
     struct gpiod_line *btn_mode  = gpiod_chip_get_line(gpio_chip, BTN_MODE);
     gpiod_line_request_input_flags(btn_mode, "openrts",
-                                GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP);
+                                   GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP);
 
     // Set up a GPIO pulse source, send pulses to the framebuilder
     struct rts_pulse_source pulse_source;
@@ -60,14 +96,28 @@ int main(int argc, char **argv)
     rts_receiver_set_mode_callback(&receiver, mode_callback, NULL);
 
     // Check for new pulses
+    bool button_state     = false;
+    uint32_t last_updated = millis();
     while (1) {
         rts_receiver_update(&receiver);
 
-        // TODO: Single button press enters programming mode
-        // TODO: Long button press clears all paired remotes from memory
+        bool new_state = !gpiod_line_get_value(btn_mode);
+        if (new_state != button_state) {
+            uint32_t now = millis();
+            if (!new_state) {
+                if (now - last_updated > 2000) {
+                    // Press button for > 2 seconds to clear paired remotes
+                    rts_receiver_forget_all_remotes(&receiver);
+                    rts_receiver_set_mode(&receiver, RTS_RECEIVER_MODE_COMMAND);
+                } else {
+                    // Short button press enters programming mode
+                    rts_receiver_set_mode(&receiver,
+                                          RTS_RECEIVER_MODE_PROGRAMMING);
+                }
+            }
 
-        if(!gpiod_line_get_value(btn_mode)) {
-            printf("Mode button pressed\n");
+            button_state = new_state;
+            last_updated = now;
         }
     }
 

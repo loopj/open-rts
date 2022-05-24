@@ -41,8 +41,7 @@ struct rts_receiver {
     struct rts_remote_store *remote_store;
 
     void (*event_callback)(enum rts_receiver_event event,
-                           struct rts_frame *frame,
-                           void *user_data);
+                           struct rts_frame *frame, void *user_data);
     void *event_user_data;
 
     void (*mode_callback)(enum rts_receiver_mode mode, void *user_data);
