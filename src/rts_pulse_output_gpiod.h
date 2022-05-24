@@ -13,7 +13,7 @@ extern "C" {
  *
  * @note
  *       - Can be enabled on Linux systems by defining the `HAS_GPIOD` macro
- *       - Make sure the libgpiod-dev package is available on your
+ *       - Make sure the libgpiod-dev (>= 1.5) package is available on your
  *         system, eg `sudo apt install libgpiod-dev`
  *       - Don't forget to link libgpiod when building (`-lgpiod`)
  *
