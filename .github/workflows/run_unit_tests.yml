@@ -1,6 +1,7 @@
 name: Run Unit Tests
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - src/**
