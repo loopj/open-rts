@@ -135,7 +135,7 @@ void rts_receiver_init(struct rts_receiver *receiver,
 }
 
 void rts_receiver_set_event_callback(struct rts_receiver *receiver,
-                                     void (*callback)(uint8_t event,
+                                     void (*callback)(enum rts_receiver_event,
                                                       struct rts_frame *frame,
                                                       void *user_data),
                                      void *user_data)
@@ -145,7 +145,7 @@ void rts_receiver_set_event_callback(struct rts_receiver *receiver,
 }
 
 void rts_receiver_set_mode_callback(struct rts_receiver *receiver,
-                                    void (*callback)(uint8_t mode,
+                                    void (*callback)(enum rts_receiver_mode,
                                                      void *user_data),
                                     void *user_data)
 {

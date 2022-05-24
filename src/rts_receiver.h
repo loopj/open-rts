@@ -40,11 +40,12 @@ struct rts_receiver {
     struct rts_pulse_source *pulse_source;
     struct rts_remote_store *remote_store;
 
-    void (*event_callback)(uint8_t event, struct rts_frame *frame,
+    void (*event_callback)(enum rts_receiver_event event,
+                           struct rts_frame *frame,
                            void *user_data);
     void *event_user_data;
 
-    void (*mode_callback)(uint8_t mode, void *user_data);
+    void (*mode_callback)(enum rts_receiver_mode mode, void *user_data);
     void *mode_user_data;
 
     uint8_t mode;
@@ -62,13 +63,13 @@ void rts_receiver_init(struct rts_receiver *receiver,
                        struct rts_remote_store *remote_store);
 
 void rts_receiver_set_event_callback(struct rts_receiver *receiver,
-                                     void (*callback)(uint8_t event,
+                                     void (*callback)(enum rts_receiver_event,
                                                       struct rts_frame *frame,
                                                       void *user_data),
                                      void *user_data);
 
 void rts_receiver_set_mode_callback(struct rts_receiver *receiver,
-                                    void (*callback)(uint8_t mode,
+                                    void (*callback)(enum rts_receiver_mode,
                                                      void *user_data),
                                     void *user_data);
 
