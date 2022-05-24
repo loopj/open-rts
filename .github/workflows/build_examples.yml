@@ -20,6 +20,10 @@ jobs:
             env: featheresp32-espidf
           - example: examples/espidf/sniffer
             env: featheresp32-espidf
+          - example: examples/raspberry-pi/remote
+            env: linux
+          - example: examples/raspberry-pi/sniffer
+            env: linux
 
     steps:
     - uses: actions/checkout@v3
