@@ -8,6 +8,7 @@ on:
     paths:
       - src/**
       - doxygen/Doxyfile
+      - .github/workflows/build_docs.yml
 
 jobs:
   docs:

@@ -7,6 +7,7 @@ on:
       - src/**
       - examples/**
       - platformio.ini
+      - .github/workflows/build_examples.yml
 
 jobs:
   build:
@@ -46,4 +47,4 @@ jobs:
         pio run -e ${{ matrix.env }}
       env:
         PLATFORMIO_BUILD_FLAGS:
-        PLATFORMIO_CI_SRC: ${{ matrix.example }}
+        PLATFORMIO_SRC_DIR: ${{ matrix.example }}
