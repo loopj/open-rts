@@ -1,0 +1,29 @@
+name: Doxygen Docs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - src/**
+      - doxygen/Doxyfile
+
+jobs:
+  docs:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build Docs
+        uses: mattnotmitt/doxygen-action@edge
+        with:
+            doxyfile-path: 'doxygen/Doxyfile'
+
+      - name: Deploy Docs
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs

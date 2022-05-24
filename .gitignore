@@ -1,0 +1,6 @@
+.pio
+docs
+sdkconfig.*
+CMakeLists.txt
+.vscode
+*.swp
