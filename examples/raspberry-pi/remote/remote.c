@@ -44,15 +44,16 @@ int main(int argc, char **argv)
     buttons[3] = gpiod_chip_get_line(gpio_chip, BUTTON_PIN_3);
 
     // Set up the remote button GPIOs as inputs, enable internal pull-ups
-    for(int i=0; i<4; i++) {
-        gpiod_line_request_input_flags(buttons[i], "remote", GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP);
+    for (int i = 0; i < 4; i++) {
+        gpiod_line_request_input_flags(buttons[i], "remote",
+                                       GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP);
     }
 
     // Set up pulse output
     rts_pulse_output_init_gpiod(&pulse_output, GPIOD_DEVICE, DATA_PIN);
 
     // Store remote rolling codes in memory
-    rts_remote_store_init_memory(&remote_store, 1);
+    rts_remote_store_init_mmap(&remote_store, "remotes.dat");
 
     // Set up the remote
     rts_remote_init(&remote, &pulse_output, &remote_store, RTS_TIMINGS_DEFAULT);
@@ -61,10 +62,10 @@ int main(int argc, char **argv)
     uint8_t last_command = 0;
     while (1) {
         uint8_t command = 0;
-        command |= !gpiod_line_get_value(buttons[0]);       // My
-        command |= !gpiod_line_get_value(buttons[1]) << 1;  // Up
-        command |= !gpiod_line_get_value(buttons[2]) << 2;  // Down
-        command |= !gpiod_line_get_value(buttons[3]) << 3;  // Prog
+        command |= !gpiod_line_get_value(buttons[0]);      // My
+        command |= !gpiod_line_get_value(buttons[1]) << 1; // Up
+        command |= !gpiod_line_get_value(buttons[2]) << 2; // Down
+        command |= !gpiod_line_get_value(buttons[3]) << 3; // Prog
 
         if (command) {
             printf("Sending command: %d\n", command);
