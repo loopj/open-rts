@@ -94,7 +94,7 @@ void poll_buttons()
     static uint32_t pressed_time = 0;
 
     // Check if button is pressed
-    bool state = !gpio_get_level(BUTTON_PIN_1);
+    bool state   = !gpio_get_level(BUTTON_PIN_1);
     uint32_t now = (uint32_t)(esp_timer_get_time() / 1000);
     if (state == true && last_state == false) {
         pressed_time = now;

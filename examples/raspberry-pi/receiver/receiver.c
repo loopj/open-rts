@@ -4,8 +4,8 @@
 
 #include "open_rts.h"
 
-#define BTN_MODE     5
 #define DATA_PIN     24
+#define BUTTON_PIN_1 5
 #define SPI_DEVICE   "/dev/spidev0.1"
 #define GPIOD_DEVICE "/dev/gpiochip0"
 
@@ -16,12 +16,15 @@ struct rts_receiver receiver;
 
 void init_radio()
 {
+    // Initialize the SPI module
     struct spi_module spi = {};
     spi_module_init_linux(&spi, SPI_DEVICE);
 
+    // Initialize the radio
     rfm69_init(&radio, &spi, true);
     rfm69_configure_for_rts(&radio);
 
+    // Switch to receive mode
     rfm69_set_mode(&radio, RFM69_MODE_RX);
 }
 
@@ -74,15 +77,47 @@ uint32_t millis()
     return (ts.tv_sec * 1000) + ts.tv_nsec / 1000000;
 }
 
+void poll_button(struct gpiod_line *button)
+{
+    static uint8_t event_fired   = 0;
+    static bool last_state       = false;
+    static uint32_t pressed_time = 0;
+
+    // Check if button is pressed
+    bool state   = !gpiod_line_get_value(button);
+    uint32_t now = millis();
+    if (state == true && last_state == false) {
+        pressed_time = now;
+        event_fired  = 0;
+    }
+
+    // Handle button press/held events
+    if (state == true && last_state == true) {
+        if (now - pressed_time > 2000 && event_fired == 0) {
+            // Button pressed and held for > 2s, enter programming mode
+            rts_receiver_set_mode(&receiver, RTS_RECEIVER_MODE_PROGRAMMING);
+            event_fired++;
+        } else if (now - pressed_time > 4000 && event_fired == 1) {
+            // Button pressed and held for > 4s, forget all paired remotes
+            // and go back into command mode
+            rts_receiver_forget_all_remotes(&receiver);
+            rts_receiver_set_mode(&receiver, RTS_RECEIVER_MODE_COMMAND);
+            event_fired++;
+        }
+    }
+
+    last_state = state;
+}
+
 int main(int argc, char **argv)
 {
     // Initialize the radio
     init_radio();
 
-    // Set up the mode button
+    // Set up the receiver "mode" button
     struct gpiod_chip *gpio_chip = gpiod_chip_open(GPIOD_DEVICE);
-    struct gpiod_line *btn_mode  = gpiod_chip_get_line(gpio_chip, BTN_MODE);
-    gpiod_line_request_input_flags(btn_mode, "openrts",
+    struct gpiod_line *button    = gpiod_chip_get_line(gpio_chip, BUTTON_PIN_1);
+    gpiod_line_request_input_flags(button, "openrts",
                                    GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP);
 
     // Set up a GPIO pulse source
@@ -98,30 +133,12 @@ int main(int argc, char **argv)
     rts_receiver_set_event_callback(&receiver, event_callback, NULL);
     rts_receiver_set_mode_callback(&receiver, mode_callback, NULL);
 
-    // Check for new pulses
-    bool button_state     = false;
-    uint32_t last_updated = millis();
     while (1) {
+        // Update receiver with new pulses
         rts_receiver_update(&receiver);
 
-        bool new_state = !gpiod_line_get_value(btn_mode);
-        if (new_state != button_state) {
-            uint32_t now = millis();
-            if (!new_state) {
-                if (now - last_updated > 2000) {
-                    // Press button for > 2 seconds to clear paired remotes
-                    rts_receiver_forget_all_remotes(&receiver);
-                    rts_receiver_set_mode(&receiver, RTS_RECEIVER_MODE_COMMAND);
-                } else {
-                    // Short button press enters programming mode
-                    rts_receiver_set_mode(&receiver,
-                                          RTS_RECEIVER_MODE_PROGRAMMING);
-                }
-            }
-
-            button_state = new_state;
-            last_updated = now;
-        }
+        // Check for button presses
+        poll_button(button);
     }
 
     return 0;
