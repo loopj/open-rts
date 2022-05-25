@@ -2,10 +2,10 @@
 
 #include "rts_pulse_output_espidf_gpio.h"
 
-#include <stdio.h>
-
 #include "driver/gpio.h"
 #include "rom/ets_sys.h"
+
+#include <stdio.h>
 
 static void enable(struct rts_pulse_output *pulse_output)
 {
@@ -32,4 +32,4 @@ void rts_pulse_output_init_espidf_gpio(struct rts_pulse_output *pulse_output,
     pulse_output->user_data_int = data_pin;
 }
 
-#endif
+#endif // defined(ESP_PLATFORM)

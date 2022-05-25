@@ -22,10 +22,10 @@
 #define DATA_PIN 32
 
 struct rfm69 radio;
+struct rts_pulse_source pulse_source;
 struct rts_frame_builder frame_builder;
+
 TaskHandle_t check_for_pulses_task;
-bool last_state       = false;
-uint64_t last_updated = 0;
 
 void init_spi()
 {
@@ -75,18 +75,8 @@ void check_for_pulses(void *params)
         // Block indefinitely until interrupt recieved
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 
-        // Get state and time since last state change
-        bool state = !gpio_get_level(DATA_PIN);
-        if (state != last_state) {
-            int64_t now            = esp_timer_get_time();
-            uint32_t time_in_state = now - last_updated;
-
-            rts_frame_builder_handle_pulse(&frame_builder, state,
-                                           time_in_state);
-
-            last_state   = state;
-            last_updated = now;
-        }
+        // Let pulse source know when state changes
+        rts_pulse_source_update(&pulse_source);
     }
 }
 
@@ -98,15 +88,20 @@ void app_main()
     // Initialize the radio
     init_radio();
 
+    // Set up a framebuilder and subscribe to new frames
+    rts_frame_builder_init(&frame_builder, RTS_TIMINGS_DEFAULT);
+    rts_frame_builder_set_callback(&frame_builder, print_frame, NULL);
+
+    // Set up a GPIO pulse source, send pulses to the framebuilder
+    rts_pulse_source_init_espidf_gpio(&pulse_source, DATA_PIN);
+    rts_pulse_source_attach(&pulse_source, &frame_builder);
+    rts_pulse_source_enable(&pulse_source);
+
     // Set up the radio data pin for reading and attach interrupt
     gpio_install_isr_service(0);
     gpio_set_direction(DATA_PIN, GPIO_MODE_INPUT);
     gpio_set_intr_type(DATA_PIN, GPIO_INTR_ANYEDGE);
     gpio_isr_handler_add(DATA_PIN, isr0, NULL);
-
-    // Set up a framebuilder
-    rts_frame_builder_init(&frame_builder, RTS_TIMINGS_DEFAULT);
-    rts_frame_builder_set_callback(&frame_builder, print_frame, NULL);
 
     // Check for new pulses
     xTaskCreate(check_for_pulses, "check_for_pulses", 2048, NULL, 5,
