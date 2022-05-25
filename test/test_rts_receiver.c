@@ -4,7 +4,7 @@
 
 static int callback_count = 0;
 
-static void _mode_callback(uint8_t mode, void *user_data)
+static void _mode_callback(enum rts_receiver_mode mode, void *user_data)
 {
     callback_count++;
 }
