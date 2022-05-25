@@ -79,11 +79,13 @@ void app_main()
     // Configure radio
     init_radio();
 
-    // Set up the buttons
+    // Set up the remote button GPIOs as inputs
     gpio_set_direction(BUTTON_PIN_UP, GPIO_MODE_INPUT);
     gpio_set_direction(BUTTON_PIN_DOWN, GPIO_MODE_INPUT);
     gpio_set_direction(BUTTON_PIN_MY, GPIO_MODE_INPUT);
     gpio_set_direction(BUTTON_PIN_PROG, GPIO_MODE_INPUT);
+
+    // Enable internal pullup resistors on remote button GPIOS
     gpio_set_pull_mode(BUTTON_PIN_UP, GPIO_PULLUP_ONLY);
     gpio_set_pull_mode(BUTTON_PIN_DOWN, GPIO_PULLUP_ONLY);
     gpio_set_pull_mode(BUTTON_PIN_MY, GPIO_PULLUP_ONLY);

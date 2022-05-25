@@ -117,7 +117,7 @@ int main(int argc, char **argv)
     // Set up the receiver "mode" button
     struct gpiod_chip *gpio_chip = gpiod_chip_open(GPIOD_DEVICE);
     struct gpiod_line *button    = gpiod_chip_get_line(gpio_chip, BUTTON_PIN_1);
-    gpiod_line_request_input_flags(button, "openrts",
+    gpiod_line_request_input_flags(button, "receiver",
                                    GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP);
 
     // Set up a GPIO pulse source
