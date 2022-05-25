@@ -4,17 +4,25 @@
 
 #include "open_rts.h"
 
-#define BTN_MODE 5
-#define DATA_PIN 24
+#define BTN_MODE     5
+#define DATA_PIN     24
+#define SPI_DEVICE   "/dev/spidev0.1"
+#define GPIOD_DEVICE "/dev/gpiochip0"
 
-void init_radio(struct spi_module *spi, struct rfm69 *radio)
+struct rfm69 radio;
+struct rts_pulse_source pulse_source;
+struct rts_remote_store remote_store;
+struct rts_receiver receiver;
+
+void init_radio()
 {
-    spi_module_init_linux(spi, "/dev/spidev0.1");
+    struct spi_module spi = {};
+    spi_module_init_linux(&spi, SPI_DEVICE);
 
-    rfm69_init(radio, spi, true);
-    rfm69_configure_for_rts(radio);
+    rfm69_init(&radio, &spi, true);
+    rfm69_configure_for_rts(&radio);
 
-    rfm69_set_mode(radio, RFM69_MODE_RX);
+    rfm69_set_mode(&radio, RFM69_MODE_RX);
 }
 
 void event_callback(enum rts_receiver_event event, struct rts_frame *frame,
@@ -69,27 +77,22 @@ uint32_t millis()
 int main(int argc, char **argv)
 {
     // Initialize the radio
-    struct spi_module spi = {};
-    struct rfm69 radio;
-    init_radio(&spi, &radio);
+    init_radio();
 
     // Set up the mode button
-    struct gpiod_chip *gpio_chip = gpiod_chip_open("/dev/gpiochip0");
+    struct gpiod_chip *gpio_chip = gpiod_chip_open(GPIOD_DEVICE);
     struct gpiod_line *btn_mode  = gpiod_chip_get_line(gpio_chip, BTN_MODE);
     gpiod_line_request_input_flags(btn_mode, "openrts",
                                    GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP);
 
-    // Set up a GPIO pulse source, send pulses to the framebuilder
-    struct rts_pulse_source pulse_source;
-    rts_pulse_source_init_gpiod(&pulse_source, "/dev/gpiochip0", DATA_PIN);
+    // Set up a GPIO pulse source
+    rts_pulse_source_init_gpiod(&pulse_source, GPIOD_DEVICE, DATA_PIN);
     rts_pulse_source_enable(&pulse_source);
 
     // Set up remote store for remote pairing
-    struct rts_remote_store remote_store;
     rts_remote_store_init_memory(&remote_store, 1);
 
     // Create a receiver
-    struct rts_receiver receiver;
     rts_receiver_init(&receiver, &pulse_source, &remote_store);
     rts_receiver_set_mode(&receiver, RTS_RECEIVER_MODE_COMMAND);
     rts_receiver_set_event_callback(&receiver, event_callback, NULL);

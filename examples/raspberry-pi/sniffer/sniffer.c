@@ -2,8 +2,8 @@
 
 #include "open_rts.h"
 
-#define DATA_PIN 24
-#define SPI_DEVICE "/dev/spidev0.1"
+#define DATA_PIN     24
+#define SPI_DEVICE   "/dev/spidev0.1"
 #define GPIOD_DEVICE "/dev/gpiochip0"
 
 struct rfm69 radio;
