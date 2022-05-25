@@ -7,8 +7,8 @@
 #include <stdint.h>
 
 /**
- * Assembles pulses received via #rts_frame_builder_handle_pulse, into a complete
- * rts_frame, and delivers them to the user-provided callback.
+ * Assembles pulses received via #rts_frame_builder_handle_pulse, into a
+ * complete rts_frame, and delivers them to the user-provided callback.
  *
  * This class will fire the configured callback _every time_ a
  * valid RTS frame is received. It does not perform any sort of deduplication,

@@ -2,16 +2,23 @@
 
 #include "open_rts.h"
 
-#define DATA_PIN 24
+#define DATA_PIN     24
+#define SPI_DEVICE   "/dev/spidev0.1"
+#define GPIOD_DEVICE "/dev/gpiochip0"
 
-void init_radio(struct spi_module *spi, struct rfm69 *radio)
+struct rfm69 radio;
+struct rts_frame_builder frame_builder;
+struct rts_pulse_source pulse_source;
+
+void init_radio()
 {
-    spi_module_init_linux(spi, "/dev/spidev0.1");
+    struct spi_module spi = {};
+    spi_module_init_linux(&spi, SPI_DEVICE);
 
-    rfm69_init(radio, spi, true);
-    rfm69_configure_for_rts(radio);
+    rfm69_init(&radio, &spi, true);
+    rfm69_configure_for_rts(&radio);
 
-    rfm69_set_mode(radio, RFM69_MODE_RX);
+    rfm69_set_mode(&radio, RFM69_MODE_RX);
 }
 
 void print_frame(struct rts_frame *frame, uint8_t count, uint32_t duration,
@@ -26,18 +33,14 @@ void print_frame(struct rts_frame *frame, uint8_t count, uint32_t duration,
 int main(int argc, char **argv)
 {
     // Initialize the radio
-    struct spi_module spi = {};
-    struct rfm69 radio;
-    init_radio(&spi, &radio);
+    init_radio();
 
     // Set up a framebuilder and subscribe to new frames
-    struct rts_frame_builder frame_builder;
     rts_frame_builder_init(&frame_builder, RTS_TIMINGS_DEFAULT);
     rts_frame_builder_set_callback(&frame_builder, print_frame, NULL);
 
     // Set up a GPIO pulse source, send pulses to the framebuilder
-    struct rts_pulse_source pulse_source;
-    rts_pulse_source_init_gpiod(&pulse_source, "/dev/gpiochip0", DATA_PIN);
+    rts_pulse_source_init_gpiod(&pulse_source, GPIOD_DEVICE, DATA_PIN);
     rts_pulse_source_attach(&pulse_source, &frame_builder);
     rts_pulse_source_enable(&pulse_source);
 

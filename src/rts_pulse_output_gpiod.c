@@ -10,24 +10,24 @@
 
 static void enable(struct rts_pulse_output *pulse_output)
 {
-    struct gpiod_line *line = (struct gpiod_line *)pulse_output->user_data_ptr;
-    gpiod_line_request_output(line, "openrts", false);
+    gpiod_line_request_output((struct gpiod_line *)pulse_output->user_data_ptr,
+                              "open_rts", false);
 }
 
 static void disable(struct rts_pulse_output *pulse_output)
 {
+    gpiod_line_request_input((struct gpiod_line *)pulse_output->user_data_ptr,
+                              "open_rts");
 }
 
 static void send_pulse(struct rts_pulse_output *pulse_output, bool state,
                        uint32_t micros)
 {
-    struct gpiod_line *line = (struct gpiod_line *)pulse_output->user_data_ptr;
-    gpiod_line_set_value(line, state);
+    gpiod_line_set_value((struct gpiod_line *)pulse_output->user_data_ptr,
+                         state);
 
-    const struct timespec t = {
-        .tv_nsec = micros * 1000,
-    };
-    nanosleep(&t, NULL);
+    const struct timespec time = {.tv_nsec = micros * 1000};
+    nanosleep(&time, NULL);
 }
 
 void rts_pulse_output_init_gpiod(struct rts_pulse_output *pulse_output,

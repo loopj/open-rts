@@ -26,6 +26,9 @@ struct rts_pulse_source {
     void (*disable)(struct rts_pulse_source *pulse_source);
     void (*update)(struct rts_pulse_source *pulse_source);
 
+    bool last_state;
+    uint64_t last_updated;
+
     union {
         void *user_data_ptr;
         int user_data_int;

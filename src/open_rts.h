@@ -36,6 +36,7 @@
 
 #if HAS_ESPIDF_GPIO
 #include "rts_pulse_output_espidf_gpio.h"
+#include "rts_pulse_source_espidf_gpio.h"
 #endif
 
 #if HAS_NVS
