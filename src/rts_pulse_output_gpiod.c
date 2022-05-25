@@ -16,6 +16,8 @@ static void enable(struct rts_pulse_output *pulse_output)
 
 static void disable(struct rts_pulse_output *pulse_output)
 {
+    gpiod_line_request_input((struct gpiod_line *)pulse_output->user_data_ptr,
+                              "open_rts");
 }
 
 static void send_pulse(struct rts_pulse_output *pulse_output, bool state,

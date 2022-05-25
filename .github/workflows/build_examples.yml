@@ -21,9 +21,13 @@ jobs:
             env: featheresp32-espidf
           - example: examples/espidf/sniffer
             env: featheresp32-espidf
+          - example: examples/espidf/receiver
+            env: featheresp32-espidf
           - example: examples/raspberry-pi/remote
             env: linux
           - example: examples/raspberry-pi/sniffer
+            env: linux
+          - example: examples/raspberry-pi/receiver
             env: linux
 
     steps:

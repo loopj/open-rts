@@ -19,7 +19,7 @@ static uint64_t micros()
 
 static void enable(struct rts_pulse_source *pulse_source)
 {
-    gpiod_line_request_input(pulse_source->user_data_ptr, "openrts");
+    gpiod_line_request_input(pulse_source->user_data_ptr, "open_rts");
 }
 
 static void disable(struct rts_pulse_source *pulse_source)
