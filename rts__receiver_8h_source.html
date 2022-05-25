@@ -114,11 +114,11 @@ $(document).ready(function(){initNavTree('rts__receiver_8h_source.html',''); ini
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *remote_store;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    void (*event_callback)(uint8_t event, <span class="keyword">struct </span><a class="code hl_struct" href="structrts__frame.html">rts_frame</a> *frame,</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                           <span class="keywordtype">void</span> *user_data);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    void (*event_callback)(<span class="keyword">enum</span> rts_receiver_event event,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                           <span class="keyword">struct </span><a class="code hl_struct" href="structrts__frame.html">rts_frame</a> *frame, <span class="keywordtype">void</span> *user_data);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> *event_user_data;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    void (*mode_callback)(uint8_t mode, <span class="keywordtype">void</span> *user_data);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    void (*mode_callback)(<span class="keyword">enum</span> rts_receiver_mode mode, <span class="keywordtype">void</span> *user_data);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> *mode_user_data;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    uint8_t mode;</div>
@@ -136,13 +136,13 @@ $(document).ready(function(){initNavTree('rts__receiver_8h_source.html',''); ini
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                       <span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *remote_store);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> rts_receiver_set_event_callback(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__receiver.html">rts_receiver</a> *receiver,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                     <span class="keywordtype">void</span> (*callback)(uint8_t event,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                     <span class="keywordtype">void</span> (*callback)(<span class="keyword">enum</span> rts_receiver_event,</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                                      <span class="keyword">struct</span> <a class="code hl_struct" href="structrts__frame.html">rts_frame</a> *frame,</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                                                      <span class="keywordtype">void</span> *user_data),</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                                     <span class="keywordtype">void</span> *user_data);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span> rts_receiver_set_mode_callback(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__receiver.html">rts_receiver</a> *receiver,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                    <span class="keywordtype">void</span> (*callback)(uint8_t mode,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                    <span class="keywordtype">void</span> (*callback)(<span class="keyword">enum</span> rts_receiver_mode,</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                                                     <span class="keywordtype">void</span> *user_data),</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                                    <span class="keywordtype">void</span> *user_data);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
