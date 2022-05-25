@@ -14,6 +14,7 @@ static void enable(struct rts_pulse_output *pulse_output)
 
 static void disable(struct rts_pulse_output *pulse_output)
 {
+    gpio_set_direction(pulse_output->user_data_int, GPIO_MODE_INPUT);
 }
 
 static void send_pulse(struct rts_pulse_output *pulse_output, bool state,
