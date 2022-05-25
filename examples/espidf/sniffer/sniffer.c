@@ -1,9 +1,6 @@
-#include "driver/gpio.h"
-#include "driver/spi_master.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "sdkconfig.h"
 #include <stdio.h>
+
+#include "driver/spi_master.h"
 
 #include "open_rts.h"
 
@@ -22,13 +19,12 @@
 #define DATA_PIN 32
 
 struct rfm69 radio;
-struct rts_pulse_source pulse_source;
 struct rts_frame_builder frame_builder;
+struct rts_pulse_source pulse_source;
 
-TaskHandle_t check_for_pulses_task;
-
-void init_spi()
+void init_radio()
 {
+    // Initialize SPI host bus
     spi_bus_config_t buscfg = {
         .miso_io_num   = SPI_MISO,
         .mosi_io_num   = SPI_MOSI,
@@ -38,10 +34,8 @@ void init_spi()
     };
 
     spi_bus_initialize(HSPI_HOST, &buscfg, 1);
-}
 
-void init_radio()
-{
+    // Initialize SPI module
     struct spi_module spi = {
         .cs_pin = SPI_SS,
         .clock  = 1000000,
@@ -49,6 +43,7 @@ void init_radio()
     };
     spi_module_init_espidf(&spi, HSPI_HOST);
 
+    // Initialize radio
     rfm69_init(&radio, &spi, true);
     rfm69_configure_for_rts(&radio);
     rfm69_set_mode(&radio, RFM69_MODE_RX);
@@ -63,28 +58,8 @@ void print_frame(struct rts_frame *frame, uint8_t count, uint32_t duration,
     printf("Rolling Code: 0x%04X (%d)\n\n", frame->rolling_code, count);
 }
 
-void IRAM_ATTR isr0()
-{
-    vTaskNotifyGiveFromISR(check_for_pulses_task, NULL);
-    portYIELD_FROM_ISR();
-}
-
-void check_for_pulses(void *params)
-{
-    while (1) {
-        // Block indefinitely until interrupt recieved
-        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-
-        // Let pulse source know when state changes
-        rts_pulse_source_update(&pulse_source);
-    }
-}
-
 void app_main()
 {
-    // Initialize the SPI bus
-    init_spi();
-
     // Initialize the radio
     init_radio();
 
@@ -96,14 +71,4 @@ void app_main()
     rts_pulse_source_init_espidf_gpio(&pulse_source, DATA_PIN);
     rts_pulse_source_attach(&pulse_source, &frame_builder);
     rts_pulse_source_enable(&pulse_source);
-
-    // Set up the radio data pin for reading and attach interrupt
-    gpio_install_isr_service(0);
-    gpio_set_direction(DATA_PIN, GPIO_MODE_INPUT);
-    gpio_set_intr_type(DATA_PIN, GPIO_INTR_ANYEDGE);
-    gpio_isr_handler_add(DATA_PIN, isr0, NULL);
-
-    // Check for new pulses
-    xTaskCreate(check_for_pulses, "check_for_pulses", 2048, NULL, 5,
-                &check_for_pulses_task);
 }
