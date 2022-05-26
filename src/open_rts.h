@@ -43,8 +43,4 @@
 #include "rts_remote_store_nvs.h"
 #endif
 
-#if defined (__unix__) || (defined (__APPLE__) && defined (__MACH__))
-#include "rts_remote_store_mmap.h"
-#endif
-
 #endif // OPEN_RTS_H
