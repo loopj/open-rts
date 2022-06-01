@@ -94,8 +94,8 @@ $(document).ready(function(){initNavTree('sx1278_8h_source.html',''); initResiza
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;spi_module.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structsx1278.html">    8</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structsx1278.html">sx1278</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structspi__module.html">spi_module</a> *<a class="code hl_struct" href="structspi__module.html">spi_module</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">struct </span>sx1278 {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">struct </span>spi_module *spi_module;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">bool</span> use_pa_boost;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">int</span> power;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">int</span> mode;</div>
@@ -199,25 +199,23 @@ $(document).ready(function(){initNavTree('sx1278_8h_source.html',''); initResiza
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">void</span> sx1278_init(<span class="keyword">struct</span> <a class="code hl_struct" href="structsx1278.html">sx1278</a> *radio, <span class="keyword">struct</span> <a class="code hl_struct" href="structspi__module.html">spi_module</a> *spi,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">void</span> sx1278_init(<span class="keyword">struct</span> sx1278 *radio, <span class="keyword">struct</span> spi_module *spi,</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                 <span class="keywordtype">bool</span> use_pa_boost);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keywordtype">void</span> sx1278_set_long_range_mode(<span class="keyword">struct</span> <a class="code hl_struct" href="structsx1278.html">sx1278</a> *radio, <span class="keywordtype">bool</span> long_range_mode);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keywordtype">void</span> sx1278_set_data_mode(<span class="keyword">struct</span> <a class="code hl_struct" href="structsx1278.html">sx1278</a> *radio, <span class="keywordtype">int</span> mode);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keywordtype">void</span> sx1278_set_modulation_type(<span class="keyword">struct</span> <a class="code hl_struct" href="structsx1278.html">sx1278</a> *radio, <span class="keywordtype">int</span> modulation);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keywordtype">void</span> sx1278_set_bit_sync_on(<span class="keyword">struct</span> <a class="code hl_struct" href="structsx1278.html">sx1278</a> *radio, <span class="keywordtype">bool</span> bit_sync_on);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">void</span> sx1278_set_frequency(<span class="keyword">struct</span> <a class="code hl_struct" href="structsx1278.html">sx1278</a> *radio, <span class="keywordtype">int</span> freq);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keywordtype">void</span> sx1278_set_bitrate(<span class="keyword">struct</span> <a class="code hl_struct" href="structsx1278.html">sx1278</a> *radio, <span class="keywordtype">int</span> bitrate);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keywordtype">void</span> sx1278_set_rx_bandwidth(<span class="keyword">struct</span> <a class="code hl_struct" href="structsx1278.html">sx1278</a> *radio, <span class="keywordtype">int</span> bw);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keywordtype">void</span> sx1278_set_transmit_power(<span class="keyword">struct</span> <a class="code hl_struct" href="structsx1278.html">sx1278</a> *radio, <span class="keywordtype">int</span> power);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keywordtype">void</span> sx1278_set_mode(<span class="keyword">struct</span> <a class="code hl_struct" href="structsx1278.html">sx1278</a> *radio, <span class="keywordtype">int</span> mode);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keywordtype">void</span> sx1278_set_long_range_mode(<span class="keyword">struct</span> sx1278 *radio, <span class="keywordtype">bool</span> long_range_mode);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keywordtype">void</span> sx1278_set_data_mode(<span class="keyword">struct</span> sx1278 *radio, <span class="keywordtype">int</span> mode);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keywordtype">void</span> sx1278_set_modulation_type(<span class="keyword">struct</span> sx1278 *radio, <span class="keywordtype">int</span> modulation);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keywordtype">void</span> sx1278_set_bit_sync_on(<span class="keyword">struct</span> sx1278 *radio, <span class="keywordtype">bool</span> bit_sync_on);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">void</span> sx1278_set_frequency(<span class="keyword">struct</span> sx1278 *radio, <span class="keywordtype">int</span> freq);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keywordtype">void</span> sx1278_set_bitrate(<span class="keyword">struct</span> sx1278 *radio, <span class="keywordtype">int</span> bitrate);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keywordtype">void</span> sx1278_set_rx_bandwidth(<span class="keyword">struct</span> sx1278 *radio, <span class="keywordtype">int</span> bw);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keywordtype">void</span> sx1278_set_transmit_power(<span class="keyword">struct</span> sx1278 *radio, <span class="keywordtype">int</span> power);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keywordtype">void</span> sx1278_set_mode(<span class="keyword">struct</span> sx1278 *radio, <span class="keywordtype">int</span> mode);</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>} <span class="comment">// extern &quot;C&quot;</span></div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#endif </span><span class="comment">// RTS_RADIO_SX1278_H</span></div>
-<div class="ttc" id="astructspi__module_html"><div class="ttname"><a href="structspi__module.html">spi_module</a></div><div class="ttdef"><b>Definition:</b> spi_module.h:10</div></div>
-<div class="ttc" id="astructsx1278_html"><div class="ttname"><a href="structsx1278.html">sx1278</a></div><div class="ttdef"><b>Definition:</b> sx1278.h:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
