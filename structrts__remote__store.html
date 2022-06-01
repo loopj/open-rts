@@ -117,9 +117,6 @@ Related Functions</h2></td></tr>
 <tr class="memitem:aba1b041180b813756605331bba63a006"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#aba1b041180b813756605331bba63a006">rts_remote_store_clear</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
 <tr class="memdesc:aba1b041180b813756605331bba63a006"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all remotes and rolling codes.  <a href="structrts__remote__store.html#aba1b041180b813756605331bba63a006">More...</a><br /></td></tr>
 <tr class="separator:aba1b041180b813756605331bba63a006"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1065f5dbee970b9466b8f074d68a70a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#a1065f5dbee970b9466b8f074d68a70a8">rts_remote_store_init_memory</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint8_t max_remotes)</td></tr>
-<tr class="memdesc:a1065f5dbee970b9466b8f074d68a70a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in memory.  <a href="structrts__remote__store.html#a1065f5dbee970b9466b8f074d68a70a8">More...</a><br /></td></tr>
-<tr class="separator:a1065f5dbee970b9466b8f074d68a70a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afefe1fed614ea5110fed6eb69d2d9cdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#afefe1fed614ea5110fed6eb69d2d9cdd">rts_remote_store_init_nvs</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
 <tr class="memdesc:afefe1fed614ea5110fed6eb69d2d9cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in ESP-IDF's NVS (Non-volatile storage) on ESP8266 and ESP32 devices.  <a href="structrts__remote__store.html#afefe1fed614ea5110fed6eb69d2d9cdd">More...</a><br /></td></tr>
 <tr class="separator:afefe1fed614ea5110fed6eb69d2d9cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -396,51 +393,6 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1065f5dbee970b9466b8f074d68a70a8" name="a1065f5dbee970b9466b8f074d68a70a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1065f5dbee970b9466b8f074d68a70a8">&#9670;&nbsp;</a></span>rts_remote_store_init_memory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_remote_store_init_memory </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
-          <td class="paramname"><em>store</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>max_remotes</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in memory. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> struct to initialize </td></tr>
-    <tr><td class="paramname">max_remotes</td><td>the max number of remotes we would like to store </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="afefe1fed614ea5110fed6eb69d2d9cdd" name="afefe1fed614ea5110fed6eb69d2d9cdd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afefe1fed614ea5110fed6eb69d2d9cdd">&#9670;&nbsp;</a></span>rts_remote_store_init_nvs()</h2>
 
@@ -479,7 +431,6 @@ Related Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/<a class="el" href="rts__remote__store_8h_source.html">rts_remote_store.h</a></li>
-<li>src/<a class="el" href="rts__remote__store__memory_8h_source.html">rts_remote_store_memory.h</a></li>
 <li>src/<a class="el" href="rts__remote__store__nvs_8h_source.html">rts_remote_store_nvs.h</a></li>
 </ul>
 </div><!-- contents -->
