@@ -67,7 +67,7 @@ void poll_buttons()
         gpio_set_level(OPENRTS_LED, 1);
         rts_remote_send_command(&remote, 0xC0FFEE, command,
                                 last_command == command);
-        printf("Sending command: %d\n", command);
+        printf("Sending command: %s\n", rts_command_to_string(command));
     } else {
         gpio_set_level(OPENRTS_LED, 0);
     }

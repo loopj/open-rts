@@ -1,3 +1,5 @@
+/// @file
+
 #ifndef RTS_RADIO_H
 #define RTS_RADIO_H
 
@@ -9,9 +11,9 @@
  * The transceiver mode to enter
  */
 enum rts_radio_mode {
-    RTS_RADIO_MODE_STANDBY,
-    RTS_RADIO_MODE_RECEIVE,
-    RTS_RADIO_MODE_TRANSMIT,
+    RTS_RADIO_MODE_STANDBY,  ///< Standby mode
+    RTS_RADIO_MODE_RECEIVE,  ///< Receive mode
+    RTS_RADIO_MODE_TRANSMIT, ///< Transmit mode
 };
 
 enum rts_radio_module {

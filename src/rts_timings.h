@@ -1,7 +1,7 @@
+/// @file
+
 #ifndef RTS_TIMINGS_H
 #define RTS_TIMINGS_H
-
-/// @file
 
 #include <stdint.h>
 

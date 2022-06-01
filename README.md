@@ -47,6 +47,6 @@ An `rts_receiver` simulates a physical RTS receiver device, such as a shade or d
 
 It connects an `rts_pulse_source` (eg. a GPIO or radio) to an internal `rts_frame_builder` and adds common receiver functionality such as frame deduplication, remote pairing, and rolling code validation.
 
-Deduplicated frame "events" such as "remote button pressed" and "remote button held" are sent to the event callback you attach with `rts_receiver_set_event_callback()`.
+Deduplicated frame "events" such as "remote button pressed" and "remote button held" are sent to the event callback you attach with `rts_receiver_set_frame_callback()`.
 
 Paired remotes and rolling codes can be persisted by providing a `rts_remote_store` backend (eg. ESP32's non-volatile storage, Arduino's EEPROM, or something custom if you'd prefer).

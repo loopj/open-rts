@@ -2,6 +2,8 @@
 
 #include "hal.h"
 
+#include <stddef.h>
+
 #define HOLD_DURATION               2000
 #define HOLD_2_DURATION             4000
 #define HOLD_3_DURATION             6000
@@ -102,9 +104,9 @@ static void process_frame(struct rts_frame *frame, uint8_t count,
             rts_receiver_set_mode(receiver, RTS_RECEIVER_MODE_PROGRAMMING);
         } else {
             // Pass all other events on to the user-provided callback
-            if (receiver->event_callback) {
-                receiver->event_callback(event, frame,
-                                         receiver->event_user_data);
+            if (receiver->frame_callback) {
+                receiver->frame_callback(event, frame,
+                                         receiver->frame_user_data);
             }
         }
 
@@ -127,6 +129,8 @@ void rts_receiver_init(struct rts_receiver *receiver,
     receiver->mode                = RTS_RECEIVER_MODE_OFF;
     receiver->event_fired         = RTS_RECEIVER_EVENT_NONE;
     receiver->rolling_code_window = DEFAULT_ROLLING_CODE_WINDOW;
+    receiver->frame_callback      = NULL;
+    receiver->mode_callback       = NULL;
 
     rts_frame_builder_init(&receiver->frame_builder, RTS_TIMINGS_DEFAULT);
     rts_frame_builder_set_callback(&receiver->frame_builder, process_frame,
@@ -134,14 +138,14 @@ void rts_receiver_init(struct rts_receiver *receiver,
     pulse_source->frame_builder = &receiver->frame_builder;
 }
 
-void rts_receiver_set_event_callback(struct rts_receiver *receiver,
+void rts_receiver_set_frame_callback(struct rts_receiver *receiver,
                                      void (*callback)(enum rts_receiver_event,
                                                       struct rts_frame *frame,
                                                       void *user_data),
                                      void *user_data)
 {
-    receiver->event_callback  = callback;
-    receiver->event_user_data = user_data;
+    receiver->frame_callback  = callback;
+    receiver->frame_user_data = user_data;
 }
 
 void rts_receiver_set_mode_callback(struct rts_receiver *receiver,

@@ -53,7 +53,7 @@ void event_callback(enum rts_receiver_event event, struct rts_frame *frame,
         break;
     }
 
-    printf("Command: %X\n", frame->command);
+    printf("Command: %s\n", rts_command_to_string(frame->command));
     printf("Remote: 0x%06X\n", frame->remote_address);
     printf("Rolling Code: 0x%04X\n\n", frame->rolling_code);
 }
@@ -133,7 +133,7 @@ int main(int argc, char **argv)
     // Create a receiver
     rts_receiver_init(&receiver, &pulse_source, &remote_store);
     rts_receiver_set_mode(&receiver, RTS_RECEIVER_MODE_COMMAND);
-    rts_receiver_set_event_callback(&receiver, event_callback, NULL);
+    rts_receiver_set_frame_callback(&receiver, event_callback, NULL);
     rts_receiver_set_mode_callback(&receiver, mode_callback, NULL);
 
     while (1) {

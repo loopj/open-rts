@@ -47,7 +47,7 @@ void print_frame(struct rts_frame *frame, uint8_t count, uint32_t duration,
                  void *user_data)
 {
     printf("Detected an RTS Frame!\n");
-    printf("Command: %X\n", frame->command);
+    printf("Command: %s\n", rts_command_to_string(frame->command));
     printf("Remote: 0x%06X\n", frame->remote_address);
     printf("Rolling Code: 0x%04X (%d)\n\n", frame->rolling_code, count);
 }

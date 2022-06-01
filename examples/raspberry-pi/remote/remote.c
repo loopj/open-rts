@@ -68,7 +68,7 @@ int main(int argc, char **argv)
         command |= !gpiod_line_get_value(buttons[3]) << 3; // Prog
 
         if (command) {
-            printf("Sending command: %d\n", command);
+            printf("Sending command: %s\n", rts_command_to_string(command));
             rts_remote_send_command(&remote, 0xC0FFEE, command,
                                     last_command == command);
         }
