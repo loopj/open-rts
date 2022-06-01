@@ -127,8 +127,8 @@ int main(int argc, char **argv)
     rts_pulse_source_init_gpiod(&pulse_source, OPENRTS_GPIOD_DEVICE, OPENRTS_RADIO_DATA);
     rts_pulse_source_enable(&pulse_source);
 
-    // Set up remote store for remote pairing
-    rts_remote_store_init_memory(&remote_store, 1);
+    // Store paired remotes and rolling codes in a memory-mapped file
+    rts_remote_store_init_mmap(&remote_store, "remotes.dat");
 
     // Create a receiver
     rts_receiver_init(&receiver, &pulse_source, &remote_store);

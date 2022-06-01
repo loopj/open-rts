@@ -26,7 +26,7 @@ void init_radio()
     #endif
 
     // Switch to transmit mode
-    rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);
+    rts_radio_set_mode(&radio, RTS_RADIO_MODE_TRANSMIT);
 }
 
 int main(int argc, char **argv)
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
     struct gpiod_chip *gpio_chip = gpiod_chip_open(OPENRTS_GPIOD_DEVICE);
     struct gpiod_line *buttons[4];
     buttons[0] = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_1);
-    buttons[1] = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_2;
+    buttons[1] = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_2);
     buttons[2] = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_3);
     buttons[3] = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_4);
 
@@ -48,10 +48,11 @@ int main(int argc, char **argv)
                                        GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP);
     }
 
-    // Set up pulse output
-    rts_pulse_output_init_gpiod(&pulse_output, OPENRTS_GPIOD_DEVICE, OPENRTS_RADIO_DATA);
+    // Set up pulse output to send pulses to a linux gpiod pin
+    rts_pulse_output_init_gpiod(&pulse_output, OPENRTS_GPIOD_DEVICE,
+                                OPENRTS_RADIO_DATA);
 
-    // Store remote rolling codes in memory
+    // Store remote rolling codes in a memory-mapped file
     rts_remote_store_init_mmap(&remote_store, "remotes.dat");
 
     // Set up the remote
