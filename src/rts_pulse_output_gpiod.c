@@ -2,7 +2,7 @@
 
 #if HAS_GPIOD
 
-#include <time.h>
+#include <unistd.h>
 
 #include <gpiod.h>
 
@@ -26,8 +26,7 @@ static void send_pulse(struct rts_pulse_output *pulse_output, bool state,
     gpiod_line_set_value((struct gpiod_line *)pulse_output->user_data_ptr,
                          state);
 
-    const struct timespec time = {.tv_nsec = micros * 1000};
-    nanosleep(&time, NULL);
+    usleep(micros);
 }
 
 void rts_pulse_output_init_gpiod(struct rts_pulse_output *pulse_output,
