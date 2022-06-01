@@ -142,7 +142,6 @@ extern "C" {
 #endif
 
 void rfm69_init(struct rfm69 *radio, struct spi_module *spi, bool use_pa_boost);
-void rfm69_configure_for_rts(struct rfm69 *radio);
 void rfm69_set_data_mode(struct rfm69 *radio, uint8_t mode);
 void rfm69_set_modulation_type(struct rfm69 *radio, uint8_t modulation);
 void rfm69_set_frequency(struct rfm69 *radio, unsigned long freq);

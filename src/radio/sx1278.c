@@ -15,18 +15,6 @@ void sx1278_init(struct sx1278 *radio, struct spi_module *spi,
     spi->read_mask  = 0x00;
 }
 
-void sx1278_configure_for_rts(struct sx1278 *radio)
-{
-    sx1278_set_long_range_mode(radio, SX1278_LONG_RANGE_MODE_OFF);
-    sx1278_set_data_mode(radio, SX1278_DATA_MODE_CONTINUOUS);
-    sx1278_set_modulation_type(radio, SX1278_MODULATION_TYPE_OOK);
-    sx1278_set_bit_sync_on(radio, false);
-    sx1278_set_frequency(radio, 433420000);
-    sx1278_set_bitrate(radio, 1200);
-    sx1278_set_rx_bandwidth(radio, 62500);
-    sx1278_set_transmit_power(radio, 20);
-}
-
 void sx1278_set_long_range_mode(struct sx1278 *radio, bool long_range_mode)
 {
     spi_write_masked(radio->spi_module, SX1278_REG_OP_MODE,

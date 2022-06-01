@@ -112,7 +112,6 @@ extern "C" {
 
 void sx1278_init(struct sx1278 *radio, struct spi_module *spi,
                  bool use_pa_boost);
-void sx1278_configure_for_rts(struct sx1278 *radio);
 void sx1278_set_long_range_mode(struct sx1278 *radio, bool long_range_mode);
 void sx1278_set_data_mode(struct sx1278 *radio, int mode);
 void sx1278_set_modulation_type(struct sx1278 *radio, int modulation);

@@ -17,6 +17,7 @@
 #include "rts_timings.h"
 
 #if HAS_RADIO
+#include "rts_radio.h"
 #include "radio/rfm69.h"
 #include "radio/spi_module.h"
 #include "radio/sx1278.h"
