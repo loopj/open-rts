@@ -1,6 +1,7 @@
 #ifndef OPEN_RTS_H
 #define OPEN_RTS_H
 
+#include "boards.h"
 #include "config.h"
 
 #include "hal.h"

@@ -1,7 +1,5 @@
 #include "spi_module.h"
 
-#include <stdio.h>
-
 uint8_t spi_read(struct spi_module *spi, uint8_t reg)
 {
     uint8_t buf[2];
