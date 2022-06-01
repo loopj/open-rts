@@ -9,7 +9,7 @@
  * Timing definitions for encoding and decoding frames to pulses.
  *
  * You can provide your own custom timings, but it is most common to use
- * the predefined timings provided in the #RTS_TIMINGS_DEFAULT global.
+ * the predefined timings provided in the RTS_TIMINGS_DEFAULT global.
  *
  * RTS remotes will send a wakeup pulse, followed by a series of frames,
  * separated by an inter-frame sleep pulse.

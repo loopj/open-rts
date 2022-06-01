@@ -33,6 +33,7 @@ void rts_remote_store_free_memory(struct rts_remote_store *store);
  * @relates rts_remote_store
  *
  * @param store the rts_remote_store struct to initialize
+ * @param filename the path of the filename to store remote data
  */
 void rts_remote_store_init_mmap(struct rts_remote_store *store,
                                 const char *filename);

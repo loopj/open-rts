@@ -71,7 +71,8 @@ void rts_pulse_source_update(struct rts_pulse_source *pulse_source);
  *
  * @relates rts_pulse_source
  *
- * @param observer  the rts_frame_builder observing this source.
+ * @param pulse_source the rts_pulse_source to be observed
+ * @param frame_builder the rts_frame_builder observing this source.
  */
 void rts_pulse_source_attach(struct rts_pulse_source *pulse_source,
                              struct rts_frame_builder *frame_builder);
