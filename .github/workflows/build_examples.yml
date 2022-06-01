@@ -24,11 +24,11 @@ jobs:
           - example: examples/espidf/receiver
             env: featheresp32-espidf
           - example: examples/raspberry-pi/remote
-            env: linux
+            env: raspberrypi
           - example: examples/raspberry-pi/sniffer
-            env: linux
+            env: raspberrypi
           - example: examples/raspberry-pi/receiver
-            env: linux
+            env: raspberrypi
 
     steps:
     - uses: actions/checkout@v3
