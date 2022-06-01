@@ -1,33 +1,32 @@
 #include <gpiod.h>
 #include <stdio.h>
 
+// Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+// #define OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
+// #define OPENRTS_BOARD_RASPBERRY_PI_RFM96_BONNET
+
 #include "open_rts.h"
 
-#define BUTTON_PIN_1 5
-#define BUTTON_PIN_2 6
-#define BUTTON_PIN_3 12
-#define BUTTON_PIN_4 13
-#define DATA_PIN     24
-#define SPI_DEVICE   "/dev/spidev0.1"
-#define GPIOD_DEVICE "/dev/gpiochip0"
-
-struct rfm69 radio;
+struct rts_radio radio;
 struct rts_pulse_output pulse_output;
 struct rts_remote_store remote_store;
 struct rts_remote remote;
 
 void init_radio()
 {
-    // Initialize the SPI module
+    // Initialize SPI module
     struct spi_module spi = {};
-    spi_module_init_linux(&spi, SPI_DEVICE);
+    spi_module_init_linux(&spi, OPENRTS_SPI_DEVICE);
 
-    // Initialize the radio
-    rfm69_init(&radio, &spi, true);
-    rfm69_configure_for_rts(&radio);
+    // Initialize radio
+    #if defined(OPENRTS_RADIO_TYPE_RFM69)
+    rts_radio_init_rfm69(&radio, &spi, true);
+    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
+    rts_radio_init_sx1278(&radio, &spi, true);
+    #endif
 
     // Switch to transmit mode
-    rfm69_set_mode(&radio, RFM69_MODE_TX);
+    rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);
 }
 
 int main(int argc, char **argv)
@@ -36,12 +35,12 @@ int main(int argc, char **argv)
     init_radio();
 
     // Set up the buttons
-    struct gpiod_chip *gpio_chip = gpiod_chip_open(GPIOD_DEVICE);
+    struct gpiod_chip *gpio_chip = gpiod_chip_open(OPENRTS_GPIOD_DEVICE);
     struct gpiod_line *buttons[4];
-    buttons[0] = gpiod_chip_get_line(gpio_chip, BUTTON_PIN_1);
-    buttons[1] = gpiod_chip_get_line(gpio_chip, BUTTON_PIN_2);
-    buttons[2] = gpiod_chip_get_line(gpio_chip, BUTTON_PIN_3);
-    buttons[3] = gpiod_chip_get_line(gpio_chip, BUTTON_PIN_3);
+    buttons[0] = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_1);
+    buttons[1] = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_2;
+    buttons[2] = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_3);
+    buttons[3] = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_4);
 
     // Set up the remote button GPIOs as inputs, enable internal pull-ups
     for (int i = 0; i < 4; i++) {
@@ -50,7 +49,7 @@ int main(int argc, char **argv)
     }
 
     // Set up pulse output
-    rts_pulse_output_init_gpiod(&pulse_output, GPIOD_DEVICE, DATA_PIN);
+    rts_pulse_output_init_gpiod(&pulse_output, OPENRTS_GPIOD_DEVICE, OPENRTS_RADIO_DATA);
 
     // Store remote rolling codes in memory
     rts_remote_store_init_mmap(&remote_store, "remotes.dat");
