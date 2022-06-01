@@ -142,14 +142,13 @@ extern "C" {
 #endif
 
 void rfm69_init(struct rfm69 *radio, struct spi_module *spi, bool use_pa_boost);
-void rfm69_configure_for_rts(struct rfm69 *radio);
-void rfm69_set_data_mode(struct rfm69 *radio, int mode);
-void rfm69_set_modulation_type(struct rfm69 *radio, int modulation);
-void rfm69_set_frequency(struct rfm69 *radio, int freq);
-void rfm69_set_bitrate(struct rfm69 *radio, int bitrate);
-void rfm69_set_rx_bandwidth(struct rfm69 *radio, int bw);
-void rfm69_set_transmit_power(struct rfm69 *radio, int power);
-void rfm69_set_mode(struct rfm69 *radio, int mode);
+void rfm69_set_data_mode(struct rfm69 *radio, uint8_t mode);
+void rfm69_set_modulation_type(struct rfm69 *radio, uint8_t modulation);
+void rfm69_set_frequency(struct rfm69 *radio, unsigned long freq);
+void rfm69_set_bitrate(struct rfm69 *radio, uint16_t bitrate);
+void rfm69_set_rx_bandwidth(struct rfm69 *radio, uint32_t bw);
+void rfm69_set_transmit_power(struct rfm69 *radio, int8_t power);
+void rfm69_set_mode(struct rfm69 *radio, uint8_t mode);
 
 #ifdef __cplusplus
 } // extern "C"

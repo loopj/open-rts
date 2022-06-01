@@ -15,8 +15,10 @@ static void remote_store_setUp()
 {
 #if HAS_NVS
     rts_remote_store_init_nvs(&remote_store);
+#elif HAS_POSIX
+    rts_remote_store_init_mmap(&remote_store, "remotes.dat");
 #else
-    rts_remote_store_init_memory(&remote_store, 2);
+    rts_remote_store_init_memory(&remote_store);
 #endif
 
     rts_remote_store_clear(&remote_store);
@@ -24,6 +26,13 @@ static void remote_store_setUp()
 
 static void remote_store_tearDown()
 {
+#if HAS_NVS
+    // rts_remote_store_free_nvs(&remote_store);
+#elif HAS_POSIX
+    rts_remote_store_free_mmap(&remote_store);
+#else
+    rts_remote_store_free_memory(&remote_store);
+#endif
 }
 
 static void test_known_remote()

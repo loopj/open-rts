@@ -1,17 +1,38 @@
 #include "rts_remote_store_memory.h"
 
+#include "config.h"
+
 #include <stdlib.h>
+
+#if HAS_POSIX
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <unistd.h>
+#endif // HAS_POSIX
+
+#define MAX_REMOTES 16
 
 struct remote_data {
     uint8_t num_remotes;
-    uint32_t *remote_addresses;
-    uint16_t *rolling_codes;
+    uint32_t remote_addresses[MAX_REMOTES];
+    uint16_t rolling_codes[MAX_REMOTES];
 };
+
+struct user_data {
+    int file_handle;
+    struct remote_data *remote_data;
+};
+
+static struct remote_data *get_remote_data(struct rts_remote_store *store)
+{
+    struct user_data *user_data = (struct user_data *)store->user_data_ptr;
+    return user_data->remote_data;
+}
 
 static int8_t remote_index(struct rts_remote_store *store,
                            uint32_t remote_address)
 {
-    struct remote_data *data = (struct remote_data *)store->user_data_ptr;
+    struct remote_data *data = get_remote_data(store);
 
     for (uint8_t i = 0; i < data->num_remotes; i++) {
         if (remote_address == data->remote_addresses[i]) {
@@ -25,7 +46,7 @@ static int8_t remote_index(struct rts_remote_store *store,
 static int8_t get_code(struct rts_remote_store *store, uint32_t remote_address,
                        uint16_t *rolling_code)
 {
-    struct remote_data *data = (struct remote_data *)store->user_data_ptr;
+    struct remote_data *data = get_remote_data(store);
 
     int idx = remote_index(store, remote_address);
     if (idx == -1) {
@@ -39,7 +60,7 @@ static int8_t get_code(struct rts_remote_store *store, uint32_t remote_address,
 static int8_t set_code(struct rts_remote_store *store, uint32_t remote_address,
                        uint16_t rolling_code)
 {
-    struct remote_data *data = (struct remote_data *)store->user_data_ptr;
+    struct remote_data *data = get_remote_data(store);
 
     int idx = remote_index(store, remote_address);
     if (idx == -1) {
@@ -58,7 +79,7 @@ static int8_t set_code(struct rts_remote_store *store, uint32_t remote_address,
 
 static int8_t forget(struct rts_remote_store *store, uint32_t remote_address)
 {
-    struct remote_data *data = (struct remote_data *)store->user_data_ptr;
+    struct remote_data *data = get_remote_data(store);
 
     if (data->num_remotes == 0) {
         return RTS_ERR_REMOTE_NOT_FOUND;
@@ -83,28 +104,62 @@ static int8_t forget(struct rts_remote_store *store, uint32_t remote_address)
 
 static int8_t clear(struct rts_remote_store *store)
 {
-    struct remote_data *data = (struct remote_data *)store->user_data_ptr;
+    struct remote_data *data = get_remote_data(store);
 
     data->num_remotes = 0;
 
     return RTS_ERR_NONE;
 }
 
-void rts_remote_store_init_memory(struct rts_remote_store *store,
-                                  uint8_t max_remotes)
+void rts_remote_store_init_memory(struct rts_remote_store *store)
 {
     store->get_code = get_code;
     store->set_code = set_code;
     store->forget   = forget;
     store->clear    = clear;
 
-    struct remote_data *data = malloc(sizeof(struct remote_data));
-    data->remote_addresses =
-        malloc(sizeof(*data->remote_addresses) * max_remotes);
-    data->rolling_codes = malloc(sizeof(*data->rolling_codes) * max_remotes);
-    data->num_remotes   = 0;
+    struct user_data *user_data     = malloc(sizeof(struct user_data));
+    struct remote_data *remote_data = malloc(sizeof(struct remote_data));
+    remote_data->num_remotes        = 0;
 
-    // TODO: Check malloc return codes
-
-    store->user_data_ptr = data;
+    user_data->remote_data = remote_data;
+    store->user_data_ptr   = user_data;
 }
+
+void rts_remote_store_free_memory(struct rts_remote_store *store)
+{
+    struct user_data *user_data = (struct user_data *)store->user_data_ptr;
+    free(user_data->remote_data);
+    free(user_data);
+}
+
+#if HAS_POSIX
+void rts_remote_store_init_mmap(struct rts_remote_store *store,
+                                const char *filename)
+{
+    store->get_code = get_code;
+    store->set_code = set_code;
+    store->forget   = forget;
+    store->clear    = clear;
+
+    struct user_data *user_data = malloc(sizeof(struct user_data));
+    user_data->file_handle =
+        open(filename, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+    ftruncate(user_data->file_handle, sizeof(struct remote_data));
+
+    user_data->remote_data =
+        mmap(NULL, sizeof(struct remote_data), PROT_READ | PROT_WRITE,
+             MAP_SHARED, user_data->file_handle, 0);
+
+    store->user_data_ptr = user_data;
+}
+
+void rts_remote_store_free_mmap(struct rts_remote_store *store)
+{
+    struct user_data *user_data = (struct user_data *)store->user_data_ptr;
+
+    munmap(user_data->remote_data, sizeof(struct remote_data));
+    close(user_data->file_handle);
+    free(user_data);
+}
+#endif // HAS_POSIX

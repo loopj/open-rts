@@ -1,6 +1,7 @@
 #ifndef OPEN_RTS_H
 #define OPEN_RTS_H
 
+#include "boards.h"
 #include "config.h"
 
 #include "hal.h"
@@ -19,6 +20,7 @@
 #include "radio/rfm69.h"
 #include "radio/spi_module.h"
 #include "radio/sx1278.h"
+#include "rts_radio.h"
 
 #if defined(ESP_PLATFORM)
 #include "radio/spi_module_espidf.h"

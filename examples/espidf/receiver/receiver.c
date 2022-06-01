@@ -3,46 +3,49 @@
 #include "driver/gpio.h"
 #include "driver/spi_master.h"
 
+// Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+// #define OPENRTS_BOARD_SPARKFUN_LORA_GATEWAY
+// #define OPENRTS_BOARD_TTGO_LORA32_V21
+// #define OPENRTS_BOARD_HELTEC_WIFI_LORA_32_V2
+
+// Also define which GPIO to use for the "programming mode" button
+// #define OPENRTS_BUTTON_1 0
+
 #include "open_rts.h"
 
-// Sparkfun ESP32 LoRa 1-CH Gateway
-#define SPI_SS   16
-#define SPI_MOSI 13
-#define SPI_MISO 12
-#define SPI_SCLK 14
-
-#define DATA_PIN     32
-#define BUTTON_PIN_1 23
-
-struct rfm69 radio;
+struct rts_radio radio;
 struct rts_pulse_source pulse_source;
 struct rts_remote_store remote_store;
 struct rts_receiver receiver;
 
 void init_radio()
 {
-    // Initialize SPI host bus
+    // Initialize the ESP-IDF SPI host bus
     spi_bus_config_t buscfg = {
-        .miso_io_num   = SPI_MISO,
-        .mosi_io_num   = SPI_MOSI,
-        .sclk_io_num   = SPI_SCLK,
+        .miso_io_num   = OPENRTS_RADIO_MISO,
+        .mosi_io_num   = OPENRTS_RADIO_MOSI,
+        .sclk_io_num   = OPENRTS_RADIO_SCK,
         .quadwp_io_num = -1,
         .quadhd_io_num = -1,
     };
     spi_bus_initialize(HSPI_HOST, &buscfg, 1);
 
-    // Initialize SPI module
+    // Initialize SPI module for the radio
     struct spi_module spi = {
-        .cs_pin = SPI_SS,
+        .cs_pin = OPENRTS_RADIO_CS,
         .clock  = 1000000,
         .mode   = 0,
     };
     spi_module_init_espidf(&spi, HSPI_HOST);
 
     // Initialize radio
-    rfm69_init(&radio, &spi, true);
-    rfm69_configure_for_rts(&radio);
-    rfm69_set_mode(&radio, RFM69_MODE_RX);
+    #if defined(OPENRTS_RADIO_TYPE_RFM69)
+    rts_radio_init_rfm69(&radio, &spi, true);
+    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
+    rts_radio_init_sx1278(&radio, &spi, true);
+    #endif
+
+    rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);
 }
 
 void event_callback(enum rts_receiver_event event, struct rts_frame *frame,
@@ -76,12 +79,15 @@ void mode_callback(enum rts_receiver_mode mode, void *user_data)
 {
     switch (mode) {
     case RTS_RECEIVER_MODE_OFF:
+        gpio_set_level(OPENRTS_LED, 0);
         printf("[Mode Changed] Receiver Off\n");
         break;
     case RTS_RECEIVER_MODE_PROGRAMMING:
+        gpio_set_level(OPENRTS_LED, 1);
         printf("[Mode Changed] Programming Mode\n");
         break;
     case RTS_RECEIVER_MODE_COMMAND:
+        gpio_set_level(OPENRTS_LED, 0);
         printf("[Mode Changed] Command Mode\n");
         break;
     }
@@ -94,7 +100,7 @@ void poll_buttons()
     static uint32_t pressed_time = 0;
 
     // Check if button is pressed
-    bool state   = !gpio_get_level(BUTTON_PIN_1);
+    bool state   = !gpio_get_level(OPENRTS_BUTTON_1);
     uint32_t now = (uint32_t)(esp_timer_get_time() / 1000);
     if (state == true && last_state == false) {
         pressed_time = now;
@@ -126,7 +132,7 @@ void app_main()
 
     // Set up a ESP-IDF GPIO pulse source
     // This sets up an interrupt-driven FreeRTOS task under the hood
-    rts_pulse_source_init_espidf_gpio(&pulse_source, DATA_PIN);
+    rts_pulse_source_init_espidf_gpio(&pulse_source, OPENRTS_RADIO_DATA);
     rts_pulse_source_enable(&pulse_source);
 
     // Set up remote store for remote pairing
@@ -140,8 +146,11 @@ void app_main()
     rts_receiver_set_mode(&receiver, RTS_RECEIVER_MODE_COMMAND);
 
     // Initialize the receiver button
-    gpio_set_direction(BUTTON_PIN_1, GPIO_MODE_INPUT);
-    gpio_set_pull_mode(BUTTON_PIN_1, GPIO_PULLUP_ONLY);
+    gpio_set_direction(OPENRTS_BUTTON_1, GPIO_MODE_INPUT);
+    gpio_set_pull_mode(OPENRTS_BUTTON_1, GPIO_PULLUP_ONLY);
+
+    // Set up the LED
+    gpio_set_direction(OPENRTS_LED, GPIO_MODE_OUTPUT);
 
     // Check for button presses periodically
     esp_timer_handle_t timer           = NULL;

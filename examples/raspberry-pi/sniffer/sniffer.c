@@ -1,24 +1,30 @@
 #include <stdio.h>
 
+// Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+// #define OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
+// #define OPENRTS_BOARD_RASPBERRY_PI_RFM96_BONNET
+
 #include "open_rts.h"
 
-#define DATA_PIN     24
-#define SPI_DEVICE   "/dev/spidev0.1"
-#define GPIOD_DEVICE "/dev/gpiochip0"
-
-struct rfm69 radio;
+struct rts_radio radio;
 struct rts_frame_builder frame_builder;
 struct rts_pulse_source pulse_source;
 
 void init_radio()
 {
+    // Initialize SPI module
     struct spi_module spi = {};
-    spi_module_init_linux(&spi, SPI_DEVICE);
+    spi_module_init_linux(&spi, OPENRTS_SPI_DEVICE);
 
-    rfm69_init(&radio, &spi, true);
-    rfm69_configure_for_rts(&radio);
+    // Initialize radio
+    #if defined(OPENRTS_RADIO_TYPE_RFM69)
+    rts_radio_init_rfm69(&radio, &spi, true);
+    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
+    rts_radio_init_sx1278(&radio, &spi, true);
+    #endif
 
-    rfm69_set_mode(&radio, RFM69_MODE_RX);
+    // Switch to receive mode
+    rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);
 }
 
 void print_frame(struct rts_frame *frame, uint8_t count, uint32_t duration,
@@ -40,7 +46,7 @@ int main(int argc, char **argv)
     rts_frame_builder_set_callback(&frame_builder, print_frame, NULL);
 
     // Set up a GPIO pulse source, send pulses to the framebuilder
-    rts_pulse_source_init_gpiod(&pulse_source, GPIOD_DEVICE, DATA_PIN);
+    rts_pulse_source_init_gpiod(&pulse_source, OPENRTS_GPIOD_DEVICE, OPENRTS_RADIO_DATA);
     rts_pulse_source_attach(&pulse_source, &frame_builder);
     rts_pulse_source_enable(&pulse_source);
 
