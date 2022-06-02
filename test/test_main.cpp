@@ -12,14 +12,26 @@ extern "C" {
     void test_rts_remote_store();
 }
 
+void test_RTSFrame();
+void test_RTSFrameBuilder();
+void test_RTSRemote();
+void test_RTSRemoteStore();
+
 void run_tests() {
     UNITY_BEGIN();
 
+    // C tests
     test_rts_frame();
     test_rts_frame_builder();
     test_rts_receiver();
     test_rts_remote();
     test_rts_remote_store();
+
+    // C++ tests
+    test_RTSFrame();
+    test_RTSFrameBuilder();
+    test_RTSRemote();
+    test_RTSRemoteStore();
 
     UNITY_END();
 }
@@ -33,14 +45,7 @@ void setup() {
 void loop() {
 
 }
-#elif defined(ESP_PLATFORM)
-extern "C" {
-    void app_main() {
-        run_tests();
-    }
-}
 #else
-
 int main() {
     run_tests();
 
