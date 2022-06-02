@@ -119,6 +119,9 @@ Related Functions</h2></td></tr>
 <tr class="memitem:af29fc3e4b2e446040c435f9400177934"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__source.html#af29fc3e4b2e446040c435f9400177934">rts_pulse_source_attach</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *frame_builder)</td></tr>
 <tr class="memdesc:af29fc3e4b2e446040c435f9400177934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach an observer.  <a href="structrts__pulse__source.html#af29fc3e4b2e446040c435f9400177934">More...</a><br /></td></tr>
 <tr class="separator:af29fc3e4b2e446040c435f9400177934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf1a44ffce736c880c87dac96b0e661d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__source.html#aaf1a44ffce736c880c87dac96b0e661d">rts_pulse_source_close</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source)</td></tr>
+<tr class="memdesc:aaf1a44ffce736c880c87dac96b0e661d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free any resources allocated via a previous call to rts_pulse_source_init_*()  <a href="structrts__pulse__source.html#aaf1a44ffce736c880c87dac96b0e661d">More...</a><br /></td></tr>
+<tr class="separator:aaf1a44ffce736c880c87dac96b0e661d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0739f646f14a3628a130e80120dec3fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__source.html#a0739f646f14a3628a130e80120dec3fe">rts_pulse_source_init_espidf_gpio</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, uint8_t data_pin)</td></tr>
 <tr class="memdesc:a0739f646f14a3628a130e80120dec3fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> which receives pulses from the specified ESP-IDF GPIO pin.  <a href="structrts__pulse__source.html#a0739f646f14a3628a130e80120dec3fe">More...</a><br /></td></tr>
 <tr class="separator:a0739f646f14a3628a130e80120dec3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -273,6 +276,40 @@ Related Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">pulse_source</td><td>the <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> to be observed </td></tr>
     <tr><td class="paramname">frame_builder</td><td>the <a class="el" href="structrts__frame__builder.html" title="Assembles pulses received via rts_frame_builder_handle_pulse, into a complete rts_frame,...">rts_frame_builder</a> observing this source. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf1a44ffce736c880c87dac96b0e661d" name="aaf1a44ffce736c880c87dac96b0e661d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf1a44ffce736c880c87dac96b0e661d">&#9670;&nbsp;</a></span>rts_pulse_source_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rts_pulse_source_close </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *&#160;</td>
+          <td class="paramname"><em>pulse_source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Close and free any resources allocated via a previous call to rts_pulse_source_init_*() </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pulse_source</td><td>the <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> to close </td></tr>
   </table>
   </dd>
 </dl>
