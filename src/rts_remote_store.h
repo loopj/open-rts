@@ -24,6 +24,7 @@ struct rts_remote_store {
                        uint16_t code);
     int8_t (*forget)(struct rts_remote_store *store, uint32_t remote_address);
     int8_t (*clear)(struct rts_remote_store *store);
+    void (*close)(struct rts_remote_store *store);
 
     union {
         void *user_data_ptr;
@@ -103,6 +104,16 @@ void rts_remote_store_forget(struct rts_remote_store *store,
  * @param store the rts_remote_store struct to clear
  */
 void rts_remote_store_clear(struct rts_remote_store *store);
+
+/**
+ * Close and free any resources allocated via a previous call to
+ * rts_remote_store_init*()
+ *
+ * @relates rts_remote_store
+ *
+ * @param store the rts_remote_store to close
+ */
+void rts_remote_store_close(struct rts_remote_store *store);
 
 #ifdef __cplusplus
 } // extern "C"

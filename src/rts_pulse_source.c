@@ -1,5 +1,7 @@
 #include "rts_pulse_source.h"
 
+#include <string.h>
+
 void rts_pulse_source_attach(struct rts_pulse_source *pulse_source,
                              struct rts_frame_builder *frame_builder)
 {
@@ -34,4 +36,13 @@ void rts_pulse_source_update(struct rts_pulse_source *pulse_source)
     }
 
     pulse_source->update(pulse_source);
+}
+
+void rts_pulse_source_close(struct rts_pulse_source *pulse_source)
+{
+    if(pulse_source->close) {
+        pulse_source->close(pulse_source);
+    }
+
+    memset(pulse_source, 0, sizeof(struct rts_pulse_source));
 }

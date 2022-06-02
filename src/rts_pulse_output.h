@@ -19,6 +19,7 @@ struct rts_pulse_output {
     void (*disable)(struct rts_pulse_output *pulse_output);
     void (*send_pulse)(struct rts_pulse_output *pulse_output, bool state,
                        uint32_t micros);
+    void (*close)(struct rts_pulse_output *pulse_output);
 
     union {
         void *user_data_ptr;
@@ -59,6 +60,16 @@ void rts_pulse_output_disable(struct rts_pulse_output *pulse_output);
  */
 void rts_pulse_output_send_pulse(struct rts_pulse_output *pulse_output,
                                  bool state, uint32_t micros);
+
+/**
+ * Close and free resources allocated via a previous call to
+ * rts_pulse_output_init_*()
+ *
+ * @relates rts_pulse_output
+ *
+ * @param pulse_output the rts_pulse_output to close
+ */
+void rts_pulse_output_close(struct rts_pulse_output *pulse_output);
 
 #ifdef __cplusplus
 } // extern "C"

@@ -135,7 +135,7 @@ void rts_receiver_set_mode(struct rts_receiver *receiver, uint8_t mode);
  *
  * @relates rts_receiver
  *
- * @param receiver
+ * @param receiver the rts_receiver struct to forget remotes for
  */
 void rts_receiver_forget_all_remotes(struct rts_receiver *receiver);
 
@@ -146,7 +146,7 @@ void rts_receiver_forget_all_remotes(struct rts_receiver *receiver);
  *
  * @relates rts_receiver
  *
- * @param pulse_source the rts_receiver struct to update
+ * @param receiver the rts_receiver struct to update
  */
 void rts_receiver_update(struct rts_receiver *receiver);
 

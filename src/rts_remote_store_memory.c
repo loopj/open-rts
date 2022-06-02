@@ -111,12 +111,20 @@ static int8_t clear(struct rts_remote_store *store)
     return RTS_ERR_NONE;
 }
 
+static void close(struct rts_remote_store *store)
+{
+    struct user_data *user_data = (struct user_data *)store->user_data_ptr;
+    free(user_data->remote_data);
+    free(user_data);
+}
+
 void rts_remote_store_init_memory(struct rts_remote_store *store)
 {
     store->get_code = get_code;
     store->set_code = set_code;
     store->forget   = forget;
     store->clear    = clear;
+    store->close    = close;
 
     struct user_data *user_data     = malloc(sizeof(struct user_data));
     struct remote_data *remote_data = malloc(sizeof(struct remote_data));
@@ -126,14 +134,16 @@ void rts_remote_store_init_memory(struct rts_remote_store *store)
     store->user_data_ptr   = user_data;
 }
 
-void rts_remote_store_free_memory(struct rts_remote_store *store)
+#if HAS_POSIX
+static void close_mmap(struct rts_remote_store *store)
 {
     struct user_data *user_data = (struct user_data *)store->user_data_ptr;
-    free(user_data->remote_data);
+
+    munmap(user_data->remote_data, sizeof(struct remote_data));
+    close(user_data->file_handle);
     free(user_data);
 }
 
-#if HAS_POSIX
 void rts_remote_store_init_mmap(struct rts_remote_store *store,
                                 const char *filename)
 {
@@ -141,6 +151,7 @@ void rts_remote_store_init_mmap(struct rts_remote_store *store,
     store->set_code = set_code;
     store->forget   = forget;
     store->clear    = clear;
+    store->close    = close_mmap;
 
     struct user_data *user_data = malloc(sizeof(struct user_data));
     user_data->file_handle =
@@ -152,14 +163,5 @@ void rts_remote_store_init_mmap(struct rts_remote_store *store,
              MAP_SHARED, user_data->file_handle, 0);
 
     store->user_data_ptr = user_data;
-}
-
-void rts_remote_store_free_mmap(struct rts_remote_store *store)
-{
-    struct user_data *user_data = (struct user_data *)store->user_data_ptr;
-
-    munmap(user_data->remote_data, sizeof(struct remote_data));
-    close(user_data->file_handle);
-    free(user_data);
 }
 #endif // HAS_POSIX

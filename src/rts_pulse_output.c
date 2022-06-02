@@ -1,5 +1,7 @@
 #include "rts_pulse_output.h"
 
+#include <string.h>
+
 void rts_pulse_output_enable(struct rts_pulse_output *pulse_output)
 {
     if (!pulse_output->enable) {
@@ -29,4 +31,13 @@ void rts_pulse_output_send_pulse(struct rts_pulse_output *pulse_output,
     }
 
     pulse_output->send_pulse(pulse_output, state, micros);
+}
+
+void rts_pulse_output_close(struct rts_pulse_output *pulse_output)
+{
+    if(pulse_output->close) {
+        pulse_output->close(pulse_output);
+    }
+
+    memset(pulse_output, 0, sizeof(struct rts_pulse_output));
 }

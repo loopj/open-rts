@@ -58,6 +58,7 @@ void rts_pulse_source_init_espidf_gpio(struct rts_pulse_source *pulse_source,
     pulse_source->enable        = enable;
     pulse_source->disable       = disable;
     pulse_source->update        = update;
+    pulse_source->close         = NULL;
     pulse_source->frame_builder = NULL;
     pulse_source->user_data_int = data_pin;
     pulse_source->last_state    = false;

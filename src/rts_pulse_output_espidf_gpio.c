@@ -31,6 +31,7 @@ void rts_pulse_output_init_espidf_gpio(struct rts_pulse_output *pulse_output,
     pulse_output->enable        = enable;
     pulse_output->disable       = disable;
     pulse_output->user_data_int = data_pin;
+    pulse_output->close         = NULL;
 }
 
 #endif // defined(ESP_PLATFORM)

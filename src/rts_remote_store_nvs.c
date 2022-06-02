@@ -61,12 +61,19 @@ static int8_t clear(struct rts_remote_store *store)
     return RTS_ERR_NONE;
 }
 
+static void close(struct rts_remote_store *store)
+{
+    nvs_close((nvs_handle *)(&store->user_data_int));
+    nvs_flash_deinit();
+}
+
 void rts_remote_store_init_nvs(struct rts_remote_store *store)
 {
     store->get_code = get_code;
     store->set_code = set_code;
     store->forget   = forget;
     store->clear    = clear;
+    store->close    = close;
 
     nvs_flash_init();
     nvs_open("openrts", NVS_READWRITE, (nvs_handle *)(&store->user_data_int));

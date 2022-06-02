@@ -1,5 +1,7 @@
 #include "rts_remote_store.h"
 
+#include <string.h>
+
 void rts_remote_store_set_code(struct rts_remote_store *store,
                                uint32_t remote_address, uint16_t rolling_code)
 {
@@ -68,4 +70,13 @@ void rts_remote_store_clear(struct rts_remote_store *store)
     }
 
     store->clear(store);
+}
+
+void rts_remote_store_close(struct rts_remote_store *store)
+{
+    if(store->close) {
+        store->close(store);
+    }
+
+    memset(store, 0, sizeof(struct rts_remote_store));
 }

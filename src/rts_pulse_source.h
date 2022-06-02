@@ -25,6 +25,7 @@ struct rts_pulse_source {
     void (*enable)(struct rts_pulse_source *pulse_source);
     void (*disable)(struct rts_pulse_source *pulse_source);
     void (*update)(struct rts_pulse_source *pulse_source);
+    void (*close)(struct rts_pulse_source *pulse_source);
 
     bool last_state;
     uint64_t last_updated;
@@ -76,6 +77,16 @@ void rts_pulse_source_update(struct rts_pulse_source *pulse_source);
  */
 void rts_pulse_source_attach(struct rts_pulse_source *pulse_source,
                              struct rts_frame_builder *frame_builder);
+
+/**
+ * Close and free any resources allocated via a previous call to
+ * rts_pulse_source_init_*()
+ *
+ * @relates rts_pulse_source
+ *
+ * @param pulse_source the rts_pulse_source to close
+ */
+void rts_pulse_source_close(struct rts_pulse_source *pulse_source);
 
 #ifdef __cplusplus
 } // extern "C"
