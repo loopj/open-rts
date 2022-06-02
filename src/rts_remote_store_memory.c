@@ -111,7 +111,7 @@ static int8_t clear(struct rts_remote_store *store)
     return RTS_ERR_NONE;
 }
 
-static void close(struct rts_remote_store *store)
+static void close_memory(struct rts_remote_store *store)
 {
     struct user_data *user_data = (struct user_data *)store->user_data_ptr;
     free(user_data->remote_data);
@@ -124,7 +124,7 @@ void rts_remote_store_init_memory(struct rts_remote_store *store)
     store->set_code = set_code;
     store->forget   = forget;
     store->clear    = clear;
-    store->close    = close;
+    store->close    = close_memory;
 
     struct user_data *user_data     = malloc(sizeof(struct user_data));
     struct remote_data *remote_data = malloc(sizeof(struct remote_data));

@@ -26,13 +26,7 @@ static void remote_store_setUp()
 
 static void remote_store_tearDown()
 {
-#if HAS_NVS
-    // rts_remote_store_free_nvs(&remote_store);
-#elif HAS_POSIX
-    rts_remote_store_free_mmap(&remote_store);
-#else
-    rts_remote_store_free_memory(&remote_store);
-#endif
+    rts_remote_store_close(&remote_store);
 }
 
 static void test_known_remote()
