@@ -1,5 +1,5 @@
 #if defined(ARDUINO)
-#include <Arduino.h>
+
 #endif
 
 #include <unity.h>
@@ -12,12 +12,7 @@ extern "C" {
     void test_rts_remote_store();
 }
 
-void test_RTSFrame();
-void test_RTSFrameBuilder();
-void test_RTSRemote();
-void test_RTSRemoteStore();
-
-void run_tests() {
+static void RUN_UNITY_TESTS() {
     UNITY_BEGIN();
 
     // C tests
@@ -27,28 +22,33 @@ void run_tests() {
     test_rts_remote();
     test_rts_remote_store();
 
-    // C++ tests
-    test_RTSFrame();
-    test_RTSFrameBuilder();
-    test_RTSRemote();
-    test_RTSRemoteStore();
-
     UNITY_END();
 }
 
 #if defined(ARDUINO)
+
+#include <Arduino.h>
+
 void setup() {
     delay(2000);
-    run_tests();
+    RUN_UNITY_TESTS();
 }
 
 void loop() {
 
 }
-#else
-int main() {
-    run_tests();
 
+#elif defined(ESP_PLATFORM)
+
+extern "C" void app_main() {
+	RUN_UNITY_TESTS();
+}
+
+#else
+
+int main(int argc, char **argv) {
+    RUN_UNITY_TESTS();
     return 0;
 }
+
 #endif

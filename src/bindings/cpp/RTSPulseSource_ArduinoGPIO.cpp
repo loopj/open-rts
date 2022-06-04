@@ -18,20 +18,20 @@ static void INTERRUPT_ATTR isr0() {
     }
 }
 
-void rts_pulse_source_enable_gpio(rts_pulse_source_t *pulse_source) {
+void rts_pulse_source_enable_gpio(struct rts_pulse_source *pulse_source) {
     RTSPulseSource_GPIO *inst = (RTSPulseSource_GPIO *)pulse_source->user_data_ptr;
 
     pinMode(inst->dataPin, INPUT);
     attachInterrupt(digitalPinToInterrupt(inst->dataPin), isr0, CHANGE);
 }
 
-void rts_pulse_source_disable_gpio(rts_pulse_source_t *pulse_source) {
+void rts_pulse_source_disable_gpio(struct rts_pulse_source *pulse_source) {
     RTSPulseSource_GPIO *inst = (RTSPulseSource_GPIO *)pulse_source->user_data_ptr;
 
     detachInterrupt(digitalPinToInterrupt(inst->dataPin));
 }
 
-void rts_pulse_source_update_gpio(rts_pulse_source_t *pulse_source) {
+void rts_pulse_source_update_gpio(struct rts_pulse_source *pulse_source) {
     RTSPulseSource_GPIO *inst = (RTSPulseSource_GPIO *)pulse_source->user_data_ptr;
 
     if(inst->interruptReady) {

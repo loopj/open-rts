@@ -63,7 +63,7 @@ static int8_t clear(struct rts_remote_store *store)
 
 static void close(struct rts_remote_store *store)
 {
-    nvs_close((nvs_handle *)(&store->user_data_int));
+    nvs_close(store->user_data_int);
     nvs_flash_deinit();
 }
 

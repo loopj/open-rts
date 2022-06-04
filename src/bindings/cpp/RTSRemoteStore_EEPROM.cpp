@@ -4,7 +4,7 @@
 
 #include <EEPROM.h>
 
-static int _get_remote_index(rts_remote_store_t *store, uint32_t remote_address) {
+static int _get_remote_index(struct rts_remote_store *store, uint32_t remote_address) {
     uint8_t num_remotes = 0;
     num_remotes = EEPROM.get(0, num_remotes);
 
@@ -20,19 +20,19 @@ static int _get_remote_index(rts_remote_store_t *store, uint32_t remote_address)
     return -1;
 }
 
-static int8_t rts_remote_store_get_code_eeprom(rts_remote_store_t *store, uint32_t remote_address, uint16_t *rolling_code) {
+static int8_t rts_remote_store_get_code_eeprom(struct rts_remote_store *store, uint32_t remote_address, uint16_t *rolling_code) {
     int idx = _get_remote_index(store, remote_address);
     if(idx == -1) {
-        return SOMFYSUITE_ERR_REMOTE_NOT_FOUND;
+        return RTS_ERR_REMOTE_NOT_FOUND;
     }
 
     uint16_t tmp = 0;
     *rolling_code = EEPROM.get(1 + 6*idx + 4, tmp);
 
-    return SOMFYSUITE_ERR_NONE;
+    return RTS_ERR_NONE;
 }
 
-static int8_t rts_remote_store_set_code_eeprom(rts_remote_store_t *store, uint32_t remote_address, uint16_t rolling_code) {
+static int8_t rts_remote_store_set_code_eeprom(struct rts_remote_store *store, uint32_t remote_address, uint16_t rolling_code) {
     int idx = _get_remote_index(store, remote_address);
 
     // Add new remote if doesn't already exist
@@ -52,19 +52,19 @@ static int8_t rts_remote_store_set_code_eeprom(rts_remote_store_t *store, uint32
     EEPROM.commit();
     #endif
 
-    return SOMFYSUITE_ERR_NONE;
+    return RTS_ERR_NONE;
 }
 
-static int8_t rts_remote_store_forget_eeprom(rts_remote_store_t *store, uint32_t remote_address) {
+static int8_t rts_remote_store_forget_eeprom(struct rts_remote_store *store, uint32_t remote_address) {
     uint8_t num_remotes = 0;
     num_remotes = EEPROM.get(0, num_remotes);
     if(num_remotes == 0) {
-        return SOMFYSUITE_ERR_REMOTE_NOT_FOUND;
+        return RTS_ERR_REMOTE_NOT_FOUND;
     }
 
     int idx = _get_remote_index(store, remote_address);
     if(idx == -1) {
-        return SOMFYSUITE_ERR_REMOTE_NOT_FOUND;
+        return RTS_ERR_REMOTE_NOT_FOUND;
     }
 
     // Shift all remotes down by 1
@@ -85,24 +85,24 @@ static int8_t rts_remote_store_forget_eeprom(rts_remote_store_t *store, uint32_t
     EEPROM.commit();
     #endif
 
-    return SOMFYSUITE_ERR_NONE;
+    return RTS_ERR_NONE;
 }
 
-static int8_t rts_remote_store_clear_eeprom(rts_remote_store_t *store) {
+static int8_t rts_remote_store_clear_eeprom(struct rts_remote_store *store) {
     EEPROM.put(0, 0);
 
     #if defined(ESP8266) || defined(ESP32)
     EEPROM.commit();
     #endif
 
-    return SOMFYSUITE_ERR_NONE;
+    return RTS_ERR_NONE;
 }
 
 RTSRemoteStore_EEPROM::RTSRemoteStore_EEPROM(uint8_t maxRemotes, uint16_t baseAddress) {
-    rts_remote_store_t::get_code = &rts_remote_store_get_code_eeprom;
-    rts_remote_store_t::set_code = &rts_remote_store_set_code_eeprom;
-    rts_remote_store_t::forget = &rts_remote_store_forget_eeprom;
-    rts_remote_store_t::clear = &rts_remote_store_clear_eeprom;
+    rts_remote_store::get_code = &rts_remote_store_get_code_eeprom;
+    rts_remote_store::set_code = &rts_remote_store_set_code_eeprom;
+    rts_remote_store::forget = &rts_remote_store_forget_eeprom;
+    rts_remote_store::clear = &rts_remote_store_clear_eeprom;
 
     this->user_data_int = 0;
 }
