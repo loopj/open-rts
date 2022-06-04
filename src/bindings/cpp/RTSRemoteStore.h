@@ -40,6 +40,7 @@ class RTSRemoteStore : protected rts_remote_store {
         rts_remote_store::get_code = nullptr;
         rts_remote_store::forget = nullptr;
         rts_remote_store::clear = nullptr;
+        rts_remote_store::close = nullptr;
     }
 
   friend class RTSRemote;

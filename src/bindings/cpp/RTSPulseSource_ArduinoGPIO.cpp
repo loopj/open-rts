@@ -1,4 +1,4 @@
-#include "RTSPulseSource_GPIO.h"
+#include "RTSPulseSource_ArduinoGPIO.h"
 
 #if defined(ARDUINO)
 

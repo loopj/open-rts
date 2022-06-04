@@ -1,6 +1,6 @@
 #include <unity.h>
 
-#include "cpplib/RTSFrame.h"
+#include "bindings/cpp/RTSFrame.h"
 
 static void test_fromBytes() {
     uint8_t bytes[] = { 0xAB, 0x2F, 0x00, 0x7B, 0xDE, 0xCA, 0xFA };

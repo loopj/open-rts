@@ -1,13 +1,13 @@
 #include <unity.h>
 
-#include "cpplib/RTSRemoteStore.h"
+#include "bindings/cpp/RTSRemoteStore.h"
 
 #if defined(ESP_PLATFORM)
-#include "cpplib/RTSRemoteStore_NVS.h"
+#include "bindings/cpp/RTSRemoteStore_NVS.h"
 #elif defined(__AVR__)
-#include "cpplib/RTSRemoteStore_EEPROM.h"
+#include "bindings/cpp/RTSRemoteStore_EEPROM.h"
 #else
-#include "cpplib/RTSRemoteStore_Memory.h"
+#include "bindings/cpp/RTSRemoteStore_Memory.h"
 #endif
 
 RTSRemoteStore *store;

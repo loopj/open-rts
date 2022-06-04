@@ -18,8 +18,7 @@ class RTSFrameBuilder : protected rts_frame_builder {
         rts_frame_builder_set_callback(this, [](rts_frame *frame, uint8_t repeat_count, uint32_t repeat_duration, void *user_data) {
             RTSFrameBuilder *inst = (RTSFrameBuilder *)user_data;
 
-            // Convert rts_frame_t to RTSFrame
-            // TODO: Copy constructor?
+            // Convert rts_frame to RTSFrame
             RTSFrame convertedFrame(frame->command, frame->rolling_code, frame->remote_address);
             convertedFrame.encryption_key = frame->encryption_key;
 

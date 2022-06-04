@@ -5,8 +5,7 @@
 class RTSPulseOutput : protected rts_pulse_output {
   public:
     ~RTSPulseOutput() {
-        // TODO: Fix segfault
-        // rts_pulse_output_close(this);
+        rts_pulse_output_close(this);
     }
 
     void enable() {
@@ -26,6 +25,7 @@ class RTSPulseOutput : protected rts_pulse_output {
         rts_pulse_output::send_pulse = nullptr;
         rts_pulse_output::enable = nullptr;
         rts_pulse_output::disable = nullptr;
+        rts_pulse_output::close = nullptr;
     }
 
   friend class RTSRemote;

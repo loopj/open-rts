@@ -2,9 +2,9 @@
 
 #include "fixtures.h"
 
-#include "cpplib/RTSRemote.h"
-#include "cpplib/RTSRemoteStore.h"
-#include "cpplib/RTSPulseOutput.h"
+#include "bindings/cpp/RTSRemote.h"
+#include "bindings/cpp/RTSRemoteStore.h"
+#include "bindings/cpp/RTSPulseOutput.h"
 
 static uint16_t pulseCount = 0;
 
