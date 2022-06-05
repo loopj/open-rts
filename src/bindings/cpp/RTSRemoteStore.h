@@ -44,4 +44,5 @@ class RTSRemoteStore : protected rts_remote_store {
     }
 
   friend class RTSRemote;
+  friend class RTSReceiver;
 };

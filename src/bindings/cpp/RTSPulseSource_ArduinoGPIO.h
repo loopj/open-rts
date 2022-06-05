@@ -2,9 +2,9 @@
 
 #include "RTSPulseSource.h"
 
-class RTSPulseSource_GPIO : public RTSPulseSource {
+class RTSPulseSource_ArduinoGPIO : public RTSPulseSource {
   public:
-    RTSPulseSource_GPIO(uint8_t dataPin, bool interruptCapable);
+    RTSPulseSource_ArduinoGPIO(uint8_t dataPin, bool interruptCapable=true);
 
     uint8_t dataPin;
     bool interruptCapable;

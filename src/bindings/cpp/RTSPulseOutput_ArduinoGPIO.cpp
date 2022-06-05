@@ -13,7 +13,7 @@ static void rts_pulse_output_send_pulse_gpio(struct rts_pulse_output *pulse_outp
     micros < 10000 ? delayMicroseconds(micros) : delay(micros/10000);
 }
 
-RTSPulseOutput_GPIO::RTSPulseOutput_GPIO(uint8_t dataPin) {
+RTSPulseOutput_ArduinoGPIO::RTSPulseOutput_ArduinoGPIO(uint8_t dataPin) {
     this->user_data_int = dataPin;
 
     rts_pulse_output::enable = &rts_pulse_output_enable_gpio;

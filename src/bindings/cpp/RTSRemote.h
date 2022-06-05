@@ -23,6 +23,6 @@ class RTSRemote : public rts_remote {
     }
 
     void sendPulse(bool state, uint32_t micros) {
-        rts_pulse_output_send_pulse(pulse_output, state, micros);
+        rts_pulse_output_send_pulse(this->pulse_output, state, micros);
     }
 };

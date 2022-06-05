@@ -1,4 +1,4 @@
-EXAMPLES = $(wildcard examples/**/**/*.c)
+EXAMPLES = $(wildcard examples/**/**/*.c) $(wildcard examples/**/**/*.cpp) $(wildcard examples/**/**/*.ino)
 
 .PHONY: clean docs format test $(EXAMPLES)
 

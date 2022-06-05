@@ -10,7 +10,7 @@
 #define INTERRUPT_ATTR
 #endif
 
-static RTSPulseSource_GPIO* interruptInstance = NULL;
+static RTSPulseSource_ArduinoGPIO* interruptInstance = NULL;
 
 static void INTERRUPT_ATTR isr0() {
     if(interruptInstance) {
@@ -18,21 +18,21 @@ static void INTERRUPT_ATTR isr0() {
     }
 }
 
-void rts_pulse_source_enable_gpio(struct rts_pulse_source *pulse_source) {
-    RTSPulseSource_GPIO *inst = (RTSPulseSource_GPIO *)pulse_source->user_data_ptr;
+static void rts_pulse_source_enable_gpio(struct rts_pulse_source *pulse_source) {
+    RTSPulseSource_ArduinoGPIO *inst = (RTSPulseSource_ArduinoGPIO *)pulse_source->user_data_ptr;
 
     pinMode(inst->dataPin, INPUT);
     attachInterrupt(digitalPinToInterrupt(inst->dataPin), isr0, CHANGE);
 }
 
-void rts_pulse_source_disable_gpio(struct rts_pulse_source *pulse_source) {
-    RTSPulseSource_GPIO *inst = (RTSPulseSource_GPIO *)pulse_source->user_data_ptr;
+static void rts_pulse_source_disable_gpio(struct rts_pulse_source *pulse_source) {
+    RTSPulseSource_ArduinoGPIO *inst = (RTSPulseSource_ArduinoGPIO *)pulse_source->user_data_ptr;
 
     detachInterrupt(digitalPinToInterrupt(inst->dataPin));
 }
 
-void rts_pulse_source_update_gpio(struct rts_pulse_source *pulse_source) {
-    RTSPulseSource_GPIO *inst = (RTSPulseSource_GPIO *)pulse_source->user_data_ptr;
+static void rts_pulse_source_update_gpio(struct rts_pulse_source *pulse_source) {
+    RTSPulseSource_ArduinoGPIO *inst = (RTSPulseSource_ArduinoGPIO *)pulse_source->user_data_ptr;
 
     if(inst->interruptReady) {
         bool state = !digitalRead(inst->dataPin);
@@ -48,13 +48,14 @@ void rts_pulse_source_update_gpio(struct rts_pulse_source *pulse_source) {
     }
 }
 
-RTSPulseSource_GPIO::RTSPulseSource_GPIO(uint8_t dataPin, bool interruptCapable) {
+RTSPulseSource_ArduinoGPIO::RTSPulseSource_ArduinoGPIO(uint8_t dataPin, bool interruptCapable) {
     this->dataPin = dataPin;
     this->interruptCapable = interruptCapable;
 
-    rts_pulse_source::enable = &rts_pulse_source_enable_gpio;
-    rts_pulse_source::disable = &rts_pulse_source_disable_gpio;
-    rts_pulse_source::update = &rts_pulse_source_update_gpio;
+    rts_pulse_source::enable = rts_pulse_source_enable_gpio;
+    rts_pulse_source::disable = rts_pulse_source_disable_gpio;
+    rts_pulse_source::update = rts_pulse_source_update_gpio;
+    rts_pulse_source::user_data_ptr = this;
 
     if(interruptCapable) {
         if(interruptInstance) {

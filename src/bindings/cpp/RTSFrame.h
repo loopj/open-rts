@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RTS_FRAME_CPP_H
+#define RTS_FRAME_CPP_H
 
 #include "rts_frame.h"
 
@@ -10,6 +11,13 @@ class RTSFrame : public rts_frame {
 
     RTSFrame(rts_command command, uint16_t rollingCode, uint32_t remoteAddress) {
         rts_frame_init(this, command, rollingCode, remoteAddress);
+    }
+
+    RTSFrame(rts_frame *frame) {
+        this->command = frame->command;
+        this->rolling_code = frame->rolling_code;
+        this->remote_address = frame->remote_address;
+        this->encryption_key = frame->encryption_key;
     }
 
     void toBytes(uint8_t *dest, bool obfuscate=false) {
@@ -28,3 +36,5 @@ class RTSFrame : public rts_frame {
         return rts_frame_generate_checksum(bytes);
     }
 };
+
+#endif // RTS_FRAME_CPP_H

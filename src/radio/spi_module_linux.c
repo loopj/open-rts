@@ -9,11 +9,10 @@
 static void transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
                      uint8_t *rx_buffer, uint8_t length)
 {
-    // TODO Make speed configurable from spi->clock
     struct spi_ioc_transfer transfer = {
         .tx_buf   = (unsigned long)tx_buffer,
         .rx_buf   = (unsigned long)rx_buffer,
-        .speed_hz = 1000000,
+        .speed_hz = spi_module->clock,
         .len      = length,
     };
 

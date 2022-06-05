@@ -1,5 +1,7 @@
 #pragma once
 
+#include "RTSFrameBuilder.h"
+
 #include "rts_pulse_source.h"
 
 class RTSPulseSource : protected rts_pulse_source {
@@ -20,10 +22,17 @@ class RTSPulseSource : protected rts_pulse_source {
         rts_pulse_source_update(this);
     }
 
+    void attach(RTSFrameBuilder *frameBuilder) {
+        rts_pulse_source_attach(this, frameBuilder);
+    }
+
   protected:
     RTSPulseSource() {
         rts_pulse_source::enable = nullptr;
         rts_pulse_source::disable = nullptr;
         rts_pulse_source::update = nullptr;
+        rts_pulse_source::close = nullptr;
     }
+
+  friend class RTSReceiver;
 };
