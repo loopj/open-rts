@@ -12,26 +12,29 @@
 
 RTSRemoteStore *store;
 
-static void RTSRemoteStore_setUp() {
-    #if defined(ESP_PLATFORM)
+static void RTSRemoteStore_setUp()
+{
+#if defined(ESP_PLATFORM)
     store = new RTSRemoteStore_NVS();
-    #elif defined(__AVR__)
-        #if defined(ESP_PLATFORM)
-        EEPROM.begin(512);
-        #endif
+#elif defined(__AVR__)
+#if defined(ESP_PLATFORM)
+    EEPROM.begin(512);
+#endif
     store = new RTSRemoteStore_EEPROM();
-    #else
+#else
     store = new RTSRemoteStore_Memory();
-    #endif
+#endif
 
     store->clear();
 }
 
-static void RTSRemoteStore_tearDown() {
+static void RTSRemoteStore_tearDown()
+{
     delete store;
 }
 
-static void test_knownRemote() {
+static void test_knownRemote()
+{
     RTSRemoteStore_setUp();
 
     store->setCode(0xC0FFEE, 123);
@@ -40,7 +43,8 @@ static void test_knownRemote() {
     RTSRemoteStore_tearDown();
 }
 
-static void test_getCode() {
+static void test_getCode()
+{
     RTSRemoteStore_setUp();
 
     store->setCode(0xC0FFEE, 0x1234);
@@ -50,7 +54,8 @@ static void test_getCode() {
     RTSRemoteStore_tearDown();
 }
 
-static void test_getCode_newRemote() {
+static void test_getCode_newRemote()
+{
     RTSRemoteStore_setUp();
 
     TEST_ASSERT_EQUAL_HEX16(0x0000, store->getCode(0xC0FFEE));
@@ -58,7 +63,8 @@ static void test_getCode_newRemote() {
     RTSRemoteStore_tearDown();
 }
 
-static void test_nextCode() {
+static void test_nextCode()
+{
     RTSRemoteStore_setUp();
 
     store->setCode(0xC0FFEE, 0x1234);
@@ -69,7 +75,8 @@ static void test_nextCode() {
     RTSRemoteStore_tearDown();
 }
 
-static void test_nextCode_newRemote() {
+static void test_nextCode_newRemote()
+{
     RTSRemoteStore_setUp();
 
     TEST_ASSERT_EQUAL_HEX16(0x0000, store->nextCode(0xC0FFEE));
@@ -79,7 +86,8 @@ static void test_nextCode_newRemote() {
     RTSRemoteStore_tearDown();
 }
 
-static void test_forget() {
+static void test_forget()
+{
     RTSRemoteStore_setUp();
 
     store->setCode(0xC0FFEE, 123);
@@ -91,7 +99,8 @@ static void test_forget() {
     RTSRemoteStore_tearDown();
 }
 
-static void test_clear() {
+static void test_clear()
+{
     RTSRemoteStore_setUp();
 
     store->setCode(0xC0FFEE, 123);
@@ -107,7 +116,8 @@ static void test_clear() {
     RTSRemoteStore_tearDown();
 }
 
-void test_RTSRemoteStore() {
+void test_RTSRemoteStore()
+{
     Unity.TestFile = __FILE__;
 
     RUN_TEST(test_knownRemote);

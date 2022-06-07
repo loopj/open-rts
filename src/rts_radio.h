@@ -61,7 +61,7 @@ void rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi,
                            bool use_pa_boost);
 
 /**
- * Set the radio mode for the specified rts_radio module, eg. standby, recevie,
+ * Set the radio mode for the specified rts_radio module, eg. standby, receive,
  * or transmit.
  *
  * @relates rts_radio

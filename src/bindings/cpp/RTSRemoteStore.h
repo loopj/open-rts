@@ -1,8 +1,6 @@
 #ifndef RTS_REMOTE_STORE_CPP_H
 #define RTS_REMOTE_STORE_CPP_H
 
-#include <stdint.h>
-
 #include "rts_remote_store.h"
 
 class RTSRemoteStore : protected rts_remote_store

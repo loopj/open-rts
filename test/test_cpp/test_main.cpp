@@ -5,7 +5,8 @@ void test_RTSFrameBuilder();
 void test_RTSRemote();
 void test_RTSRemoteStore();
 
-static void RUN_UNITY_TESTS() {
+static void RUN_UNITY_TESTS()
+{
     UNITY_BEGIN();
 
     test_RTSFrame();
@@ -19,24 +20,27 @@ static void RUN_UNITY_TESTS() {
 #if defined(ARDUINO)
 
 #include <Arduino.h>
-void setup() {
+void setup()
+{
     delay(2000);
     RUN_UNITY_TESTS();
 }
 
-void loop() {
-
+void loop()
+{
 }
 
 #elif defined(ESP_PLATFORM)
 
-extern "C" void app_main() {
-	RUN_UNITY_TESTS();
+extern "C" void app_main()
+{
+    RUN_UNITY_TESTS();
 }
 
 #else
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     RUN_UNITY_TESTS();
     return 0;
 }

@@ -10,7 +10,7 @@ docs:
 	@doxygen doxygen/Doxyfile
 
 format:
-	@find src test examples -name *.h -o -name *.c ! -name fixtures.c | xargs clang-format -i
+	@find src test examples -name *.h -o -name *.c -o -name *.cpp ! -name fixtures.c | xargs clang-format -i
 
 # Run unit tests in native environment
 test:

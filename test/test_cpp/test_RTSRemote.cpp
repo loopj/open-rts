@@ -2,21 +2,27 @@
 
 #include "fixtures.h"
 
+#include "bindings/cpp/RTSPulseOutput.h"
 #include "bindings/cpp/RTSRemote.h"
 #include "bindings/cpp/RTSRemoteStore.h"
-#include "bindings/cpp/RTSPulseOutput.h"
 
 static uint16_t pulseCount = 0;
 
-class DummyRemoteStore : public RTSRemoteStore {
+class DummyRemoteStore : public RTSRemoteStore
+{
   public:
-    DummyRemoteStore() {
-        rts_remote_store::get_code = [](rts_remote_store *store, uint32_t remote_address, uint16_t *rolling_code) -> int8_t {
+    DummyRemoteStore()
+    {
+        rts_remote_store::get_code = [](rts_remote_store *store,
+                                        uint32_t remote_address,
+                                        uint16_t *rolling_code) -> int8_t {
             *rolling_code = store->user_data_int;
             return RTS_ERR_NONE;
         };
 
-        rts_remote_store::set_code = [](rts_remote_store *store, uint32_t remote_address, uint16_t rolling_code) -> int8_t {
+        rts_remote_store::set_code = [](rts_remote_store *store,
+                                        uint32_t remote_address,
+                                        uint16_t rolling_code) -> int8_t {
             store->user_data_int = rolling_code;
             return RTS_ERR_NONE;
         };
@@ -25,23 +31,26 @@ class DummyRemoteStore : public RTSRemoteStore {
     }
 };
 
-class DummyPulseOutput : public RTSPulseOutput {
+class DummyPulseOutput : public RTSPulseOutput
+{
   public:
     typedef void (*Callback)(bool, uint32_t);
 
-    DummyPulseOutput(Callback callback=nullptr) {
-        rts_pulse_output::send_pulse = [](rts_pulse_output *output, bool state, uint32_t micros) {
-            if(output->user_data_ptr) {
+    DummyPulseOutput(Callback callback = nullptr)
+    {
+        rts_pulse_output::send_pulse = [](rts_pulse_output *output, bool state,
+                                          uint32_t micros) {
+            if (output->user_data_ptr) {
                 ((Callback)output->user_data_ptr)(state, micros);
             }
         };
 
-        user_data_ptr =  (void *)callback;
+        user_data_ptr = (void *)callback;
     }
 };
 
-
-static void test_sendCommand() {
+static void test_sendCommand()
+{
     pulseCount = 0;
 
     DummyPulseOutput pulseOutput([](bool state, uint32_t micros) {
@@ -57,16 +66,17 @@ static void test_sendCommand() {
     TEST_ASSERT_EQUAL(121, pulseCount);
 }
 
-static void test_sendCommand_repeated() {
+static void test_sendCommand_repeated()
+{
     pulseCount = 0;
 
     DummyPulseOutput pulseOutput([](bool state, uint32_t micros) {
         TEST_ASSERT_EQUAL(GENERATED_PULSES_UP_REPEAT[pulseCount].state, state);
-        TEST_ASSERT_EQUAL(GENERATED_PULSES_UP_REPEAT[pulseCount].micros, micros);
+        TEST_ASSERT_EQUAL(GENERATED_PULSES_UP_REPEAT[pulseCount].micros,
+                          micros);
 
         pulseCount++;
     });
-
 
     DummyRemoteStore remoteStore;
     remoteStore.setCode(0xF00DEE, 0x04D2);
@@ -78,7 +88,8 @@ static void test_sendCommand_repeated() {
     TEST_ASSERT_EQUAL(250, pulseCount);
 }
 
-static void test_sendFrame() {
+static void test_sendFrame()
+{
     pulseCount = 0;
 
     DummyPulseOutput pulseOutput([](bool state, uint32_t micros) {
@@ -95,12 +106,14 @@ static void test_sendFrame() {
     TEST_ASSERT_EQUAL(121, pulseCount);
 }
 
-static void test_sendFrame_repeated() {
+static void test_sendFrame_repeated()
+{
     pulseCount = 0;
 
     DummyPulseOutput pulseOutput([](bool state, uint32_t micros) {
         TEST_ASSERT_EQUAL(GENERATED_PULSES_UP_REPEAT[pulseCount].state, state);
-        TEST_ASSERT_EQUAL(GENERATED_PULSES_UP_REPEAT[pulseCount].micros, micros);
+        TEST_ASSERT_EQUAL(GENERATED_PULSES_UP_REPEAT[pulseCount].micros,
+                          micros);
 
         pulseCount++;
     });
@@ -113,7 +126,8 @@ static void test_sendFrame_repeated() {
     TEST_ASSERT_EQUAL(250, pulseCount);
 }
 
-void test_RTSRemote() {
+void test_RTSRemote()
+{
     Unity.TestFile = __FILE__;
 
     RUN_TEST(test_sendCommand);

@@ -1,8 +1,6 @@
 #ifndef RTS_RADIO_SX1278_CPP_H
 #define RTS_RADIO_SX1278_CPP_H
 
-#include "radio/spi_module_arduino.h"
-
 #include "RTSRadio.h"
 
 class RTSRadio_SX1278 : public RTSRadio

@@ -11,28 +11,12 @@ class RTSRemote : public rts_remote
 {
   public:
     RTSRemote(RTSPulseOutput *output, RTSRemoteStore *store = nullptr,
-              rts_timings *timings = RTS_TIMINGS_DEFAULT)
-    {
-        this->pulse_output = output;
-        this->remote_store = store;
-        this->timings      = timings;
-    }
+              rts_timings *timings = RTS_TIMINGS_DEFAULT);
 
     void sendCommand(uint32_t address, rts_command command,
-                     bool repeated = false)
-    {
-        rts_remote_send_command(this, address, command, repeated);
-    }
-
-    void sendFrame(RTSFrame *frame, bool repeated = false)
-    {
-        rts_remote_send_frame(this, frame, repeated);
-    }
-
-    void sendPulse(bool state, uint32_t micros)
-    {
-        rts_pulse_output_send_pulse(this->pulse_output, state, micros);
-    }
+                     bool repeated = false);
+    void sendFrame(RTSFrame *frame, bool repeated = false);
+    void sendPulse(bool state, uint32_t micros);
 };
 
 #endif // RTS_REMOTE_CPP_H

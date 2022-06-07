@@ -5,14 +5,15 @@
 #include <unity.h>
 
 extern "C" {
-    void test_rts_frame();
-    void test_rts_frame_builder();
-    void test_rts_receiver();
-    void test_rts_remote();
-    void test_rts_remote_store();
+void test_rts_frame();
+void test_rts_frame_builder();
+void test_rts_receiver();
+void test_rts_remote();
+void test_rts_remote_store();
 }
 
-static void RUN_UNITY_TESTS() {
+static void RUN_UNITY_TESTS()
+{
     UNITY_BEGIN();
 
     // C tests
@@ -29,24 +30,27 @@ static void RUN_UNITY_TESTS() {
 
 #include <Arduino.h>
 
-void setup() {
+void setup()
+{
     delay(2000);
     RUN_UNITY_TESTS();
 }
 
-void loop() {
-
+void loop()
+{
 }
 
 #elif defined(ESP_PLATFORM)
 
-extern "C" void app_main() {
-	RUN_UNITY_TESTS();
+extern "C" void app_main()
+{
+    RUN_UNITY_TESTS();
 }
 
 #else
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     RUN_UNITY_TESTS();
     return 0;
 }
