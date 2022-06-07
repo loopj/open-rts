@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RTS_PULSE_OUTPUT_CPP_H
+#define RTS_PULSE_OUTPUT_CPP_H
 
 #include "RTSFrameBuilder.h"
 
@@ -36,3 +37,5 @@ class RTSPulseSource : protected rts_pulse_source {
 
   friend class RTSReceiver;
 };
+
+#endif // RTS_PULSE_OUTPUT_CPP_H

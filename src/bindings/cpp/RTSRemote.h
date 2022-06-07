@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RTS_REMOTE_CPP_H
+#define RTS_REMOTE_CPP_H
 
 #include "rts_remote.h"
 
@@ -26,3 +27,5 @@ class RTSRemote : public rts_remote {
         rts_pulse_output_send_pulse(this->pulse_output, state, micros);
     }
 };
+
+#endif // RTS_REMOTE_CPP_H

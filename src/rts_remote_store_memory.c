@@ -4,11 +4,11 @@
 
 #include <stdlib.h>
 
-#if HAS_POSIX
+#if OPENRTS_HAS_POSIX
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <unistd.h>
-#endif // HAS_POSIX
+#endif // OPENRTS_HAS_POSIX
 
 #define MAX_REMOTES 16
 
@@ -134,7 +134,7 @@ void rts_remote_store_init_memory(struct rts_remote_store *store)
     store->user_data_ptr   = user_data;
 }
 
-#if HAS_POSIX
+#if OPENRTS_HAS_POSIX
 static void close_mmap(struct rts_remote_store *store)
 {
     struct user_data *user_data = (struct user_data *)store->user_data_ptr;
@@ -164,4 +164,4 @@ void rts_remote_store_init_mmap(struct rts_remote_store *store,
 
     store->user_data_ptr = user_data;
 }
-#endif // HAS_POSIX
+#endif // OPENRTS_HAS_POSIX

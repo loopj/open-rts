@@ -1,6 +1,6 @@
 #include "config.h"
 
-#if HAS_GPIOD
+#if OPENRTS_HAS_GPIOD
 
 #include "rts_pulse_source_gpiod.h"
 
@@ -54,4 +54,4 @@ void rts_pulse_source_init_gpiod(struct rts_pulse_source *pulse_source,
     pulse_source->last_updated   = micros();
 }
 
-#endif /* HAS_GPIOD */
+#endif /* OPENRTS_HAS_GPIOD */

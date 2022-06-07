@@ -1,6 +1,6 @@
 #include "config.h"
 
-#if HAS_NVS
+#if OPENRTS_HAS_NVS
 
 #include "rts_remote_store_nvs.h"
 
@@ -79,4 +79,4 @@ void rts_remote_store_init_nvs(struct rts_remote_store *store)
     nvs_open("openrts", NVS_READWRITE, (nvs_handle *)(&store->user_data_int));
 }
 
-#endif /* HAS_NVS */
+#endif /* OPENRTS_HAS_NVS */

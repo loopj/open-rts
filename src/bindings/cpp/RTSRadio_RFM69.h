@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RTS_RADIO_RFM69_CPP_H
+#define RTS_RADIO_RFM69_CPP_H
 
 #include "radio/spi_module_arduino.h"
 
@@ -10,3 +11,5 @@ class RTSRadio_RFM69 : public RTSRadio {
 		rts_radio_init_rfm69(this, spi, use_pa_boost);
 	}
 };
+
+#endif // RTS_RADIO_RFM69_CPP_H

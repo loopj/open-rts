@@ -1,6 +1,6 @@
 #include "config.h"
 
-#if HAS_GPIOD
+#if OPENRTS_HAS_GPIOD
 
 #include <stddef.h>
 
@@ -49,4 +49,4 @@ void rts_pulse_output_init_gpiod(struct rts_pulse_output *pulse_output,
     pulse_output->user_data_ptr  = gpiod_chip_get_line(gpio_chip, data_pin);
 }
 
-#endif /* HAS_GPIOD */
+#endif /* OPENRTS_HAS_GPIOD */

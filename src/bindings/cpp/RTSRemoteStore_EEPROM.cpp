@@ -1,6 +1,8 @@
-#include "RTSRemoteStore_EEPROM.h"
+#include "config.h"
 
-#if defined(ARDUINO) && (defined(__AVR__) || defined(ESP_PLATFORM))
+#ifdef OPENRTS_HAS_EEPROM
+
+#include "RTSRemoteStore_EEPROM.h"
 
 #include <EEPROM.h>
 
@@ -107,4 +109,4 @@ RTSRemoteStore_EEPROM::RTSRemoteStore_EEPROM(uint8_t maxRemotes, uint16_t baseAd
     this->user_data_int = 0;
 }
 
-#endif
+#endif // OPENRTS_HAS_EEPROM

@@ -2,6 +2,7 @@
 #define RTS_FRAME_BUILDER_CPP_H
 
 #include "RTSFrame.h"
+
 #include "rts_frame_builder.h"
 
 class RTSFrameBuilder : protected rts_frame_builder {

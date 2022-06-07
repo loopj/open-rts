@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RTS_RECEIVER_CPP_H
+#define RTS_RECEIVER_CPP_H
 
 #include "rts_receiver.h"
 
@@ -55,3 +56,5 @@ class RTSReceiver : protected rts_receiver {
     ModeCallback modeCallback = nullptr;
 	void *modeCallbackUserData = nullptr;
 };
+
+#endif // RTS_RECEIVER_CPP_H

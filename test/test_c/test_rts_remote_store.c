@@ -3,7 +3,7 @@
 #include "config.h"
 #include "rts_remote_store.h"
 
-#if HAS_NVS
+#if OPENRTS_HAS_NVS
 #include <rts_remote_store_nvs.h>
 #else
 #include <rts_remote_store_memory.h>
@@ -13,9 +13,9 @@ struct rts_remote_store remote_store;
 
 static void remote_store_setUp()
 {
-#if HAS_NVS
+#if OPENRTS_HAS_NVS
     rts_remote_store_init_nvs(&remote_store);
-#elif HAS_POSIX
+#elif OPENRTS_HAS_POSIX
     rts_remote_store_init_mmap(&remote_store, "remotes.dat");
 #else
     rts_remote_store_init_memory(&remote_store);

@@ -16,41 +16,41 @@
 #include "rts_remote_store_memory.h"
 #include "rts_timings.h"
 
-#if HAS_GPIOD
+#if OPENRTS_HAS_GPIOD
 #include "rts_pulse_output_gpiod.h"
 #include "rts_pulse_source_gpiod.h"
 #endif
 
-#if HAS_ESPIDF_GPIO
+#if OPENRTS_HAS_ESPIDF_GPIO
 #include "rts_pulse_output_espidf_gpio.h"
 #include "rts_pulse_source_espidf_gpio.h"
 #endif
 
-#if HAS_NVS
+#if OPENRTS_HAS_NVS
 #include "rts_remote_store_nvs.h"
 #endif
 
 
 // Radio (ook-radio) features
-#if INCLUDE_RADIO
+#if OPENRTS_INCLUDE_RADIO
 #include "rts_radio.h"
 
 #if defined(ESP_PLATFORM)
 #include "radio/spi_module_espidf.h"
 #endif
 
-#if HAS_LINUX
+#if OPENRTS_HAS_LINUX
 #include "radio/spi_module_linux.h"
 #endif
 
-#if HAS_ARDUINO
+#if OPENRTS_HAS_ARDUINO
 #include "radio/spi_module_arduino.h"
 #endif
-#endif // INCLUDE_RADIO
+#endif // OPENRTS_INCLUDE_RADIO
 
 
 // C++ bindings
-#if INCLUDE_CPP_BINDINGS
+#if OPENRTS_INCLUDE_CPP_BINDINGS
 
 #include "bindings/cpp/RTSFrame.h"
 #include "bindings/cpp/RTSFrameBuilder.h"
@@ -61,25 +61,29 @@
 #include "bindings/cpp/RTSRemoteStore.h"
 #include "bindings/cpp/RTSRemoteStore_Memory.h"
 
-#if HAS_ARDUINO
+#if OPENRTS_HAS_ARDUINO
 #include "bindings/cpp/RTSPulseOutput_ArduinoGPIO.h"
 #include "bindings/cpp/RTSPulseSource_ArduinoGPIO.h"
 #endif
 
-#if HAS_POSIX
+#if OPENRTS_HAS_POSIX
 #include "bindings/cpp/RTSRemoteStore_MMap.h"
 #endif
 
-#if HAS_NVS
+#if OPENRTS_HAS_NVS
 #include "bindings/cpp/RTSRemoteStore_NVS.h"
 #endif
 
-#if INCLUDE_RADIO
+#if OPENRTS_HAS_EEPROM
+#include "bindings/cpp/RTSRemoteStore_EEPROM.h"
+#endif
+
+#if OPENRTS_INCLUDE_RADIO
 #include "bindings/cpp/RTSRadio.h"
 #include "bindings/cpp/RTSRadio_RFM69.h"
 #include "bindings/cpp/RTSRadio_SX1278.h"
-#endif
+#endif // OPENRTS_INCLUDE_RADIO
 
-#endif // INCLUDE_CPP_BINDINGS
+#endif // OPENRTS_INCLUDE_CPP_BINDINGS
 
 #endif // OPEN_RTS_H

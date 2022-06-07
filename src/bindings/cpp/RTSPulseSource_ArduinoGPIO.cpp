@@ -1,6 +1,8 @@
-#include "RTSPulseSource_ArduinoGPIO.h"
+#include "config.h"
 
-#if defined(ARDUINO)
+#if OPENRTS_HAS_ARDUINO && OPENRTS_INCLUDE_CPP_BINDINGS
+
+#include "RTSPulseSource_ArduinoGPIO.h"
 
 #include <Arduino.h>
 
@@ -66,4 +68,4 @@ RTSPulseSource_ArduinoGPIO::RTSPulseSource_ArduinoGPIO(uint8_t dataPin, bool int
     }
 }
 
-#endif
+#endif // #if OPENRTS_HAS_ARDUINO && OPENRTS_INCLUDE_CPP_BINDINGS
