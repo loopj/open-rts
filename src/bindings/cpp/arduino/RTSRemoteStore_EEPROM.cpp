@@ -1,6 +1,6 @@
 #include "config.h"
 
-#ifdef OPENRTS_HAS_EEPROM
+#if OPENRTS_INCLUDE_CPP_BINDINGS && OPENRTS_HAS_EEPROM
 
 #include <EEPROM.h>
 

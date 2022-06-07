@@ -1,6 +1,10 @@
 #ifndef OPEN_RTS_H
 #define OPEN_RTS_H
 
+//
+// Core library
+//
+
 #include "boards.h"
 #include "config.h"
 
@@ -16,40 +20,7 @@
 #include "rts_remote_store_memory.h"
 #include "rts_timings.h"
 
-#if OPENRTS_HAS_GPIOD
-#include "rts_pulse_output_gpiod.h"
-#include "rts_pulse_source_gpiod.h"
-#endif
-
-#if OPENRTS_HAS_ESPIDF_GPIO
-#include "rts_pulse_output_espidf_gpio.h"
-#include "rts_pulse_source_espidf_gpio.h"
-#endif
-
-#if OPENRTS_HAS_NVS
-#include "rts_remote_store_nvs.h"
-#endif
-
-// Radio (ook-radio) features
-#if OPENRTS_INCLUDE_RADIO
-#include "rts_radio.h"
-
-#if defined(ESP_PLATFORM)
-#include "radio/spi_module_espidf.h"
-#endif
-
-#if OPENRTS_HAS_LINUX
-#include "radio/spi_module_linux.h"
-#endif
-
-#if OPENRTS_HAS_ARDUINO
-#include "radio/spi_module_arduino.h"
-#endif
-#endif // OPENRTS_INCLUDE_RADIO
-
-// C++ bindings
 #if OPENRTS_INCLUDE_CPP_BINDINGS
-
 #include "bindings/cpp/RTSFrame.h"
 #include "bindings/cpp/RTSFrameBuilder.h"
 #include "bindings/cpp/RTSPulseOutput.h"
@@ -58,30 +29,73 @@
 #include "bindings/cpp/RTSRemote.h"
 #include "bindings/cpp/RTSRemoteStore.h"
 #include "bindings/cpp/RTSRemoteStore_Memory.h"
+#endif // OPENRTS_INCLUDE_CPP_BINDINGS
 
-#if OPENRTS_HAS_ARDUINO
-#include "bindings/cpp/RTSPulseOutput_ArduinoGPIO.h"
-#include "bindings/cpp/RTSPulseSource_ArduinoGPIO.h"
+//
+// Platform-specific includes
+//
+
+// Arduino
+#if OPENRTS_HAS_ARDUINO_GPIO && OPENRTS_INCLUDE_CPP_BINDINGS
+#include "bindings/cpp/arduino/RTSPulseOutput_ArduinoGPIO.h"
+#include "bindings/cpp/arduino/RTSPulseSource_ArduinoGPIO.h"
 #endif
 
-#if OPENRTS_HAS_POSIX
-#include "bindings/cpp/RTSRemoteStore_MMap.h"
+#if OPENRTS_HAS_EEPROM && OPENRTS_INCLUDE_CPP_BINDINGS
+#include "bindings/cpp/arduino/RTSRemoteStore_EEPROM.h"
+#endif
+
+// ESP-IDF (ESP32)
+#if OPENRTS_HAS_ESPIDF_GPIO
+#include "espidf/rts_pulse_output_espidf_gpio.h"
+#include "espidf/rts_pulse_source_espidf_gpio.h"
 #endif
 
 #if OPENRTS_HAS_NVS
-#include "bindings/cpp/RTSRemoteStore_NVS.h"
+#include "espidf/rts_remote_store_nvs.h"
+
+#if OPENRTS_INCLUDE_CPP_BINDINGS
+#include "bindings/cpp/espidf/RTSRemoteStore_NVS.h"
+#endif
 #endif
 
-#if OPENRTS_HAS_EEPROM
-#include "bindings/cpp/RTSRemoteStore_EEPROM.h"
+// Linux
+#if OPENRTS_HAS_GPIOD
+#include "linux/rts_pulse_output_gpiod.h"
+#include "linux/rts_pulse_source_gpiod.h"
 #endif
 
+#if OPENRTS_HAS_MMAP
+#include "linux/rts_remote_store_mmap.h"
+
+#if OPENRTS_INCLUDE_CPP_BINDINGS
+#include "bindings/cpp/linux/RTSRemoteStore_MMap.h"
+#endif
+#endif
+
+//
+// Radio (ook-radio) features
+//
 #if OPENRTS_INCLUDE_RADIO
+#include "rts_radio.h"
+
+#if defined(ESP_PLATFORM)
+#include "radio/spi_module_espidf.h"
+#endif
+
+#if defined(__linux__)
+#include "radio/spi_module_linux.h"
+#endif
+
+#if defined(ARDUINO)
+#include "radio/spi_module_arduino.h"
+#endif
+
+#if OPENRTS_INCLUDE_CPP_BINDINGS
 #include "bindings/cpp/RTSRadio.h"
 #include "bindings/cpp/RTSRadio_RFM69.h"
 #include "bindings/cpp/RTSRadio_SX1278.h"
+#endif
 #endif // OPENRTS_INCLUDE_RADIO
-
-#endif // OPENRTS_INCLUDE_CPP_BINDINGS
 
 #endif // OPEN_RTS_H

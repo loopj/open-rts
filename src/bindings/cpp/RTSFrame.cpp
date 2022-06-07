@@ -1,3 +1,7 @@
+#include "config.h"
+
+#if OPENRTS_INCLUDE_CPP_BINDINGS
+
 #include "RTSFrame.h"
 
 RTSFrame::RTSFrame(uint8_t *bytes)
@@ -38,3 +42,5 @@ uint8_t RTSFrame::generateChecksum(uint8_t *bytes)
 {
     return rts_frame_generate_checksum(bytes);
 }
+
+#endif // OPENRTS_INCLUDE_CPP_BINDINGS

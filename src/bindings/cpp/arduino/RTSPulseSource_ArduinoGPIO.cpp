@@ -1,6 +1,6 @@
 #include "config.h"
 
-#if OPENRTS_HAS_ARDUINO && OPENRTS_INCLUDE_CPP_BINDINGS
+#if OPENRTS_INCLUDE_CPP_BINDINGS && OPENRTS_HAS_ARDUINO_GPIO
 
 #include <Arduino.h>
 
@@ -76,4 +76,4 @@ RTSPulseSource_ArduinoGPIO::RTSPulseSource_ArduinoGPIO(uint8_t dataPin)
     interruptInstance = this;
 }
 
-#endif // #if OPENRTS_HAS_ARDUINO && OPENRTS_INCLUDE_CPP_BINDINGS
+#endif // #if OPENRTS_INCLUDE_CPP_BINDINGS && OPENRTS_HAS_ARDUINO_GPIO

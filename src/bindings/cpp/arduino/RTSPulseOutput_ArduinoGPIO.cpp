@@ -1,6 +1,6 @@
 #include "config.h"
 
-#if OPENRTS_HAS_ARDUINO && OPENRTS_INCLUDE_CPP_BINDINGS
+#if OPENRTS_INCLUDE_CPP_BINDINGS && OPENRTS_HAS_ARDUINO_GPIO
 
 #include <Arduino.h>
 
@@ -28,4 +28,4 @@ RTSPulseOutput_ArduinoGPIO::RTSPulseOutput_ArduinoGPIO(uint8_t dataPin)
     rts_pulse_output::send_pulse = &rts_pulse_output_send_pulse_gpio;
 }
 
-#endif // OPENRTS_HAS_ARDUINO && OPENRTS_INCLUDE_CPP_BINDINGS
+#endif // OPENRTS_INCLUDE_CPP_BINDINGS && OPENRTS_HAS_ARDUINO_GPIO

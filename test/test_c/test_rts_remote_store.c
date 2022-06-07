@@ -4,7 +4,9 @@
 #include "rts_remote_store.h"
 
 #if OPENRTS_HAS_NVS
-#include <rts_remote_store_nvs.h>
+#include "espidf/rts_remote_store_nvs.h"
+#elif OPENRTS_HAS_MMAP
+#include "linux/rts_remote_store_mmap.h"
 #else
 #include <rts_remote_store_memory.h>
 #endif
@@ -15,7 +17,7 @@ static void remote_store_setUp()
 {
 #if OPENRTS_HAS_NVS
     rts_remote_store_init_nvs(&remote_store);
-#elif OPENRTS_HAS_POSIX
+#elif OPENRTS_HAS_MMAP
     rts_remote_store_init_mmap(&remote_store, "remotes.dat");
 #else
     rts_remote_store_init_memory(&remote_store);

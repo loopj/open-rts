@@ -1,3 +1,7 @@
+#include "config.h"
+
+#if OPENRTS_INCLUDE_CPP_BINDINGS
+
 #include "RTSFrameBuilder.h"
 
 RTSFrameBuilder::RTSFrameBuilder(rts_timings *timings)
@@ -27,3 +31,5 @@ void RTSFrameBuilder::callbackWrapper(rts_frame *frame, uint8_t repeatCount,
     inst->frameCallback(&convertedFrame, repeatCount, repeatDuration,
                         inst->frameCallbackUserData);
 }
+
+#endif // OPENRTS_INCLUDE_CPP_BINDINGS

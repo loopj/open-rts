@@ -1,7 +1,7 @@
 #ifndef RTS_PULSE_SOURCE_ARDUINO_GPIO_CPP_H
 #define RTS_PULSE_SOURCE_ARDUINO_GPIO_CPP_H
 
-#include "RTSPulseSource.h"
+#include "bindings/cpp/RTSPulseSource.h"
 
 class RTSPulseSource_ArduinoGPIO : public RTSPulseSource
 {

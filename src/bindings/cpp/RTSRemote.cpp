@@ -1,3 +1,7 @@
+#include "config.h"
+
+#if OPENRTS_INCLUDE_CPP_BINDINGS
+
 #include "RTSRemote.h"
 
 RTSRemote::RTSRemote(RTSPulseOutput *output, RTSRemoteStore *store,
@@ -23,3 +27,5 @@ void RTSRemote::sendPulse(bool state, uint32_t micros)
 {
     rts_pulse_output_send_pulse(this->pulse_output, state, micros);
 }
+
+#endif // OPENRTS_INCLUDE_CPP_BINDINGS

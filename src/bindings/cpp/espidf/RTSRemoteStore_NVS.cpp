@@ -1,8 +1,8 @@
 #include "config.h"
 
-#if OPENRTS_HAS_NVS
+#if OPENRTS_INCLUDE_CPP_BINDINGS && OPENRTS_HAS_NVS
 
-#include "rts_remote_store_nvs.h"
+#include "espidf/rts_remote_store_nvs.h"
 
 #include "RTSRemoteStore_NVS.h"
 

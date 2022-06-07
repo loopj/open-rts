@@ -32,19 +32,23 @@
 #endif
 
 //
-// Include POSIX-specific code if we are on a POSIX platform
-// Currently just the memory-mapped rts_remote_store
-#if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
-#define OPENRTS_HAS_POSIX 1
+// Include the memory-mapped file (mmap) rts_remote_store by default when we
+// detect you are building on a POSIX platform.
+//
+// Uncomment the following line to disable:
+// #define OPENRTS_HAS_MMAP 0
+#if (defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))) &&        \
+    !defined(OPENRTS_HAS_MMAP)
+#define OPENRTS_HAS_MMAP 1
 #endif
 
 //
 // Include Arduino-specific code if we are on Arduino
 //
 // Uncomment the following line to disable:
-// #define OPENRTS_HAS_ARDUINO 0
-#if defined(ARDUINO) && !defined(OPENRTS_HAS_ARDUINO)
-#define OPENRTS_HAS_ARDUINO 1
+// #define OPENRTS_HAS_ARDUINO_GPIO 0
+#if defined(ARDUINO) && !defined(OPENRTS_HAS_ARDUINO_GPIO)
+#define OPENRTS_HAS_ARDUINO_GPIO 1
 #endif
 
 //

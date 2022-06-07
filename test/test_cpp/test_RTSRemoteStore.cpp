@@ -1,11 +1,14 @@
 #include <unity.h>
 
+#include "config.h"
 #include "bindings/cpp/RTSRemoteStore.h"
 
-#if defined(ESP_PLATFORM)
-#include "bindings/cpp/RTSRemoteStore_NVS.h"
-#elif defined(__AVR__)
-#include "bindings/cpp/RTSRemoteStore_EEPROM.h"
+#if OPENRTS_HAS_NVS
+#include "bindings/cpp/espidf/RTSRemoteStore_NVS.h"
+#elif OPENRTS_HAS_EEPROM
+#include "bindings/cpp/arduino/RTSRemoteStore_EEPROM.h"
+#elif OPENRTS_HAS_MMAP
+#include "bindings/cpp/linux/RTSRemoteStore_MMap.h"
 #else
 #include "bindings/cpp/RTSRemoteStore_Memory.h"
 #endif
@@ -14,13 +17,15 @@ RTSRemoteStore *store;
 
 static void RTSRemoteStore_setUp()
 {
-#if defined(ESP_PLATFORM)
+#if OPENRTS_HAS_NVS
     store = new RTSRemoteStore_NVS();
-#elif defined(__AVR__)
+#elif OPENRTS_HAS_EEPROM
 #if defined(ESP_PLATFORM)
     EEPROM.begin(512);
 #endif
     store = new RTSRemoteStore_EEPROM();
+#elif OPENRTS_HAS_MMAP
+    store = new RTSRemoteStore_MMap("remotes.dat");
 #else
     store = new RTSRemoteStore_Memory();
 #endif

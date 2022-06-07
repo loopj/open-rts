@@ -1,4 +1,6 @@
-#if defined(ESP_PLATFORM)
+#include "config.h"
+
+#if OPENRTS_HAS_ESPIDF_GPIO
 
 #include "rts_pulse_source_espidf_gpio.h"
 
@@ -27,17 +29,20 @@ static void check_for_pulses_task(void *params)
     }
 }
 
-static void enable(struct rts_pulse_source *pulse_source)
+static void
+rts_pulse_source_enable_espidf_gpio(struct rts_pulse_source *pulse_source)
 {
     gpio_intr_enable(pulse_source->user_data_int);
 }
 
-static void disable(struct rts_pulse_source *pulse_source)
+static void
+rts_pulse_source_disable_espidf_gpio(struct rts_pulse_source *pulse_source)
 {
     gpio_intr_disable(pulse_source->user_data_int);
 }
 
-static void update(struct rts_pulse_source *pulse_source)
+static void
+rts_pulse_source_update_espidf_gpio(struct rts_pulse_source *pulse_source)
 {
     bool state = !gpio_get_level(pulse_source->user_data_int);
     if (state != pulse_source->last_state) {
@@ -55,9 +60,9 @@ static void update(struct rts_pulse_source *pulse_source)
 void rts_pulse_source_init_espidf_gpio(struct rts_pulse_source *pulse_source,
                                        uint8_t data_pin)
 {
-    pulse_source->enable        = enable;
-    pulse_source->disable       = disable;
-    pulse_source->update        = update;
+    pulse_source->enable        = rts_pulse_source_enable_espidf_gpio;
+    pulse_source->disable       = rts_pulse_source_disable_espidf_gpio;
+    pulse_source->update        = rts_pulse_source_update_espidf_gpio;
     pulse_source->close         = NULL;
     pulse_source->frame_builder = NULL;
     pulse_source->user_data_int = data_pin;
@@ -77,4 +82,4 @@ void rts_pulse_source_init_espidf_gpio(struct rts_pulse_source *pulse_source,
     gpio_intr_disable(data_pin);
 }
 
-#endif // defined(ESP_PLATFORM)
+#endif // OPENRTS_HAS_ESPIDF_GPIO

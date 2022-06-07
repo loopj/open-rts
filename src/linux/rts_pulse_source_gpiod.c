@@ -17,16 +17,17 @@ static uint64_t micros()
     return (ts.tv_sec * 1000000) + ts.tv_nsec / 1000;
 }
 
-static void enable(struct rts_pulse_source *pulse_source)
+static void rts_pulse_source_enable_gpiod(struct rts_pulse_source *pulse_source)
 {
     gpiod_line_request_input(pulse_source->user_data_ptr, "open_rts");
 }
 
-static void disable(struct rts_pulse_source *pulse_source)
+static void
+rts_pulse_source_disable_gpiod(struct rts_pulse_source *pulse_source)
 {
 }
 
-static void update(struct rts_pulse_source *pulse_source)
+static void rts_pulse_source_update_gpiod(struct rts_pulse_source *pulse_source)
 {
     bool state = gpiod_line_get_value(pulse_source->user_data_ptr);
     if (state != pulse_source->last_state) {
@@ -46,9 +47,9 @@ void rts_pulse_source_init_gpiod(struct rts_pulse_source *pulse_source,
 {
     struct gpiod_chip *gpio_chip = gpiod_chip_open(device);
     pulse_source->user_data_ptr  = gpiod_chip_get_line(gpio_chip, data_pin);
-    pulse_source->enable         = enable;
-    pulse_source->disable        = disable;
-    pulse_source->update         = update;
+    pulse_source->enable         = rts_pulse_source_enable_gpiod;
+    pulse_source->disable        = rts_pulse_source_disable_gpiod;
+    pulse_source->update         = rts_pulse_source_disable_gpiod;
     pulse_source->frame_builder  = NULL;
     pulse_source->last_state     = false;
     pulse_source->last_updated   = micros();
