@@ -35,7 +35,7 @@ void rts_pulse_output_send_pulse(struct rts_pulse_output *pulse_output,
 
 void rts_pulse_output_close(struct rts_pulse_output *pulse_output)
 {
-    if(pulse_output->close) {
+    if (pulse_output->close) {
         pulse_output->close(pulse_output);
     }
 

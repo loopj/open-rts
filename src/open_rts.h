@@ -30,7 +30,6 @@
 #include "rts_remote_store_nvs.h"
 #endif
 
-
 // Radio (ook-radio) features
 #if OPENRTS_INCLUDE_RADIO
 #include "rts_radio.h"
@@ -47,7 +46,6 @@
 #include "radio/spi_module_arduino.h"
 #endif
 #endif // OPENRTS_INCLUDE_RADIO
-
 
 // C++ bindings
 #if OPENRTS_INCLUDE_CPP_BINDINGS

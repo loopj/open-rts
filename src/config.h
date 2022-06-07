@@ -53,7 +53,8 @@
 //
 // Uncomment the following line to disable:
 // #define OPENRTS_HAS_EEPROM 0
-#if (defined(ARDUINO) && (defined(__AVR__) || defined(ESP_PLATFORM))) && !defined(OPENRTS_HAS_EEPROM)
+#if (defined(ARDUINO) && (defined(__AVR__) || defined(ESP_PLATFORM))) &&       \
+    !defined(OPENRTS_HAS_EEPROM)
 #define OPENRTS_HAS_EEPROM 1
 #endif
 

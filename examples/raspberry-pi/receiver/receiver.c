@@ -19,17 +19,16 @@ void init_radio()
     struct spi_module spi = {};
     spi_module_init_linux(&spi, OPENRTS_SPI_DEVICE);
 
-    // Initialize radio
-    #if defined(OPENRTS_RADIO_TYPE_RFM69)
+// Initialize radio
+#if defined(OPENRTS_RADIO_TYPE_RFM69)
     rts_radio_init_rfm69(&radio, &spi, true);
-    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
+#elif defined(OPENRTS_RADIO_TYPE_SX1278)
     rts_radio_init_sx1278(&radio, &spi, true);
-    #endif
+#endif
 
     // Switch to receive mode
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);
 }
-
 
 void event_callback(enum rts_receiver_event event, struct rts_frame *frame,
                     void *user_data)
@@ -119,12 +118,14 @@ int main(int argc, char **argv)
 
     // Set up the receiver "mode" button
     struct gpiod_chip *gpio_chip = gpiod_chip_open(OPENRTS_GPIOD_DEVICE);
-    struct gpiod_line *button    = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_1);
+    struct gpiod_line *button =
+        gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_1);
     gpiod_line_request_input_flags(button, "receiver",
                                    GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP);
 
     // Set up a GPIO pulse source
-    rts_pulse_source_init_gpiod(&pulse_source, OPENRTS_GPIOD_DEVICE, OPENRTS_RADIO_DATA);
+    rts_pulse_source_init_gpiod(&pulse_source, OPENRTS_GPIOD_DEVICE,
+                                OPENRTS_RADIO_DATA);
     rts_pulse_source_enable(&pulse_source);
 
     // Store paired remotes and rolling codes in a memory-mapped file

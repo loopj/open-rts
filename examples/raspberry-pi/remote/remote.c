@@ -18,12 +18,12 @@ void init_radio()
     struct spi_module spi = {};
     spi_module_init_linux(&spi, OPENRTS_SPI_DEVICE);
 
-    // Initialize radio
-    #if defined(OPENRTS_RADIO_TYPE_RFM69)
+// Initialize radio
+#if defined(OPENRTS_RADIO_TYPE_RFM69)
     rts_radio_init_rfm69(&radio, &spi, true);
-    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
+#elif defined(OPENRTS_RADIO_TYPE_SX1278)
     rts_radio_init_sx1278(&radio, &spi, true);
-    #endif
+#endif
 
     // Switch to transmit mode
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_TRANSMIT);

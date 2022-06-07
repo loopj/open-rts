@@ -16,12 +16,12 @@ void init_radio()
     struct spi_module spi = {};
     spi_module_init_linux(&spi, OPENRTS_SPI_DEVICE);
 
-    // Initialize radio
-    #if defined(OPENRTS_RADIO_TYPE_RFM69)
+// Initialize radio
+#if defined(OPENRTS_RADIO_TYPE_RFM69)
     rts_radio_init_rfm69(&radio, &spi, true);
-    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
+#elif defined(OPENRTS_RADIO_TYPE_SX1278)
     rts_radio_init_sx1278(&radio, &spi, true);
-    #endif
+#endif
 
     // Switch to receive mode
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);
@@ -46,7 +46,8 @@ int main(int argc, char **argv)
     rts_frame_builder_set_callback(&frame_builder, print_frame, NULL);
 
     // Set up a GPIO pulse source, send pulses to the framebuilder
-    rts_pulse_source_init_gpiod(&pulse_source, OPENRTS_GPIOD_DEVICE, OPENRTS_RADIO_DATA);
+    rts_pulse_source_init_gpiod(&pulse_source, OPENRTS_GPIOD_DEVICE,
+                                OPENRTS_RADIO_DATA);
     rts_pulse_source_attach(&pulse_source, &frame_builder);
     rts_pulse_source_enable(&pulse_source);
 

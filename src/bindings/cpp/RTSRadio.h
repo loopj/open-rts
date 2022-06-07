@@ -3,11 +3,13 @@
 
 #include "rts_radio.h"
 
-class RTSRadio : protected rts_radio {
+class RTSRadio : protected rts_radio
+{
   public:
-    void setMode(rts_radio_mode mode) {
-		rts_radio_set_mode(this, mode);
-	}
+    void setMode(rts_radio_mode mode)
+    {
+        rts_radio_set_mode(this, mode);
+    }
 };
 
 #endif // RTS_RADIO_CPP_H

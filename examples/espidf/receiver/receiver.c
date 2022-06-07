@@ -38,12 +38,12 @@ void init_radio()
     };
     spi_module_init_espidf(&spi, HSPI_HOST);
 
-    // Initialize radio
-    #if defined(OPENRTS_RADIO_TYPE_RFM69)
+// Initialize radio
+#if defined(OPENRTS_RADIO_TYPE_RFM69)
     rts_radio_init_rfm69(&radio, &spi, true);
-    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
+#elif defined(OPENRTS_RADIO_TYPE_SX1278)
     rts_radio_init_sx1278(&radio, &spi, true);
-    #endif
+#endif
 
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);
 }
