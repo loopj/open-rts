@@ -5,41 +5,30 @@
 
 #include "open_rts.h"
 
+// Supported radio modules
+#if defined(OPENRTS_RADIO_TYPE_RFM69)
+RTSRadio_RFM69 radio(OPENRTS_RADIO_CS);
+#elif defined(OPENRTS_RADIO_TYPE_SX1278)
+RTSRadio_SX1278 radio(OPENRTS_RADIO_CS);
+#endif
+
+// Remote and rolling code persistence
+#if OPENRTS_HAS_NVS
+RTSRemoteStore_NVS remoteStore;
+#elif OPENRTS_HAS_EEPROM
+RTSRemoteStore_EEPROM remoteStore;
+#else
+RTSRemoteStore_Memory remoteStore;
+#endif
+
 // Set up remote
 uint32_t remoteAddress = 0xC0FFEE;
-RTSPulseOutput_ArduinoGPIO pulseOutput(OPENRTS_RADIO_DATA);
-RTSRemoteStore_Memory remoteStore;
-RTSRemote remote(&pulseOutput, &remoteStore);
+RTSRemote remote(new RTSPulseOutput_ArduinoGPIO(OPENRTS_RADIO_DATA), &remoteStore);
 uint8_t lastCommand = 0;
-
-struct rts_radio radio;
-void init_radio()
-{
-    // Initialize SPI module
-    struct spi_module spi = {
-        .cs_pin = OPENRTS_RADIO_CS,
-        .clock = 1000000,
-        .mode = 0,
-    };
-    spi_module_init_arduino(&spi);
-
-    // Initialize radio
-    #if defined(OPENRTS_RADIO_TYPE_RFM69)
-    rts_radio_init_rfm69(&radio, &spi, true);
-    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
-    rts_radio_init_sx1278(&radio, &spi, true);
-    #endif
-
-    // Switch to receive mode
-    rts_radio_set_mode(&radio, RTS_RADIO_MODE_TRANSMIT);
-}
 
 void setup() {
     // Enable serial debugging
     Serial.begin(115200);
-
-    // Configure radio
-    init_radio();
 
     // Set up the buttons
     pinMode(OPENRTS_BUTTON_1, INPUT_PULLUP);
@@ -49,6 +38,9 @@ void setup() {
 
     // Set up the LED
     pinMode(OPENRTS_LED, OUTPUT);
+
+    // Configure radio
+    radio.setMode(RTS_RADIO_MODE_TRANSMIT);
 }
 
 void loop() {
@@ -63,8 +55,11 @@ void loop() {
     if(command) {
         Serial.print("Sending command: ");
         Serial.println(rts_command_to_string((rts_command)command));
+
+        // Turn on LED while sending
         digitalWrite(OPENRTS_LED, 1);
 
+        // Send the command
         remote.sendCommand(remoteAddress, (rts_command)command, lastCommand == command);
     } else {
         digitalWrite(OPENRTS_LED, 0);

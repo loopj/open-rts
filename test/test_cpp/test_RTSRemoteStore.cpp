@@ -1,6 +1,7 @@
 #include <unity.h>
 
 #include "config.h"
+
 #include "bindings/cpp/RTSRemoteStore.h"
 
 #if OPENRTS_HAS_NVS

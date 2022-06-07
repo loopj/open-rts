@@ -5,31 +5,16 @@
 
 #include "open_rts.h"
 
+// Supported radio modules
+#if defined(OPENRTS_RADIO_TYPE_RFM69)
+RTSRadio_RFM69 radio(OPENRTS_RADIO_CS);
+#elif defined(OPENRTS_RADIO_TYPE_SX1278)
+RTSRadio_SX1278 radio(OPENRTS_RADIO_CS);
+#endif
+
 // Pulse source and frame builder
 RTSPulseSource_ArduinoGPIO pulseSource(OPENRTS_RADIO_DATA);
 RTSFrameBuilder frameBuilder;
-
-struct rts_radio radio;
-void init_radio()
-{
-    // Initialize SPI module
-    struct spi_module spi = {
-        .cs_pin = OPENRTS_RADIO_CS,
-        .clock = 1000000,
-        .mode = 0,
-    };
-    spi_module_init_arduino(&spi);
-
-    // Initialize radio
-    #if defined(OPENRTS_RADIO_TYPE_RFM69)
-    rts_radio_init_rfm69(&radio, &spi, true);
-    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
-    rts_radio_init_sx1278(&radio, &spi, true);
-    #endif
-
-    // Switch to receive mode
-    rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);
-}
 
 // Print frames to Serial when received
 void printFrame(RTSFrame *frame, uint8_t repeatCount, uint32_t repeatDuration, void *userData) {
@@ -57,7 +42,7 @@ void setup() {
     Serial.begin(115200);
 
     // Configure radio
-    init_radio();
+    radio.setMode(RTS_RADIO_MODE_RECEIVE);
 
     // Connect pulses to the framebuilder
     pulseSource.attach(&frameBuilder);
