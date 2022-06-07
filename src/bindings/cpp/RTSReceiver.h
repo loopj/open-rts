@@ -23,17 +23,7 @@ class RTSReceiver : protected rts_receiver
         this->frameCallback         = callback;
         this->frameCallbackUserData = userData;
 
-        rts_receiver_set_frame_callback(
-            this,
-            [](enum rts_receiver_event event, rts_frame *frame,
-               void *userData) {
-                RTSReceiver *inst = (RTSReceiver *)userData;
-
-                RTSFrame convertedFrame(frame);
-                inst->frameCallback(event, &convertedFrame,
-                                    inst->frameCallbackUserData);
-            },
-            this);
+        rts_receiver_set_frame_callback(this, frameCallbackWrapper, this);
     }
 
     void setModeCallback(ModeCallback callback, void *userData = nullptr)
@@ -41,13 +31,7 @@ class RTSReceiver : protected rts_receiver
         this->modeCallback         = callback;
         this->modeCallbackUserData = userData;
 
-        rts_receiver_set_mode_callback(
-            this,
-            [](enum rts_receiver_mode mode, void *userData) {
-                RTSReceiver *inst = (RTSReceiver *)userData;
-                inst->modeCallback(mode, inst->modeCallbackUserData);
-            },
-            this);
+        rts_receiver_set_mode_callback(this, modeCallbackWrapper, this);
     }
 
     void setMode(enum rts_receiver_mode mode)
@@ -66,6 +50,22 @@ class RTSReceiver : protected rts_receiver
     }
 
   private:
+    static void frameCallbackWrapper(enum rts_receiver_event event,
+                                     rts_frame *frame, void *userData)
+    {
+        RTSReceiver *inst = (RTSReceiver *)userData;
+
+        RTSFrame convertedFrame(frame);
+        inst->frameCallback(event, &convertedFrame,
+                            inst->frameCallbackUserData);
+    }
+
+    static void modeCallbackWrapper(enum rts_receiver_mode mode, void *userData)
+    {
+        RTSReceiver *inst = (RTSReceiver *)userData;
+        inst->modeCallback(mode, inst->modeCallbackUserData);
+    }
+
     FrameCallback frameCallback = nullptr;
     void *frameCallbackUserData = nullptr;
 

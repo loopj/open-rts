@@ -21,20 +21,7 @@ class RTSFrameBuilder : protected rts_frame_builder
         this->frameCallback         = callback;
         this->frameCallbackUserData = userData;
 
-        rts_frame_builder_set_callback(
-            this,
-            [](rts_frame *frame, uint8_t repeatCount, uint32_t repeatDuration,
-               void *userData) {
-                RTSFrameBuilder *inst = (RTSFrameBuilder *)userData;
-
-                RTSFrame convertedFrame(frame->command, frame->rolling_code,
-                                        frame->remote_address);
-                convertedFrame.encryption_key = frame->encryption_key;
-                inst->frameCallback(&convertedFrame, repeatCount,
-                                    repeatDuration,
-                                    inst->frameCallbackUserData);
-            },
-            this);
+        rts_frame_builder_set_callback(this, callbackWrapper, this);
     }
 
     void handlePulse(bool state, uint32_t micros)
@@ -43,6 +30,16 @@ class RTSFrameBuilder : protected rts_frame_builder
     }
 
   private:
+    static void callbackWrapper(rts_frame *frame, uint8_t repeatCount,
+                                uint32_t repeatDuration, void *userData)
+    {
+        RTSFrameBuilder *inst = (RTSFrameBuilder *)userData;
+
+        RTSFrame convertedFrame(frame);
+        inst->frameCallback(&convertedFrame, repeatCount, repeatDuration,
+                            inst->frameCallbackUserData);
+    }
+
     FrameCallback frameCallback = nullptr;
     void *frameCallbackUserData = nullptr;
 
