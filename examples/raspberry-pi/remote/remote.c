@@ -1,9 +1,34 @@
-#include <gpiod.h>
-#include <stdio.h>
+/*
+ * Simple RTS Remote Example
+ *
+ * This example implements a 4-button, single-address RTS remote control.
+ * It takes button inputs, assembles them into RTS frames, then outputs them
+ * to the attached radio module.
+ *
+ * Rolling codes are persisted to a file "remotes.dat"
+ *
+ * Pressing and holding a button will send "repeat" frames, which won't
+ * increase the rolling code.
+ */
 
+//
 // Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+//
+
 // #define OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
 // #define OPENRTS_BOARD_RASPBERRY_PI_RFM96_BONNET
+
+//
+// Uncomment all of the following and configure which GPIOs to use for input
+//
+
+// #define OPENRTS_BUTTON_1 0   // My button
+// #define OPENRTS_BUTTON_2 23  // Up button
+// #define OPENRTS_BUTTON_3 19  // Down button
+// #define OPENRTS_BUTTON_4 18  // Prog button
+
+#include <gpiod.h>
+#include <stdio.h>
 
 #include "open_rts.h"
 
@@ -18,12 +43,12 @@ void init_radio()
     struct spi_module spi = {};
     spi_module_init_linux(&spi, OPENRTS_SPI_DEVICE);
 
-// Initialize radio
-#if defined(OPENRTS_RADIO_TYPE_RFM69)
+    // Initialize radio
+    #if defined(OPENRTS_RADIO_TYPE_RFM69)
     rts_radio_init_rfm69(&radio, &spi, true);
-#elif defined(OPENRTS_RADIO_TYPE_SX1278)
+    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
     rts_radio_init_sx1278(&radio, &spi, true);
-#endif
+    #endif
 
     // Switch to transmit mode
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_TRANSMIT);

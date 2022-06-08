@@ -1,10 +1,39 @@
+/*
+ * Paired Receiver Example
+ *
+ * This example receives pulses from a 433MHz radio module, assembles them
+ * into RTS Frames and deduplicates them. It also handles remote pairing,
+ * "known remote" validation, and rolling code validation.
+ *
+ * Valid, deduplicated frame "events", (eg. RTSReceiver::Event::PRESS)
+ * from known remotes are printed to the Serial console.
+ *
+ *   - To enter "programming mode" press and hold the button connected to
+ *     OPENRTS_BUTTON_1 for 2 seconds.
+ *   - To pair a new remote, enter programming mode and press the "PROG" button
+ *     on the remote
+ *   - To unpair a paired remote, enter programming mode and press the "PROG"
+ *     button on the remote
+ *   - To clear all remotes from memory, press and hold the button connected to
+ *     OPENRTS_BUTTON_1 for 4 seconds.
+ */
+
+//
+// Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+//
+
+// #define OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
+// #define OPENRTS_BOARD_RASPBERRY_PI_RFM96_BONNET
+
+//
+// Also define which GPIO to use for the "programming mode" button
+//
+
+// #define OPENRTS_BUTTON_1 0
+
 #include <gpiod.h>
 #include <stdio.h>
 #include <time.h>
-
-// Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
-// #define OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
-// #define OPENRTS_BOARD_RASPBERRY_PI_RFM96_BONNET
 
 #include "open_rts.h"
 
@@ -19,12 +48,12 @@ void init_radio()
     struct spi_module spi = {};
     spi_module_init_linux(&spi, OPENRTS_SPI_DEVICE);
 
-// Initialize radio
-#if defined(OPENRTS_RADIO_TYPE_RFM69)
+    // Initialize radio
+    #if defined(OPENRTS_RADIO_TYPE_RFM69)
     rts_radio_init_rfm69(&radio, &spi, true);
-#elif defined(OPENRTS_RADIO_TYPE_SX1278)
+    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
     rts_radio_init_sx1278(&radio, &spi, true);
-#endif
+    #endif
 
     // Switch to receive mode
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);

@@ -1,21 +1,40 @@
-#include "driver/gpio.h"
-#include "driver/spi_master.h"
-#include "esp_timer.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "sdkconfig.h"
-#include <stdio.h>
+/*
+ * Simple RTS Remote Example
+ *
+ * This example implements a 4-button, single-address RTS remote control.
+ * It takes button inputs, assembles them into RTS frames, then outputs them
+ * to the attached radio module.
+ *
+ * Rolling codes are persisted to EEPROM or NVS if available.
+ *
+ * Pressing and holding a button will send "repeat" frames, which won't
+ * increase the rolling code.
+ */
 
+//
 // Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+//
+
 // #define OPENRTS_BOARD_SPARKFUN_LORA_GATEWAY
 // #define OPENRTS_BOARD_TTGO_LORA32_V21
 // #define OPENRTS_BOARD_HELTEC_WIFI_LORA_32_V2
 
-// Also define which GPIOs to use for the remote's 4 buttons
-// #define OPENRTS_BUTTON_1 0
-// #define OPENRTS_BUTTON_2 23
-// #define OPENRTS_BUTTON_3 19
-// #define OPENRTS_BUTTON_4 18
+//
+// Uncomment all of the following and configure which GPIOs to use for input
+//
+
+// #define OPENRTS_BUTTON_1 0   // My button
+// #define OPENRTS_BUTTON_2 23  // Up button
+// #define OPENRTS_BUTTON_3 19  // Down button
+// #define OPENRTS_BUTTON_4 18  // Prog button
+
+#include "driver/gpio.h"
+#include "driver/spi_master.h"
+// #include "esp_timer.h"
+// #include "freertos/FreeRTOS.h"
+// #include "freertos/task.h"
+// #include "sdkconfig.h"
+// #include <stdio.h>
 
 #include "open_rts.h"
 
@@ -45,12 +64,12 @@ void init_radio()
     };
     spi_module_init_espidf(&spi, HSPI_HOST);
 
-// Initialize radio
-#if defined(OPENRTS_RADIO_TYPE_RFM69)
+    // Initialize radio
+    #if defined(OPENRTS_RADIO_TYPE_RFM69)
     rts_radio_init_rfm69(&radio, &spi, true);
-#elif defined(OPENRTS_RADIO_TYPE_SX1278)
+    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
     rts_radio_init_sx1278(&radio, &spi, true);
-#endif
+    #endif
 
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_TRANSMIT);
 }

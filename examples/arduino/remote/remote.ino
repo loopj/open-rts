@@ -1,7 +1,32 @@
+/*
+ * Simple RTS Remote Example
+ *
+ * This example implements a 4-button, single-address RTS remote control.
+ * It takes button inputs, assembles them into RTS frames, then outputs them
+ * to the attached radio module.
+ *
+ * Rolling codes are persisted to EEPROM or NVS if available.
+ *
+ * Pressing and holding a button will send "repeat" frames, which won't
+ * increase the rolling code.
+ */
+
+//
 // Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+//
+
 // #define OPENRTS_BOARD_SPARKFUN_LORA_GATEWAY
 // #define OPENRTS_BOARD_TTGO_LORA32_V21
 // #define OPENRTS_BOARD_HELTEC_WIFI_LORA_32_V2
+
+//
+// Uncomment all of the following and configure which GPIOs to use for input
+//
+
+// #define OPENRTS_BUTTON_1 0   // My button
+// #define OPENRTS_BUTTON_2 23  // Up button
+// #define OPENRTS_BUTTON_3 19  // Down button
+// #define OPENRTS_BUTTON_4 18  // Prog button
 
 #include "open_rts.h"
 

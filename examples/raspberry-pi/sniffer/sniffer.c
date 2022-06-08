@@ -1,8 +1,22 @@
-#include <stdio.h>
+/*
+ * Serial Frame Sniffer Example
+ *
+ * This example receives pulses from a 433MHz radio module, assembles them
+ * into RTS Frames, then outputs them to the Serial console.
+ *
+ * This example doesn't care about remote addresses, rolling codes, or frame
+ * deduplication, just prints every assembled frame.
+ */
 
-// Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+//
+// Uncomment one of these to use a predefined board config
+// Alternatively you'll need to define the pins manually
+//
+
 // #define OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
 // #define OPENRTS_BOARD_RASPBERRY_PI_RFM96_BONNET
+
+#include <stdio.h>
 
 #include "open_rts.h"
 
@@ -16,12 +30,12 @@ void init_radio()
     struct spi_module spi = {};
     spi_module_init_linux(&spi, OPENRTS_SPI_DEVICE);
 
-// Initialize radio
-#if defined(OPENRTS_RADIO_TYPE_RFM69)
+    // Initialize radio
+    #if defined(OPENRTS_RADIO_TYPE_RFM69)
     rts_radio_init_rfm69(&radio, &spi, true);
-#elif defined(OPENRTS_RADIO_TYPE_SX1278)
+    #elif defined(OPENRTS_RADIO_TYPE_SX1278)
     rts_radio_init_sx1278(&radio, &spi, true);
-#endif
+    #endif
 
     // Switch to receive mode
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);

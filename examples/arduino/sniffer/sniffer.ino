@@ -1,4 +1,18 @@
-// Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+/*
+ * Serial Frame Sniffer Example
+ *
+ * This example receives pulses from a 433MHz radio module, assembles them
+ * into RTS Frames, then outputs them to the Serial console.
+ *
+ * This example doesn't care about remote addresses, rolling codes, or frame
+ * deduplication, just prints every assembled frame.
+ */
+
+//
+// Uncomment one of these to use a predefined board config
+// Alternatively you'll need to define the pins manually
+//
+
 // #define OPENRTS_BOARD_SPARKFUN_LORA_GATEWAY
 // #define OPENRTS_BOARD_TTGO_LORA32_V21
 // #define OPENRTS_BOARD_HELTEC_WIFI_LORA_32_V2
