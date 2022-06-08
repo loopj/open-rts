@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
+
 #ifndef RTS_REMOTE_H
 #define RTS_REMOTE_H
 
@@ -12,7 +18,7 @@
  * Simulates a physical RTS remote control.
  *
  * It takes RTS commands (button presses), converts them into a series of
- * pulses, then outputs those pulses to a RTSPulseOutput (eg. a GPIO or radio).
+ * pulses, then outputs those pulses to a rts_pulse_output (eg. a GPIO or radio).
  *
  * Remote rolling codes can be persisted by providing a rts_remote_store backend
  * (eg. ESP32's non-volatile storage, or Arduino's EEPROM).
@@ -95,3 +101,5 @@ void rts_remote_send_pulse(struct rts_remote *remote, bool state,
 #endif
 
 #endif // RTS_REMOTE_H
+
+/// @}

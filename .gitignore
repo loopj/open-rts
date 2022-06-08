@@ -4,3 +4,4 @@ sdkconfig.*
 CMakeLists.txt
 .vscode
 *.swp
+remotes.dat

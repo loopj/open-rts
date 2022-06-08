@@ -1,15 +1,41 @@
-#include <stdio.h>
+/*
+ * Paired Receiver Example
+ *
+ * This example receives pulses from a 433MHz radio module, assembles them
+ * into RTS Frames and deduplicates them. It also handles remote pairing,
+ * "known remote" validation, and rolling code validation.
+ *
+ * Valid, deduplicated frame "events", (eg. RTSReceiver::Event::PRESS)
+ * from known remotes are printed to the Serial console.
+ *
+ *   - To enter "programming mode" press and hold the button connected to
+ *     OPENRTS_BUTTON_1 for 2 seconds.
+ *   - To pair a new remote, enter programming mode and press the "PROG" button
+ *     on the remote
+ *   - To unpair a paired remote, enter programming mode and press the "PROG"
+ *     button on the remote
+ *   - To clear all remotes from memory, press and hold the button connected to
+ *     OPENRTS_BUTTON_1 for 4 seconds.
+ */
 
-#include "driver/gpio.h"
-#include "driver/spi_master.h"
-
+//
 // Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+//
+
 // #define OPENRTS_BOARD_SPARKFUN_LORA_GATEWAY
 // #define OPENRTS_BOARD_TTGO_LORA32_V21
 // #define OPENRTS_BOARD_HELTEC_WIFI_LORA_32_V2
 
+//
 // Also define which GPIO to use for the "programming mode" button
+//
+
 // #define OPENRTS_BUTTON_1 0
+
+#include <stdio.h>
+
+#include "driver/gpio.h"
+#include "driver/spi_master.h"
 
 #include "open_rts.h"
 
@@ -24,7 +50,7 @@ void init_radio()
     spi_bus_config_t buscfg = {
         .miso_io_num   = OPENRTS_RADIO_MISO,
         .mosi_io_num   = OPENRTS_RADIO_MOSI,
-        .sclk_io_num   = OPENRTS_RADIO_SCK,
+        .sclk_io_num   = OPENRTS_RADIO_SCLK,
         .quadwp_io_num = -1,
         .quadhd_io_num = -1,
     };

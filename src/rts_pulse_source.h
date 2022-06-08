@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
+
 #ifndef RTS_PULSE_SOURCE_H
 #define RTS_PULSE_SOURCE_H
 
@@ -93,3 +99,5 @@ void rts_pulse_source_close(struct rts_pulse_source *pulse_source);
 #endif
 
 #endif // RTS_PULSE_SOURCE_H
+
+/// @}

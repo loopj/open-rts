@@ -1,4 +1,5 @@
-#pragma once
+#ifndef OPENRTS_TEST_FIXTURES_H
+#define OPENRTS_TEST_FIXTURES_H
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -16,3 +17,5 @@ extern struct recorded_pulse RECORDED_PULSES_BAD_ENCODING[];
 extern struct recorded_pulse RECORDED_PULSES_UP_REPEAT[];
 extern struct recorded_pulse GENERATED_PULSES_UP[];
 extern struct recorded_pulse GENERATED_PULSES_UP_REPEAT[];
+
+#endif // OPENRTS_TEST_FIXTURES_H

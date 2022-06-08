@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
+
 #ifndef RTS_RECEIVER_H
 #define RTS_RECEIVER_H
 
@@ -6,18 +12,24 @@
 #include "rts_pulse_source.h"
 #include "rts_remote_store.h"
 
+/**
+ * De-duplicated "frame" events.
+ */
 enum rts_receiver_event {
-    RTS_RECEIVER_EVENT_NONE,
-    RTS_RECEIVER_EVENT_PRESS,
-    RTS_RECEIVER_EVENT_HOLD,
-    RTS_RECEIVER_EVENT_HOLD_2,
-    RTS_RECEIVER_EVENT_HOLD_3,
+    RTS_RECEIVER_EVENT_NONE,    ///< No event detected.
+    RTS_RECEIVER_EVENT_PRESS,   ///< "Press" event detected, fired on first frame
+    RTS_RECEIVER_EVENT_HOLD,    ///< "Hold" event detected, fired after 2s of repeats
+    RTS_RECEIVER_EVENT_HOLD_2,  ///< "2x Hold" event detected, fired after 4s of repeats
+    RTS_RECEIVER_EVENT_HOLD_3,  ///< "3x Hold" event detected, fired after 6s of repeats
 };
 
+/**
+ * Receiver modes.
+ */
 enum rts_receiver_mode {
-    RTS_RECEIVER_MODE_OFF,
-    RTS_RECEIVER_MODE_PROGRAMMING,
-    RTS_RECEIVER_MODE_COMMAND,
+    RTS_RECEIVER_MODE_OFF,          ///< The receiver is off, will not process events.
+    RTS_RECEIVER_MODE_PROGRAMMING,  ///< The receiver is in programming mode.
+    RTS_RECEIVER_MODE_COMMAND,      ///< The receiver is in command mode.
 };
 
 /**
@@ -155,3 +167,5 @@ void rts_receiver_update(struct rts_receiver *receiver);
 #endif
 
 #endif // RTS_RECEIVER_H
+
+/// @}

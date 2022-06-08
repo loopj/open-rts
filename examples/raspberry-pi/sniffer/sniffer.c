@@ -1,8 +1,22 @@
-#include <stdio.h>
+/*
+ * Serial Frame Sniffer Example
+ *
+ * This example receives pulses from a 433MHz radio module, assembles them
+ * into RTS Frames, then outputs them to stdout.
+ *
+ * This example doesn't care about remote addresses, rolling codes, or frame
+ * deduplication, just prints every assembled frame.
+ */
 
-// Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+//
+// Uncomment one of these to use a predefined board config
+// Alternatively you'll need to define the pins manually
+//
+
 // #define OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
 // #define OPENRTS_BOARD_RASPBERRY_PI_RFM96_BONNET
+
+#include <stdio.h>
 
 #include "open_rts.h"
 
@@ -46,7 +60,8 @@ int main(int argc, char **argv)
     rts_frame_builder_set_callback(&frame_builder, print_frame, NULL);
 
     // Set up a GPIO pulse source, send pulses to the framebuilder
-    rts_pulse_source_init_gpiod(&pulse_source, OPENRTS_GPIOD_DEVICE, OPENRTS_RADIO_DATA);
+    rts_pulse_source_init_gpiod(&pulse_source, OPENRTS_GPIOD_DEVICE,
+                                OPENRTS_RADIO_DATA);
     rts_pulse_source_attach(&pulse_source, &frame_builder);
     rts_pulse_source_enable(&pulse_source);
 

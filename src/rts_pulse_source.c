@@ -40,7 +40,7 @@ void rts_pulse_source_update(struct rts_pulse_source *pulse_source)
 
 void rts_pulse_source_close(struct rts_pulse_source *pulse_source)
 {
-    if(pulse_source->close) {
+    if (pulse_source->close) {
         pulse_source->close(pulse_source);
     }
 

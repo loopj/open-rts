@@ -1,4 +1,8 @@
-/// @file
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
 
 #ifndef RTS_COMMAND_H
 #define RTS_COMMAND_H
@@ -23,6 +27,16 @@ enum rts_command {
     RTS_COMMAND_FLAG       = 0xA, ///< Flag button pressed (Soliris)
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 const char *rts_command_to_string(enum rts_command command);
 
+#ifdef __cplusplus
+} // extern "C"
+#endif
+
 #endif // RTS_COMMAND_H
+
+/// @}

@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
+
 #ifndef RTS_FRAME_H
 #define RTS_FRAME_H
 
@@ -122,3 +128,5 @@ uint8_t rts_frame_generate_checksum(const uint8_t *bytes);
 #endif
 
 #endif // RTS_FRAME_H
+
+/// @}

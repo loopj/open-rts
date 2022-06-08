@@ -1,4 +1,8 @@
-/// @file
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
 
 #ifndef RTS_TIMINGS_H
 #define RTS_TIMINGS_H
@@ -50,3 +54,5 @@ extern struct rts_timings RTS_TIMINGS_SITUO5;
 extern struct rts_timings *RTS_TIMINGS_DEFAULT;
 
 #endif // RTS_TIMINGS_H
+
+/// @}

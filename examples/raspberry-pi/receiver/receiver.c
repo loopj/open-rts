@@ -1,10 +1,39 @@
+/*
+ * Paired Receiver Example
+ *
+ * This example receives pulses from a 433MHz radio module, assembles them
+ * into RTS Frames and deduplicates them. It also handles remote pairing,
+ * "known remote" validation, and rolling code validation.
+ *
+ * Valid, deduplicated frame "events", (eg. RTSReceiver::Event::PRESS)
+ * from known remotes are printed to stdout.
+ *
+ *   - To enter "programming mode" press and hold the button connected to
+ *     OPENRTS_BUTTON_1 for 2 seconds.
+ *   - To pair a new remote, enter programming mode and press the "PROG" button
+ *     on the remote
+ *   - To unpair a paired remote, enter programming mode and press the "PROG"
+ *     button on the remote
+ *   - To clear all remotes from memory, press and hold the button connected to
+ *     OPENRTS_BUTTON_1 for 4 seconds.
+ */
+
+//
+// Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
+//
+
+// #define OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
+// #define OPENRTS_BOARD_RASPBERRY_PI_RFM96_BONNET
+
+//
+// Also define which GPIO to use for the "programming mode" button
+//
+
+// #define OPENRTS_BUTTON_1 0
+
 #include <gpiod.h>
 #include <stdio.h>
 #include <time.h>
-
-// Uncomment one of these or define your own OPENRTS_* defines (see boards.h)
-// #define OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
-// #define OPENRTS_BOARD_RASPBERRY_PI_RFM96_BONNET
 
 #include "open_rts.h"
 
@@ -29,7 +58,6 @@ void init_radio()
     // Switch to receive mode
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_RECEIVE);
 }
-
 
 void event_callback(enum rts_receiver_event event, struct rts_frame *frame,
                     void *user_data)
@@ -119,12 +147,14 @@ int main(int argc, char **argv)
 
     // Set up the receiver "mode" button
     struct gpiod_chip *gpio_chip = gpiod_chip_open(OPENRTS_GPIOD_DEVICE);
-    struct gpiod_line *button    = gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_1);
+    struct gpiod_line *button =
+        gpiod_chip_get_line(gpio_chip, OPENRTS_BUTTON_1);
     gpiod_line_request_input_flags(button, "receiver",
                                    GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP);
 
     // Set up a GPIO pulse source
-    rts_pulse_source_init_gpiod(&pulse_source, OPENRTS_GPIOD_DEVICE, OPENRTS_RADIO_DATA);
+    rts_pulse_source_init_gpiod(&pulse_source, OPENRTS_GPIOD_DEVICE,
+                                OPENRTS_RADIO_DATA);
     rts_pulse_source_enable(&pulse_source);
 
     // Store paired remotes and rolling codes in a memory-mapped file

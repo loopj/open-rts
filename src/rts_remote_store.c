@@ -74,7 +74,7 @@ void rts_remote_store_clear(struct rts_remote_store *store)
 
 void rts_remote_store_close(struct rts_remote_store *store)
 {
-    if(store->close) {
+    if (store->close) {
         store->close(store);
     }
 

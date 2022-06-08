@@ -1,11 +1,13 @@
-/// @file
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
 
 #ifndef RTS_RADIO_H
 #define RTS_RADIO_H
 
-#include "radio/rfm69.h"
-#include "radio/spi_module.h"
-#include "radio/sx1278.h"
+#include "ookradio/ookradio.h"
 
 /**
  * The transceiver mode to enter
@@ -61,7 +63,7 @@ void rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi,
                            bool use_pa_boost);
 
 /**
- * Set the radio mode for the specified rts_radio module, eg. standby, recevie,
+ * Set the radio mode for the specified rts_radio module, eg. standby, receive,
  * or transmit.
  *
  * @relates rts_radio
@@ -76,3 +78,5 @@ void rts_radio_set_mode(struct rts_radio *radio, enum rts_radio_mode mode);
 #endif
 
 #endif // RTS_RADIO_H
+
+/// @}
