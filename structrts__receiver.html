@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('structrts__receiver.html',''); initRes
 <div class="header">
   <div class="summary">
 <a href="#related">Related Functions</a>  </div>
-  <div class="headertitle"><div class="title">rts_receiver Struct Reference</div></div>
+  <div class="headertitle"><div class="title">rts_receiver Struct Reference<div class="ingroups"><a class="el" href="group__c.html">C Library</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,29 +102,38 @@ $(document).ready(function(){initNavTree('structrts__receiver.html',''); initRes
  <a href="structrts__receiver.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="rts__receiver_8h_source.html">rts_receiver.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for rts_receiver:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structrts__receiver.png" usemap="#rts_5Freceiver_map" alt=""/>
+  <map id="rts_5Freceiver_map" name="rts_5Freceiver_map">
+<area href="classRTSReceiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor." alt="RTSReceiver" shape="rect" coords="0,56,86,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="related" name="related"></a>
 Related Functions</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p >(Note that these are not member functions.) </p>
 </td></tr>
-<tr class="memitem:afd40f0657d24a152a50b94760dce812e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__receiver.html#afd40f0657d24a152a50b94760dce812e">rts_receiver_init</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *remote_store)</td></tr>
-<tr class="memdesc:afd40f0657d24a152a50b94760dce812e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a>.  <a href="structrts__receiver.html#afd40f0657d24a152a50b94760dce812e">More...</a><br /></td></tr>
-<tr class="separator:afd40f0657d24a152a50b94760dce812e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ad4ce1fbb9688ada6fcb41eb5245859"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__receiver.html#a6ad4ce1fbb9688ada6fcb41eb5245859">rts_receiver_set_frame_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum rts_receiver_event, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, void *user_data), void *user_data)</td></tr>
-<tr class="memdesc:a6ad4ce1fbb9688ada6fcb41eb5245859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when new receiver events are received.  <a href="structrts__receiver.html#a6ad4ce1fbb9688ada6fcb41eb5245859">More...</a><br /></td></tr>
-<tr class="separator:a6ad4ce1fbb9688ada6fcb41eb5245859"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acad30b70597a760b6800352ed3326f61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__receiver.html#acad30b70597a760b6800352ed3326f61">rts_receiver_set_mode_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum rts_receiver_mode, void *user_data), void *user_data)</td></tr>
-<tr class="memdesc:acad30b70597a760b6800352ed3326f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when the receiver mode changes.  <a href="structrts__receiver.html#acad30b70597a760b6800352ed3326f61">More...</a><br /></td></tr>
-<tr class="separator:acad30b70597a760b6800352ed3326f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8220ee59b348c4ed810237e95c468b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__receiver.html#ad8220ee59b348c4ed810237e95c468b1">rts_receiver_set_mode</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, uint8_t mode)</td></tr>
-<tr class="memdesc:ad8220ee59b348c4ed810237e95c468b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the receiver mode.  <a href="structrts__receiver.html#ad8220ee59b348c4ed810237e95c468b1">More...</a><br /></td></tr>
-<tr class="separator:ad8220ee59b348c4ed810237e95c468b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb156e720eb4e0891e1e2e5bfaff73f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__receiver.html#abb156e720eb4e0891e1e2e5bfaff73f1">rts_receiver_forget_all_remotes</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
-<tr class="memdesc:abb156e720eb4e0891e1e2e5bfaff73f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function to forget all paired remotes by clearing the receiver's <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a>.  <a href="structrts__receiver.html#abb156e720eb4e0891e1e2e5bfaff73f1">More...</a><br /></td></tr>
-<tr class="separator:abb156e720eb4e0891e1e2e5bfaff73f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1561b9797fe677fadeb0117ea83b3177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__receiver.html#a1561b9797fe677fadeb0117ea83b3177">rts_receiver_update</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
-<tr class="memdesc:a1561b9797fe677fadeb0117ea83b3177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the receiver's <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> to check for new pulse data, should be called every loop() if the pulse source does not keep itself updated (eg.  <a href="structrts__receiver.html#a1561b9797fe677fadeb0117ea83b3177">More...</a><br /></td></tr>
-<tr class="separator:a1561b9797fe677fadeb0117ea83b3177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd40f0657d24a152a50b94760dce812e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gafd40f0657d24a152a50b94760dce812e">rts_receiver_init</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *remote_store)</td></tr>
+<tr class="memdesc:gafd40f0657d24a152a50b94760dce812e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a>.  <a href="group__c.html#gafd40f0657d24a152a50b94760dce812e">More...</a><br /></td></tr>
+<tr class="separator:gafd40f0657d24a152a50b94760dce812e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ad4ce1fbb9688ada6fcb41eb5245859"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga6ad4ce1fbb9688ada6fcb41eb5245859">rts_receiver_set_frame_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum <a class="el" href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a>, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, void *user_data), void *user_data)</td></tr>
+<tr class="memdesc:ga6ad4ce1fbb9688ada6fcb41eb5245859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when new receiver events are received.  <a href="group__c.html#ga6ad4ce1fbb9688ada6fcb41eb5245859">More...</a><br /></td></tr>
+<tr class="separator:ga6ad4ce1fbb9688ada6fcb41eb5245859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacad30b70597a760b6800352ed3326f61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gacad30b70597a760b6800352ed3326f61">rts_receiver_set_mode_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum <a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a>, void *user_data), void *user_data)</td></tr>
+<tr class="memdesc:gacad30b70597a760b6800352ed3326f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when the receiver mode changes.  <a href="group__c.html#gacad30b70597a760b6800352ed3326f61">More...</a><br /></td></tr>
+<tr class="separator:gacad30b70597a760b6800352ed3326f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8220ee59b348c4ed810237e95c468b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gad8220ee59b348c4ed810237e95c468b1">rts_receiver_set_mode</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, uint8_t mode)</td></tr>
+<tr class="memdesc:gad8220ee59b348c4ed810237e95c468b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the receiver mode.  <a href="group__c.html#gad8220ee59b348c4ed810237e95c468b1">More...</a><br /></td></tr>
+<tr class="separator:gad8220ee59b348c4ed810237e95c468b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb156e720eb4e0891e1e2e5bfaff73f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gabb156e720eb4e0891e1e2e5bfaff73f1">rts_receiver_forget_all_remotes</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
+<tr class="memdesc:gabb156e720eb4e0891e1e2e5bfaff73f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function to forget all paired remotes by clearing the receiver's <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a>.  <a href="group__c.html#gabb156e720eb4e0891e1e2e5bfaff73f1">More...</a><br /></td></tr>
+<tr class="separator:gabb156e720eb4e0891e1e2e5bfaff73f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1561b9797fe677fadeb0117ea83b3177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga1561b9797fe677fadeb0117ea83b3177">rts_receiver_update</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
+<tr class="memdesc:ga1561b9797fe677fadeb0117ea83b3177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the receiver's <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> to check for new pulse data, should be called every loop() if the pulse source does not keep itself updated (eg.  <a href="group__c.html#ga1561b9797fe677fadeb0117ea83b3177">More...</a><br /></td></tr>
+<tr class="separator:ga1561b9797fe677fadeb0117ea83b3177"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Simulates a physical RTS receiver device, such as a shade or drapery motor. </p>
@@ -133,282 +142,10 @@ Related Functions</h2></td></tr>
 button held" are sent to the event callback you attach with rts_receiver_set_frame_callback.</p>
 <p >Paired remotes and rolling codes can be persisted by providing a <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> backend (eg. ESP32's non-volatile storage, Arduino's EEPROM, or something custom if you'd prefer).</p>
 <p >Receivers can be in one of three modes: "off", "programming" or "command".</p>
-<p >In "off" mode, the receiver will not process any commands from remotes. To re-enable processing of commands, you'll need to call <a class="el" href="structrts__receiver.html#ad8220ee59b348c4ed810237e95c468b1" title="Change the receiver mode.">rts_receiver_set_mode()</a>. Typically you'll want to call this when the user presses a physical button on the receiver, as on real RTS devices.</p>
+<p >In "off" mode, the receiver will not process any commands from remotes. To re-enable processing of commands, you'll need to call <a class="el" href="group__c.html#gad8220ee59b348c4ed810237e95c468b1" title="Change the receiver mode.">rts_receiver_set_mode()</a>. Typically you'll want to call this when the user presses a physical button on the receiver, as on real RTS devices.</p>
 <p >In "programming" mode, the receiver will process pairing/unpairing commands from remotes (Prog button pressed), and also process "RTS Off" commands from remotes (My+Up+Down buttons pressed and held).</p>
 <p >In "command" mode, the receiver will process regular RTS frame events with rolling code validation, and handle certain special events such as allowing a paired remote to enter "programming" mode by pressing and holding "Prog". </p>
-</div><h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="afd40f0657d24a152a50b94760dce812e" name="afd40f0657d24a152a50b94760dce812e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd40f0657d24a152a50b94760dce812e">&#9670;&nbsp;</a></span>rts_receiver_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_receiver_init </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *&#160;</td>
-          <td class="paramname"><em>receiver</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *&#160;</td>
-          <td class="paramname"><em>pulse_source</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
-          <td class="paramname"><em>remote_store</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialize an <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">receiver</td><td>the <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a> struct to initialize </td></tr>
-    <tr><td class="paramname">pulse_source</td><td>the <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> to receive pulses from </td></tr>
-    <tr><td class="paramname">remote_store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> to persist paired remotes to </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a6ad4ce1fbb9688ada6fcb41eb5245859" name="a6ad4ce1fbb9688ada6fcb41eb5245859"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ad4ce1fbb9688ada6fcb41eb5245859">&#9670;&nbsp;</a></span>rts_receiver_set_frame_callback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_receiver_set_frame_callback </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *&#160;</td>
-          <td class="paramname"><em>receiver</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void(*)(enum rts_receiver_event, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, void *user_data)&#160;</td>
-          <td class="paramname"><em>callback</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>user_data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set a callback function to call when new receiver events are received. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">receiver</td><td>the <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a> struct to set callback on </td></tr>
-    <tr><td class="paramname">callback</td><td>the callback function to call when new frame events are received. Frame events are fired after RTS frames are parsed and deduplicated. </td></tr>
-    <tr><td class="paramname">user_data</td><td>optional user_data pointer to pass to every callback. Set to NULL if not using. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="acad30b70597a760b6800352ed3326f61" name="acad30b70597a760b6800352ed3326f61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acad30b70597a760b6800352ed3326f61">&#9670;&nbsp;</a></span>rts_receiver_set_mode_callback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_receiver_set_mode_callback </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *&#160;</td>
-          <td class="paramname"><em>receiver</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void(*)(enum rts_receiver_mode, void *user_data)&#160;</td>
-          <td class="paramname"><em>callback</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>user_data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set a callback function to call when the receiver mode changes. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">receiver</td><td>the <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a> struct to set callback on </td></tr>
-    <tr><td class="paramname">callback</td><td>the callback function to call when the mode changes </td></tr>
-    <tr><td class="paramname">user_data</td><td>optional user_data pointer top pass to every callback. Set to NULL if not using. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad8220ee59b348c4ed810237e95c468b1" name="ad8220ee59b348c4ed810237e95c468b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8220ee59b348c4ed810237e95c468b1">&#9670;&nbsp;</a></span>rts_receiver_set_mode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_receiver_set_mode </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *&#160;</td>
-          <td class="paramname"><em>receiver</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>mode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Change the receiver mode. </p>
-<p >Receivers can be either "off", in "programming" mode or "command" mode.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">receiver</td><td>the <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a> struct to change the mode of </td></tr>
-    <tr><td class="paramname">mode</td><td>the rts_receiver_mode to change to </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="abb156e720eb4e0891e1e2e5bfaff73f1" name="abb156e720eb4e0891e1e2e5bfaff73f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb156e720eb4e0891e1e2e5bfaff73f1">&#9670;&nbsp;</a></span>rts_receiver_forget_all_remotes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_receiver_forget_all_remotes </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *&#160;</td>
-          <td class="paramname"><em>receiver</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Convenience function to forget all paired remotes by clearing the receiver's <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">receiver</td><td>the <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a> struct to forget remotes for </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a1561b9797fe677fadeb0117ea83b3177" name="a1561b9797fe677fadeb0117ea83b3177"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1561b9797fe677fadeb0117ea83b3177">&#9670;&nbsp;</a></span>rts_receiver_update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_receiver_update </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *&#160;</td>
-          <td class="paramname"><em>receiver</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Instruct the receiver's <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> to check for new pulse data, should be called every loop() if the pulse source does not keep itself updated (eg. </p>
-<p >using interrupts).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">receiver</td><td>the <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a> struct to update </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/<a class="el" href="rts__receiver_8h_source.html">rts_receiver.h</a></li>
 </ul>
 </div><!-- contents -->

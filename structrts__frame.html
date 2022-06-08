@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('structrts__frame.html',''); initResiza
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a> &#124;
 <a href="#related">Related Functions</a>  </div>
-  <div class="headertitle"><div class="title">rts_frame Struct Reference</div></div>
+  <div class="headertitle"><div class="title">rts_frame Struct Reference<div class="ingroups"><a class="el" href="group__c.html">C Library</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -103,13 +103,22 @@ $(document).ready(function(){initNavTree('structrts__frame.html',''); initResiza
  <a href="structrts__frame.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="rts__frame_8h_source.html">rts_frame.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for rts_frame:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structrts__frame.png" usemap="#rts_5Fframe_map" alt=""/>
+  <map id="rts_5Fframe_map" name="rts_5Fframe_map">
+<area href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls." alt="RTSFrame" shape="rect" coords="0,56,71,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a995b3e499dede20ddbbc72b46d9b19eb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame.html#a995b3e499dede20ddbbc72b46d9b19eb">encryption_key</a>: 8</td></tr>
 <tr class="memdesc:a995b3e499dede20ddbbc72b46d9b19eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">8-bit encryption key, typically generated automatically.  <a href="structrts__frame.html#a995b3e499dede20ddbbc72b46d9b19eb">More...</a><br /></td></tr>
 <tr class="separator:a995b3e499dede20ddbbc72b46d9b19eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a964158d6b5abbdf6b270ee68f5f47d1d"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="rts__command_8h.html#a2dc6d8f19dc54273cf451709d2e9d164">rts_command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame.html#a964158d6b5abbdf6b270ee68f5f47d1d">command</a>: 4</td></tr>
+<tr class="memitem:a964158d6b5abbdf6b270ee68f5f47d1d"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame.html#a964158d6b5abbdf6b270ee68f5f47d1d">command</a>: 4</td></tr>
 <tr class="memdesc:a964158d6b5abbdf6b270ee68f5f47d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The command we are sending, eg "Up", "Down", "My", or combinations of buttons found on remote controls.  <a href="structrts__frame.html#a964158d6b5abbdf6b270ee68f5f47d1d">More...</a><br /></td></tr>
 <tr class="separator:a964158d6b5abbdf6b270ee68f5f47d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2748d2359b54160bac4602dedf227ff"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame.html#ab2748d2359b54160bac4602dedf227ff">rolling_code</a>: 16</td></tr>
@@ -123,301 +132,29 @@ Data Fields</h2></td></tr>
 Related Functions</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p >(Note that these are not member functions.) </p>
 </td></tr>
-<tr class="memitem:ab5571a1d421a1148d309f2858a83613f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame.html#ab5571a1d421a1148d309f2858a83613f">rts_frame_init</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, enum <a class="el" href="rts__command_8h.html#a2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> <a class="el" href="structrts__frame.html#a964158d6b5abbdf6b270ee68f5f47d1d">command</a>, uint16_t <a class="el" href="structrts__frame.html#ab2748d2359b54160bac4602dedf227ff">rolling_code</a>, uint32_t <a class="el" href="structrts__frame.html#a1e13f78218638b484d92d51e3df6cfd9">remote_address</a>)</td></tr>
-<tr class="memdesc:ab5571a1d421a1148d309f2858a83613f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> with typical payload.  <a href="structrts__frame.html#ab5571a1d421a1148d309f2858a83613f">More...</a><br /></td></tr>
-<tr class="separator:ab5571a1d421a1148d309f2858a83613f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4223460f69635b1c97a7c9f2dd42dfb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame.html#a4223460f69635b1c97a7c9f2dd42dfb5">rts_frame_from_bytes</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, const uint8_t *bytes)</td></tr>
-<tr class="memdesc:a4223460f69635b1c97a7c9f2dd42dfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> from the raw (deobfuscated) bytes received.  <a href="structrts__frame.html#a4223460f69635b1c97a7c9f2dd42dfb5">More...</a><br /></td></tr>
-<tr class="separator:a4223460f69635b1c97a7c9f2dd42dfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abee4ad16c735ef07839cbc12f9282b96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame.html#abee4ad16c735ef07839cbc12f9282b96">rts_frame_to_bytes</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, uint8_t *bytes, bool obfuscate)</td></tr>
-<tr class="memdesc:abee4ad16c735ef07839cbc12f9282b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> to byte representation, and optionally apply XOR obfuscation to make it ready to send.  <a href="structrts__frame.html#abee4ad16c735ef07839cbc12f9282b96">More...</a><br /></td></tr>
-<tr class="separator:abee4ad16c735ef07839cbc12f9282b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa119ab98f70aaa2f90961c7830e882a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame.html#afa119ab98f70aaa2f90961c7830e882a">rts_frame_obfuscate_bytes</a> (uint8_t *bytes)</td></tr>
-<tr class="memdesc:afa119ab98f70aaa2f90961c7830e882a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply in-place XOR obfuscation to a raw byte array representation of a frame.  <a href="structrts__frame.html#afa119ab98f70aaa2f90961c7830e882a">More...</a><br /></td></tr>
-<tr class="separator:afa119ab98f70aaa2f90961c7830e882a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a055aa8c663040dd6861a11035696bca5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame.html#a055aa8c663040dd6861a11035696bca5">rts_frame_deobfuscate_bytes</a> (uint8_t *dest, const uint8_t *src)</td></tr>
-<tr class="memdesc:a055aa8c663040dd6861a11035696bca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply XOR deobfuscation to a raw byte array representation of a frame.  <a href="structrts__frame.html#a055aa8c663040dd6861a11035696bca5">More...</a><br /></td></tr>
-<tr class="separator:a055aa8c663040dd6861a11035696bca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c6b65412d7a48442ff251fbff5360f5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame.html#a8c6b65412d7a48442ff251fbff5360f5">rts_frame_generate_checksum</a> (const uint8_t *bytes)</td></tr>
-<tr class="memdesc:a8c6b65412d7a48442ff251fbff5360f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a checksum for the raw (deobfuscated) bytes of a frame.  <a href="structrts__frame.html#a8c6b65412d7a48442ff251fbff5360f5">More...</a><br /></td></tr>
-<tr class="separator:a8c6b65412d7a48442ff251fbff5360f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5571a1d421a1148d309f2858a83613f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gab5571a1d421a1148d309f2858a83613f">rts_frame_init</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, enum <a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> <a class="el" href="structrts__frame.html#a964158d6b5abbdf6b270ee68f5f47d1d">command</a>, uint16_t <a class="el" href="structrts__frame.html#ab2748d2359b54160bac4602dedf227ff">rolling_code</a>, uint32_t <a class="el" href="structrts__frame.html#a1e13f78218638b484d92d51e3df6cfd9">remote_address</a>)</td></tr>
+<tr class="memdesc:gab5571a1d421a1148d309f2858a83613f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> with typical payload.  <a href="group__c.html#gab5571a1d421a1148d309f2858a83613f">More...</a><br /></td></tr>
+<tr class="separator:gab5571a1d421a1148d309f2858a83613f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4223460f69635b1c97a7c9f2dd42dfb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga4223460f69635b1c97a7c9f2dd42dfb5">rts_frame_from_bytes</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, const uint8_t *bytes)</td></tr>
+<tr class="memdesc:ga4223460f69635b1c97a7c9f2dd42dfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> from the raw (deobfuscated) bytes received.  <a href="group__c.html#ga4223460f69635b1c97a7c9f2dd42dfb5">More...</a><br /></td></tr>
+<tr class="separator:ga4223460f69635b1c97a7c9f2dd42dfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabee4ad16c735ef07839cbc12f9282b96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gabee4ad16c735ef07839cbc12f9282b96">rts_frame_to_bytes</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, uint8_t *bytes, bool obfuscate)</td></tr>
+<tr class="memdesc:gabee4ad16c735ef07839cbc12f9282b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> to byte representation, and optionally apply XOR obfuscation to make it ready to send.  <a href="group__c.html#gabee4ad16c735ef07839cbc12f9282b96">More...</a><br /></td></tr>
+<tr class="separator:gabee4ad16c735ef07839cbc12f9282b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa119ab98f70aaa2f90961c7830e882a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gafa119ab98f70aaa2f90961c7830e882a">rts_frame_obfuscate_bytes</a> (uint8_t *bytes)</td></tr>
+<tr class="memdesc:gafa119ab98f70aaa2f90961c7830e882a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply in-place XOR obfuscation to a raw byte array representation of a frame.  <a href="group__c.html#gafa119ab98f70aaa2f90961c7830e882a">More...</a><br /></td></tr>
+<tr class="separator:gafa119ab98f70aaa2f90961c7830e882a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga055aa8c663040dd6861a11035696bca5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga055aa8c663040dd6861a11035696bca5">rts_frame_deobfuscate_bytes</a> (uint8_t *dest, const uint8_t *src)</td></tr>
+<tr class="memdesc:ga055aa8c663040dd6861a11035696bca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply XOR deobfuscation to a raw byte array representation of a frame.  <a href="group__c.html#ga055aa8c663040dd6861a11035696bca5">More...</a><br /></td></tr>
+<tr class="separator:ga055aa8c663040dd6861a11035696bca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c6b65412d7a48442ff251fbff5360f5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga8c6b65412d7a48442ff251fbff5360f5">rts_frame_generate_checksum</a> (const uint8_t *bytes)</td></tr>
+<tr class="memdesc:ga8c6b65412d7a48442ff251fbff5360f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a checksum for the raw (deobfuscated) bytes of a frame.  <a href="group__c.html#ga8c6b65412d7a48442ff251fbff5360f5">More...</a><br /></td></tr>
+<tr class="separator:ga8c6b65412d7a48442ff251fbff5360f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Represents the message "payload" sent by RTS remote controls. </p>
 <p >It contains the command (eg. UP, DOWN, etc), the identity of the sender remote_address), and information to verify the authenticity of the payload (checksum, rolling_code, encryption_key). </p>
-</div><h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="ab5571a1d421a1148d309f2858a83613f" name="ab5571a1d421a1148d309f2858a83613f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5571a1d421a1148d309f2858a83613f">&#9670;&nbsp;</a></span>rts_frame_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_frame_init </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__frame.html">rts_frame</a> *&#160;</td>
-          <td class="paramname"><em>frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">enum <a class="el" href="rts__command_8h.html#a2dc6d8f19dc54273cf451709d2e9d164">rts_command</a>&#160;</td>
-          <td class="paramname"><em>command</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>rolling_code</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>remote_address</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialize an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> with typical payload. </p>
-<p >We'll generate a sensible encryption_key automatically.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">frame</td><td>the frame to initialize </td></tr>
-    <tr><td class="paramname">command</td><td>the rts_command </td></tr>
-    <tr><td class="paramname">rolling_code</td><td>the rolling code </td></tr>
-    <tr><td class="paramname">remote_address</td><td>the remote address </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4223460f69635b1c97a7c9f2dd42dfb5" name="a4223460f69635b1c97a7c9f2dd42dfb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4223460f69635b1c97a7c9f2dd42dfb5">&#9670;&nbsp;</a></span>rts_frame_from_bytes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_frame_from_bytes </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__frame.html">rts_frame</a> *&#160;</td>
-          <td class="paramname"><em>frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint8_t *&#160;</td>
-          <td class="paramname"><em>bytes</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialize an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> from the raw (deobfuscated) bytes received. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">frame</td><td>the frame to initialize </td></tr>
-    <tr><td class="paramname">bytes</td><td>the raw frame bytes to construct from </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="abee4ad16c735ef07839cbc12f9282b96" name="abee4ad16c735ef07839cbc12f9282b96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abee4ad16c735ef07839cbc12f9282b96">&#9670;&nbsp;</a></span>rts_frame_to_bytes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_frame_to_bytes </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__frame.html">rts_frame</a> *&#160;</td>
-          <td class="paramname"><em>frame</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>bytes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>obfuscate</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Convert an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> to byte representation, and optionally apply XOR obfuscation to make it ready to send. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">frame</td><td>the frame to convert </td></tr>
-    <tr><td class="paramname">bytes</td><td>the byte array to store the result in </td></tr>
-    <tr><td class="paramname">obfuscate</td><td>should we also apply obfuscation to the bytes </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="afa119ab98f70aaa2f90961c7830e882a" name="afa119ab98f70aaa2f90961c7830e882a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa119ab98f70aaa2f90961c7830e882a">&#9670;&nbsp;</a></span>rts_frame_obfuscate_bytes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_frame_obfuscate_bytes </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>bytes</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Apply in-place XOR obfuscation to a raw byte array representation of a frame. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bytes</td><td>the raw frame bytes to obfuscate </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a055aa8c663040dd6861a11035696bca5" name="a055aa8c663040dd6861a11035696bca5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a055aa8c663040dd6861a11035696bca5">&#9670;&nbsp;</a></span>rts_frame_deobfuscate_bytes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_frame_deobfuscate_bytes </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint8_t *&#160;</td>
-          <td class="paramname"><em>src</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Apply XOR deobfuscation to a raw byte array representation of a frame. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dest</td><td>the destination byte array for the deobfuscated frame bytes </td></tr>
-    <tr><td class="paramname">src</td><td>the raw frame bytes to deobfuscate </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8c6b65412d7a48442ff251fbff5360f5" name="a8c6b65412d7a48442ff251fbff5360f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c6b65412d7a48442ff251fbff5360f5">&#9670;&nbsp;</a></span>rts_frame_generate_checksum()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t rts_frame_generate_checksum </td>
-          <td>(</td>
-          <td class="paramtype">const uint8_t *&#160;</td>
-          <td class="paramname"><em>bytes</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generate a checksum for the raw (deobfuscated) bytes of a frame. </p>
-<p >Checksum for a valid frame is 0.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bytes</td><td>the raw deobfuscated frame bytes to check </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">Field Documentation</h2>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="a995b3e499dede20ddbbc72b46d9b19eb" name="a995b3e499dede20ddbbc72b46d9b19eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a995b3e499dede20ddbbc72b46d9b19eb">&#9670;&nbsp;</a></span>encryption_key</h2>
 
@@ -442,7 +179,7 @@ Related Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="rts__command_8h.html#a2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> rts_frame::command</td>
+          <td class="memname">enum <a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> rts_frame::command</td>
         </tr>
       </table>
 </div><div class="memdoc">

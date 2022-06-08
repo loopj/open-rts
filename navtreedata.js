@@ -32,12 +32,15 @@ var NAVTREE =
       [ "rts_frame_builder", "index.html#autotoc_md5", null ],
       [ "rts_receiver", "index.html#autotoc_md6", null ]
     ] ],
+    [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Data Fields", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -54,7 +57,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"RTSFrameBuilder_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

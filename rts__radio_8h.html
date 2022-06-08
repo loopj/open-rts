@@ -98,9 +98,7 @@ $(document).ready(function(){initNavTree('rts__radio_8h.html',''); initResizable
   <div class="headertitle"><div class="title">rts_radio.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;radio/rfm69.h&quot;</code><br />
-<code>#include &quot;radio/spi_module.h&quot;</code><br />
-<code>#include &quot;radio/sx1278.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;ookradio/ookradio.h&quot;</code><br />
 </div>
 <p><a href="rts__radio_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -112,42 +110,17 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a307d23bc496f860a9ff57bde0ca15336"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rts__radio_8h.html#a307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a> { <br />
-&#160;&#160;<a class="el" href="rts__radio_8h.html#a307d23bc496f860a9ff57bde0ca15336a709e6461ce74ad1d3a97fe10631e76bd">RTS_RADIO_MODE_STANDBY</a>
+<tr class="memitem:ga307d23bc496f860a9ff57bde0ca15336"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a> { <br />
+&#160;&#160;<a class="el" href="group__c.html#gga307d23bc496f860a9ff57bde0ca15336a709e6461ce74ad1d3a97fe10631e76bd">RTS_RADIO_MODE_STANDBY</a>
 , <br />
-&#160;&#160;<a class="el" href="rts__radio_8h.html#a307d23bc496f860a9ff57bde0ca15336a92b2151744028824c9ff3867acf604ae">RTS_RADIO_MODE_RECEIVE</a>
+&#160;&#160;<a class="el" href="group__c.html#gga307d23bc496f860a9ff57bde0ca15336a92b2151744028824c9ff3867acf604ae">RTS_RADIO_MODE_RECEIVE</a>
 , <br />
-&#160;&#160;<a class="el" href="rts__radio_8h.html#a307d23bc496f860a9ff57bde0ca15336a5a2fd52a32e6e5ded54d751aa65d9585">RTS_RADIO_MODE_TRANSMIT</a>
+&#160;&#160;<a class="el" href="group__c.html#gga307d23bc496f860a9ff57bde0ca15336a5a2fd52a32e6e5ded54d751aa65d9585">RTS_RADIO_MODE_TRANSMIT</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a307d23bc496f860a9ff57bde0ca15336"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transceiver mode to enter.  <a href="rts__radio_8h.html#a307d23bc496f860a9ff57bde0ca15336">More...</a><br /></td></tr>
-<tr class="separator:a307d23bc496f860a9ff57bde0ca15336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ga307d23bc496f860a9ff57bde0ca15336"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transceiver mode to enter.  <a href="group__c.html#ga307d23bc496f860a9ff57bde0ca15336">More...</a><br /></td></tr>
+<tr class="separator:ga307d23bc496f860a9ff57bde0ca15336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a307d23bc496f860a9ff57bde0ca15336" name="a307d23bc496f860a9ff57bde0ca15336"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a307d23bc496f860a9ff57bde0ca15336">&#9670;&nbsp;</a></span>rts_radio_mode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="rts__radio_8h.html#a307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The transceiver mode to enter. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a307d23bc496f860a9ff57bde0ca15336a709e6461ce74ad1d3a97fe10631e76bd" name="a307d23bc496f860a9ff57bde0ca15336a709e6461ce74ad1d3a97fe10631e76bd"></a>RTS_RADIO_MODE_STANDBY&#160;</td><td class="fielddoc"><p >Standby mode. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a307d23bc496f860a9ff57bde0ca15336a92b2151744028824c9ff3867acf604ae" name="a307d23bc496f860a9ff57bde0ca15336a92b2151744028824c9ff3867acf604ae"></a>RTS_RADIO_MODE_RECEIVE&#160;</td><td class="fielddoc"><p >Receive mode. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a307d23bc496f860a9ff57bde0ca15336a5a2fd52a32e6e5ded54d751aa65d9585" name="a307d23bc496f860a9ff57bde0ca15336a5a2fd52a32e6e5ded54d751aa65d9585"></a>RTS_RADIO_MODE_TRANSMIT&#160;</td><td class="fielddoc"><p >Transmit mode. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

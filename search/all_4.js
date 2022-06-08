@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['preamble_5fhigh_0',['preamble_high',['../structrts__timings.html#a266a072f05e01e3bc92f641c32f1262c',1,'rts_timings']]],
-  ['preamble_5flow_1',['preamble_low',['../structrts__timings.html#ab95bec97e093ebc1937ecece873c28d7',1,'rts_timings']]]
+  ['enable_0',['enable',['../classRTSPulseOutput.html#a49ed9eaa66774a9ff42c0d9d717cf671',1,'RTSPulseOutput::enable()'],['../classRTSPulseSource.html#a2912c479e7d793621733e034b6df9dd2',1,'RTSPulseSource::enable()']]],
+  ['encryption_5fkey_1',['encryption_key',['../structrts__frame.html#a995b3e499dede20ddbbc72b46d9b19eb',1,'rts_frame']]]
 ];

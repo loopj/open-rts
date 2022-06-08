@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('structrts__remote__store.html',''); in
 <div class="header">
   <div class="summary">
 <a href="#related">Related Functions</a>  </div>
-  <div class="headertitle"><div class="title">rts_remote_store Struct Reference</div></div>
+  <div class="headertitle"><div class="title">rts_remote_store Struct Reference<div class="ingroups"><a class="el" href="group__c.html">C Library</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,48 +102,57 @@ $(document).ready(function(){initNavTree('structrts__remote__store.html',''); in
  <a href="structrts__remote__store.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="rts__remote__store_8h_source.html">rts_remote_store.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for rts_remote_store:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structrts__remote__store.png" usemap="#rts_5Fremote_5Fstore_map" alt=""/>
+  <map id="rts_5Fremote_5Fstore_map" name="rts_5Fremote_5Fstore_map">
+<area href="classRTSRemoteStore.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes." alt="RTSRemoteStore" shape="rect" coords="0,56,106,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="related" name="related"></a>
 Related Functions</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p >(Note that these are not member functions.) </p>
 </td></tr>
-<tr class="memitem:afd495bd856ec66c5f7b4dba72bc54ca6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#afd495bd856ec66c5f7b4dba72bc54ca6">rts_remote_store_set_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address, uint16_t rolling_code)</td></tr>
-<tr class="memdesc:afd495bd856ec66c5f7b4dba72bc54ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rolling code for this remote, create if doesn't exist.  <a href="structrts__remote__store.html#afd495bd856ec66c5f7b4dba72bc54ca6">More...</a><br /></td></tr>
-<tr class="separator:afd495bd856ec66c5f7b4dba72bc54ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab26b0afe0ab17f81af2a505ef4d05658"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#ab26b0afe0ab17f81af2a505ef4d05658">rts_remote_store_get_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
-<tr class="memdesc:ab26b0afe0ab17f81af2a505ef4d05658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rolling code for this remote.  <a href="structrts__remote__store.html#ab26b0afe0ab17f81af2a505ef4d05658">More...</a><br /></td></tr>
-<tr class="separator:ab26b0afe0ab17f81af2a505ef4d05658"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a558753287dc627e36b5216f5217e7177"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#a558753287dc627e36b5216f5217e7177">rts_remote_store_next_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
-<tr class="memdesc:a558753287dc627e36b5216f5217e7177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rolling code for this remote, then increment and persist.  <a href="structrts__remote__store.html#a558753287dc627e36b5216f5217e7177">More...</a><br /></td></tr>
-<tr class="separator:a558753287dc627e36b5216f5217e7177"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ecf66e04d8462b100b142cecc6a338d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#a6ecf66e04d8462b100b142cecc6a338d">rts_remote_store_known_remote</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
-<tr class="memdesc:a6ecf66e04d8462b100b142cecc6a338d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this is a known remote address.  <a href="structrts__remote__store.html#a6ecf66e04d8462b100b142cecc6a338d">More...</a><br /></td></tr>
-<tr class="separator:a6ecf66e04d8462b100b142cecc6a338d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93d26435ee32bda67ad0958cd08bfbfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#a93d26435ee32bda67ad0958cd08bfbfb">rts_remote_store_forget</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
-<tr class="memdesc:a93d26435ee32bda67ad0958cd08bfbfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget a specific remote.  <a href="structrts__remote__store.html#a93d26435ee32bda67ad0958cd08bfbfb">More...</a><br /></td></tr>
-<tr class="separator:a93d26435ee32bda67ad0958cd08bfbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba1b041180b813756605331bba63a006"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#aba1b041180b813756605331bba63a006">rts_remote_store_clear</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
-<tr class="memdesc:aba1b041180b813756605331bba63a006"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all remotes and rolling codes.  <a href="structrts__remote__store.html#aba1b041180b813756605331bba63a006">More...</a><br /></td></tr>
-<tr class="separator:aba1b041180b813756605331bba63a006"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55de60ac69a0b8576e52214fc51d22fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#a55de60ac69a0b8576e52214fc51d22fe">rts_remote_store_close</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
-<tr class="memdesc:a55de60ac69a0b8576e52214fc51d22fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free any resources allocated via a previous call to rts_remote_store_init*()  <a href="structrts__remote__store.html#a55de60ac69a0b8576e52214fc51d22fe">More...</a><br /></td></tr>
-<tr class="separator:a55de60ac69a0b8576e52214fc51d22fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52529ac5fcf5001a80dd19e3d490bf47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#a52529ac5fcf5001a80dd19e3d490bf47">rts_remote_store_init_memory</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
-<tr class="memdesc:a52529ac5fcf5001a80dd19e3d490bf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in memory.  <a href="structrts__remote__store.html#a52529ac5fcf5001a80dd19e3d490bf47">More...</a><br /></td></tr>
-<tr class="separator:a52529ac5fcf5001a80dd19e3d490bf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a947e08504299d8fe5812ec0c18a699c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#a947e08504299d8fe5812ec0c18a699c3">rts_remote_store_init_mmap</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, const char *filename)</td></tr>
-<tr class="memdesc:a947e08504299d8fe5812ec0c18a699c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in a memory-mapped file on POSIX systems.  <a href="structrts__remote__store.html#a947e08504299d8fe5812ec0c18a699c3">More...</a><br /></td></tr>
-<tr class="separator:a947e08504299d8fe5812ec0c18a699c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afefe1fed614ea5110fed6eb69d2d9cdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#afefe1fed614ea5110fed6eb69d2d9cdd">rts_remote_store_init_nvs</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
 <tr class="memdesc:afefe1fed614ea5110fed6eb69d2d9cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in ESP-IDF's NVS (Non-volatile storage) on ESP8266 and ESP32 devices.  <a href="structrts__remote__store.html#afefe1fed614ea5110fed6eb69d2d9cdd">More...</a><br /></td></tr>
 <tr class="separator:afefe1fed614ea5110fed6eb69d2d9cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a947e08504299d8fe5812ec0c18a699c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__remote__store.html#a947e08504299d8fe5812ec0c18a699c3">rts_remote_store_init_mmap</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, const char *filename)</td></tr>
+<tr class="memdesc:a947e08504299d8fe5812ec0c18a699c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in a memory-mapped file on POSIX systems.  <a href="structrts__remote__store.html#a947e08504299d8fe5812ec0c18a699c3">More...</a><br /></td></tr>
+<tr class="separator:a947e08504299d8fe5812ec0c18a699c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd495bd856ec66c5f7b4dba72bc54ca6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gafd495bd856ec66c5f7b4dba72bc54ca6">rts_remote_store_set_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address, uint16_t rolling_code)</td></tr>
+<tr class="memdesc:gafd495bd856ec66c5f7b4dba72bc54ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rolling code for this remote, create if doesn't exist.  <a href="group__c.html#gafd495bd856ec66c5f7b4dba72bc54ca6">More...</a><br /></td></tr>
+<tr class="separator:gafd495bd856ec66c5f7b4dba72bc54ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab26b0afe0ab17f81af2a505ef4d05658"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gab26b0afe0ab17f81af2a505ef4d05658">rts_remote_store_get_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
+<tr class="memdesc:gab26b0afe0ab17f81af2a505ef4d05658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rolling code for this remote.  <a href="group__c.html#gab26b0afe0ab17f81af2a505ef4d05658">More...</a><br /></td></tr>
+<tr class="separator:gab26b0afe0ab17f81af2a505ef4d05658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga558753287dc627e36b5216f5217e7177"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga558753287dc627e36b5216f5217e7177">rts_remote_store_next_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
+<tr class="memdesc:ga558753287dc627e36b5216f5217e7177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rolling code for this remote, then increment and persist.  <a href="group__c.html#ga558753287dc627e36b5216f5217e7177">More...</a><br /></td></tr>
+<tr class="separator:ga558753287dc627e36b5216f5217e7177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ecf66e04d8462b100b142cecc6a338d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga6ecf66e04d8462b100b142cecc6a338d">rts_remote_store_known_remote</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
+<tr class="memdesc:ga6ecf66e04d8462b100b142cecc6a338d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this is a known remote address.  <a href="group__c.html#ga6ecf66e04d8462b100b142cecc6a338d">More...</a><br /></td></tr>
+<tr class="separator:ga6ecf66e04d8462b100b142cecc6a338d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93d26435ee32bda67ad0958cd08bfbfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga93d26435ee32bda67ad0958cd08bfbfb">rts_remote_store_forget</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
+<tr class="memdesc:ga93d26435ee32bda67ad0958cd08bfbfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget a specific remote.  <a href="group__c.html#ga93d26435ee32bda67ad0958cd08bfbfb">More...</a><br /></td></tr>
+<tr class="separator:ga93d26435ee32bda67ad0958cd08bfbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba1b041180b813756605331bba63a006"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gaba1b041180b813756605331bba63a006">rts_remote_store_clear</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
+<tr class="memdesc:gaba1b041180b813756605331bba63a006"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all remotes and rolling codes.  <a href="group__c.html#gaba1b041180b813756605331bba63a006">More...</a><br /></td></tr>
+<tr class="separator:gaba1b041180b813756605331bba63a006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55de60ac69a0b8576e52214fc51d22fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga55de60ac69a0b8576e52214fc51d22fe">rts_remote_store_close</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
+<tr class="memdesc:ga55de60ac69a0b8576e52214fc51d22fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free any resources allocated via a previous call to rts_remote_store_init*()  <a href="group__c.html#ga55de60ac69a0b8576e52214fc51d22fe">More...</a><br /></td></tr>
+<tr class="separator:ga55de60ac69a0b8576e52214fc51d22fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52529ac5fcf5001a80dd19e3d490bf47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga52529ac5fcf5001a80dd19e3d490bf47">rts_remote_store_init_memory</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
+<tr class="memdesc:ga52529ac5fcf5001a80dd19e3d490bf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in memory.  <a href="group__c.html#ga52529ac5fcf5001a80dd19e3d490bf47">More...</a><br /></td></tr>
+<tr class="separator:ga52529ac5fcf5001a80dd19e3d490bf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Provides an interface for a datastore which contains details about remote controls and rolling codes. </p>
 <p >Implementations must define the get_code, set_code, forget, and clear functions and set the function pointers in the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> struct. </p>
 </div><h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="afd495bd856ec66c5f7b4dba72bc54ca6" name="afd495bd856ec66c5f7b4dba72bc54ca6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd495bd856ec66c5f7b4dba72bc54ca6">&#9670;&nbsp;</a></span>rts_remote_store_set_code()</h2>
+<a id="afefe1fed614ea5110fed6eb69d2d9cdd" name="afefe1fed614ea5110fed6eb69d2d9cdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefe1fed614ea5110fed6eb69d2d9cdd">&#9670;&nbsp;</a></span>rts_remote_store_init_nvs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,241 +161,7 @@ Related Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void rts_remote_store_set_code </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
-          <td class="paramname"><em>store</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>remote_address</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>rolling_code</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set the rolling code for this remote, create if doesn't exist. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> struct to set the code to </td></tr>
-    <tr><td class="paramname">remote_address</td><td>the address of the remote control </td></tr>
-    <tr><td class="paramname">rolling_code</td><td>the rolling code to set </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab26b0afe0ab17f81af2a505ef4d05658" name="ab26b0afe0ab17f81af2a505ef4d05658"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab26b0afe0ab17f81af2a505ef4d05658">&#9670;&nbsp;</a></span>rts_remote_store_get_code()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t rts_remote_store_get_code </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
-          <td class="paramname"><em>store</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>remote_address</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the rolling code for this remote. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> struct to get the code from </td></tr>
-    <tr><td class="paramname">remote_address</td><td>the address of the remote control</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the rolling code for this remote </dd></dl>
-
-</div>
-</div>
-<a id="a558753287dc627e36b5216f5217e7177" name="a558753287dc627e36b5216f5217e7177"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a558753287dc627e36b5216f5217e7177">&#9670;&nbsp;</a></span>rts_remote_store_next_code()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t rts_remote_store_next_code </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
-          <td class="paramname"><em>store</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>remote_address</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the rolling code for this remote, then increment and persist. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> struct to get the code from </td></tr>
-    <tr><td class="paramname">remote_address</td><td>the address of the remote control</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the rolling code for this remote </dd></dl>
-
-</div>
-</div>
-<a id="a6ecf66e04d8462b100b142cecc6a338d" name="a6ecf66e04d8462b100b142cecc6a338d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ecf66e04d8462b100b142cecc6a338d">&#9670;&nbsp;</a></span>rts_remote_store_known_remote()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool rts_remote_store_known_remote </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
-          <td class="paramname"><em>store</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>remote_address</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check if this is a known remote address. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> struct to check in </td></tr>
-    <tr><td class="paramname">remote_address</td><td>the address of the remote control </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a93d26435ee32bda67ad0958cd08bfbfb" name="a93d26435ee32bda67ad0958cd08bfbfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93d26435ee32bda67ad0958cd08bfbfb">&#9670;&nbsp;</a></span>rts_remote_store_forget()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_remote_store_forget </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
-          <td class="paramname"><em>store</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>remote_address</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Forget a specific remote. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> struct </td></tr>
-    <tr><td class="paramname">remote_address</td><td>the address of the remote control to forget </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aba1b041180b813756605331bba63a006" name="aba1b041180b813756605331bba63a006"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba1b041180b813756605331bba63a006">&#9670;&nbsp;</a></span>rts_remote_store_clear()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_remote_store_clear </td>
+          <td class="memname">void rts_remote_store_init_nvs </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
           <td class="paramname"><em>store</em></td><td>)</td>
@@ -400,75 +175,8 @@ Related Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Clear all remotes and rolling codes. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> struct to clear </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a55de60ac69a0b8576e52214fc51d22fe" name="a55de60ac69a0b8576e52214fc51d22fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55de60ac69a0b8576e52214fc51d22fe">&#9670;&nbsp;</a></span>rts_remote_store_close()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_remote_store_close </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
-          <td class="paramname"><em>store</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Close and free any resources allocated via a previous call to rts_remote_store_init*() </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> to close </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a52529ac5fcf5001a80dd19e3d490bf47" name="a52529ac5fcf5001a80dd19e3d490bf47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52529ac5fcf5001a80dd19e3d490bf47">&#9670;&nbsp;</a></span>rts_remote_store_init_memory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_remote_store_init_memory </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
-          <td class="paramname"><em>store</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in memory. </p>
+<p>Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in ESP-IDF's NVS (Non-volatile storage) on ESP8266 and ESP32 devices. </p>
+<dl class="section note"><dt>Note</dt><dd>Only available on ESP8266/ESP32 devices</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> struct to initialize </td></tr>
@@ -523,45 +231,11 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afefe1fed614ea5110fed6eb69d2d9cdd" name="afefe1fed614ea5110fed6eb69d2d9cdd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afefe1fed614ea5110fed6eb69d2d9cdd">&#9670;&nbsp;</a></span>rts_remote_store_init_nvs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_remote_store_init_nvs </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *&#160;</td>
-          <td class="paramname"><em>store</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in ESP-IDF's NVS (Non-volatile storage) on ESP8266 and ESP32 devices. </p>
-<dl class="section note"><dt>Note</dt><dd>Only available on ESP8266/ESP32 devices</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">store</td><td>the <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> struct to initialize </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/<a class="el" href="rts__remote__store_8h_source.html">rts_remote_store.h</a></li>
+<li>src/espidf/<a class="el" href="rts__remote__store__nvs_8h_source.html">rts_remote_store_nvs.h</a></li>
+<li>src/linux/<a class="el" href="rts__remote__store__mmap_8h_source.html">rts_remote_store_mmap.h</a></li>
 <li>src/<a class="el" href="rts__remote__store__memory_8h_source.html">rts_remote_store_memory.h</a></li>
-<li>src/<a class="el" href="rts__remote__store__nvs_8h_source.html">rts_remote_store_nvs.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

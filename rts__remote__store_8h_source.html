@@ -95,75 +95,78 @@ $(document).ready(function(){initNavTree('rts__remote__store_8h_source.html','')
   <div class="headertitle"><div class="title">rts_remote_store.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef RTS_REMOTE_STORE_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define RTS_REMOTE_STORE_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// TODO: Centralize error codes</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">enum</span> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    RTS_ERR_NONE             = 0,</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    RTS_ERR_REMOTE_NOT_FOUND = -1,</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>};</div>
+<a href="rts__remote__store_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef RTS_REMOTE_STORE_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define RTS_REMOTE_STORE_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structrts__remote__store.html">   20</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    int8_t (*get_code)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address,</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                       uint16_t *code);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    int8_t (*set_code)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address,</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                       uint16_t code);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    int8_t (*forget)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    int8_t (*clear)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    void (*close)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">union </span>{</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> *user_data_ptr;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">int</span> user_data_int;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    };</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// TODO: Centralize error codes</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    RTS_ERR_NONE             = 0,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    RTS_ERR_REMOTE_NOT_FOUND = -1,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structrts__remote__store.html">   26</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    int8_t (*get_code)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                       uint16_t *code);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    int8_t (*set_code)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                       uint16_t code);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    int8_t (*forget)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    int8_t (*clear)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    void (*close)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="structrts__remote__store.html#afd495bd856ec66c5f7b4dba72bc54ca6">rts_remote_store_set_code</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                               uint32_t remote_address, uint16_t rolling_code);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>uint16_t <a class="code hl_function" href="structrts__remote__store.html#ab26b0afe0ab17f81af2a505ef4d05658">rts_remote_store_get_code</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                                   uint32_t remote_address);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>uint16_t <a class="code hl_function" href="structrts__remote__store.html#a558753287dc627e36b5216f5217e7177">rts_remote_store_next_code</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                                    uint32_t remote_address);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keywordtype">bool</span> <a class="code hl_function" href="structrts__remote__store.html#a6ecf66e04d8462b100b142cecc6a338d">rts_remote_store_known_remote</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                                   uint32_t remote_address);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keywordtype">void</span> <a class="code hl_function" href="structrts__remote__store.html#a93d26435ee32bda67ad0958cd08bfbfb">rts_remote_store_forget</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                             uint32_t remote_address);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keywordtype">void</span> <a class="code hl_function" href="structrts__remote__store.html#aba1b041180b813756605331bba63a006">rts_remote_store_clear</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keywordtype">void</span> <a class="code hl_function" href="structrts__remote__store.html#a55de60ac69a0b8576e52214fc51d22fe">rts_remote_store_close</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#endif </span><span class="comment">// RTS_REMOTE_STORE_H</span></div>
-<div class="ttc" id="astructrts__remote__store_html"><div class="ttname"><a href="structrts__remote__store.html">rts_remote_store</a></div><div class="ttdoc">Provides an interface for a datastore which contains details about remote controls and rolling codes.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.h:20</div></div>
-<div class="ttc" id="astructrts__remote__store_html_a558753287dc627e36b5216f5217e7177"><div class="ttname"><a href="structrts__remote__store.html#a558753287dc627e36b5216f5217e7177">rts_remote_store::rts_remote_store_next_code</a></div><div class="ttdeci">uint16_t rts_remote_store_next_code(struct rts_remote_store *store, uint32_t remote_address)</div><div class="ttdoc">Get the rolling code for this remote, then increment and persist.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:33</div></div>
-<div class="ttc" id="astructrts__remote__store_html_a55de60ac69a0b8576e52214fc51d22fe"><div class="ttname"><a href="structrts__remote__store.html#a55de60ac69a0b8576e52214fc51d22fe">rts_remote_store::rts_remote_store_close</a></div><div class="ttdeci">void rts_remote_store_close(struct rts_remote_store *store)</div><div class="ttdoc">Close and free any resources allocated via a previous call to rts_remote_store_init*()</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:75</div></div>
-<div class="ttc" id="astructrts__remote__store_html_a6ecf66e04d8462b100b142cecc6a338d"><div class="ttname"><a href="structrts__remote__store.html#a6ecf66e04d8462b100b142cecc6a338d">rts_remote_store::rts_remote_store_known_remote</a></div><div class="ttdeci">bool rts_remote_store_known_remote(struct rts_remote_store *store, uint32_t remote_address)</div><div class="ttdoc">Check if this is a known remote address.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:42</div></div>
-<div class="ttc" id="astructrts__remote__store_html_a93d26435ee32bda67ad0958cd08bfbfb"><div class="ttname"><a href="structrts__remote__store.html#a93d26435ee32bda67ad0958cd08bfbfb">rts_remote_store::rts_remote_store_forget</a></div><div class="ttdeci">void rts_remote_store_forget(struct rts_remote_store *store, uint32_t remote_address)</div><div class="ttdoc">Forget a specific remote.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:54</div></div>
-<div class="ttc" id="astructrts__remote__store_html_ab26b0afe0ab17f81af2a505ef4d05658"><div class="ttname"><a href="structrts__remote__store.html#ab26b0afe0ab17f81af2a505ef4d05658">rts_remote_store::rts_remote_store_get_code</a></div><div class="ttdeci">uint16_t rts_remote_store_get_code(struct rts_remote_store *store, uint32_t remote_address)</div><div class="ttdoc">Get the rolling code for this remote.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:16</div></div>
-<div class="ttc" id="astructrts__remote__store_html_aba1b041180b813756605331bba63a006"><div class="ttname"><a href="structrts__remote__store.html#aba1b041180b813756605331bba63a006">rts_remote_store::rts_remote_store_clear</a></div><div class="ttdeci">void rts_remote_store_clear(struct rts_remote_store *store)</div><div class="ttdoc">Clear all remotes and rolling codes.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:65</div></div>
-<div class="ttc" id="astructrts__remote__store_html_afd495bd856ec66c5f7b4dba72bc54ca6"><div class="ttname"><a href="structrts__remote__store.html#afd495bd856ec66c5f7b4dba72bc54ca6">rts_remote_store::rts_remote_store_set_code</a></div><div class="ttdeci">void rts_remote_store_set_code(struct rts_remote_store *store, uint32_t remote_address, uint16_t rolling_code)</div><div class="ttdoc">Set the rolling code for this remote, create if doesn't exist.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:5</div></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordtype">void</span> *user_data_ptr;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">int</span> user_data_int;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    };</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__c.html#gafd495bd856ec66c5f7b4dba72bc54ca6">rts_remote_store_set_code</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                               uint32_t remote_address, uint16_t rolling_code);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>uint16_t <a class="code hl_function" href="group__c.html#gab26b0afe0ab17f81af2a505ef4d05658">rts_remote_store_get_code</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                                   uint32_t remote_address);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>uint16_t <a class="code hl_function" href="group__c.html#ga558753287dc627e36b5216f5217e7177">rts_remote_store_next_code</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                                    uint32_t remote_address);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keywordtype">bool</span> <a class="code hl_function" href="group__c.html#ga6ecf66e04d8462b100b142cecc6a338d">rts_remote_store_known_remote</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                   uint32_t remote_address);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__c.html#ga93d26435ee32bda67ad0958cd08bfbfb">rts_remote_store_forget</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                             uint32_t remote_address);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__c.html#gaba1b041180b813756605331bba63a006">rts_remote_store_clear</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__c.html#ga55de60ac69a0b8576e52214fc51d22fe">rts_remote_store_close</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__remote__store.html">rts_remote_store</a> *store);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#endif </span><span class="comment">// RTS_REMOTE_STORE_H</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="ttc" id="agroup__c_html_ga558753287dc627e36b5216f5217e7177"><div class="ttname"><a href="group__c.html#ga558753287dc627e36b5216f5217e7177">rts_remote_store::rts_remote_store_next_code</a></div><div class="ttdeci">uint16_t rts_remote_store_next_code(struct rts_remote_store *store, uint32_t remote_address)</div><div class="ttdoc">Get the rolling code for this remote, then increment and persist.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:33</div></div>
+<div class="ttc" id="agroup__c_html_ga55de60ac69a0b8576e52214fc51d22fe"><div class="ttname"><a href="group__c.html#ga55de60ac69a0b8576e52214fc51d22fe">rts_remote_store::rts_remote_store_close</a></div><div class="ttdeci">void rts_remote_store_close(struct rts_remote_store *store)</div><div class="ttdoc">Close and free any resources allocated via a previous call to rts_remote_store_init*()</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:75</div></div>
+<div class="ttc" id="agroup__c_html_ga6ecf66e04d8462b100b142cecc6a338d"><div class="ttname"><a href="group__c.html#ga6ecf66e04d8462b100b142cecc6a338d">rts_remote_store::rts_remote_store_known_remote</a></div><div class="ttdeci">bool rts_remote_store_known_remote(struct rts_remote_store *store, uint32_t remote_address)</div><div class="ttdoc">Check if this is a known remote address.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:42</div></div>
+<div class="ttc" id="agroup__c_html_ga93d26435ee32bda67ad0958cd08bfbfb"><div class="ttname"><a href="group__c.html#ga93d26435ee32bda67ad0958cd08bfbfb">rts_remote_store::rts_remote_store_forget</a></div><div class="ttdeci">void rts_remote_store_forget(struct rts_remote_store *store, uint32_t remote_address)</div><div class="ttdoc">Forget a specific remote.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:54</div></div>
+<div class="ttc" id="agroup__c_html_gab26b0afe0ab17f81af2a505ef4d05658"><div class="ttname"><a href="group__c.html#gab26b0afe0ab17f81af2a505ef4d05658">rts_remote_store::rts_remote_store_get_code</a></div><div class="ttdeci">uint16_t rts_remote_store_get_code(struct rts_remote_store *store, uint32_t remote_address)</div><div class="ttdoc">Get the rolling code for this remote.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:16</div></div>
+<div class="ttc" id="agroup__c_html_gaba1b041180b813756605331bba63a006"><div class="ttname"><a href="group__c.html#gaba1b041180b813756605331bba63a006">rts_remote_store::rts_remote_store_clear</a></div><div class="ttdeci">void rts_remote_store_clear(struct rts_remote_store *store)</div><div class="ttdoc">Clear all remotes and rolling codes.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:65</div></div>
+<div class="ttc" id="agroup__c_html_gafd495bd856ec66c5f7b4dba72bc54ca6"><div class="ttname"><a href="group__c.html#gafd495bd856ec66c5f7b4dba72bc54ca6">rts_remote_store::rts_remote_store_set_code</a></div><div class="ttdeci">void rts_remote_store_set_code(struct rts_remote_store *store, uint32_t remote_address, uint16_t rolling_code)</div><div class="ttdoc">Set the rolling code for this remote, create if doesn't exist.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.c:5</div></div>
+<div class="ttc" id="astructrts__remote__store_html"><div class="ttname"><a href="structrts__remote__store.html">rts_remote_store</a></div><div class="ttdoc">Provides an interface for a datastore which contains details about remote controls and rolling codes.</div><div class="ttdef"><b>Definition:</b> rts_remote_store.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>rts_remote_store.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="rts__remote__store_8h.html">rts_remote_store.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

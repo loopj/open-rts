@@ -95,54 +95,57 @@ $(document).ready(function(){initNavTree('rts__pulse__output_8h_source.html','')
   <div class="headertitle"><div class="title">rts_pulse_output.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef RTS_PULSE_OUTPUT_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define RTS_PULSE_OUTPUT_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structrts__pulse__output.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    void (*enable)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    void (*disable)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    void (*send_pulse)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, <span class="keywordtype">bool</span> state,</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                       uint32_t micros);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    void (*close)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">union </span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> *user_data_ptr;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">int</span> user_data_int;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    };</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
+<a href="rts__pulse__output_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef RTS_PULSE_OUTPUT_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define RTS_PULSE_OUTPUT_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structrts__pulse__output.html">   23</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    void (*enable)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    void (*disable)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    void (*send_pulse)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, <span class="keywordtype">bool</span> state,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                       uint32_t micros);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    void (*close)(<span class="keyword">struct </span><a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> <a class="code hl_function" href="structrts__pulse__output.html#a25ffde10f6d05c6ee10a72cba20661b7">rts_pulse_output_enable</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> <a class="code hl_function" href="structrts__pulse__output.html#ab13f5dc4c1590c8b62ee99a39f555a97">rts_pulse_output_disable</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> <a class="code hl_function" href="structrts__pulse__output.html#a077cadffb99c505fc5c338975770cf05">rts_pulse_output_send_pulse</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                                 <span class="keywordtype">bool</span> state, uint32_t micros);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> <a class="code hl_function" href="structrts__pulse__output.html#a828fc88c73c452a2ea0c2c32f77508da">rts_pulse_output_close</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif </span><span class="comment">// RTS_PULSE_OUTPUT_H</span></div>
-<div class="ttc" id="astructrts__pulse__output_html"><div class="ttname"><a href="structrts__pulse__output.html">rts_pulse_output</a></div><div class="ttdoc">Provides an interface for an output of RTS pulses, eg a GPIO or radio.</div><div class="ttdef"><b>Definition:</b> rts_pulse_output.h:17</div></div>
-<div class="ttc" id="astructrts__pulse__output_html_a077cadffb99c505fc5c338975770cf05"><div class="ttname"><a href="structrts__pulse__output.html#a077cadffb99c505fc5c338975770cf05">rts_pulse_output::rts_pulse_output_send_pulse</a></div><div class="ttdeci">void rts_pulse_output_send_pulse(struct rts_pulse_output *pulse_output, bool state, uint32_t micros)</div><div class="ttdoc">Instruct the rts_pulse_output to output a pulse.</div><div class="ttdef"><b>Definition:</b> rts_pulse_output.c:25</div></div>
-<div class="ttc" id="astructrts__pulse__output_html_a25ffde10f6d05c6ee10a72cba20661b7"><div class="ttname"><a href="structrts__pulse__output.html#a25ffde10f6d05c6ee10a72cba20661b7">rts_pulse_output::rts_pulse_output_enable</a></div><div class="ttdeci">void rts_pulse_output_enable(struct rts_pulse_output *pulse_output)</div><div class="ttdoc">Enable the pulse output.</div><div class="ttdef"><b>Definition:</b> rts_pulse_output.c:5</div></div>
-<div class="ttc" id="astructrts__pulse__output_html_a828fc88c73c452a2ea0c2c32f77508da"><div class="ttname"><a href="structrts__pulse__output.html#a828fc88c73c452a2ea0c2c32f77508da">rts_pulse_output::rts_pulse_output_close</a></div><div class="ttdeci">void rts_pulse_output_close(struct rts_pulse_output *pulse_output)</div><div class="ttdoc">Close and free resources allocated via a previous call to rts_pulse_output_init_*()</div><div class="ttdef"><b>Definition:</b> rts_pulse_output.c:36</div></div>
-<div class="ttc" id="astructrts__pulse__output_html_ab13f5dc4c1590c8b62ee99a39f555a97"><div class="ttname"><a href="structrts__pulse__output.html#ab13f5dc4c1590c8b62ee99a39f555a97">rts_pulse_output::rts_pulse_output_disable</a></div><div class="ttdeci">void rts_pulse_output_disable(struct rts_pulse_output *pulse_output)</div><div class="ttdoc">Disable the pulse output.</div><div class="ttdef"><b>Definition:</b> rts_pulse_output.c:15</div></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">void</span> *user_data_ptr;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">int</span> user_data_int;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    };</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__c.html#ga25ffde10f6d05c6ee10a72cba20661b7">rts_pulse_output_enable</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__c.html#gab13f5dc4c1590c8b62ee99a39f555a97">rts_pulse_output_disable</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__c.html#ga077cadffb99c505fc5c338975770cf05">rts_pulse_output_send_pulse</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                                 <span class="keywordtype">bool</span> state, uint32_t micros);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__c.html#ga828fc88c73c452a2ea0c2c32f77508da">rts_pulse_output_close</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#endif </span><span class="comment">// RTS_PULSE_OUTPUT_H</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="ttc" id="agroup__c_html_ga077cadffb99c505fc5c338975770cf05"><div class="ttname"><a href="group__c.html#ga077cadffb99c505fc5c338975770cf05">rts_pulse_output::rts_pulse_output_send_pulse</a></div><div class="ttdeci">void rts_pulse_output_send_pulse(struct rts_pulse_output *pulse_output, bool state, uint32_t micros)</div><div class="ttdoc">Instruct the rts_pulse_output to output a pulse.</div><div class="ttdef"><b>Definition:</b> rts_pulse_output.c:25</div></div>
+<div class="ttc" id="agroup__c_html_ga25ffde10f6d05c6ee10a72cba20661b7"><div class="ttname"><a href="group__c.html#ga25ffde10f6d05c6ee10a72cba20661b7">rts_pulse_output::rts_pulse_output_enable</a></div><div class="ttdeci">void rts_pulse_output_enable(struct rts_pulse_output *pulse_output)</div><div class="ttdoc">Enable the pulse output.</div><div class="ttdef"><b>Definition:</b> rts_pulse_output.c:5</div></div>
+<div class="ttc" id="agroup__c_html_ga828fc88c73c452a2ea0c2c32f77508da"><div class="ttname"><a href="group__c.html#ga828fc88c73c452a2ea0c2c32f77508da">rts_pulse_output::rts_pulse_output_close</a></div><div class="ttdeci">void rts_pulse_output_close(struct rts_pulse_output *pulse_output)</div><div class="ttdoc">Close and free resources allocated via a previous call to rts_pulse_output_init_*()</div><div class="ttdef"><b>Definition:</b> rts_pulse_output.c:36</div></div>
+<div class="ttc" id="agroup__c_html_gab13f5dc4c1590c8b62ee99a39f555a97"><div class="ttname"><a href="group__c.html#gab13f5dc4c1590c8b62ee99a39f555a97">rts_pulse_output::rts_pulse_output_disable</a></div><div class="ttdeci">void rts_pulse_output_disable(struct rts_pulse_output *pulse_output)</div><div class="ttdoc">Disable the pulse output.</div><div class="ttdef"><b>Definition:</b> rts_pulse_output.c:15</div></div>
+<div class="ttc" id="astructrts__pulse__output_html"><div class="ttname"><a href="structrts__pulse__output.html">rts_pulse_output</a></div><div class="ttdoc">Provides an interface for an output of RTS pulses, eg a GPIO or radio.</div><div class="ttdef"><b>Definition:</b> rts_pulse_output.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>rts_pulse_output.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="rts__pulse__output_8h.html">rts_pulse_output.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('structrts__pulse__output.html',''); in
 <div class="header">
   <div class="summary">
 <a href="#related">Related Functions</a>  </div>
-  <div class="headertitle"><div class="title">rts_pulse_output Struct Reference</div></div>
+  <div class="headertitle"><div class="title">rts_pulse_output Struct Reference<div class="ingroups"><a class="el" href="group__c.html">C Library</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,189 +102,44 @@ $(document).ready(function(){initNavTree('structrts__pulse__output.html',''); in
  <a href="structrts__pulse__output.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="rts__pulse__output_8h_source.html">rts_pulse_output.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for rts_pulse_output:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structrts__pulse__output.png" usemap="#rts_5Fpulse_5Foutput_map" alt=""/>
+  <map id="rts_5Fpulse_5Foutput_map" name="rts_5Fpulse_5Foutput_map">
+<area href="classRTSPulseOutput.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio." alt="RTSPulseOutput" shape="rect" coords="0,56,104,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="related" name="related"></a>
 Related Functions</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p >(Note that these are not member functions.) </p>
 </td></tr>
-<tr class="memitem:a25ffde10f6d05c6ee10a72cba20661b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__output.html#a25ffde10f6d05c6ee10a72cba20661b7">rts_pulse_output_enable</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
-<tr class="memdesc:a25ffde10f6d05c6ee10a72cba20661b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the pulse output.  <a href="structrts__pulse__output.html#a25ffde10f6d05c6ee10a72cba20661b7">More...</a><br /></td></tr>
-<tr class="separator:a25ffde10f6d05c6ee10a72cba20661b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab13f5dc4c1590c8b62ee99a39f555a97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__output.html#ab13f5dc4c1590c8b62ee99a39f555a97">rts_pulse_output_disable</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
-<tr class="memdesc:ab13f5dc4c1590c8b62ee99a39f555a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the pulse output.  <a href="structrts__pulse__output.html#ab13f5dc4c1590c8b62ee99a39f555a97">More...</a><br /></td></tr>
-<tr class="separator:ab13f5dc4c1590c8b62ee99a39f555a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a077cadffb99c505fc5c338975770cf05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__output.html#a077cadffb99c505fc5c338975770cf05">rts_pulse_output_send_pulse</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, bool state, uint32_t micros)</td></tr>
-<tr class="memdesc:a077cadffb99c505fc5c338975770cf05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> to output a pulse.  <a href="structrts__pulse__output.html#a077cadffb99c505fc5c338975770cf05">More...</a><br /></td></tr>
-<tr class="separator:a077cadffb99c505fc5c338975770cf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a828fc88c73c452a2ea0c2c32f77508da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__output.html#a828fc88c73c452a2ea0c2c32f77508da">rts_pulse_output_close</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
-<tr class="memdesc:a828fc88c73c452a2ea0c2c32f77508da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free resources allocated via a previous call to rts_pulse_output_init_*()  <a href="structrts__pulse__output.html#a828fc88c73c452a2ea0c2c32f77508da">More...</a><br /></td></tr>
-<tr class="separator:a828fc88c73c452a2ea0c2c32f77508da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6c20b47f3c8f0bd80492edbb122e905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__output.html#af6c20b47f3c8f0bd80492edbb122e905">rts_pulse_output_init_espidf_gpio</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, uint8_t data_pin)</td></tr>
 <tr class="memdesc:af6c20b47f3c8f0bd80492edbb122e905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> which sends pulses to the specified ESP-IDF GPIO pin.  <a href="structrts__pulse__output.html#af6c20b47f3c8f0bd80492edbb122e905">More...</a><br /></td></tr>
 <tr class="separator:af6c20b47f3c8f0bd80492edbb122e905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a534578efdd276bbda622e2bc1a4e2440"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__output.html#a534578efdd276bbda622e2bc1a4e2440">rts_pulse_output_init_gpiod</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, char *device, uint8_t data_pin)</td></tr>
 <tr class="memdesc:a534578efdd276bbda622e2bc1a4e2440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> which sends pulses to the specified Linux gpiod device.  <a href="structrts__pulse__output.html#a534578efdd276bbda622e2bc1a4e2440">More...</a><br /></td></tr>
 <tr class="separator:a534578efdd276bbda622e2bc1a4e2440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25ffde10f6d05c6ee10a72cba20661b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga25ffde10f6d05c6ee10a72cba20661b7">rts_pulse_output_enable</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
+<tr class="memdesc:ga25ffde10f6d05c6ee10a72cba20661b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the pulse output.  <a href="group__c.html#ga25ffde10f6d05c6ee10a72cba20661b7">More...</a><br /></td></tr>
+<tr class="separator:ga25ffde10f6d05c6ee10a72cba20661b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab13f5dc4c1590c8b62ee99a39f555a97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gab13f5dc4c1590c8b62ee99a39f555a97">rts_pulse_output_disable</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
+<tr class="memdesc:gab13f5dc4c1590c8b62ee99a39f555a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the pulse output.  <a href="group__c.html#gab13f5dc4c1590c8b62ee99a39f555a97">More...</a><br /></td></tr>
+<tr class="separator:gab13f5dc4c1590c8b62ee99a39f555a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga077cadffb99c505fc5c338975770cf05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga077cadffb99c505fc5c338975770cf05">rts_pulse_output_send_pulse</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, bool state, uint32_t micros)</td></tr>
+<tr class="memdesc:ga077cadffb99c505fc5c338975770cf05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> to output a pulse.  <a href="group__c.html#ga077cadffb99c505fc5c338975770cf05">More...</a><br /></td></tr>
+<tr class="separator:ga077cadffb99c505fc5c338975770cf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga828fc88c73c452a2ea0c2c32f77508da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga828fc88c73c452a2ea0c2c32f77508da">rts_pulse_output_close</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
+<tr class="memdesc:ga828fc88c73c452a2ea0c2c32f77508da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free resources allocated via a previous call to rts_pulse_output_init_*()  <a href="group__c.html#ga828fc88c73c452a2ea0c2c32f77508da">More...</a><br /></td></tr>
+<tr class="separator:ga828fc88c73c452a2ea0c2c32f77508da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Provides an interface for an output of RTS pulses, eg a GPIO or radio. </p>
 <p >Bundled implementations are provided for Linux/Raspberry Pi gpiod (<a class="el" href="structrts__pulse__output.html#a534578efdd276bbda622e2bc1a4e2440" title="Initialize an rts_pulse_output which sends pulses to the specified Linux gpiod device.">rts_pulse_output_init_gpiod</a>) and ESP-IDF GPIO (<a class="el" href="structrts__pulse__output.html#af6c20b47f3c8f0bd80492edbb122e905" title="Initialize an rts_pulse_output which sends pulses to the specified ESP-IDF GPIO pin.">rts_pulse_output_init_espidf_gpio</a>).</p>
 <p >Implementations must define the <code>enable</code>, <code>disable</code>, and <code>send_pulse</code> functions and set the function pointers in the <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> struct. </p>
 </div><h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a25ffde10f6d05c6ee10a72cba20661b7" name="a25ffde10f6d05c6ee10a72cba20661b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25ffde10f6d05c6ee10a72cba20661b7">&#9670;&nbsp;</a></span>rts_pulse_output_enable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_pulse_output_enable </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *&#160;</td>
-          <td class="paramname"><em>pulse_output</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enable the pulse output. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pulse_output</td><td>the <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> struct to enable </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab13f5dc4c1590c8b62ee99a39f555a97" name="ab13f5dc4c1590c8b62ee99a39f555a97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab13f5dc4c1590c8b62ee99a39f555a97">&#9670;&nbsp;</a></span>rts_pulse_output_disable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_pulse_output_disable </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *&#160;</td>
-          <td class="paramname"><em>pulse_output</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Disable the pulse output. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pulse_output</td><td>the <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> struct to disable </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a077cadffb99c505fc5c338975770cf05" name="a077cadffb99c505fc5c338975770cf05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a077cadffb99c505fc5c338975770cf05">&#9670;&nbsp;</a></span>rts_pulse_output_send_pulse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_pulse_output_send_pulse </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *&#160;</td>
-          <td class="paramname"><em>pulse_output</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>micros</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Instruct the <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> to output a pulse. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pulse_output</td><td>the <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> struct </td></tr>
-    <tr><td class="paramname">state</td><td>boolean pulse logic state, true = HIGH, false = LOW </td></tr>
-    <tr><td class="paramname">micros</td><td>the time the pulse was in this state, in microseconds </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a828fc88c73c452a2ea0c2c32f77508da" name="a828fc88c73c452a2ea0c2c32f77508da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a828fc88c73c452a2ea0c2c32f77508da">&#9670;&nbsp;</a></span>rts_pulse_output_close()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_pulse_output_close </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *&#160;</td>
-          <td class="paramname"><em>pulse_output</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Close and free resources allocated via a previous call to rts_pulse_output_init_*() </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pulse_output</td><td>the <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> to close </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="af6c20b47f3c8f0bd80492edbb122e905" name="af6c20b47f3c8f0bd80492edbb122e905"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af6c20b47f3c8f0bd80492edbb122e905">&#9670;&nbsp;</a></span>rts_pulse_output_init_espidf_gpio()</h2>
 
@@ -373,7 +228,7 @@ Related Functions</h2></td></tr>
 
 <p>Initialize an <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> which sends pulses to the specified Linux gpiod device. </p>
 <dl class="section note"><dt>Note</dt><dd><ul>
-<li>Can be enabled on Linux systems by defining the <code>HAS_GPIOD</code> macro</li>
+<li>Can be enabled on Linux systems by defining the <code>OPENRTS_HAS_GPIOD</code> macro</li>
 <li>Make sure the libgpiod-dev (&gt;= 1.5) package is available on your system, eg <code>sudo apt install libgpiod-dev</code></li>
 <li>Don't forget to link libgpiod when building (<code>-lgpiod</code>)</li>
 </ul>
@@ -391,8 +246,8 @@ Related Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/<a class="el" href="rts__pulse__output_8h_source.html">rts_pulse_output.h</a></li>
-<li>src/<a class="el" href="rts__pulse__output__espidf__gpio_8h_source.html">rts_pulse_output_espidf_gpio.h</a></li>
-<li>src/<a class="el" href="rts__pulse__output__gpiod_8h_source.html">rts_pulse_output_gpiod.h</a></li>
+<li>src/espidf/<a class="el" href="rts__pulse__output__espidf__gpio_8h_source.html">rts_pulse_output_espidf_gpio.h</a></li>
+<li>src/linux/<a class="el" href="rts__pulse__output__gpiod_8h_source.html">rts_pulse_output_gpiod.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

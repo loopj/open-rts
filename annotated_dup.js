@@ -8,5 +8,13 @@ var annotated_dup =
     [ "rts_receiver", "structrts__receiver.html", "structrts__receiver" ],
     [ "rts_remote", "structrts__remote.html", "structrts__remote" ],
     [ "rts_remote_store", "structrts__remote__store.html", "structrts__remote__store" ],
-    [ "rts_timings", "structrts__timings.html", "structrts__timings" ]
+    [ "rts_timings", "structrts__timings.html", "structrts__timings" ],
+    [ "RTSFrame", "classRTSFrame.html", "classRTSFrame" ],
+    [ "RTSFrameBuilder", "classRTSFrameBuilder.html", "classRTSFrameBuilder" ],
+    [ "RTSPulseOutput", "classRTSPulseOutput.html", "classRTSPulseOutput" ],
+    [ "RTSPulseSource", "classRTSPulseSource.html", "classRTSPulseSource" ],
+    [ "RTSRadio", "classRTSRadio.html", "classRTSRadio" ],
+    [ "RTSReceiver", "classRTSReceiver.html", "classRTSReceiver" ],
+    [ "RTSRemote", "classRTSRemote.html", "classRTSRemote" ],
+    [ "RTSRemoteStore", "classRTSRemoteStore.html", "classRTSRemoteStore" ]
 ];
