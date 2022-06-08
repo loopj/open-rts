@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
+
 #ifndef RTS_FRAME_BUILDER_H
 #define RTS_FRAME_BUILDER_H
 
@@ -121,3 +127,5 @@ void rts_frame_builder_set_callback(struct rts_frame_builder *builder,
 #endif
 
 #endif // RTS_FRAME_BUILDER_H
+
+// @}

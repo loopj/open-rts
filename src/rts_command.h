@@ -1,4 +1,8 @@
-/// @file
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
 
 #ifndef RTS_COMMAND_H
 #define RTS_COMMAND_H
@@ -34,3 +38,5 @@ const char *rts_command_to_string(enum rts_command command);
 #endif
 
 #endif // RTS_COMMAND_H
+
+/// @}

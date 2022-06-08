@@ -1,3 +1,8 @@
+/// @file
+
+/// @defgroup c C Library
+/// @defgroup cpp C++ Bindings
+
 #ifndef OPEN_RTS_H
 #define OPEN_RTS_H
 
@@ -79,22 +84,10 @@
 #if OPENRTS_INCLUDE_RADIO
 #include "rts_radio.h"
 
-#if defined(ESP_PLATFORM)
-#include "radio/spi_module_espidf.h"
-#endif
-
-#if defined(__linux__)
-#include "radio/spi_module_linux.h"
-#endif
-
-#if defined(ARDUINO)
-#include "radio/spi_module_arduino.h"
-#endif
-
 #if OPENRTS_INCLUDE_CPP_BINDINGS
 #include "bindings/cpp/RTSRadio.h"
-#include "bindings/cpp/RTSRadio_RFM69.h"
-#include "bindings/cpp/RTSRadio_SX1278.h"
+#include "bindings/cpp/radio/RTSRadio_RFM69.h"
+#include "bindings/cpp/radio/RTSRadio_SX1278.h"
 #endif
 #endif // OPENRTS_INCLUDE_RADIO
 

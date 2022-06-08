@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
+
 #ifndef RTS_REMOTE_STORE_MEMORY_H
 #define RTS_REMOTE_STORE_MEMORY_H
 
@@ -47,3 +53,5 @@ int8_t rts_remote_store_clear_memory(struct rts_remote_store *store);
 #endif
 
 #endif // RTS_REMOTE_STORE_MEMORY_H
+
+/// @}

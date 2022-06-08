@@ -4,15 +4,15 @@
 
 #include "RTSFrame.h"
 
-RTSFrame::RTSFrame(uint8_t *bytes)
-{
-    rts_frame_from_bytes(this, bytes);
-}
-
 RTSFrame::RTSFrame(rts_command command, uint16_t rollingCode,
                    uint32_t remoteAddress)
 {
     rts_frame_init(this, command, rollingCode, remoteAddress);
+}
+
+RTSFrame::RTSFrame(uint8_t *bytes)
+{
+    rts_frame_from_bytes(this, bytes);
 }
 
 RTSFrame::RTSFrame(rts_frame *frame)
@@ -23,9 +23,9 @@ RTSFrame::RTSFrame(rts_frame *frame)
     this->encryption_key = frame->encryption_key;
 }
 
-void RTSFrame::toBytes(uint8_t *dest, bool obfuscate)
+void RTSFrame::toBytes(uint8_t *bytes, bool obfuscate)
 {
-    rts_frame_to_bytes(this, dest, obfuscate);
+    rts_frame_to_bytes(this, bytes, obfuscate);
 }
 
 void RTSFrame::obfuscateBytes(uint8_t *bytes)

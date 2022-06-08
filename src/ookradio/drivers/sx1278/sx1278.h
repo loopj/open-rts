@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 
-#include "spi_module.h"
+#include "ookradio/hal/spi_module.h"
 
 struct sx1278 {
     struct spi_module *spi_module;

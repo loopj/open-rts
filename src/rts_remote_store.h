@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
+
 #ifndef RTS_REMOTE_STORE_H
 #define RTS_REMOTE_STORE_H
 
@@ -120,3 +126,5 @@ void rts_remote_store_close(struct rts_remote_store *store);
 #endif
 
 #endif // RTS_REMOTE_STORE_H
+
+/// @}

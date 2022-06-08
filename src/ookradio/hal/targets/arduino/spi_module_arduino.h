@@ -1,7 +1,7 @@
 #ifndef SPI_MODULE_ARDUINO_H
 #define SPI_MODULE_ARDUINO_H
 
-#include "spi_module.h"
+#include "ookradio/hal/spi_module.h"
 
 #ifdef __cplusplus
 extern "C" {

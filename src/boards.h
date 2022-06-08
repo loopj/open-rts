@@ -1,5 +1,5 @@
 /**
- * @file boards.h
+ * @file
  *
  * Common board definitions for microcontrollers and radio modules.
  *
@@ -27,7 +27,6 @@
  * - `OPENRTS_BUTTON_2`     - Onboard button 2
  * - `OPENRTS_BUTTON_3`     - Onboard button 3
  * - `OPENRTS_BUTTON_4`     - Onboard button 4
- *
  */
 
 #if defined(OPENRTS_BOARD_SPARKFUN_LORA_GATEWAY)

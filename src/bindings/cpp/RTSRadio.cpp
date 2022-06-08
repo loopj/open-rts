@@ -5,10 +5,10 @@
 #include "RTSRadio.h"
 
 #if defined(ARDUINO)
-#include "radio/spi_module_arduino.h"
+#include "ookradio/hal/targets/arduino/spi_module_arduino.h"
 #endif
 
-void RTSRadio::setMode(rts_radio_mode mode)
+void RTSRadio::setMode(enum rts_radio_mode mode)
 {
     rts_radio_set_mode(this, mode);
 }

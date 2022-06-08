@@ -1,3 +1,9 @@
+/**
+ * @file
+ * @addtogroup c
+ *  @{
+ */
+
 #ifndef RTS_PULSE_OUTPUT_H
 #define RTS_PULSE_OUTPUT_H
 
@@ -76,3 +82,5 @@ void rts_pulse_output_close(struct rts_pulse_output *pulse_output);
 #endif
 
 #endif // RTS_PULSE_OUTPUT_H
+
+/// @}
