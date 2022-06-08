@@ -16,11 +16,11 @@ void RTSRadio::setMode(rts_radio_mode mode)
 struct spi_module *RTSRadio::defaultSPIModule(uint8_t chipSelect)
 {
 	#if defined(ARDUINO)
-	static struct spi_module spi = {
-		.cs_pin = chipSelect,
-		.clock = 1000000,
-		.mode = 0,
-	};
+	static struct spi_module spi;
+	spi.cs_pin = chipSelect;
+	spi.clock = 1000000;
+	spi.mode = 0;
+
 	spi_module_init_arduino(&spi);
 
 	return &spi;
