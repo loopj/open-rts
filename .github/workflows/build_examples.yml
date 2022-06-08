@@ -29,6 +29,12 @@ jobs:
             env: raspberrypi
           - example: examples/raspberry-pi/receiver
             env: raspberrypi
+          - example: examples/arduino/remote
+            env: featheresp32-arduino
+          - example: examples/arduino/sniffer
+            env: featheresp32-arduino
+          - example: examples/arduino/receiver
+            env: featheresp32-arduino
 
     steps:
     - uses: actions/checkout@v3
