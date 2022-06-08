@@ -6,7 +6,7 @@
  * "known remote" validation, and rolling code validation.
  *
  * Valid, deduplicated frame "events", (eg. RTSReceiver::Event::PRESS)
- * from known remotes are printed to the Serial console.
+ * from known remotes are printed to stdout.
  *
  *   - To enter "programming mode" press and hold the button connected to
  *     OPENRTS_BUTTON_1 for 2 seconds.

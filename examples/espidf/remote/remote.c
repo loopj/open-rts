@@ -5,7 +5,7 @@
  * It takes button inputs, assembles them into RTS frames, then outputs them
  * to the attached radio module.
  *
- * Rolling codes are persisted to EEPROM or NVS if available.
+ * Rolling codes are persisted to NVS.
  *
  * Pressing and holding a button will send "repeat" frames, which won't
  * increase the rolling code.
@@ -30,11 +30,6 @@
 
 #include "driver/gpio.h"
 #include "driver/spi_master.h"
-// #include "esp_timer.h"
-// #include "freertos/FreeRTOS.h"
-// #include "freertos/task.h"
-// #include "sdkconfig.h"
-// #include <stdio.h>
 
 #include "open_rts.h"
 

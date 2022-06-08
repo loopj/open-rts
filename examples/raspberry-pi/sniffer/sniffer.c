@@ -2,7 +2,7 @@
  * Serial Frame Sniffer Example
  *
  * This example receives pulses from a 433MHz radio module, assembles them
- * into RTS Frames, then outputs them to the Serial console.
+ * into RTS Frames, then outputs them to stdout.
  *
  * This example doesn't care about remote addresses, rolling codes, or frame
  * deduplication, just prints every assembled frame.
