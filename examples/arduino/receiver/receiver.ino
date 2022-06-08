@@ -73,11 +73,11 @@ void frameCallback(enum rts_receiver_event event, RTSFrame *frame, void *userDat
     }
 
     Serial.print("Command: ");
-	Serial.println(rts_command_to_string(frame->command));
+    Serial.println(rts_command_to_string(frame->command));
     Serial.print("Remote: 0x");
-	Serial.println(frame->remote_address, HEX);
+    Serial.println(frame->remote_address, HEX);
     Serial.print("Rolling Code: 0x");
-	Serial.println(frame->rolling_code, HEX);
+    Serial.println(frame->rolling_code, HEX);
 }
 
 void modeCallback(enum rts_receiver_mode mode, void *userData) {
@@ -114,13 +114,13 @@ void pollModeButton() {
     if (state == true && lastState == true) {
         if (now - pressedTime > 2000 && eventFired == 0) {
             // Button pressed and held for > 2s, enter programming mode
-			receiver.setMode(RTS_RECEIVER_MODE_PROGRAMMING);
+            receiver.setMode(RTS_RECEIVER_MODE_PROGRAMMING);
             eventFired++;
         } else if (now - pressedTime > 4000 && eventFired == 1) {
             // Button pressed and held for > 4s, forget all paired remotes
             // and go back into command mode
-			receiver.forgetAllRemotes();
-			receiver.setMode(RTS_RECEIVER_MODE_COMMAND);
+            receiver.forgetAllRemotes();
+            receiver.setMode(RTS_RECEIVER_MODE_COMMAND);
             eventFired++;
         }
     }
@@ -140,17 +140,17 @@ void setup() {
     radio.setMode(RTS_RADIO_MODE_RECEIVE);
 
     // Set callbacks for new frames and mode change events
-	receiver.setFrameCallback(frameCallback);
-	receiver.setModeCallback(modeCallback);
+    receiver.setFrameCallback(frameCallback);
+    receiver.setModeCallback(modeCallback);
 
-	// Enable the receiver
-	receiver.setMode(RTS_RECEIVER_MODE_COMMAND);
+    // Enable the receiver
+    receiver.setMode(RTS_RECEIVER_MODE_COMMAND);
 }
 
 void loop() {
     // Check for new RTS pulses
     receiver.update();
 
-	// Check for receiver "mode" button presses
-	pollModeButton();
+    // Check for receiver "mode" button presses
+    pollModeButton();
 }

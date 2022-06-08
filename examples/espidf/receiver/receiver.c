@@ -12,6 +12,8 @@
  *     OPENRTS_BUTTON_1 for 2 seconds.
  *   - To pair a new remote, enter programming mode and press the "PROG" button
  *     on the remote
+ *   - To unpair a paired remote, enter programming mode and press the "PROG"
+ *     button on the remote
  *   - To clear all remotes from memory, press and hold the button connected to
  *     OPENRTS_BUTTON_1 for 4 seconds.
  */
@@ -48,7 +50,7 @@ void init_radio()
     spi_bus_config_t buscfg = {
         .miso_io_num   = OPENRTS_RADIO_MISO,
         .mosi_io_num   = OPENRTS_RADIO_MOSI,
-        .sclk_io_num   = OPENRTS_RADIO_SCK,
+        .sclk_io_num   = OPENRTS_RADIO_SCLK,
         .quadwp_io_num = -1,
         .quadhd_io_num = -1,
     };

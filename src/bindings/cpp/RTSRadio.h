@@ -9,7 +9,7 @@ class RTSRadio : protected rts_radio
     void setMode(rts_radio_mode mode);
 
   protected:
-	struct spi_module *defaultSPIModule(uint8_t chipSelect);
+    struct spi_module *defaultSPIModule(uint8_t chipSelect);
 };
 
 #endif // RTS_RADIO_CPP_H

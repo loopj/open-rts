@@ -35,7 +35,7 @@ void printFrame(RTSFrame *frame, uint8_t repeatCount, uint32_t repeatDuration, v
     Serial.println("Detected an RTS Frame!");
 
     Serial.print("Command: ");
-	Serial.print(rts_command_to_string(frame->command));
+    Serial.print(rts_command_to_string(frame->command));
     Serial.print(" (0x");
     Serial.print((int)frame->command, HEX);
     Serial.println(")");

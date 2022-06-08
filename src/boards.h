@@ -5,28 +5,28 @@
  *
  * Each board config should define the following:
  *
- * - `OPENRTS_RADIO_TYPE_*` - The type of radio module connected to the MCU
- * - `OPENRTS_RADIO_CS` 	- The SPI chip select pin for the radio module
- * - `OPENRTS_RADIO_DATA` 	- The data pin for OOK control on the radio module
- * - `OPENRTS_RADIO_RST` 	- The reset GPIO for the radio module (if present)
+ * - `OPENRTS_RADIO_TYPE_*` - Type of radio module connected to the MCU
+ * - `OPENRTS_RADIO_CS`     - SPI chip select pin for the radio module
+ * - `OPENRTS_RADIO_DATA`   - Data pin for OOK control on the radio module
+ * - `OPENRTS_RADIO_RST`    - Reset pin for the radio module (if present)
  *
  *
  * Although Arduino typically defines MISO/MOSI/SCLK for us, on other platforms
  * it is useful to know these:
  *
- * - `OPENRTS_RADIO_MISO` 	- The SPI MISO pin
- * - `OPENRTS_RADIO_MOSI` 	- The SPI MOSI pin
- * - `OPENRTS_RADIO_SCK` 	- The SPI SCLK pin
+ * - `OPENRTS_RADIO_MISO`   - The SPI MISO pin
+ * - `OPENRTS_RADIO_MOSI`   - The SPI MOSI pin
+ * - `OPENRTS_RADIO_SCLK`   - The SPI SCLK pin
  *
  *
  * Where the board has onboard buttons/leds it is helpful to define these for
  * use in example applications:
  *
- * - `OPENRTS_LED` 			- Onboard LED
- * - `OPENRTS_BUTTON_1` 	- Onboard button 1
- * - `OPENRTS_BUTTON_2` 	- Onboard button 2
- * - `OPENRTS_BUTTON_3` 	- Onboard button 3
- * - `OPENRTS_BUTTON_4` 	- Onboard button 4
+ * - `OPENRTS_LED`          - Onboard LED
+ * - `OPENRTS_BUTTON_1`     - Onboard button 1
+ * - `OPENRTS_BUTTON_2`     - Onboard button 2
+ * - `OPENRTS_BUTTON_3`     - Onboard button 3
+ * - `OPENRTS_BUTTON_4`     - Onboard button 4
  *
  */
 
@@ -37,7 +37,7 @@
 #define OPENRTS_RADIO_TYPE_RFM69
 #define OPENRTS_RADIO_MISO 12
 #define OPENRTS_RADIO_MOSI 13
-#define OPENRTS_RADIO_SCK  14
+#define OPENRTS_RADIO_SCLK 14
 #define OPENRTS_RADIO_CS   16
 #define OPENRTS_RADIO_RST  27
 #define OPENRTS_RADIO_DATA 32
@@ -48,7 +48,7 @@
 #define OPENRTS_RADIO_TYPE_SX1278
 #define OPENRTS_RADIO_MISO 19
 #define OPENRTS_RADIO_MOSI 27
-#define OPENRTS_RADIO_SCK  5
+#define OPENRTS_RADIO_SCLK 5
 #define OPENRTS_RADIO_CS   18
 #define OPENRTS_RADIO_RST  23
 #define OPENRTS_RADIO_DATA 32
@@ -58,7 +58,7 @@
 #define OPENRTS_RADIO_TYPE_SX1278
 #define OPENRTS_RADIO_MISO 19
 #define OPENRTS_RADIO_MOSI 27
-#define OPENRTS_RADIO_SCK  5
+#define OPENRTS_RADIO_SCLK 5
 #define OPENRTS_RADIO_CS   18
 #define OPENRTS_RADIO_RST  14
 #define OPENRTS_RADIO_DATA 34

@@ -33,7 +33,7 @@ void init_radio()
     spi_bus_config_t buscfg = {
         .miso_io_num   = OPENRTS_RADIO_MISO,
         .mosi_io_num   = OPENRTS_RADIO_MOSI,
-        .sclk_io_num   = OPENRTS_RADIO_SCK,
+        .sclk_io_num   = OPENRTS_RADIO_SCLK,
         .quadwp_io_num = -1,
         .quadhd_io_num = -1,
     };

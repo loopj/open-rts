@@ -6,8 +6,8 @@
 #include <SPI.h>
 
 static void spi_module_transfer_arduino(struct spi_module *spi_module,
-                                        uint8_t *tx_buffer,
-                                        uint8_t *rx_buffer, uint8_t length)
+                                        uint8_t *tx_buffer, uint8_t *rx_buffer,
+                                        uint8_t length)
 {
     digitalWrite(spi_module->cs_pin, LOW);
     SPI.beginTransaction(*((SPISettings *)spi_module->user_data_ptr));
