@@ -55,7 +55,7 @@ void rts_pulse_source_init_gpiod(struct rts_pulse_source *pulse_source,
     pulse_source->user_data_ptr  = gpiod_chip_get_line(gpio_chip, data_pin);
     pulse_source->enable         = rts_pulse_source_enable_gpiod;
     pulse_source->disable        = rts_pulse_source_disable_gpiod;
-    pulse_source->update         = rts_pulse_source_disable_gpiod;
+    pulse_source->update         = rts_pulse_source_update_gpiod;
     pulse_source->frame_builder  = NULL;
     pulse_source->last_state     = false;
     pulse_source->last_updated   = micros();
