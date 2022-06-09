@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-void spi_module_init_arduino(struct spi_module *spi_module);
+int spi_module_init_arduino(struct spi_module *spi_module);
 
 #ifdef __cplusplus
 } // extern "C"

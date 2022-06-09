@@ -2,13 +2,18 @@
 
 #include <fcntl.h>
 #include <linux/spi/spidev.h>
+#include <stdio.h>
 #include <sys/ioctl.h>
 
 #include "spi_module_linux.h"
 
-static void transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
+static int transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
                      uint8_t *rx_buffer, uint8_t length)
 {
+    if(spi_module->user_data_int == -1) {
+        return -1;
+    }
+
     struct spi_ioc_transfer transfer = {
         .tx_buf   = (unsigned long)tx_buffer,
         .rx_buf   = (unsigned long)rx_buffer,
@@ -16,15 +21,23 @@ static void transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
         .len      = length,
     };
 
-    ioctl(spi_module->user_data_int, SPI_IOC_MESSAGE(1), &transfer);
+    if(ioctl(spi_module->user_data_int, SPI_IOC_MESSAGE(1), &transfer) == -1) {
+        perror("SPI transfer failed");
+        return -1;
+    }
 
-    // TODO: Handle errors
+    return 0;
 }
 
-void spi_module_init_linux(struct spi_module *spi_module, const char *device)
+int spi_module_init_linux(struct spi_module *spi_module, const char *device)
 {
     spi_module->transfer      = transfer;
     spi_module->user_data_int = open(device, O_RDWR);
+
+    if(spi_module->user_data_int == -1) {
+        return -1;
+        perror("SPI init failed");
+    }
 }
 
 #endif

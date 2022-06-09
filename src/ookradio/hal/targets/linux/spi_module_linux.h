@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-void spi_module_init_linux(struct spi_module *spi_module, const char *device);
+int spi_module_init_linux(struct spi_module *spi_module, const char *device);
 
 #ifdef __cplusplus
 } // extern "C"

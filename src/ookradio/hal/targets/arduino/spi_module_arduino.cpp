@@ -5,9 +5,9 @@
 #include <Arduino.h>
 #include <SPI.h>
 
-static void spi_module_transfer_arduino(struct spi_module *spi_module,
-                                        uint8_t *tx_buffer, uint8_t *rx_buffer,
-                                        uint8_t length)
+static int spi_module_transfer_arduino(struct spi_module *spi_module,
+                                       uint8_t *tx_buffer, uint8_t *rx_buffer,
+                                       uint8_t length)
 {
     digitalWrite(spi_module->cs_pin, LOW);
     SPI.beginTransaction(*((SPISettings *)spi_module->user_data_ptr));
@@ -19,9 +19,11 @@ static void spi_module_transfer_arduino(struct spi_module *spi_module,
     }
     SPI.endTransaction();
     digitalWrite(spi_module->cs_pin, HIGH);
+
+    return 0;
 }
 
-void spi_module_init_arduino(struct spi_module *spi_module)
+int spi_module_init_arduino(struct spi_module *spi_module)
 {
     SPI.begin();
     pinMode(spi_module->cs_pin, OUTPUT);
@@ -29,6 +31,8 @@ void spi_module_init_arduino(struct spi_module *spi_module)
     spi_module->transfer = spi_module_transfer_arduino;
     spi_module->user_data_ptr =
         new SPISettings(spi_module->clock, MSBFIRST, spi_module->mode);
+
+    return 0;
 }
 
 #endif // defined(ARDUINO)

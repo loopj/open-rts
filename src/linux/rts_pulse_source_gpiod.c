@@ -6,6 +6,7 @@
 
 #include <gpiod.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 
 // TODO: Check return codes in gpiod_* etc
@@ -46,6 +47,11 @@ void rts_pulse_source_init_gpiod(struct rts_pulse_source *pulse_source,
                                  char *device, uint8_t data_pin)
 {
     struct gpiod_chip *gpio_chip = gpiod_chip_open(device);
+    if(!gpio_chip) {
+        fprintf(stderr, "Failed to open GPIO chip %s\n", device);
+        return;
+    }
+
     pulse_source->user_data_ptr  = gpiod_chip_get_line(gpio_chip, data_pin);
     pulse_source->enable         = rts_pulse_source_enable_gpiod;
     pulse_source->disable        = rts_pulse_source_disable_gpiod;

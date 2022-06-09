@@ -1,8 +1,8 @@
-#include "rts_remote_store_memory.h"
+#include <stdlib.h>
 
 #include "config.h"
 
-#include <stdlib.h>
+#include "rts_remote_store_memory.h"
 
 static int8_t remote_index(struct rts_remote_store *store,
                            uint32_t remote_address)

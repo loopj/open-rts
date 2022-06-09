@@ -2,8 +2,8 @@
 
 #include "spi_module_espidf.h"
 
-static void transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
-                     uint8_t *rx_buffer, uint8_t length)
+static int transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
+                    uint8_t *rx_buffer, uint8_t length)
 {
     spi_transaction_t t = {
         .length    = 8 * length,
@@ -11,13 +11,16 @@ static void transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
         .rx_buffer = rx_buffer,
     };
 
-    spi_device_transmit(spi_module->user_data_ptr, &t);
+    esp_err_t status = spi_device_transmit(spi_module->user_data_ptr, &t);
+    if(status != ESP_OK) {
+        return -1;
+    }
 
-    // TODO: Handle errors
+    return 0;
 }
 
-void spi_module_init_espidf(struct spi_module *spi_module,
-                            spi_host_device_t host_device)
+int spi_module_init_espidf(struct spi_module *spi_module,
+                           spi_host_device_t host_device)
 {
     spi_device_interface_config_t devcfg = {
         .mode           = spi_module->mode,
@@ -28,10 +31,14 @@ void spi_module_init_espidf(struct spi_module *spi_module,
 
     spi_module->transfer = transfer;
 
-    spi_bus_add_device(host_device, &devcfg,
+    esp_err_t status = spi_bus_add_device(host_device, &devcfg,
                        (spi_device_handle_t *)(&spi_module->user_data_ptr));
 
-    // TODO: Handle errors
+    if(status != ESP_OK) {
+        return -1;
+    }
+
+    return 0;
 }
 
 #endif

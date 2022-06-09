@@ -8,8 +8,8 @@ extern "C" {
 #endif
 
 struct spi_module {
-    void (*transfer)(struct spi_module *spi, uint8_t *tx_buffer,
-                     uint8_t *rx_buffer, uint8_t length);
+    int (*transfer)(struct spi_module *spi, uint8_t *tx_buffer,
+                    uint8_t *rx_buffer, uint8_t length);
     uint8_t cs_pin;
     uint32_t clock;
     uint8_t mode;

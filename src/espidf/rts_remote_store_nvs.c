@@ -2,10 +2,10 @@
 
 #if OPENRTS_HAS_NVS
 
-#include "rts_remote_store_nvs.h"
-
 #include <nvs.h>
 #include <nvs_flash.h>
+
+#include "rts_remote_store_nvs.h"
 
 #define NVS_KEY_LENGTH 16
 

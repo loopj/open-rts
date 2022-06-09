@@ -10,11 +10,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-// TODO: Centralize error codes
-enum {
-    RTS_ERR_NONE             = 0,
-    RTS_ERR_REMOTE_NOT_FOUND = -1,
-};
+#include "errors.h"
 
 /**
  * Provides an interface for a datastore which contains details about remote
