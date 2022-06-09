@@ -6,6 +6,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "ookradio", "dir_061d9544433da36a74f5f04effdebb1e.html", "dir_061d9544433da36a74f5f04effdebb1e" ],
     [ "boards.h", "boards_8h.html", null ],
     [ "config.h", "config_8h_source.html", null ],
+    [ "errors.h", "errors_8h_source.html", null ],
     [ "hal.h", "hal_8h_source.html", null ],
     [ "open_rts.h", "open__rts_8h.html", null ],
     [ "rts_command.h", "rts__command_8h.html", "rts__command_8h" ],
