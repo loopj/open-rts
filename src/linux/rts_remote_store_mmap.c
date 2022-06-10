@@ -21,7 +21,7 @@ static void rts_remote_store_close_mmap(struct rts_remote_store *store)
 void rts_remote_store_init_mmap(struct rts_remote_store *store,
                                 const char *filename)
 {
-    struct rts_remote_store_memory_data *user_data = malloc(sizeof(user_data));
+    struct rts_remote_store_memory_data *user_data = malloc(sizeof(*user_data));
 
     // Open the memory-mapped file, create if doesn't already exits
     user_data->file_handle =
