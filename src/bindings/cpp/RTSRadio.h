@@ -16,11 +16,11 @@
 class RTSRadio : protected rts_radio
 {
   public:
-	/**
-	 * Set the radio mode for this module, eg. standby, receive, or transmit.
-	 *
-	 * @param mode the rts_radio_mode to enter
-	 */
+    /**
+     * Set the radio mode for this module, eg. standby, receive, or transmit.
+     *
+     * @param mode the rts_radio_mode to enter
+     */
     void setMode(enum rts_radio_mode mode);
 
   protected:
