@@ -27,18 +27,19 @@ target_sources(openrts PRIVATE
     src/ookradio/drivers/sx1278/sx1278.c
 )
 
-include(CheckSymbolExists)
-
 if(ESP_PLATFORM)
     target_sources(openrts PRIVATE
         src/espidf/rts_pulse_output_espidf_gpio.c
         src/espidf/rts_pulse_source_espidf_gpio.c
+        src/espidf/rts_remote_store_nvs.c
         src/ookradio/hal/targets/espidf/spi_module_espidf.c
-        # src/espidf/rts_remote_store_nvs.c
     )
+
+    target_link_libraries(openrts PRIVATE idf::nvs_flash)
 endif()
 
-# Build the mmap remote store when mmap is available
+# Include rts_remote_store_mmap where mmap is available
+include(CheckSymbolExists)
 check_symbol_exists(mmap "sys/mman.h" OPENRTS_HAVE_MMAP)
 if(OPENRTS_HAVE_MMAP)
     target_sources(openrts PRIVATE
@@ -52,7 +53,7 @@ if(OPENRTS_HAS_GPIOD)
         src/linux/rts_pulse_output_gpiod.c
     )
 
-    target_compile_definitions(openrts PRIVATE
+    target_compile_definitions(openrts PUBLIC
         OPENRTS_HAS_GPIOD
     )
 endif()
