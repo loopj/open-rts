@@ -4,7 +4,7 @@ EXAMPLES = $(wildcard examples/**/**/*.c) $(wildcard examples/**/**/*.cpp) $(wil
 
 clean:
 	@rm -rf .pio .vscode docs
-	@find -name CMakeLists.txt -o -name "sdkconfig.*" | xargs rm -f
+	@find -name "sdkconfig.*" | xargs rm -f
 
 docs:
 	@doxygen doxygen/Doxyfile
