@@ -86,6 +86,7 @@
 #define OPENRTS_BUTTON_3     12
 #define OPENRTS_BUTTON_4     13
 #define OPENRTS_RADIO_DATA   24
+#define OPENRTS_RADIO_RST    25
 #define OPENRTS_SPI_DEVICE   "/dev/spidev0.1"
 #define OPENRTS_GPIOD_DEVICE "/dev/gpiochip0"
 #elif defined(OPENRTS_BOARD_RASPBERRY_PI_RFM96_BONNET)
@@ -96,6 +97,7 @@
 #define OPENRTS_BUTTON_3     12
 #define OPENRTS_BUTTON_4     13
 #define OPENRTS_RADIO_DATA   24
+#define OPENRTS_RADIO_RST    25
 #define OPENRTS_SPI_DEVICE   "/dev/spidev0.1"
 #define OPENRTS_GPIOD_DEVICE "/dev/gpiochip0"
 #endif

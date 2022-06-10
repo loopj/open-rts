@@ -11,6 +11,7 @@ static int transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
                      uint8_t *rx_buffer, uint8_t length)
 {
     if(spi_module->user_data_int == -1) {
+        printf("SPI transfer failed\n");
         return -1;
     }
 
@@ -35,8 +36,8 @@ int spi_module_init_linux(struct spi_module *spi_module, const char *device)
     spi_module->user_data_int = open(device, O_RDWR);
 
     if(spi_module->user_data_int == -1) {
-        return -1;
         perror("SPI init failed");
+        return -1;
     }
 }
 
