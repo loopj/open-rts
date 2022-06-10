@@ -22,17 +22,45 @@ target_sources(openrts PRIVATE
     src/rts_remote.c
     src/rts_timings.c
 
-    src/linux/rts_pulse_source_gpiod.c
-    src/linux/rts_pulse_output_gpiod.c
-
-    src/linux/rts_remote_store_mmap.c
-
     src/ookradio/hal/spi_module.c
-    src/ookradio/hal/targets/linux/spi_module_linux.c
     src/ookradio/drivers/rfm69/rfm69.c
     src/ookradio/drivers/sx1278/sx1278.c
 )
 
-target_include_directories(openrts PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/src
-)
+include(CheckSymbolExists)
+
+if(ESP_PLATFORM)
+    target_sources(openrts PRIVATE
+        src/espidf/rts_pulse_output_espidf_gpio.c
+        src/espidf/rts_pulse_source_espidf_gpio.c
+        src/ookradio/hal/targets/espidf/spi_module_espidf.c
+        # src/espidf/rts_remote_store_nvs.c
+    )
+endif()
+
+# Build the mmap remote store when mmap is available
+check_symbol_exists(mmap "sys/mman.h" OPENRTS_HAVE_MMAP)
+if(OPENRTS_HAVE_MMAP)
+    target_sources(openrts PRIVATE
+        src/linux/rts_remote_store_mmap.c
+    )
+endif()
+
+if(OPENRTS_HAS_GPIOD)
+    target_sources(openrts PRIVATE
+        src/linux/rts_pulse_source_gpiod.c
+        src/linux/rts_pulse_output_gpiod.c
+    )
+
+    target_compile_definitions(openrts PRIVATE
+        OPENRTS_HAS_GPIOD
+    )
+endif()
+
+if(UNIX)
+    target_sources(openrts PRIVATE
+        src/ookradio/hal/targets/linux/spi_module_linux.c
+    )
+endif()
+
+target_include_directories(openrts PUBLIC src)

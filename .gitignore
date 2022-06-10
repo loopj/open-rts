@@ -1,6 +1,6 @@
 .pio
 docs
-sdkconfig.*
+sdkconfig*
 .vscode
 *.swp
 remotes.dat
