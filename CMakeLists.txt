@@ -24,6 +24,7 @@ target_sources(openrts PRIVATE
 
     src/linux/rts_pulse_source_gpiod.c
     src/linux/rts_pulse_output_gpiod.c
+
     src/linux/rts_remote_store_mmap.c
 
     src/ookradio/hal/spi_module.c
@@ -35,7 +36,3 @@ target_sources(openrts PRIVATE
 target_include_directories(openrts PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
-
-add_subdirectory(examples/raspberry-pi/sniffer)
-add_subdirectory(examples/raspberry-pi/remote)
-add_subdirectory(examples/raspberry-pi/receiver)

@@ -4,7 +4,7 @@ EXAMPLES = $(wildcard examples/**/**/*.c) $(wildcard examples/**/**/*.cpp) $(wil
 
 clean:
 	@rm -rf .pio .vscode docs
-	@find -name "sdkconfig.*" | xargs rm -f
+	@find -type d -name build -o -name "sdkconfig.*" | xargs rm -rf
 
 docs:
 	@doxygen doxygen/Doxyfile
