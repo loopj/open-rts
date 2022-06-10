@@ -28,7 +28,7 @@ void rts_remote_store_init_mmap(struct rts_remote_store *store,
         open(filename, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
 
     // Expand the memory mapped file to the size of our struct
-    ftruncate(user_data->file_handle, sizeof(user_data->store));
+    ftruncate(user_data->file_handle, sizeof(*(user_data->store)));
 
     // Map the contents of the file to memory
     user_data->store =

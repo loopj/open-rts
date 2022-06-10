@@ -40,7 +40,9 @@ struct rts_remote remote;
 void init_radio()
 {
     // Initialize SPI module
-    struct spi_module spi = {};
+    struct spi_module spi = {
+        .clock = 1000000,
+    };
     spi_module_init_linux(&spi, OPENRTS_SPI_DEVICE);
 
     // Initialize radio
