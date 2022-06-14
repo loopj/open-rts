@@ -3,7 +3,7 @@
 [![GitHub](https://img.shields.io/github/license/loopj/open-rts)](https://github.com/loopj/open-rts/blob/main/LICENSE)
 [![Build Status](https://github.com/loopj/open-rts/actions/workflows/run_unit_tests.yml/badge.svg)](https://github.com/loopj/open-rts/actions/workflows/run_unit_tests.yml)
 
-This library is a full implementation of the Somfy RTS protocol designed for creating your own remotes, receivers, repeaters, or bridges on embedded hardware, such as Arduino or ESP8266/ESP32 devices.
+Open RTS is a C library (with optional C++ bindings), which provides a full implementation of the Somfy RTS protocol designed for creating your own remotes, receivers, repeaters, or bridges on embedded hardware, such as Arduino or ESP8266/ESP32 devices.
 
 This open-source, non-commercial library is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Somfy.
 
@@ -29,21 +29,21 @@ Alternatively you can take a 433Mhz OOK-capable radio module (eg. CC1101, RFM69,
 
 ## Key components
 
-### rts_remote
+### rts_remote / RTSRemote
 
-An `rts_remote` simulates a physical RTS remote control. It takes RTS commands (button presses), converts them into a series of pulses, then outputs those pulses to a `rts_pulse_output` (eg. a GPIO or radio).
+Simulates a physical RTS remote control. It takes RTS commands (button presses), converts them into a series of pulses, then outputs those pulses to a `rts_pulse_output` / `RTSPulseOutput` (eg. a GPIO or radio).
 
 Remote rolling codes can be persisted by providing a `rts_remote_store` backend (eg. ESP32's non-volatile storage, or Arduino's EEPROM).
 
-### rts_frame_builder
+### rts_frame_builder / RTSFrameBuilder
 
-An `rts_frame_builder` receives pulses via `rts_frame_builder_handle_pulse()`, assembles the pulses into complete RTS "frames", and delivers them to the callback you attach with `rts_frame_builder_set_callback()`.
+Receives pulses via `rts_frame_builder_handle_pulse()`, assembles the pulses into complete RTS "frames", and delivers them to the callback you attach with `rts_frame_builder_set_callback()`.
 
 An `rts_frame_builder` can be attached to an `rts_pulse_source` (eg. a GPIO or radio) with `rts_pulse_source_attach()` to observe pulses and build frames automatically.
 
-### rts_receiver
+### rts_receiver / RTSReceiver
 
-An `rts_receiver` simulates a physical RTS receiver device, such as a shade or drapery motor.
+Simulates a physical RTS receiver device, such as a shade or drapery motor.
 
 It connects an `rts_pulse_source` (eg. a GPIO or radio) to an internal `rts_frame_builder` and adds common receiver functionality such as frame deduplication, remote pairing, and rolling code validation.
 

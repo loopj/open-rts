@@ -27,18 +27,18 @@
  * frames automatically.
  */
 struct rts_frame_builder {
-    /// Timings to use for generating pulses
+    // Timings to use for generating pulses
     struct rts_timings *timings;
 
-    /// The timing tolerance to use when processing pulses. Defaults to
-    /// `timings->symbol / 2` when calling rts_frame_builder_init
+    // The timing tolerance to use when processing pulses. Defaults to
+    // `timings->symbol / 2` when calling rts_frame_builder_init
     uint16_t tolerance;
 
-    /// User provided frame callback
+    // User provided frame callback
     void (*callback)(struct rts_frame *frame, uint8_t count, uint32_t duration,
                      void *user_data);
 
-    /// Additional user data to supply whenever callback is called
+    // Additional user data to supply whenever callback is called
     void *callback_user_data;
 
     //
