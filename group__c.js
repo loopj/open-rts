@@ -15,11 +15,7 @@ var group__c =
     [ "rts_frame_builder", "structrts__frame__builder.html", [
       [ "rts_frame_builder_init", "group__c.html#ga548d086f646014651fe55561383da6da", null ],
       [ "rts_frame_builder_handle_pulse", "group__c.html#ga0a7bdbe14a80d21cbd6294bf30ff6933", null ],
-      [ "rts_frame_builder_set_callback", "group__c.html#ga610780004e4d229af371f0a3512fa102", null ],
-      [ "timings", "group__c.html#ga6b281a943f774d4bbb4007906234c240", null ],
-      [ "tolerance", "group__c.html#gad5fb6e3d813fbe3c04eee69d0177defd", null ],
-      [ "callback", "group__c.html#ga3d0d34be36c427a286b752258c0bbba1", null ],
-      [ "callback_user_data", "group__c.html#gafbbb88a122ef12a24f50797ec2dc9ed3", null ]
+      [ "rts_frame_builder_set_callback", "group__c.html#ga610780004e4d229af371f0a3512fa102", null ]
     ] ],
     [ "rts_pulse_output", "structrts__pulse__output.html", [
       [ "rts_pulse_output_init_espidf_gpio", "structrts__pulse__output.html#af6c20b47f3c8f0bd80492edbb122e905", null ],
@@ -147,10 +143,6 @@ var group__c =
     [ "rts_remote_store::rts_remote_store_clear", "group__c.html#gaba1b041180b813756605331bba63a006", null ],
     [ "rts_remote_store::rts_remote_store_close", "group__c.html#ga55de60ac69a0b8576e52214fc51d22fe", null ],
     [ "rts_remote_store::rts_remote_store_init_memory", "group__c.html#ga52529ac5fcf5001a80dd19e3d490bf47", null ],
-    [ "rts_frame_builder::timings", "group__c.html#ga6b281a943f774d4bbb4007906234c240", null ],
-    [ "rts_frame_builder::tolerance", "group__c.html#gad5fb6e3d813fbe3c04eee69d0177defd", null ],
-    [ "rts_frame_builder::callback", "group__c.html#ga3d0d34be36c427a286b752258c0bbba1", null ],
-    [ "rts_frame_builder::callback_user_data", "group__c.html#gafbbb88a122ef12a24f50797ec2dc9ed3", null ],
     [ "RTS_TIMINGS_SITUO5", "group__c.html#ga21e1f134c3b56ede954c4377ac6804bd", null ],
     [ "RTS_TIMINGS_DEFAULT", "group__c.html#ga5d5a8dd247442ea155318ad1d4d6fc7b", null ]
 ];

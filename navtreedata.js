@@ -28,9 +28,9 @@ var NAVTREE =
     [ "What can I do with this?", "index.html#autotoc_md1", null ],
     [ "What hardware do I need?", "index.html#autotoc_md2", null ],
     [ "Key components", "index.html#autotoc_md3", [
-      [ "rts_remote", "index.html#autotoc_md4", null ],
-      [ "rts_frame_builder", "index.html#autotoc_md5", null ],
-      [ "rts_receiver", "index.html#autotoc_md6", null ]
+      [ "rts_remote / RTSRemote", "index.html#autotoc_md4", null ],
+      [ "rts_frame_builder / RTSFrameBuilder", "index.html#autotoc_md5", null ],
+      [ "rts_receiver / RTSReceiver", "index.html#autotoc_md6", null ]
     ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
@@ -57,7 +57,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"RTSFrameBuilder_8h.html"
+"RTSFrameBuilder_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

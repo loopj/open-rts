@@ -212,13 +212,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8c6b65412d7a48442ff251fbff5360f5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga8c6b65412d7a48442ff251fbff5360f5">rts_frame_generate_checksum</a> (const uint8_t *bytes)</td></tr>
 <tr class="memdesc:ga8c6b65412d7a48442ff251fbff5360f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a checksum for the raw (deobfuscated) bytes of a frame.  <a href="group__c.html#ga8c6b65412d7a48442ff251fbff5360f5">More...</a><br /></td></tr>
 <tr class="separator:ga8c6b65412d7a48442ff251fbff5360f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga548d086f646014651fe55561383da6da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga548d086f646014651fe55561383da6da">rts_frame_builder_init</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, struct <a class="el" href="structrts__timings.html">rts_timings</a> *<a class="el" href="group__c.html#ga6b281a943f774d4bbb4007906234c240">timings</a>)</td></tr>
+<tr class="memitem:ga548d086f646014651fe55561383da6da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga548d086f646014651fe55561383da6da">rts_frame_builder_init</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, struct <a class="el" href="structrts__timings.html">rts_timings</a> *timings)</td></tr>
 <tr class="memdesc:ga548d086f646014651fe55561383da6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame__builder.html" title="Assembles pulses received via rts_frame_builder_handle_pulse, into a complete rts_frame,...">rts_frame_builder</a> with the specified timings.  <a href="group__c.html#ga548d086f646014651fe55561383da6da">More...</a><br /></td></tr>
 <tr class="separator:ga548d086f646014651fe55561383da6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0a7bdbe14a80d21cbd6294bf30ff6933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga0a7bdbe14a80d21cbd6294bf30ff6933">rts_frame_builder_handle_pulse</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, bool state, uint32_t micros)</td></tr>
 <tr class="memdesc:ga0a7bdbe14a80d21cbd6294bf30ff6933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform the frame builder about a new pulse.  <a href="group__c.html#ga0a7bdbe14a80d21cbd6294bf30ff6933">More...</a><br /></td></tr>
 <tr class="separator:ga0a7bdbe14a80d21cbd6294bf30ff6933"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga610780004e4d229af371f0a3512fa102"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga610780004e4d229af371f0a3512fa102">rts_frame_builder_set_callback</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, void(*<a class="el" href="group__c.html#ga3d0d34be36c427a286b752258c0bbba1">callback</a>)(struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, uint8_t count, uint32_t duration, void *user_data), void *user_data)</td></tr>
+<tr class="memitem:ga610780004e4d229af371f0a3512fa102"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga610780004e4d229af371f0a3512fa102">rts_frame_builder_set_callback</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, void(*callback)(struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, uint8_t count, uint32_t duration, void *user_data), void *user_data)</td></tr>
 <tr class="memdesc:ga610780004e4d229af371f0a3512fa102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback to call when new complete frames are received.  <a href="group__c.html#ga610780004e4d229af371f0a3512fa102">More...</a><br /></td></tr>
 <tr class="separator:ga610780004e4d229af371f0a3512fa102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga25ffde10f6d05c6ee10a72cba20661b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga25ffde10f6d05c6ee10a72cba20661b7">rts_pulse_output_enable</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
@@ -314,21 +314,6 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga6b281a943f774d4bbb4007906234c240"><td class="memItemLeft" align="right" valign="top"><a id="ga6b281a943f774d4bbb4007906234c240" name="ga6b281a943f774d4bbb4007906234c240"></a>
-struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>rts_frame_builder::timings</b></td></tr>
-<tr class="memdesc:ga6b281a943f774d4bbb4007906234c240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timings to use for generating pulses. <br /></td></tr>
-<tr class="separator:ga6b281a943f774d4bbb4007906234c240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad5fb6e3d813fbe3c04eee69d0177defd"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gad5fb6e3d813fbe3c04eee69d0177defd">rts_frame_builder::tolerance</a></td></tr>
-<tr class="memdesc:gad5fb6e3d813fbe3c04eee69d0177defd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timing tolerance to use when processing pulses.  <a href="group__c.html#gad5fb6e3d813fbe3c04eee69d0177defd">More...</a><br /></td></tr>
-<tr class="separator:gad5fb6e3d813fbe3c04eee69d0177defd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3d0d34be36c427a286b752258c0bbba1"><td class="memItemLeft" align="right" valign="top"><a id="ga3d0d34be36c427a286b752258c0bbba1" name="ga3d0d34be36c427a286b752258c0bbba1"></a>
-void(*&#160;</td><td class="memItemRight" valign="bottom"><b>rts_frame_builder::callback</b> )(struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, uint8_t count, uint32_t duration, void *user_data)</td></tr>
-<tr class="memdesc:ga3d0d34be36c427a286b752258c0bbba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">User provided frame callback. <br /></td></tr>
-<tr class="separator:ga3d0d34be36c427a286b752258c0bbba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafbbb88a122ef12a24f50797ec2dc9ed3"><td class="memItemLeft" align="right" valign="top"><a id="gafbbb88a122ef12a24f50797ec2dc9ed3" name="gafbbb88a122ef12a24f50797ec2dc9ed3"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>rts_frame_builder::callback_user_data</b></td></tr>
-<tr class="memdesc:gafbbb88a122ef12a24f50797ec2dc9ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additional user data to supply whenever callback is called. <br /></td></tr>
-<tr class="separator:gafbbb88a122ef12a24f50797ec2dc9ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga21e1f134c3b56ede954c4377ac6804bd"><td class="memItemLeft" align="right" valign="top"><a id="ga21e1f134c3b56ede954c4377ac6804bd" name="ga21e1f134c3b56ede954c4377ac6804bd"></a>
 struct <a class="el" href="structrts__timings.html">rts_timings</a>&#160;</td><td class="memItemRight" valign="bottom"><b>RTS_TIMINGS_SITUO5</b></td></tr>
 <tr class="memdesc:ga21e1f134c3b56ede954c4377ac6804bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timings as measured from a physical Situio5 remote. <br /></td></tr>
@@ -2191,24 +2176,6 @@ struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="gad5fb6e3d813fbe3c04eee69d0177defd" name="gad5fb6e3d813fbe3c04eee69d0177defd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad5fb6e3d813fbe3c04eee69d0177defd">&#9670;&nbsp;</a></span>tolerance</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t rts_frame_builder::tolerance</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The timing tolerance to use when processing pulses. </p>
-<p >Defaults to <code>timings-&gt;symbol / 2</code> when calling rts_frame_builder_init </p>
 
 </div>
 </div>

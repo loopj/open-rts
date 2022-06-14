@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['timings_0',['timings',['../group__c.html#ga6b281a943f774d4bbb4007906234c240',1,'rts_frame_builder']]],
-  ['tolerance_1',['tolerance',['../group__c.html#gad5fb6e3d813fbe3c04eee69d0177defd',1,'rts_frame_builder']]]
+  ['wakeup_5fhigh_0',['wakeup_high',['../structrts__timings.html#afe93d68fa881dcf4d721157fe147cf09',1,'rts_timings']]],
+  ['wakeup_5flow_1',['wakeup_low',['../structrts__timings.html#a67d2310a314cee6db5a145b3d22f8929',1,'rts_timings']]]
 ];

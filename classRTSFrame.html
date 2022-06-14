@@ -102,39 +102,32 @@ $(document).ready(function(){initNavTree('classRTSFrame.html',''); initResizable
 <p>Represents the message "payload" sent by RTS remote controls.  
  <a href="classRTSFrame.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="RTSFrame_8h_source.html">RTSFrame.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for RTSFrame:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classRTSFrame.png" usemap="#RTSFrame_map" alt=""/>
-  <map id="RTSFrame_map" name="RTSFrame_map">
-<area href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls." alt="rts_frame" shape="rect" coords="0,0,71,24"/>
-  </map>
-</div></div>
+<p><code>#include &lt;<a class="el" href="RTSFrame_8hpp_source.html">RTSFrame.hpp</a>&gt;</code></p>
+
+<p>Inherits <a class="el" href="structrts__frame.html">rts_frame</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b798240fe4e449f8e5042a0ad864b59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSFrame.html#a9b798240fe4e449f8e5042a0ad864b59">RTSFrame</a> (<a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> <a class="el" href="structrts__frame.html#a964158d6b5abbdf6b270ee68f5f47d1d">command</a>, uint16_t rollingCode, uint32_t remoteAddress)</td></tr>
-<tr class="memdesc:a9b798240fe4e449f8e5042a0ad864b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> with typical payload.  <a href="classRTSFrame.html#a9b798240fe4e449f8e5042a0ad864b59">More...</a><br /></td></tr>
+<tr class="memdesc:a9b798240fe4e449f8e5042a0ad864b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> with typical payload, and auto-generated encryption_key.  <a href="classRTSFrame.html#a9b798240fe4e449f8e5042a0ad864b59">More...</a><br /></td></tr>
 <tr class="separator:a9b798240fe4e449f8e5042a0ad864b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7ab0b118836ddd717714916528865c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSFrame.html#ad7ab0b118836ddd717714916528865c0">RTSFrame</a> (uint8_t *bytes)</td></tr>
 <tr class="memdesc:ad7ab0b118836ddd717714916528865c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> from the raw (deobfuscated) bytes received.  <a href="classRTSFrame.html#ad7ab0b118836ddd717714916528865c0">More...</a><br /></td></tr>
 <tr class="separator:ad7ab0b118836ddd717714916528865c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fc6ea8ab09011f6d68eb1881c49bfd7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSFrame.html#a2fc6ea8ab09011f6d68eb1881c49bfd7">RTSFrame</a> (<a class="el" href="structrts__frame.html">rts_frame</a> *frame)</td></tr>
-<tr class="memdesc:a2fc6ea8ab09011f6d68eb1881c49bfd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> by copying the contents from an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> struct.  <a href="classRTSFrame.html#a2fc6ea8ab09011f6d68eb1881c49bfd7">More...</a><br /></td></tr>
+<tr class="memdesc:a2fc6ea8ab09011f6d68eb1881c49bfd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> by copying the contents of an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a>.  <a href="classRTSFrame.html#a2fc6ea8ab09011f6d68eb1881c49bfd7">More...</a><br /></td></tr>
 <tr class="separator:a2fc6ea8ab09011f6d68eb1881c49bfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa78b70389ad653189079c0063ce51485"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSFrame.html#aa78b70389ad653189079c0063ce51485">toBytes</a> (uint8_t *bytes, bool obfuscate=false)</td></tr>
-<tr class="memdesc:aa78b70389ad653189079c0063ce51485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> to byte representation, and optionally apply XOR obfuscation to make it ready to send.  <a href="classRTSFrame.html#aa78b70389ad653189079c0063ce51485">More...</a><br /></td></tr>
+<tr class="memdesc:aa78b70389ad653189079c0063ce51485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> to byte representation.  <a href="classRTSFrame.html#aa78b70389ad653189079c0063ce51485">More...</a><br /></td></tr>
 <tr class="separator:aa78b70389ad653189079c0063ce51485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aea5945d0ba046f973e77f97aa11148bb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSFrame.html#aea5945d0ba046f973e77f97aa11148bb">obfuscateBytes</a> (uint8_t *bytes)</td></tr>
-<tr class="memdesc:aea5945d0ba046f973e77f97aa11148bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply in-place XOR obfuscation to a raw byte array representation of a frame.  <a href="classRTSFrame.html#aea5945d0ba046f973e77f97aa11148bb">More...</a><br /></td></tr>
+<tr class="memdesc:aea5945d0ba046f973e77f97aa11148bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply in-place XOR obfuscation to a raw byte representation of a frame.  <a href="classRTSFrame.html#aea5945d0ba046f973e77f97aa11148bb">More...</a><br /></td></tr>
 <tr class="separator:aea5945d0ba046f973e77f97aa11148bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5247ca42dabaf673551bd48939a7efa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSFrame.html#ac5247ca42dabaf673551bd48939a7efa">deobfuscateBytes</a> (uint8_t *dest, uint8_t *src)</td></tr>
-<tr class="memdesc:ac5247ca42dabaf673551bd48939a7efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply XOR deobfuscation to a raw byte array representation of a frame.  <a href="classRTSFrame.html#ac5247ca42dabaf673551bd48939a7efa">More...</a><br /></td></tr>
+<tr class="memdesc:ac5247ca42dabaf673551bd48939a7efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply XOR deobfuscation to a raw byte representation of a frame.  <a href="classRTSFrame.html#ac5247ca42dabaf673551bd48939a7efa">More...</a><br /></td></tr>
 <tr class="separator:ac5247ca42dabaf673551bd48939a7efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55a9053a2d3b851a46229152dbdbfafe"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSFrame.html#a55a9053a2d3b851a46229152dbdbfafe">generateChecksum</a> (uint8_t *bytes)</td></tr>
 <tr class="memdesc:a55a9053a2d3b851a46229152dbdbfafe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a checksum for the raw (deobfuscated) bytes of a frame.  <a href="classRTSFrame.html#a55a9053a2d3b851a46229152dbdbfafe">More...</a><br /></td></tr>
@@ -211,8 +204,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> with typical payload. </p>
-<p >We'll generate a sensible encryption_key automatically.</p>
+<p>Construct an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> with typical payload, and auto-generated encryption_key. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">command</td><td>the rts_command </td></tr>
@@ -266,7 +258,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> by copying the contents from an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> struct. </p>
+<p>Construct an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> by copying the contents of an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">frame</td><td></td></tr>
@@ -303,7 +295,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Convert an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> to byte representation, and optionally apply XOR obfuscation to make it ready to send. </p>
+<p>Convert an <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a> to byte representation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bytes</td><td>the byte array to store the result in </td></tr>
@@ -338,7 +330,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Apply in-place XOR obfuscation to a raw byte array representation of a frame. </p>
+<p>Apply in-place XOR obfuscation to a raw byte representation of a frame. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bytes</td><td>the raw frame bytes to obfuscate </td></tr>
@@ -382,7 +374,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Apply XOR deobfuscation to a raw byte array representation of a frame. </p>
+<p>Apply XOR deobfuscation to a raw byte representation of a frame. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dest</td><td>the destination byte array for the deobfuscated frame bytes </td></tr>
@@ -418,18 +410,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generate a checksum for the raw (deobfuscated) bytes of a frame. </p>
-<p >Checksum for a valid frame is 0.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bytes</td><td>the raw deobfuscated frame bytes to check </td></tr>
+    <tr><td class="paramname">bytes</td><td>the raw deobfuscated frame bytes to check</td></tr>
   </table>
   </dd>
 </dl>
+<p>The checksum for a valid frame should be 0. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/bindings/cpp/<a class="el" href="RTSFrame_8h_source.html">RTSFrame.h</a></li>
+<li>src/bindings/cpp/<a class="el" href="RTSFrame_8hpp_source.html">RTSFrame.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
