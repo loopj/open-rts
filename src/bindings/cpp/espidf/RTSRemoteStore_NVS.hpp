@@ -1,7 +1,7 @@
-#ifndef RTS_REMOTE_STORE_NVS_CPP_H
-#define RTS_REMOTE_STORE_NVS_CPP_H
+#ifndef RTS_REMOTE_STORE_NVS_HPP
+#define RTS_REMOTE_STORE_NVS_HPP
 
-#include "bindings/cpp/RTSRemoteStore.h"
+#include "bindings/cpp/RTSRemoteStore.hpp"
 
 class RTSRemoteStore_NVS : public RTSRemoteStore
 {

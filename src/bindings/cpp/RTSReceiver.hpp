@@ -1,18 +1,20 @@
-/**
- * @file
- * @addtogroup cpp
- *
- *  @{
- */
-
-#ifndef RTS_RECEIVER_CPP_H
-#define RTS_RECEIVER_CPP_H
+#ifndef RTS_RECEIVER_HPP
+#define RTS_RECEIVER_HPP
 
 #include "rts_receiver.h"
 
-#include "RTSFrame.h"
-#include "RTSPulseSource.h"
-#include "RTSRemoteStore.h"
+#include "RTSFrame.hpp"
+#include "RTSPulseSource.hpp"
+#include "RTSRemoteStore.hpp"
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup cpp
+ * @{
+ */
 
 /**
  * Simulates a physical RTS receiver device, such as a shade or drapery motor.
@@ -134,6 +136,8 @@ class RTSReceiver : protected rts_receiver
     void *modeCallbackUserData = nullptr;
 };
 
-#endif // RTS_RECEIVER_CPP_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_RECEIVER_HPP

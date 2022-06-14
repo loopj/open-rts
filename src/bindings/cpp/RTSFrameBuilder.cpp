@@ -2,7 +2,7 @@
 
 #if OPENRTS_INCLUDE_CPP_BINDINGS
 
-#include "RTSFrameBuilder.h"
+#include "RTSFrameBuilder.hpp"
 
 RTSFrameBuilder::RTSFrameBuilder(rts_timings *timings)
 {

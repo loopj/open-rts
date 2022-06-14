@@ -1,14 +1,16 @@
-/**
- * @file
- * @addtogroup cpp
- *
- *  @{
- */
-
-#ifndef RTS_PULSE_OUTPUT_CPP_H
-#define RTS_PULSE_OUTPUT_CPP_H
+#ifndef RTS_PULSE_OUTPUT_HPP
+#define RTS_PULSE_OUTPUT_HPP
 
 #include "rts_pulse_output.h"
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup cpp
+ * @{
+ */
 
 /**
  * Provides an interface for an output of RTS pulses, eg a GPIO or radio.
@@ -45,6 +47,8 @@ class RTSPulseOutput : protected rts_pulse_output
     friend class RTSRemote;
 };
 
-#endif // RTS_PULSE_OUTPUT_CPP_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_PULSE_OUTPUT_HPP

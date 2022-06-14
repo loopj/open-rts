@@ -4,7 +4,7 @@
 
 #include <Arduino.h>
 
-#include "RTSPulseOutput_ArduinoGPIO.h"
+#include "RTSPulseOutput_ArduinoGPIO.hpp"
 
 static void rts_pulse_output_enable_gpio(struct rts_pulse_output *pulse_output)
 {

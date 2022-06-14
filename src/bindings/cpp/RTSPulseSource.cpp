@@ -2,7 +2,7 @@
 
 #if OPENRTS_INCLUDE_CPP_BINDINGS
 
-#include "RTSPulseSource.h"
+#include "RTSPulseSource.hpp"
 
 RTSPulseSource::~RTSPulseSource()
 {

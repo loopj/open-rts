@@ -2,16 +2,16 @@
 
 #include "config.h"
 
-#include "bindings/cpp/RTSRemoteStore.h"
+#include "bindings/cpp/RTSRemoteStore.hpp"
 
 #if OPENRTS_HAS_NVS
-#include "bindings/cpp/espidf/RTSRemoteStore_NVS.h"
+#include "bindings/cpp/espidf/RTSRemoteStore_NVS.hpp"
 #elif OPENRTS_HAS_EEPROM
-#include "bindings/cpp/arduino/RTSRemoteStore_EEPROM.h"
+#include "bindings/cpp/arduino/RTSRemoteStore_EEPROM.hpp"
 #elif OPENRTS_HAS_MMAP
-#include "bindings/cpp/linux/RTSRemoteStore_MMap.h"
+#include "bindings/cpp/linux/RTSRemoteStore_MMap.hpp"
 #else
-#include "bindings/cpp/RTSRemoteStore_Memory.h"
+#include "bindings/cpp/RTSRemoteStore_Memory.hpp"
 #endif
 
 RTSRemoteStore *store;

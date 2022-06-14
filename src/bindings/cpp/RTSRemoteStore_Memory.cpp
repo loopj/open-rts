@@ -4,7 +4,7 @@
 
 #include "rts_remote_store_memory.h"
 
-#include "RTSRemoteStore_Memory.h"
+#include "RTSRemoteStore_Memory.hpp"
 
 RTSRemoteStore_Memory::RTSRemoteStore_Memory()
 {

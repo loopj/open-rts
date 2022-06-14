@@ -1,16 +1,18 @@
-/**
- * @file
- * @addtogroup cpp
- *
- *  @{
- */
-
-#ifndef RTS_PULSE_SOURCE_CPP_H
-#define RTS_PULSE_SOURCE_CPP_H
+#ifndef RTS_PULSE_SOURCE_HPP
+#define RTS_PULSE_SOURCE_HPP
 
 #include "rts_pulse_source.h"
 
-#include "RTSFrameBuilder.h"
+#include "RTSFrameBuilder.hpp"
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup cpp
+ * @{
+ */
 
 /**
  * Provides an interface for a source of RTS pulses, eg a GPIO or radio.
@@ -56,6 +58,8 @@ class RTSPulseSource : protected rts_pulse_source
     friend class RTSReceiver;
 };
 
-#endif // RTS_PULSE_SOURCE_CPP_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_PULSE_SOURCE_HPP

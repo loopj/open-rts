@@ -1,7 +1,7 @@
-#ifndef RTS_RADIO_SX1278_CPP_H
-#define RTS_RADIO_SX1278_CPP_H
+#ifndef RTS_RADIO_SX1278_HPP
+#define RTS_RADIO_SX1278_HPP
 
-#include "bindings/cpp/RTSRadio.h"
+#include "bindings/cpp/RTSRadio.hpp"
 
 class RTSRadio_SX1278 : public RTSRadio
 {
@@ -17,4 +17,4 @@ class RTSRadio_SX1278 : public RTSRadio
     }
 };
 
-#endif // RTS_RADIO_SX1278_CPP_H
+#endif // RTS_RADIO_SX1278_HPP

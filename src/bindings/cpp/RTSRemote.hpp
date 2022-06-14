@@ -1,18 +1,20 @@
-/**
- * @file
- * @addtogroup cpp
- *
- *  @{
- */
-
-#ifndef RTS_REMOTE_CPP_H
-#define RTS_REMOTE_CPP_H
+#ifndef RTS_REMOTE_HPP
+#define RTS_REMOTE_HPP
 
 #include "rts_remote.h"
 
-#include "RTSFrame.h"
-#include "RTSPulseOutput.h"
-#include "RTSRemoteStore.h"
+#include "RTSFrame.hpp"
+#include "RTSPulseOutput.hpp"
+#include "RTSRemoteStore.hpp"
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup cpp
+ * @{
+ */
 
 /**
  * Simulates a physical RTS remote control.
@@ -75,6 +77,8 @@ class RTSRemote : public rts_remote
     void sendPulse(bool state, uint32_t micros);
 };
 
-#endif // RTS_REMOTE_CPP_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_REMOTE_HPP

@@ -1,7 +1,7 @@
-#ifndef RTS_PULSE_SOURCE_ARDUINO_GPIO_CPP_H
-#define RTS_PULSE_SOURCE_ARDUINO_GPIO_CPP_H
+#ifndef RTS_PULSE_SOURCE_ARDUINO_GPIO_HPP
+#define RTS_PULSE_SOURCE_ARDUINO_GPIO_HPP
 
-#include "bindings/cpp/RTSPulseSource.h"
+#include "bindings/cpp/RTSPulseSource.hpp"
 
 class RTSPulseSource_ArduinoGPIO : public RTSPulseSource
 {
@@ -22,4 +22,4 @@ class RTSPulseSource_ArduinoGPIO : public RTSPulseSource
     static RTSPulseSource_ArduinoGPIO *interruptInstance;
 };
 
-#endif // RTS_PULSE_SOURCE_ARDUINO_GPIO_CPP_H
+#endif // RTS_PULSE_SOURCE_ARDUINO_GPIO_HPP

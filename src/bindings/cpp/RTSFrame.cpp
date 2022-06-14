@@ -2,7 +2,7 @@
 
 #if OPENRTS_INCLUDE_CPP_BINDINGS
 
-#include "RTSFrame.h"
+#include "RTSFrame.hpp"
 
 RTSFrame::RTSFrame(rts_command command, uint16_t rollingCode,
                    uint32_t remoteAddress)

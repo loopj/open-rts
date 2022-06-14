@@ -4,7 +4,7 @@
 
 #include "linux/rts_remote_store_mmap.h"
 
-#include "RTSRemoteStore_MMap.h"
+#include "RTSRemoteStore_MMap.hpp"
 
 RTSRemoteStore_MMap::RTSRemoteStore_MMap(const char *filepath)
 {
