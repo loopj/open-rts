@@ -2,7 +2,7 @@
 
 #if OPENRTS_INCLUDE_CPP_BINDINGS
 
-#include "RTSRadio.h"
+#include "RTSRadio.hpp"
 
 #if defined(ARDUINO)
 #include "ookradio/hal/targets/arduino/spi_module_arduino.h"

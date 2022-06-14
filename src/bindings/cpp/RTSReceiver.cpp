@@ -2,7 +2,7 @@
 
 #if OPENRTS_INCLUDE_CPP_BINDINGS
 
-#include "RTSReceiver.h"
+#include "RTSReceiver.hpp"
 
 RTSReceiver::RTSReceiver(RTSPulseSource *pulseSource,
                          RTSRemoteStore *remoteStore)

@@ -4,7 +4,7 @@
 
 #include <EEPROM.h>
 
-#include "RTSRemoteStore_EEPROM.h"
+#include "RTSRemoteStore_EEPROM.hpp"
 
 static int _get_remote_index(struct rts_remote_store *store,
                              uint32_t remote_address)

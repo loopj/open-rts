@@ -4,7 +4,7 @@
 
 #include <Arduino.h>
 
-#include "RTSPulseSource_ArduinoGPIO.h"
+#include "RTSPulseSource_ArduinoGPIO.hpp"
 
 #if defined(ARDUINO_ARCH_ESP32) || defined(ESP8266)
 #define INTERRUPT_ATTR IRAM_ATTR

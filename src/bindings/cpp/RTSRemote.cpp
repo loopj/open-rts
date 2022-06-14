@@ -2,7 +2,7 @@
 
 #if OPENRTS_INCLUDE_CPP_BINDINGS
 
-#include "RTSRemote.h"
+#include "RTSRemote.hpp"
 
 RTSRemote::RTSRemote(RTSPulseOutput *output, RTSRemoteStore *store,
                      rts_timings *timings)

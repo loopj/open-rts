@@ -1,14 +1,16 @@
-/**
- * @file
- * @addtogroup cpp
- *
- *  @{
- */
-
-#ifndef RTS_REMOTE_STORE_CPP_H
-#define RTS_REMOTE_STORE_CPP_H
+#ifndef RTS_REMOTE_STORE_HPP
+#define RTS_REMOTE_STORE_HPP
 
 #include "rts_remote_store.h"
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup cpp
+ * @{
+ */
 
 /**
  * Provides an interface for a datastore which contains details about remote
@@ -102,6 +104,8 @@ class RTSRemoteStore : protected rts_remote_store
     friend class RTSReceiver;
 };
 
-#endif // RTS_REMOTE_STORE_CPP_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_REMOTE_STORE_HPP

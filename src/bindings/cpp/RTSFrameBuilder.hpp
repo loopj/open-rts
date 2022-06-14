@@ -1,16 +1,18 @@
-/**
- * @file
- * @addtogroup cpp
- *
- *  @{
- */
-
-#ifndef RTS_FRAME_BUILDER_CPP_H
-#define RTS_FRAME_BUILDER_CPP_H
+#ifndef RTS_FRAME_BUILDER_HPP
+#define RTS_FRAME_BUILDER_HPP
 
 #include "rts_frame_builder.h"
 
-#include "RTSFrame.h"
+#include "RTSFrame.hpp"
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup cpp
+ * @{
+ */
 
 /**
  * Assembles pulses received via RTSFrameBuilder::handlePulse, into a
@@ -78,6 +80,8 @@ class RTSFrameBuilder : public rts_frame_builder
     friend class RTSPulseSource;
 };
 
-#endif // RTS_FRAME_BUILDER_CPP_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_FRAME_BUILDER_HPP

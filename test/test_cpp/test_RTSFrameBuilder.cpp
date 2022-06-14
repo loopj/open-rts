@@ -4,8 +4,8 @@
 
 #include "rts_pulse_output.h"
 
-#include "bindings/cpp/RTSFrameBuilder.h"
-#include "bindings/cpp/RTSRemote.h"
+#include "bindings/cpp/RTSFrameBuilder.hpp"
+#include "bindings/cpp/RTSRemote.hpp"
 
 static int callbackCount = 0;
 

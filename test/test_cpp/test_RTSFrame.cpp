@@ -1,6 +1,6 @@
 #include <unity.h>
 
-#include "bindings/cpp/RTSFrame.h"
+#include "bindings/cpp/RTSFrame.hpp"
 
 static void test_fromBytes()
 {
