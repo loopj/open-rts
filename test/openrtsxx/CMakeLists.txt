@@ -8,7 +8,8 @@ add_executable(test_openrtsxx EXCLUDE_FROM_ALL
 )
 
 target_link_libraries(test_openrtsxx
-    unity openrtsxx
+    unity
+    openrtsxx
 )
 
 target_include_directories(test_openrtsxx

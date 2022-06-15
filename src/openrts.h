@@ -1,5 +1,5 @@
-#ifndef OPEN_RTS_H
-#define OPEN_RTS_H
+#ifndef OPENRTS_H
+#define OPENRTS_H
 
 /**
  * @file
@@ -50,4 +50,4 @@
 #include "openrts/linux/rts_remote_store_mmap.h"
 #endif
 
-#endif // OPEN_RTS_H
+#endif // OPENRTS_H

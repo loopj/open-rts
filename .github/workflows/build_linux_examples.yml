@@ -1,0 +1,36 @@
+name: Build Linux Example Apps
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - src/**
+      - examples/linux/**
+      - .github/workflows/build_linux_examples.yml
+
+jobs:
+  build-examples:
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        example:
+          - sniffer
+          - remote
+          - receiver
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Install libgpiod
+        run: sudo apt-get install -y libgpiod-dev
+
+      - name: Build example
+        run: |
+          mkdir examples/linux/${{ matrix.example }}/build
+          cd examples/linux/${{ matrix.example }}/build
+          cmake ..
+          make ${{ matrix.example }}

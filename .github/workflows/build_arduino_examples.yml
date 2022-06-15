@@ -10,6 +10,7 @@ on:
 
 jobs:
   build-examples:
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -47,8 +48,6 @@ jobs:
               https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
             board-defines: |
               -DOPENRTS_BOARD_ADAFRUIT_M0_RFM69 -DOPENRTS_BUTTON_1=0 -DOPENRTS_BUTTON_2=0 -DOPENRTS_BUTTON_3=0 -DOPENRTS_BUTTON_4=0
-
-    runs-on: ubuntu-latest
 
     steps:
       # Checkout the repo

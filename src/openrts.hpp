@@ -1,5 +1,5 @@
-#ifndef OPEN_RTS_HPP
-#define OPEN_RTS_HPP
+#ifndef OPENRTS_HPP
+#define OPENRTS_HPP
 
 /**
  * @file
@@ -49,4 +49,4 @@
 #include "openrtsxx/linux/RTSRemoteStore_MMap.hpp"
 #endif
 
-#endif // OPEN_RTS_H
+#endif // OPENRTS_HPP
