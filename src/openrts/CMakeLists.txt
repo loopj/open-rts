@@ -32,7 +32,9 @@ if(ESP_PLATFORM)
         espidf/rts_remote_store_nvs.c
     )
 
-    target_link_libraries(openrts PRIVATE idf::nvs_flash)
+    target_link_libraries(openrts PRIVATE
+        idf::nvs_flash
+    )
 endif()
 
 # Include memory-mapped remote_store when available
