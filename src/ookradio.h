@@ -13,6 +13,10 @@
 // SPI hardware abstraction layer
 #include "ookradio/hal/spi_module.h"
 
+#if defined(ARDUINO) && defined(__cplusplus)
+#include "ookradio/hal/targets/arduino/spi_module_arduino.hpp"
+#endif
+
 #if defined(ESP_PLATFORM)
 #include "ookradio/hal/targets/espidf/spi_module_espidf.h"
 #endif

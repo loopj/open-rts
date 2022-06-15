@@ -122,8 +122,21 @@ enum {
 extern "C" {
 #endif
 
+/**
+ * @brief Initialize an SPI-attached SX1278/RFM96 radio module
+ *
+ * @relates sx1278
+ *
+ * @param radio the sx1278 struct to initialize
+ * @param spi the spi_module we are connecting through
+ * @param use_pa_boost is this radio module using the PA_BOOST pin?
+ *                     The should typically be set to true
+ *
+ * @return OOKRADIO_ERR_NONE if initialized successfully
+ */
 void sx1278_init(struct sx1278 *radio, struct spi_module *spi,
                  bool use_pa_boost);
+
 void sx1278_set_long_range_mode(struct sx1278 *radio, bool long_range_mode);
 void sx1278_set_data_mode(struct sx1278 *radio, int mode);
 void sx1278_set_modulation_type(struct sx1278 *radio, int modulation);
