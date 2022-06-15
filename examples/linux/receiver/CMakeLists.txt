@@ -8,11 +8,13 @@ project(receiver
 
 set(OPENRTS_HAS_GPIOD 1)
 
-add_executable(receiver receiver.c)
 add_subdirectory(../../.. openrts)
 
-target_compile_definitions(receiver PRIVATE
-    OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
+add_executable(receiver
+    receiver.c
 )
 
-target_link_libraries(receiver openrts gpiod)
+target_link_libraries(receiver
+    openrts
+    gpiod
+)

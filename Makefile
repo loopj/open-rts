@@ -1,8 +1,7 @@
 .PHONY: clean docs format
 
 clean:
-	@rm -rf .vscode docs
-	@find -type d -name build -o -name "sdkconfig*" | xargs rm -rf
+	@git clean -fdXi
 
 docs:
 	@doxygen doxygen/Doxyfile

@@ -8,11 +8,13 @@ project(remote
 
 set(OPENRTS_HAS_GPIOD 1)
 
-add_executable(remote remote.c)
 add_subdirectory(../../.. openrts)
 
-target_compile_definitions(remote PRIVATE
-    OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
+add_executable(remote
+    remote.c
 )
 
-target_link_libraries(remote openrts gpiod)
+target_link_libraries(remote
+    openrts
+    gpiod
+)

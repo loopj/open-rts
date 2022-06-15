@@ -8,11 +8,13 @@ project(sniffer
 
 set(OPENRTS_HAS_GPIOD 1)
 
-add_executable(sniffer sniffer.c)
 add_subdirectory(../../.. openrts)
 
-target_compile_definitions(sniffer PRIVATE
-    OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET
+add_executable(sniffer
+    sniffer.c
 )
 
-target_link_libraries(sniffer openrts gpiod)
+target_link_libraries(sniffer
+    openrts
+    gpiod
+)
