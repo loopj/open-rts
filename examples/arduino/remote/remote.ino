@@ -18,6 +18,8 @@
 // #define OPENRTS_BOARD_SPARKFUN_LORA_GATEWAY
 // #define OPENRTS_BOARD_TTGO_LORA32_V21
 // #define OPENRTS_BOARD_HELTEC_WIFI_LORA_32_V2
+// #define OPENRTS_BOARD_ADAFRUIT_M0_RFM69
+// #define OPENRTS_BOARD_ADAFRUIT_32U4_RFM69
 
 //
 // Uncomment all of the following and configure which GPIOs to use for input
@@ -28,7 +30,7 @@
 // #define OPENRTS_BUTTON_3 19  // Down button
 // #define OPENRTS_BUTTON_4 18  // Prog button
 
-#include "open_rts.h"
+#include <openrts.hpp>
 
 // Supported radio modules
 #if defined(OPENRTS_RADIO_TYPE_RFM69)

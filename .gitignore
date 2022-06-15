@@ -1,7 +1,8 @@
 .pio
 docs
-sdkconfig.*
-CMakeLists.txt
+sdkconfig*
 .vscode
 *.swp
 remotes.dat
+build/
+TODO

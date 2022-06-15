@@ -25,6 +25,8 @@
 // #define OPENRTS_BOARD_SPARKFUN_LORA_GATEWAY
 // #define OPENRTS_BOARD_TTGO_LORA32_V21
 // #define OPENRTS_BOARD_HELTEC_WIFI_LORA_32_V2
+// #define OPENRTS_BOARD_ADAFRUIT_M0_RFM69
+// #define OPENRTS_BOARD_ADAFRUIT_32U4_RFM69
 
 //
 // Also define which GPIO to use for the "programming mode" button
@@ -32,7 +34,7 @@
 
 // #define OPENRTS_BUTTON_1 0
 
-#include "open_rts.h"
+#include <openrts.hpp>
 
 // Supported radio modules
 #if defined(OPENRTS_RADIO_TYPE_RFM69)
@@ -131,6 +133,7 @@ void pollModeButton() {
 void setup() {
     // Enable serial debugging
     Serial.begin(115200);
+    while(!Serial) yield();
 
     // Set up the onboard button and LED
     pinMode(OPENRTS_BUTTON_1, INPUT_PULLUP);
