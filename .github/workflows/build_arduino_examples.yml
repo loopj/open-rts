@@ -15,13 +15,20 @@ jobs:
 
     strategy:
       matrix:
-        example: ["examples/arduino/sniffer", "examples/arduino/remote", "examples/arduino/receiver"]
-        arduino-platform: ["esp32:esp32"]
+        example: ["sniffer", "remote", "receiver"]
+        board: ["esp32:esp32:sparkfun_lora_gateway_1-channel", "adafruit:avr:feather32u4"]
 
+        # Representative ESP32 board
         include:
-          - arduino-platform: "esp32:esp32"
-            fqbn: "esp32:esp32:sparkfun_lora_gateway_1-channel"
-            board-defines: "-DOPENRTS_BOARD_SPARKFUN_LORA_GATEWAY -DOPENRTS_BUTTON_2=23 -DOPENRTS_BUTTON_3=19 -DOPENRTS_BUTTON_4=18"
+          - board: "esp32:esp32:sparkfun_lora_gateway_1-channel"
+            cores: "esp32:esp32"
+            board-defines: "-DOPENRTS_BOARD_SPARKFUN_LORA_GATEWAY -DOPENRTS_BUTTON_2=0 -DOPENRTS_BUTTON_3=0 -DOPENRTS_BUTTON_4=0"
+        
+        # Representative AVR board
+        include:
+          - board: "adafruit:avr:feather32u4"
+            cores: "arduino:avr adafruit:avr"
+            board-defines: "-DOPENRTS_BOARD_ADAFRUIT_32U4_RFM69 -DOPENRTS_BUTTON_1=0 -DOPENRTS_BUTTON_2=0 -DOPENRTS_BUTTON_3=0 -DOPENRTS_BUTTON_4=0"
 
     runs-on: ubuntu-latest
 
@@ -43,14 +50,14 @@ jobs:
           arduino-cli config add board_manager.additional_urls https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
           arduino-cli config add board_manager.additional_urls https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
           arduino-cli core update-index
-          arduino-cli core install ${{ matrix.arduino-platform }}
+          arduino-cli core install ${{ matrix.cores }}
 
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
       - name: Compile Sketch
         run: |
           arduino-cli compile \
-            --fqbn ${{ matrix.fqbn }} \
+            --fqbn ${{ matrix.board }} \
             --build-property compiler.cpp.extra_flags="${{ matrix.board-defines }}" \
             --library="$PWD" \
-            ${{matrix.example}}
+            examples/arduino/${{matrix.example}}
