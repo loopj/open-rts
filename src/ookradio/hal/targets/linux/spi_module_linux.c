@@ -5,14 +5,15 @@
 #include <stdio.h>
 #include <sys/ioctl.h>
 
+#include "../../../errors.h"
 #include "spi_module_linux.h"
 
 static int transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
-                     uint8_t *rx_buffer, uint8_t length)
+                    uint8_t *rx_buffer, uint8_t length)
 {
     if(spi_module->user_data_int == -1) {
         printf("SPI transfer failed\n");
-        return -1;
+        return OOKRADIO_ERR_SPI_TRANSFER_FAILED;
     }
 
     struct spi_ioc_transfer transfer = {
@@ -24,10 +25,10 @@ static int transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
 
     if(ioctl(spi_module->user_data_int, SPI_IOC_MESSAGE(1), &transfer) == -1) {
         perror("SPI transfer failed");
-        return -1;
+        return OOKRADIO_ERR_SPI_TRANSFER_FAILED;
     }
 
-    return 0;
+    return OOKRADIO_ERR_NONE;
 }
 
 int spi_module_init_linux(struct spi_module *spi_module, const char *device)
@@ -37,8 +38,10 @@ int spi_module_init_linux(struct spi_module *spi_module, const char *device)
 
     if(spi_module->user_data_int == -1) {
         perror("SPI init failed");
-        return -1;
+        return OOKRADIO_ERR_SPI_INIT_FAILED;
     }
+
+    return OOKRADIO_ERR_NONE;
 }
 
 #endif

@@ -1,10 +1,22 @@
-#ifndef RTS_RADIO_SX1278_H
-#define RTS_RADIO_SX1278_H
+#ifndef SX1278_H
+#define SX1278_H
 
 #include <stdbool.h>
 
 #include "../../hal/spi_module.h"
 
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup ookradio
+ * @{
+ */
+
+/**
+ * An SPI-attached SX1278 or RFM96 radio module
+ */
 struct sx1278 {
     struct spi_module *spi_module;
     bool use_pa_boost;
@@ -126,4 +138,8 @@ void sx1278_set_mode(struct sx1278 *radio, int mode);
 } // extern "C"
 #endif
 
-#endif // RTS_RADIO_SX1278_H
+/**
+ * @}
+ */
+
+#endif // SX1278_H

@@ -3,6 +3,10 @@
 
 #include <openrts/rts_radio.h>
 
+#if defined(ARDUINO)
+#include <SPI.h>
+#endif
+
 /**
  * @file
  */
@@ -26,7 +30,10 @@ class RTSRadio : protected rts_radio
     void setMode(enum rts_radio_mode mode);
 
   protected:
-    struct spi_module *defaultSPIModule(uint8_t chipSelect);
+    #if defined(ARDUINO)
+    struct spi_module *initArduinoSPI(uint8_t chipSelect, SPIClass *spiDevice);
+    struct spi_module spi = {};
+    #endif
 };
 
 /**

@@ -1,7 +1,6 @@
 #ifndef OOKRADIO_H
 #define OOKRADIO_H
 
-
 /**
  * @file
  */
@@ -13,10 +12,6 @@
 
 // SPI hardware abstraction layer
 #include "ookradio/hal/spi_module.h"
-
-#if defined(ARDUINO)
-#include "ookradio/hal/targets/arduino/spi_module_arduino.h"
-#endif
 
 #if defined(ESP_PLATFORM)
 #include "ookradio/hal/targets/espidf/spi_module_espidf.h"

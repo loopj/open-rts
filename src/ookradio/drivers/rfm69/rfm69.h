@@ -1,10 +1,22 @@
-#ifndef RTS_RADIO_RFM69_H
-#define RTS_RADIO_RFM69_H
+#ifndef RFM69_H
+#define RFM69_H
 
 #include <stdbool.h>
 
 #include "../../hal/spi_module.h"
 
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup ookradio
+ * @{
+ */
+
+/**
+ * An SPI-attached SX1231 or RFM69 radio module
+ */
 struct rfm69 {
     struct spi_module *spi_module;
     bool use_pa_boost;
@@ -16,6 +28,10 @@ struct rfm69 {
 #define RFM69_FXOSC 32000000.0
 #define RFM69_FSTEP (RFM69_FXOSC / 524288)
 
+// Known version numbers
+#define SX1231_VERSION 0x23
+#define RFM69_VERSION 0x24
+
 // Register map
 enum {
     RFM69_REG_OP_MODE     = 0x01,
@@ -25,6 +41,7 @@ enum {
     RFM69_REG_FRF_MSB     = 0x07,
     RFM69_REG_FRF_MID     = 0x08,
     RFM69_REG_FRF_LSB     = 0x09,
+    RFM69_REG_VERSION     = 0x10,
     RFM69_REG_PA_LEVEL    = 0x11,
     RFM69_REG_OCP         = 0x13,
     RFM69_REG_RX_BW       = 0x19,
@@ -141,7 +158,20 @@ enum {
 extern "C" {
 #endif
 
-void rfm69_init(struct rfm69 *radio, struct spi_module *spi, bool use_pa_boost);
+/**
+ * @brief Initialize an SPI-attached RFM69 radio module
+ *
+ * @relates rfm69
+ *
+ * @param radio the rfm69 struct to initialize
+ * @param spi the spi_module we are connecting through
+ * @param use_pa_boost is this radio module using the PA_BOOST pin?
+ *                     The should typically be set to true
+ *
+ * @return OOKRADIO_ERR_NONE if initialized successfully
+ */
+int rfm69_init(struct rfm69 *radio, struct spi_module *spi, bool use_pa_boost);
+
 void rfm69_set_data_mode(struct rfm69 *radio, uint8_t mode);
 void rfm69_set_modulation_type(struct rfm69 *radio, uint8_t modulation);
 void rfm69_set_frequency(struct rfm69 *radio, unsigned long freq);
@@ -154,4 +184,8 @@ void rfm69_set_mode(struct rfm69 *radio, uint8_t mode);
 } // extern "C"
 #endif
 
-#endif // RTS_RADIO_RFM69_H
+/**
+ * @}
+ */
+
+#endif // RFM69_H
