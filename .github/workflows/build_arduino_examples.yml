@@ -1,7 +1,5 @@
 name: Build Arduino Example Apps
 
-# Here we tell GitHub to run the workflow when a commit
-# is pushed or a Pull Request is opened.
 on:
   workflow_dispatch:
   push:
@@ -15,46 +13,67 @@ jobs:
 
     strategy:
       matrix:
-        example: ["sniffer", "remote", "receiver"]
-        board: ["esp32:esp32:sparkfun_lora_gateway_1-channel", "adafruit:avr:feather32u4"]
+        example:
+          - sniffer
+          - remote
+          - receiver
 
-        # Representative ESP32 board
+        board:
+          - esp32:esp32:sparkfun_lora_gateway_1-channel
+          - adafruit:avr:feather32u4
+          - adafruit:samd:adafruit_feather_m0
+
         include:
+          # Representative ESP32 board
           - board: "esp32:esp32:sparkfun_lora_gateway_1-channel"
             cores: "esp32:esp32"
-            board-defines: "-DOPENRTS_BOARD_SPARKFUN_LORA_GATEWAY -DOPENRTS_BUTTON_2=0 -DOPENRTS_BUTTON_3=0 -DOPENRTS_BUTTON_4=0"
-        
-        # Representative AVR board
-        include:
+            board-url: |
+              https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+            board-defines: |
+              -DOPENRTS_BOARD_SPARKFUN_LORA_GATEWAY -DOPENRTS_BUTTON_2=0 -DOPENRTS_BUTTON_3=0 -DOPENRTS_BUTTON_4=0
+
+          # Representative AVR board
           - board: "adafruit:avr:feather32u4"
             cores: "arduino:avr adafruit:avr"
-            board-defines: "-DOPENRTS_BOARD_ADAFRUIT_32U4_RFM69 -DOPENRTS_BUTTON_1=0 -DOPENRTS_BUTTON_2=0 -DOPENRTS_BUTTON_3=0 -DOPENRTS_BUTTON_4=0"
+            board-url: |
+              https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
+            board-defines: |
+              -DOPENRTS_BOARD_ADAFRUIT_32U4_RFM69 -DOPENRTS_BUTTON_1=0 -DOPENRTS_BUTTON_2=0 -DOPENRTS_BUTTON_3=0 -DOPENRTS_BUTTON_4=0
+
+          # Representative SAMD board
+          - board: "adafruit:samd:adafruit_feather_m0"
+            cores: "adafruit:samd"
+            board-url: |
+              https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
+            board-defines: |
+              -DOPENRTS_BOARD_ADAFRUIT_M0_RFM69 -DOPENRTS_BUTTON_1=0 -DOPENRTS_BUTTON_2=0 -DOPENRTS_BUTTON_3=0 -DOPENRTS_BUTTON_4=0
 
     runs-on: ubuntu-latest
 
     steps:
-      # First of all, we clone the repo using the `checkout` action.
+      # Checkout the repo
       - name: Checkout
         uses: actions/checkout@v3
 
-      # We use the `arduino/setup-arduino-cli` action to install and
-      # configure the Arduino CLI on the system.
+      # Install arduino cli
       - name: Setup Arduino CLI
         uses: arduino/setup-arduino-cli@v1
 
-      # We then install the platform, which one will be determined
-      # dynamically by the build matrix.
-      - name: Install platform
+      # Add additional board URL, if required
+      - name: Add additional board URLs
         run: |
           arduino-cli config init
-          arduino-cli config add board_manager.additional_urls https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-          arduino-cli config add board_manager.additional_urls https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
+          arduino-cli config add board_manager.additional_urls ${{ matrix.board-url }}
+        if: ${{ matrix.board-url }}
+
+      # Install cores
+      - name: Install platform
+        run: |
           arduino-cli core update-index
           arduino-cli core install ${{ matrix.cores }}
 
-      # Finally, we compile the sketch, using the FQBN that was set
-      # in the build matrix.
-      - name: Compile Sketch
+      # Compile the example sketch
+      - name: Compile sketch
         run: |
           arduino-cli compile \
             --fqbn ${{ matrix.board }} \
