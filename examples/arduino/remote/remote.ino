@@ -30,7 +30,7 @@
 // #define OPENRTS_BUTTON_3 19  // Down button
 // #define OPENRTS_BUTTON_4 18  // Prog button
 
-#include "open_rts.h"
+#include <openrts.hpp>
 
 // Supported radio modules
 #if defined(OPENRTS_RADIO_TYPE_RFM69)

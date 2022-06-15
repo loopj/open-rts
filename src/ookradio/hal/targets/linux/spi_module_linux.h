@@ -1,7 +1,7 @@
 #ifndef SPI_MODULE_LINUX_H
 #define SPI_MODULE_LINUX_H
 
-#include "ookradio/hal/spi_module.h"
+#include "../../spi_module.h"
 
 #ifdef __cplusplus
 extern "C" {

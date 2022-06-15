@@ -35,7 +35,7 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "open_rts.h"
+#include <openrts.h>
 
 struct rts_radio radio;
 struct rts_pulse_source pulse_source;

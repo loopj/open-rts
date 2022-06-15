@@ -18,7 +18,7 @@
 
 #include <stdio.h>
 
-#include "open_rts.h"
+#include <openrts.h>
 
 struct rts_radio radio;
 struct rts_frame_builder frame_builder;

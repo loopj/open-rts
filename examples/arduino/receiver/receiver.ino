@@ -34,7 +34,7 @@
 
 // #define OPENRTS_BUTTON_1 0
 
-#include "open_rts.h"
+#include <openrts.hpp>
 
 // Supported radio modules
 #if defined(OPENRTS_RADIO_TYPE_RFM69)

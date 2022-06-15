@@ -31,7 +31,7 @@
 #include "driver/gpio.h"
 #include "driver/spi_master.h"
 
-#include "open_rts.h"
+#include <openrts.h>
 
 struct rts_radio radio;
 struct rts_remote remote;

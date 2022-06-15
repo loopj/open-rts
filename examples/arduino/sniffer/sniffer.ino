@@ -19,7 +19,7 @@
 // #define OPENRTS_BOARD_ADAFRUIT_M0_RFM69
 // #define OPENRTS_BOARD_ADAFRUIT_32U4_RFM69
 
-#include "open_rts.h"
+#include <openrts.hpp>
 
 // Supported radio modules
 #if defined(OPENRTS_RADIO_TYPE_RFM69)

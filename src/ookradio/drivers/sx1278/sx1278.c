@@ -1,5 +1,4 @@
 #include "sx1278.h"
-#include <stdio.h>
 
 // TODO: Return error code if sensible init fails
 // E.g. check SPI is not NULL, and check "version" register

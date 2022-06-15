@@ -30,7 +30,7 @@
 #include <gpiod.h>
 #include <stdio.h>
 
-#include "open_rts.h"
+#include <openrts.h>
 
 struct rts_radio radio;
 struct rts_pulse_output pulse_output;
