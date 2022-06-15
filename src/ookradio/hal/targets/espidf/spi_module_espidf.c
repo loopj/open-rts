@@ -1,4 +1,4 @@
-#if 1//defined(ESP_PLATFORM)
+#if defined(ESP_PLATFORM)
 
 #include "../../../errors.h"
 #include "spi_module_espidf.h"
