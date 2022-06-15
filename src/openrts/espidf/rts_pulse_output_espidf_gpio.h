@@ -3,6 +3,15 @@
 
 #include "../rts_pulse_output.h"
 
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -24,5 +33,9 @@ void rts_pulse_output_init_espidf_gpio(struct rts_pulse_output *pulse_output,
 #ifdef __cplusplus
 } // extern "C"
 #endif
+
+/**
+ * @}
+ */
 
 #endif // RTS_PULSE_OUTPUT_ESPIDF_GPIO_H

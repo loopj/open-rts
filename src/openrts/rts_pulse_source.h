@@ -1,9 +1,3 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_PULSE_SOURCE_H
 #define RTS_PULSE_SOURCE_H
 
@@ -11,6 +5,15 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * Provides an interface for a source of RTS pulses, eg a GPIO or radio.
@@ -98,6 +101,8 @@ void rts_pulse_source_close(struct rts_pulse_source *pulse_source);
 } // extern "C"
 #endif
 
-#endif // RTS_PULSE_SOURCE_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_PULSE_SOURCE_H

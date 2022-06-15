@@ -1,9 +1,3 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_REMOTE_STORE_MEMORY_H
 #define RTS_REMOTE_STORE_MEMORY_H
 
@@ -11,6 +5,16 @@
 
 #define MAX_REMOTES 16
 
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
+
+// Internal struct to hold remotes/rolling codes
 struct rts_remote_store_memory_data {
     int file_handle;
     struct {
@@ -52,6 +56,8 @@ int8_t rts_remote_store_clear_memory(struct rts_remote_store *store);
 } // extern "C"
 #endif
 
-#endif // RTS_REMOTE_STORE_MEMORY_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_REMOTE_STORE_MEMORY_H

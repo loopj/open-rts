@@ -1,11 +1,14 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_COMMAND_H
 #define RTS_COMMAND_H
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * Command sent by a remote, or received by a receiver as part of
@@ -31,12 +34,20 @@ enum rts_command {
 extern "C" {
 #endif
 
+/**
+ * @brief Get a string representation of the given rts_command
+ *
+ * @param command the rts_command to convert
+ * @return const char* a string representation of the rts_command
+ */
 const char *rts_command_to_string(enum rts_command command);
 
 #ifdef __cplusplus
 } // extern "C"
 #endif
 
-#endif // RTS_COMMAND_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_COMMAND_H

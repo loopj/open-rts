@@ -3,6 +3,15 @@
 
 #include "../rts_pulse_source.h"
 
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -30,5 +39,9 @@ void rts_pulse_source_init_gpiod(struct rts_pulse_source *pulse_source,
 #ifdef __cplusplus
 } // extern "C"
 #endif
+
+/**
+ * @}
+ */
 
 #endif // RTS_PULSE_SOURCE_GPIOD_H

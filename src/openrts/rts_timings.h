@@ -1,13 +1,16 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_TIMINGS_H
 #define RTS_TIMINGS_H
 
 #include <stdint.h>
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * Timing definitions for encoding and decoding frames to pulses.
@@ -53,6 +56,8 @@ extern struct rts_timings RTS_TIMINGS_SITUO5;
 /// Default timings, suitable for most application
 extern struct rts_timings *RTS_TIMINGS_DEFAULT;
 
-#endif // RTS_TIMINGS_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_TIMINGS_H

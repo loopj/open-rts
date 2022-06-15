@@ -1,13 +1,16 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_RADIO_H
 #define RTS_RADIO_H
 
 #include <ookradio.h>
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * The transceiver mode to enter
@@ -77,6 +80,8 @@ void rts_radio_set_mode(struct rts_radio *radio, enum rts_radio_mode mode);
 } // extern "C"
 #endif
 
-#endif // RTS_RADIO_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_RADIO_H

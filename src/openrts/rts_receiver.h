@@ -1,9 +1,3 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_RECEIVER_H
 #define RTS_RECEIVER_H
 
@@ -11,6 +5,15 @@
 #include "rts_frame_builder.h"
 #include "rts_pulse_source.h"
 #include "rts_remote_store.h"
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * De-duplicated "frame" events.
@@ -166,6 +169,8 @@ void rts_receiver_update(struct rts_receiver *receiver);
 } // extern "C"
 #endif
 
-#endif // RTS_RECEIVER_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_RECEIVER_H

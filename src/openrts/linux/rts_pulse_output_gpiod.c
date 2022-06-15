@@ -12,14 +12,14 @@
 static void rts_pulse_output_enable_gpiod(struct rts_pulse_output *pulse_output)
 {
     gpiod_line_request_output((struct gpiod_line *)pulse_output->user_data_ptr,
-                              "open_rts", false);
+                              "openrts", false);
 }
 
 static void
 rts_pulse_output_disable_gpiod(struct rts_pulse_output *pulse_output)
 {
     gpiod_line_request_input((struct gpiod_line *)pulse_output->user_data_ptr,
-                             "open_rts");
+                             "openrts");
 }
 
 static void

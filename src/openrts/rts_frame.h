@@ -1,9 +1,3 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_FRAME_H
 #define RTS_FRAME_H
 
@@ -13,6 +7,15 @@
 #include <stdint.h>
 
 #define RTS_FRAME_BYTES 7
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * Represents the message "payload" sent by RTS remote controls.
@@ -127,6 +130,8 @@ uint8_t rts_frame_generate_checksum(const uint8_t *bytes);
 } // extern "C"
 #endif
 
-#endif // RTS_FRAME_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_FRAME_H

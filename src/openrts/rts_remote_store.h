@@ -1,9 +1,3 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_REMOTE_STORE_H
 #define RTS_REMOTE_STORE_H
 
@@ -11,6 +5,15 @@
 #include <stdint.h>
 
 #include "errors.h"
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * Provides an interface for a datastore which contains details about remote
@@ -121,6 +124,8 @@ void rts_remote_store_close(struct rts_remote_store *store);
 } // extern "C"
 #endif
 
-#endif // RTS_REMOTE_STORE_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_REMOTE_STORE_H

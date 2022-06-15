@@ -1,9 +1,3 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_REMOTE_H
 #define RTS_REMOTE_H
 
@@ -13,6 +7,15 @@
 #include "rts_timings.h"
 
 #include <stdint.h>
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * Simulates a physical RTS remote control.
@@ -100,6 +103,8 @@ void rts_remote_send_pulse(struct rts_remote *remote, bool state,
 } // extern "C"
 #endif
 
-#endif // RTS_REMOTE_H
+/**
+ * @}
+ */
 
-/// @}
+#endif // RTS_REMOTE_H
