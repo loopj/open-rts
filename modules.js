@@ -1,5 +1,6 @@
 var modules =
 [
-    [ "C Library", "group__c.html", "group__c" ],
-    [ "C++ Bindings", "group__cpp.html", "group__cpp" ]
+    [ "OOK Radio Library", "group__ookradio.html", null ],
+    [ "Open RTS C Library", "group__openrts.html", "group__openrts" ],
+    [ "Open RTS C++ Bindings", "group__openrtsxx.html", "group__openrtsxx" ]
 ];

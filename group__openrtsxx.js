@@ -1,4 +1,4 @@
-var group__cpp =
+var group__openrtsxx =
 [
     [ "RTSFrame", "classRTSFrame.html", [
       [ "RTSFrame", "classRTSFrame.html#a9b798240fe4e449f8e5042a0ad864b59", null ],

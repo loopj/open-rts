@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Open RTS: src/openrtsxx/RTSRemoteStore_Memory.hpp File Reference</title>
+<title>Open RTS: Open RTS C++ Bindings</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -73,7 +73,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('RTSRemoteStore__Memory_8hpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__openrtsxx.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -92,18 +92,49 @@ $(document).ready(function(){initNavTree('RTSRemoteStore__Memory_8hpp.html','');
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">RTSRemoteStore_Memory.hpp File Reference</div></div>
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
+  <div class="headertitle"><div class="title">Open RTS C++ Bindings</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="RTSRemoteStore_8hpp_source.html">RTSRemoteStore.hpp</a>&quot;</code><br />
-</div>
-<p><a href="RTSRemoteStore__Memory_8hpp_source.html">Go to the source code of this file.</a></p>
+
+<p>C++ bindings.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSFrame.html">RTSFrame</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the message "payload" sent by RTS remote controls.  <a href="classRTSFrame.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSFrameBuilder.html">RTSFrameBuilder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assembles pulses received via <a class="el" href="classRTSFrameBuilder.html#a0b87ad52f66a09cc04ec22838b0bdcf3" title="Inform the frame builder about a new pulse.">RTSFrameBuilder::handlePulse</a>, into a complete <a class="el" href="classRTSFrame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">RTSFrame</a>, and delivers them to the user-provided callback.  <a href="classRTSFrameBuilder.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSPulseOutput.html">RTSPulseOutput</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an interface for an output of RTS pulses, eg a GPIO or radio.  <a href="classRTSPulseOutput.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSPulseSource.html">RTSPulseSource</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an interface for a source of RTS pulses, eg a GPIO or radio.  <a href="classRTSPulseSource.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSRadio.html">RTSRadio</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstraction layer which configures radio modules for RTS.  <a href="classRTSRadio.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSReceiver.html">RTSReceiver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates a physical RTS receiver device, such as a shade or drapery motor.  <a href="classRTSReceiver.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSRemote.html">RTSRemote</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates a physical RTS remote control.  <a href="classRTSRemote.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSRemoteStore.html">RTSRemoteStore</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an interface for a datastore which contains details about remote controls and rolling codes.  <a href="classRTSRemoteStore.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p >C++ bindings. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cccb02d3a7177736e09aa83e4bb29774.html">openrtsxx</a></li><li class="navelem"><a class="el" href="RTSRemoteStore__Memory_8hpp.html">RTSRemoteStore_Memory.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

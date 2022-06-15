@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Open RTS: src/rts_receiver.h File Reference</title>
+<title>Open RTS: src/openrts/rts_receiver.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -113,29 +113,29 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:gaa591089885a2aef8ea967bcb1b462615"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a> { <br />
-&#160;&#160;<a class="el" href="group__c.html#ggaa591089885a2aef8ea967bcb1b462615a20ffa88b0309d238199eb5b0a624de0a">RTS_RECEIVER_EVENT_NONE</a>
+<tr class="memitem:gaa591089885a2aef8ea967bcb1b462615"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a> { <br />
+&#160;&#160;<a class="el" href="group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615a20ffa88b0309d238199eb5b0a624de0a">RTS_RECEIVER_EVENT_NONE</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#ggaa591089885a2aef8ea967bcb1b462615a4701110312e3952d07bc480545f5f246">RTS_RECEIVER_EVENT_PRESS</a>
+&#160;&#160;<a class="el" href="group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615a4701110312e3952d07bc480545f5f246">RTS_RECEIVER_EVENT_PRESS</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#ggaa591089885a2aef8ea967bcb1b462615aa0d7ec27fdfde4ad520bcb6ff8d1dd8e">RTS_RECEIVER_EVENT_HOLD</a>
+&#160;&#160;<a class="el" href="group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615aa0d7ec27fdfde4ad520bcb6ff8d1dd8e">RTS_RECEIVER_EVENT_HOLD</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#ggaa591089885a2aef8ea967bcb1b462615abb0eb0a9cc4038f710cd4dec72e59ee6">RTS_RECEIVER_EVENT_HOLD_2</a>
+&#160;&#160;<a class="el" href="group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615abb0eb0a9cc4038f710cd4dec72e59ee6">RTS_RECEIVER_EVENT_HOLD_2</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#ggaa591089885a2aef8ea967bcb1b462615a2e7d7181e13b07c03d8b1c8f584a6afa">RTS_RECEIVER_EVENT_HOLD_3</a>
+&#160;&#160;<a class="el" href="group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615a2e7d7181e13b07c03d8b1c8f584a6afa">RTS_RECEIVER_EVENT_HOLD_3</a>
 <br />
  }</td></tr>
-<tr class="memdesc:gaa591089885a2aef8ea967bcb1b462615"><td class="mdescLeft">&#160;</td><td class="mdescRight">De-duplicated "frame" events.  <a href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">More...</a><br /></td></tr>
+<tr class="memdesc:gaa591089885a2aef8ea967bcb1b462615"><td class="mdescLeft">&#160;</td><td class="mdescRight">De-duplicated "frame" events.  <a href="group__openrts.html#gaa591089885a2aef8ea967bcb1b462615">More...</a><br /></td></tr>
 <tr class="separator:gaa591089885a2aef8ea967bcb1b462615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga95b9ffaba40b365472722c9736fdb05d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a> { <br />
-&#160;&#160;<a class="el" href="group__c.html#gga95b9ffaba40b365472722c9736fdb05dae296a12c397ad0f4cdb6fae91807402d">RTS_RECEIVER_MODE_OFF</a>
+<tr class="memitem:ga95b9ffaba40b365472722c9736fdb05d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a> { <br />
+&#160;&#160;<a class="el" href="group__openrts.html#gga95b9ffaba40b365472722c9736fdb05dae296a12c397ad0f4cdb6fae91807402d">RTS_RECEIVER_MODE_OFF</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga95b9ffaba40b365472722c9736fdb05daaa909fc78742ee14a0c611aa2a7bca01">RTS_RECEIVER_MODE_PROGRAMMING</a>
+&#160;&#160;<a class="el" href="group__openrts.html#gga95b9ffaba40b365472722c9736fdb05daaa909fc78742ee14a0c611aa2a7bca01">RTS_RECEIVER_MODE_PROGRAMMING</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga95b9ffaba40b365472722c9736fdb05da51a77a887a7ab7ff270872946e7839ea">RTS_RECEIVER_MODE_COMMAND</a>
+&#160;&#160;<a class="el" href="group__openrts.html#gga95b9ffaba40b365472722c9736fdb05da51a77a887a7ab7ff270872946e7839ea">RTS_RECEIVER_MODE_COMMAND</a>
 <br />
  }</td></tr>
-<tr class="memdesc:ga95b9ffaba40b365472722c9736fdb05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiver modes.  <a href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">More...</a><br /></td></tr>
+<tr class="memdesc:ga95b9ffaba40b365472722c9736fdb05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiver modes.  <a href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">More...</a><br /></td></tr>
 <tr class="separator:ga95b9ffaba40b365472722c9736fdb05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
@@ -143,7 +143,7 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="rts__receiver_8h.html">rts_receiver.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_aac9107d8043893249ba5398edc0a255.html">openrts</a></li><li class="navelem"><a class="el" href="rts__receiver_8h.html">rts_receiver.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('classRTSRemote.html',''); initResizabl
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a>  </div>
-  <div class="headertitle"><div class="title">RTSRemote Class Reference<div class="ingroups"><a class="el" href="group__cpp.html">C++ Bindings</a></div></div></div>
+  <div class="headertitle"><div class="title">RTSRemote Class Reference<div class="ingroups"><a class="el" href="group__openrtsxx.html">Open RTS C++ Bindings</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -107,10 +107,10 @@ $(document).ready(function(){initNavTree('classRTSRemote.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aad8c636cf65cbe3a13842295d02c95d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSRemote.html#aad8c636cf65cbe3a13842295d02c95d1">RTSRemote</a> (<a class="el" href="classRTSPulseOutput.html">RTSPulseOutput</a> *output, <a class="el" href="classRTSRemoteStore.html">RTSRemoteStore</a> *store=nullptr, <a class="el" href="structrts__timings.html">rts_timings</a> *timings=<a class="el" href="group__c.html#ga5d5a8dd247442ea155318ad1d4d6fc7b">RTS_TIMINGS_DEFAULT</a>)</td></tr>
+<tr class="memitem:aad8c636cf65cbe3a13842295d02c95d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSRemote.html#aad8c636cf65cbe3a13842295d02c95d1">RTSRemote</a> (<a class="el" href="classRTSPulseOutput.html">RTSPulseOutput</a> *output, <a class="el" href="classRTSRemoteStore.html">RTSRemoteStore</a> *store=nullptr, <a class="el" href="structrts__timings.html">rts_timings</a> *timings=<a class="el" href="group__openrts.html#ga5d5a8dd247442ea155318ad1d4d6fc7b">RTS_TIMINGS_DEFAULT</a>)</td></tr>
 <tr class="memdesc:aad8c636cf65cbe3a13842295d02c95d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classRTSRemote.html" title="Simulates a physical RTS remote control.">RTSRemote</a> instance.  <a href="classRTSRemote.html#aad8c636cf65cbe3a13842295d02c95d1">More...</a><br /></td></tr>
 <tr class="separator:aad8c636cf65cbe3a13842295d02c95d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dfe6dfc07ba2836b5757806e5a6dbed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSRemote.html#a7dfe6dfc07ba2836b5757806e5a6dbed">sendCommand</a> (uint32_t address, <a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> command, bool repeated=false)</td></tr>
+<tr class="memitem:a7dfe6dfc07ba2836b5757806e5a6dbed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSRemote.html#a7dfe6dfc07ba2836b5757806e5a6dbed">sendCommand</a> (uint32_t address, <a class="el" href="group__openrts.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> command, bool repeated=false)</td></tr>
 <tr class="memdesc:a7dfe6dfc07ba2836b5757806e5a6dbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a "button press" command.  <a href="classRTSRemote.html#a7dfe6dfc07ba2836b5757806e5a6dbed">More...</a><br /></td></tr>
 <tr class="separator:a7dfe6dfc07ba2836b5757806e5a6dbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab96301b09c9ac2f72bb59d66f3097db3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSRemote.html#ab96301b09c9ac2f72bb59d66f3097db3">sendFrame</a> (<a class="el" href="classRTSFrame.html">RTSFrame</a> *frame, bool repeated=false)</td></tr>
@@ -123,17 +123,17 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header related_structrts__remote"><td colspan="2" onclick="javascript:toggleInherit('related_structrts__remote')"><img src="closed.png" alt="-"/>&#160;Related Functions inherited from <a class="el" href="structrts__remote.html">rts_remote</a></td></tr>
-<tr class="memitem:ga713e81bf47614d5cf50b8b6ab5d0a868 inherit related_structrts__remote"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga713e81bf47614d5cf50b8b6ab5d0a868">rts_remote_init</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *remote_store, struct <a class="el" href="structrts__timings.html">rts_timings</a> *timings)</td></tr>
-<tr class="memdesc:ga713e81bf47614d5cf50b8b6ab5d0a868 inherit related_structrts__remote"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="structrts__remote.html" title="Simulates a physical RTS remote control.">rts_remote</a> struct.  <a href="group__c.html#ga713e81bf47614d5cf50b8b6ab5d0a868">More...</a><br /></td></tr>
+<tr class="memitem:ga713e81bf47614d5cf50b8b6ab5d0a868 inherit related_structrts__remote"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga713e81bf47614d5cf50b8b6ab5d0a868">rts_remote_init</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *remote_store, struct <a class="el" href="structrts__timings.html">rts_timings</a> *timings)</td></tr>
+<tr class="memdesc:ga713e81bf47614d5cf50b8b6ab5d0a868 inherit related_structrts__remote"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="structrts__remote.html" title="Simulates a physical RTS remote control.">rts_remote</a> struct.  <a href="group__openrts.html#ga713e81bf47614d5cf50b8b6ab5d0a868">More...</a><br /></td></tr>
 <tr class="separator:ga713e81bf47614d5cf50b8b6ab5d0a868 inherit related_structrts__remote"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2a109f38fb4fde769dbcf0b0d94a5a72 inherit related_structrts__remote"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga2a109f38fb4fde769dbcf0b0d94a5a72">rts_remote_send_command</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, uint32_t address, enum <a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> command, bool repeated)</td></tr>
-<tr class="memdesc:ga2a109f38fb4fde769dbcf0b0d94a5a72 inherit related_structrts__remote"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a "button press" command.  <a href="group__c.html#ga2a109f38fb4fde769dbcf0b0d94a5a72">More...</a><br /></td></tr>
+<tr class="memitem:ga2a109f38fb4fde769dbcf0b0d94a5a72 inherit related_structrts__remote"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga2a109f38fb4fde769dbcf0b0d94a5a72">rts_remote_send_command</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, uint32_t address, enum <a class="el" href="group__openrts.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> command, bool repeated)</td></tr>
+<tr class="memdesc:ga2a109f38fb4fde769dbcf0b0d94a5a72 inherit related_structrts__remote"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a "button press" command.  <a href="group__openrts.html#ga2a109f38fb4fde769dbcf0b0d94a5a72">More...</a><br /></td></tr>
 <tr class="separator:ga2a109f38fb4fde769dbcf0b0d94a5a72 inherit related_structrts__remote"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1d7ef1ec7e0ff4347b6b2bd285c205c3 inherit related_structrts__remote"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga1d7ef1ec7e0ff4347b6b2bd285c205c3">rts_remote_send_frame</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, bool repeated)</td></tr>
-<tr class="memdesc:ga1d7ef1ec7e0ff4347b6b2bd285c205c3 inherit related_structrts__remote"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an RTS frame.  <a href="group__c.html#ga1d7ef1ec7e0ff4347b6b2bd285c205c3">More...</a><br /></td></tr>
+<tr class="memitem:ga1d7ef1ec7e0ff4347b6b2bd285c205c3 inherit related_structrts__remote"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga1d7ef1ec7e0ff4347b6b2bd285c205c3">rts_remote_send_frame</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, bool repeated)</td></tr>
+<tr class="memdesc:ga1d7ef1ec7e0ff4347b6b2bd285c205c3 inherit related_structrts__remote"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an RTS frame.  <a href="group__openrts.html#ga1d7ef1ec7e0ff4347b6b2bd285c205c3">More...</a><br /></td></tr>
 <tr class="separator:ga1d7ef1ec7e0ff4347b6b2bd285c205c3 inherit related_structrts__remote"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0b5d9329b4269cbf459cd1874c5918d0 inherit related_structrts__remote"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga0b5d9329b4269cbf459cd1874c5918d0">rts_remote_send_pulse</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, bool state, uint32_t micros)</td></tr>
-<tr class="memdesc:ga0b5d9329b4269cbf459cd1874c5918d0 inherit related_structrts__remote"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a single pulse to the internal <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a>.  <a href="group__c.html#ga0b5d9329b4269cbf459cd1874c5918d0">More...</a><br /></td></tr>
+<tr class="memitem:ga0b5d9329b4269cbf459cd1874c5918d0 inherit related_structrts__remote"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga0b5d9329b4269cbf459cd1874c5918d0">rts_remote_send_pulse</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, bool state, uint32_t micros)</td></tr>
+<tr class="memdesc:ga0b5d9329b4269cbf459cd1874c5918d0 inherit related_structrts__remote"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a single pulse to the internal <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a>.  <a href="group__openrts.html#ga0b5d9329b4269cbf459cd1874c5918d0">More...</a><br /></td></tr>
 <tr class="separator:ga0b5d9329b4269cbf459cd1874c5918d0 inherit related_structrts__remote"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -163,7 +163,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
-          <td class="paramname"><em>timings</em> = <code><a class="el" href="group__c.html#ga5d5a8dd247442ea155318ad1d4d6fc7b">RTS_TIMINGS_DEFAULT</a></code>&#160;</td>
+          <td class="paramname"><em>timings</em> = <code><a class="el" href="group__openrts.html#ga5d5a8dd247442ea155318ad1d4d6fc7b">RTS_TIMINGS_DEFAULT</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -201,7 +201,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__openrts.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a>&#160;</td>
           <td class="paramname"><em>command</em>, </td>
         </tr>
         <tr>
@@ -307,8 +307,9 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/bindings/cpp/<a class="el" href="RTSRemote_8hpp_source.html">RTSRemote.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/openrtsxx/<a class="el" href="RTSRemote_8hpp_source.html">RTSRemote.hpp</a></li>
+<li>src/openrtsxx/RTSRemote.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

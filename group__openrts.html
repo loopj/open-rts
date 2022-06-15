@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Open RTS: C Library</title>
+<title>Open RTS: Open RTS C Library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -73,7 +73,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__c.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__openrts.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('group__c.html',''); initResizable(); }
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">C Library</div></div>
+  <div class="headertitle"><div class="title">Open RTS C Library</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -110,7 +110,7 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the message "payload" sent by RTS remote controls.  <a href="structrts__frame.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__frame__builder.html">rts_frame_builder</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assembles pulses received via <a class="el" href="group__c.html#ga0a7bdbe14a80d21cbd6294bf30ff6933" title="Inform the frame builder about a new pulse.">rts_frame_builder_handle_pulse</a>, into a complete <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a>, and delivers them to the user-provided callback.  <a href="structrts__frame__builder.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assembles pulses received via <a class="el" href="group__openrts.html#ga0a7bdbe14a80d21cbd6294bf30ff6933" title="Inform the frame builder about a new pulse.">rts_frame_builder_handle_pulse</a>, into a complete <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a>, and delivers them to the user-provided callback.  <a href="structrts__frame__builder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__output.html">rts_pulse_output</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an interface for an output of RTS pulses, eg a GPIO or radio.  <a href="structrts__pulse__output.html#details">More...</a><br /></td></tr>
@@ -136,183 +136,183 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga2dc6d8f19dc54273cf451709d2e9d164"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> { <br />
-&#160;&#160;<a class="el" href="group__c.html#gga2dc6d8f19dc54273cf451709d2e9d164a09fa728837a8d64fb7f4bafcbde12805">RTS_COMMAND_MY</a> = 0x1
+<tr class="memitem:ga2dc6d8f19dc54273cf451709d2e9d164"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> { <br />
+&#160;&#160;<a class="el" href="group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a09fa728837a8d64fb7f4bafcbde12805">RTS_COMMAND_MY</a> = 0x1
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga2dc6d8f19dc54273cf451709d2e9d164a3a90f83ed959783ef12b278d767c3859">RTS_COMMAND_UP</a> = 0x2
+&#160;&#160;<a class="el" href="group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a3a90f83ed959783ef12b278d767c3859">RTS_COMMAND_UP</a> = 0x2
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga2dc6d8f19dc54273cf451709d2e9d164a715b4ac33fd2c69f0d475350dccdb802">RTS_COMMAND_MY_UP</a> = 0x3
+&#160;&#160;<a class="el" href="group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a715b4ac33fd2c69f0d475350dccdb802">RTS_COMMAND_MY_UP</a> = 0x3
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga2dc6d8f19dc54273cf451709d2e9d164a917c5c8d3a9648f16b672966ca1f7a99">RTS_COMMAND_DOWN</a> = 0x4
+&#160;&#160;<a class="el" href="group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a917c5c8d3a9648f16b672966ca1f7a99">RTS_COMMAND_DOWN</a> = 0x4
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga2dc6d8f19dc54273cf451709d2e9d164a1a825c8e7b1fa2cf97cbb7fb861c7bd0">RTS_COMMAND_MY_DOWN</a> = 0x5
+&#160;&#160;<a class="el" href="group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a1a825c8e7b1fa2cf97cbb7fb861c7bd0">RTS_COMMAND_MY_DOWN</a> = 0x5
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga2dc6d8f19dc54273cf451709d2e9d164af9ef17d36e1c8053e13516f18fe67455">RTS_COMMAND_UP_DOWN</a> = 0x6
+&#160;&#160;<a class="el" href="group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164af9ef17d36e1c8053e13516f18fe67455">RTS_COMMAND_UP_DOWN</a> = 0x6
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga2dc6d8f19dc54273cf451709d2e9d164aed2cb4fe313d305bf1cad965aa7a2db5">RTS_COMMAND_MY_UP_DOWN</a> = 0x7
+&#160;&#160;<a class="el" href="group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164aed2cb4fe313d305bf1cad965aa7a2db5">RTS_COMMAND_MY_UP_DOWN</a> = 0x7
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga2dc6d8f19dc54273cf451709d2e9d164ae2e44d311e49eeb6349eb60b41ac2f99">RTS_COMMAND_PROG</a> = 0x8
+&#160;&#160;<a class="el" href="group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164ae2e44d311e49eeb6349eb60b41ac2f99">RTS_COMMAND_PROG</a> = 0x8
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga2dc6d8f19dc54273cf451709d2e9d164a2ad51e428b1f9ca2d4f7f48bb7c2d282">RTS_COMMAND_SUN_FLAG</a> = 0x9
+&#160;&#160;<a class="el" href="group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a2ad51e428b1f9ca2d4f7f48bb7c2d282">RTS_COMMAND_SUN_FLAG</a> = 0x9
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga2dc6d8f19dc54273cf451709d2e9d164a9519c21df799d8153ebd6e2a43f52996">RTS_COMMAND_FLAG</a> = 0xA
+&#160;&#160;<a class="el" href="group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a9519c21df799d8153ebd6e2a43f52996">RTS_COMMAND_FLAG</a> = 0xA
 <br />
  }</td></tr>
-<tr class="memdesc:ga2dc6d8f19dc54273cf451709d2e9d164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command sent by a remote, or received by a receiver as part of an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> event.  <a href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">More...</a><br /></td></tr>
+<tr class="memdesc:ga2dc6d8f19dc54273cf451709d2e9d164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command sent by a remote, or received by a receiver as part of an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> event.  <a href="group__openrts.html#ga2dc6d8f19dc54273cf451709d2e9d164">More...</a><br /></td></tr>
 <tr class="separator:ga2dc6d8f19dc54273cf451709d2e9d164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga307d23bc496f860a9ff57bde0ca15336"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a> { <br />
-&#160;&#160;<a class="el" href="group__c.html#gga307d23bc496f860a9ff57bde0ca15336a709e6461ce74ad1d3a97fe10631e76bd">RTS_RADIO_MODE_STANDBY</a>
+<tr class="memitem:ga307d23bc496f860a9ff57bde0ca15336"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a> { <br />
+&#160;&#160;<a class="el" href="group__openrts.html#gga307d23bc496f860a9ff57bde0ca15336a709e6461ce74ad1d3a97fe10631e76bd">RTS_RADIO_MODE_STANDBY</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga307d23bc496f860a9ff57bde0ca15336a92b2151744028824c9ff3867acf604ae">RTS_RADIO_MODE_RECEIVE</a>
+&#160;&#160;<a class="el" href="group__openrts.html#gga307d23bc496f860a9ff57bde0ca15336a92b2151744028824c9ff3867acf604ae">RTS_RADIO_MODE_RECEIVE</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga307d23bc496f860a9ff57bde0ca15336a5a2fd52a32e6e5ded54d751aa65d9585">RTS_RADIO_MODE_TRANSMIT</a>
+&#160;&#160;<a class="el" href="group__openrts.html#gga307d23bc496f860a9ff57bde0ca15336a5a2fd52a32e6e5ded54d751aa65d9585">RTS_RADIO_MODE_TRANSMIT</a>
 <br />
  }</td></tr>
-<tr class="memdesc:ga307d23bc496f860a9ff57bde0ca15336"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transceiver mode to enter.  <a href="group__c.html#ga307d23bc496f860a9ff57bde0ca15336">More...</a><br /></td></tr>
+<tr class="memdesc:ga307d23bc496f860a9ff57bde0ca15336"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transceiver mode to enter.  <a href="group__openrts.html#ga307d23bc496f860a9ff57bde0ca15336">More...</a><br /></td></tr>
 <tr class="separator:ga307d23bc496f860a9ff57bde0ca15336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa591089885a2aef8ea967bcb1b462615"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a> { <br />
-&#160;&#160;<a class="el" href="group__c.html#ggaa591089885a2aef8ea967bcb1b462615a20ffa88b0309d238199eb5b0a624de0a">RTS_RECEIVER_EVENT_NONE</a>
+<tr class="memitem:gaa591089885a2aef8ea967bcb1b462615"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a> { <br />
+&#160;&#160;<a class="el" href="group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615a20ffa88b0309d238199eb5b0a624de0a">RTS_RECEIVER_EVENT_NONE</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#ggaa591089885a2aef8ea967bcb1b462615a4701110312e3952d07bc480545f5f246">RTS_RECEIVER_EVENT_PRESS</a>
+&#160;&#160;<a class="el" href="group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615a4701110312e3952d07bc480545f5f246">RTS_RECEIVER_EVENT_PRESS</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#ggaa591089885a2aef8ea967bcb1b462615aa0d7ec27fdfde4ad520bcb6ff8d1dd8e">RTS_RECEIVER_EVENT_HOLD</a>
+&#160;&#160;<a class="el" href="group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615aa0d7ec27fdfde4ad520bcb6ff8d1dd8e">RTS_RECEIVER_EVENT_HOLD</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#ggaa591089885a2aef8ea967bcb1b462615abb0eb0a9cc4038f710cd4dec72e59ee6">RTS_RECEIVER_EVENT_HOLD_2</a>
+&#160;&#160;<a class="el" href="group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615abb0eb0a9cc4038f710cd4dec72e59ee6">RTS_RECEIVER_EVENT_HOLD_2</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#ggaa591089885a2aef8ea967bcb1b462615a2e7d7181e13b07c03d8b1c8f584a6afa">RTS_RECEIVER_EVENT_HOLD_3</a>
+&#160;&#160;<a class="el" href="group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615a2e7d7181e13b07c03d8b1c8f584a6afa">RTS_RECEIVER_EVENT_HOLD_3</a>
 <br />
  }</td></tr>
-<tr class="memdesc:gaa591089885a2aef8ea967bcb1b462615"><td class="mdescLeft">&#160;</td><td class="mdescRight">De-duplicated "frame" events.  <a href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">More...</a><br /></td></tr>
+<tr class="memdesc:gaa591089885a2aef8ea967bcb1b462615"><td class="mdescLeft">&#160;</td><td class="mdescRight">De-duplicated "frame" events.  <a href="group__openrts.html#gaa591089885a2aef8ea967bcb1b462615">More...</a><br /></td></tr>
 <tr class="separator:gaa591089885a2aef8ea967bcb1b462615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga95b9ffaba40b365472722c9736fdb05d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a> { <br />
-&#160;&#160;<a class="el" href="group__c.html#gga95b9ffaba40b365472722c9736fdb05dae296a12c397ad0f4cdb6fae91807402d">RTS_RECEIVER_MODE_OFF</a>
+<tr class="memitem:ga95b9ffaba40b365472722c9736fdb05d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a> { <br />
+&#160;&#160;<a class="el" href="group__openrts.html#gga95b9ffaba40b365472722c9736fdb05dae296a12c397ad0f4cdb6fae91807402d">RTS_RECEIVER_MODE_OFF</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga95b9ffaba40b365472722c9736fdb05daaa909fc78742ee14a0c611aa2a7bca01">RTS_RECEIVER_MODE_PROGRAMMING</a>
+&#160;&#160;<a class="el" href="group__openrts.html#gga95b9ffaba40b365472722c9736fdb05daaa909fc78742ee14a0c611aa2a7bca01">RTS_RECEIVER_MODE_PROGRAMMING</a>
 , <br />
-&#160;&#160;<a class="el" href="group__c.html#gga95b9ffaba40b365472722c9736fdb05da51a77a887a7ab7ff270872946e7839ea">RTS_RECEIVER_MODE_COMMAND</a>
+&#160;&#160;<a class="el" href="group__openrts.html#gga95b9ffaba40b365472722c9736fdb05da51a77a887a7ab7ff270872946e7839ea">RTS_RECEIVER_MODE_COMMAND</a>
 <br />
  }</td></tr>
-<tr class="memdesc:ga95b9ffaba40b365472722c9736fdb05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiver modes.  <a href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">More...</a><br /></td></tr>
+<tr class="memdesc:ga95b9ffaba40b365472722c9736fdb05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiver modes.  <a href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">More...</a><br /></td></tr>
 <tr class="separator:ga95b9ffaba40b365472722c9736fdb05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gab5571a1d421a1148d309f2858a83613f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gab5571a1d421a1148d309f2858a83613f">rts_frame_init</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, enum <a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> <a class="el" href="structrts__frame.html#a964158d6b5abbdf6b270ee68f5f47d1d">command</a>, uint16_t <a class="el" href="structrts__frame.html#ab2748d2359b54160bac4602dedf227ff">rolling_code</a>, uint32_t <a class="el" href="structrts__frame.html#a1e13f78218638b484d92d51e3df6cfd9">remote_address</a>)</td></tr>
-<tr class="memdesc:gab5571a1d421a1148d309f2858a83613f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> with typical payload.  <a href="group__c.html#gab5571a1d421a1148d309f2858a83613f">More...</a><br /></td></tr>
+<tr class="memitem:gab5571a1d421a1148d309f2858a83613f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gab5571a1d421a1148d309f2858a83613f">rts_frame_init</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, enum <a class="el" href="group__openrts.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> <a class="el" href="structrts__frame.html#a964158d6b5abbdf6b270ee68f5f47d1d">command</a>, uint16_t <a class="el" href="structrts__frame.html#ab2748d2359b54160bac4602dedf227ff">rolling_code</a>, uint32_t <a class="el" href="structrts__frame.html#a1e13f78218638b484d92d51e3df6cfd9">remote_address</a>)</td></tr>
+<tr class="memdesc:gab5571a1d421a1148d309f2858a83613f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> with typical payload.  <a href="group__openrts.html#gab5571a1d421a1148d309f2858a83613f">More...</a><br /></td></tr>
 <tr class="separator:gab5571a1d421a1148d309f2858a83613f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4223460f69635b1c97a7c9f2dd42dfb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga4223460f69635b1c97a7c9f2dd42dfb5">rts_frame_from_bytes</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, const uint8_t *bytes)</td></tr>
-<tr class="memdesc:ga4223460f69635b1c97a7c9f2dd42dfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> from the raw (deobfuscated) bytes received.  <a href="group__c.html#ga4223460f69635b1c97a7c9f2dd42dfb5">More...</a><br /></td></tr>
+<tr class="memitem:ga4223460f69635b1c97a7c9f2dd42dfb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga4223460f69635b1c97a7c9f2dd42dfb5">rts_frame_from_bytes</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, const uint8_t *bytes)</td></tr>
+<tr class="memdesc:ga4223460f69635b1c97a7c9f2dd42dfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> from the raw (deobfuscated) bytes received.  <a href="group__openrts.html#ga4223460f69635b1c97a7c9f2dd42dfb5">More...</a><br /></td></tr>
 <tr class="separator:ga4223460f69635b1c97a7c9f2dd42dfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabee4ad16c735ef07839cbc12f9282b96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gabee4ad16c735ef07839cbc12f9282b96">rts_frame_to_bytes</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, uint8_t *bytes, bool obfuscate)</td></tr>
-<tr class="memdesc:gabee4ad16c735ef07839cbc12f9282b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> to byte representation, and optionally apply XOR obfuscation to make it ready to send.  <a href="group__c.html#gabee4ad16c735ef07839cbc12f9282b96">More...</a><br /></td></tr>
+<tr class="memitem:gabee4ad16c735ef07839cbc12f9282b96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gabee4ad16c735ef07839cbc12f9282b96">rts_frame_to_bytes</a> (struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, uint8_t *bytes, bool obfuscate)</td></tr>
+<tr class="memdesc:gabee4ad16c735ef07839cbc12f9282b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an <a class="el" href="structrts__frame.html" title="Represents the message &quot;payload&quot; sent by RTS remote controls.">rts_frame</a> to byte representation, and optionally apply XOR obfuscation to make it ready to send.  <a href="group__openrts.html#gabee4ad16c735ef07839cbc12f9282b96">More...</a><br /></td></tr>
 <tr class="separator:gabee4ad16c735ef07839cbc12f9282b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafa119ab98f70aaa2f90961c7830e882a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gafa119ab98f70aaa2f90961c7830e882a">rts_frame_obfuscate_bytes</a> (uint8_t *bytes)</td></tr>
-<tr class="memdesc:gafa119ab98f70aaa2f90961c7830e882a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply in-place XOR obfuscation to a raw byte array representation of a frame.  <a href="group__c.html#gafa119ab98f70aaa2f90961c7830e882a">More...</a><br /></td></tr>
+<tr class="memitem:gafa119ab98f70aaa2f90961c7830e882a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gafa119ab98f70aaa2f90961c7830e882a">rts_frame_obfuscate_bytes</a> (uint8_t *bytes)</td></tr>
+<tr class="memdesc:gafa119ab98f70aaa2f90961c7830e882a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply in-place XOR obfuscation to a raw byte array representation of a frame.  <a href="group__openrts.html#gafa119ab98f70aaa2f90961c7830e882a">More...</a><br /></td></tr>
 <tr class="separator:gafa119ab98f70aaa2f90961c7830e882a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga055aa8c663040dd6861a11035696bca5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga055aa8c663040dd6861a11035696bca5">rts_frame_deobfuscate_bytes</a> (uint8_t *dest, const uint8_t *src)</td></tr>
-<tr class="memdesc:ga055aa8c663040dd6861a11035696bca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply XOR deobfuscation to a raw byte array representation of a frame.  <a href="group__c.html#ga055aa8c663040dd6861a11035696bca5">More...</a><br /></td></tr>
+<tr class="memitem:ga055aa8c663040dd6861a11035696bca5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga055aa8c663040dd6861a11035696bca5">rts_frame_deobfuscate_bytes</a> (uint8_t *dest, const uint8_t *src)</td></tr>
+<tr class="memdesc:ga055aa8c663040dd6861a11035696bca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply XOR deobfuscation to a raw byte array representation of a frame.  <a href="group__openrts.html#ga055aa8c663040dd6861a11035696bca5">More...</a><br /></td></tr>
 <tr class="separator:ga055aa8c663040dd6861a11035696bca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8c6b65412d7a48442ff251fbff5360f5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga8c6b65412d7a48442ff251fbff5360f5">rts_frame_generate_checksum</a> (const uint8_t *bytes)</td></tr>
-<tr class="memdesc:ga8c6b65412d7a48442ff251fbff5360f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a checksum for the raw (deobfuscated) bytes of a frame.  <a href="group__c.html#ga8c6b65412d7a48442ff251fbff5360f5">More...</a><br /></td></tr>
+<tr class="memitem:ga8c6b65412d7a48442ff251fbff5360f5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga8c6b65412d7a48442ff251fbff5360f5">rts_frame_generate_checksum</a> (const uint8_t *bytes)</td></tr>
+<tr class="memdesc:ga8c6b65412d7a48442ff251fbff5360f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a checksum for the raw (deobfuscated) bytes of a frame.  <a href="group__openrts.html#ga8c6b65412d7a48442ff251fbff5360f5">More...</a><br /></td></tr>
 <tr class="separator:ga8c6b65412d7a48442ff251fbff5360f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga548d086f646014651fe55561383da6da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga548d086f646014651fe55561383da6da">rts_frame_builder_init</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, struct <a class="el" href="structrts__timings.html">rts_timings</a> *timings)</td></tr>
-<tr class="memdesc:ga548d086f646014651fe55561383da6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame__builder.html" title="Assembles pulses received via rts_frame_builder_handle_pulse, into a complete rts_frame,...">rts_frame_builder</a> with the specified timings.  <a href="group__c.html#ga548d086f646014651fe55561383da6da">More...</a><br /></td></tr>
+<tr class="memitem:ga548d086f646014651fe55561383da6da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga548d086f646014651fe55561383da6da">rts_frame_builder_init</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, struct <a class="el" href="structrts__timings.html">rts_timings</a> *timings)</td></tr>
+<tr class="memdesc:ga548d086f646014651fe55561383da6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__frame__builder.html" title="Assembles pulses received via rts_frame_builder_handle_pulse, into a complete rts_frame,...">rts_frame_builder</a> with the specified timings.  <a href="group__openrts.html#ga548d086f646014651fe55561383da6da">More...</a><br /></td></tr>
 <tr class="separator:ga548d086f646014651fe55561383da6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a7bdbe14a80d21cbd6294bf30ff6933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga0a7bdbe14a80d21cbd6294bf30ff6933">rts_frame_builder_handle_pulse</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, bool state, uint32_t micros)</td></tr>
-<tr class="memdesc:ga0a7bdbe14a80d21cbd6294bf30ff6933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform the frame builder about a new pulse.  <a href="group__c.html#ga0a7bdbe14a80d21cbd6294bf30ff6933">More...</a><br /></td></tr>
+<tr class="memitem:ga0a7bdbe14a80d21cbd6294bf30ff6933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga0a7bdbe14a80d21cbd6294bf30ff6933">rts_frame_builder_handle_pulse</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, bool state, uint32_t micros)</td></tr>
+<tr class="memdesc:ga0a7bdbe14a80d21cbd6294bf30ff6933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform the frame builder about a new pulse.  <a href="group__openrts.html#ga0a7bdbe14a80d21cbd6294bf30ff6933">More...</a><br /></td></tr>
 <tr class="separator:ga0a7bdbe14a80d21cbd6294bf30ff6933"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga610780004e4d229af371f0a3512fa102"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga610780004e4d229af371f0a3512fa102">rts_frame_builder_set_callback</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, void(*callback)(struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, uint8_t count, uint32_t duration, void *user_data), void *user_data)</td></tr>
-<tr class="memdesc:ga610780004e4d229af371f0a3512fa102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback to call when new complete frames are received.  <a href="group__c.html#ga610780004e4d229af371f0a3512fa102">More...</a><br /></td></tr>
+<tr class="memitem:ga610780004e4d229af371f0a3512fa102"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga610780004e4d229af371f0a3512fa102">rts_frame_builder_set_callback</a> (struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *builder, void(*callback)(struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, uint8_t count, uint32_t duration, void *user_data), void *user_data)</td></tr>
+<tr class="memdesc:ga610780004e4d229af371f0a3512fa102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback to call when new complete frames are received.  <a href="group__openrts.html#ga610780004e4d229af371f0a3512fa102">More...</a><br /></td></tr>
 <tr class="separator:ga610780004e4d229af371f0a3512fa102"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga25ffde10f6d05c6ee10a72cba20661b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga25ffde10f6d05c6ee10a72cba20661b7">rts_pulse_output_enable</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
-<tr class="memdesc:ga25ffde10f6d05c6ee10a72cba20661b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the pulse output.  <a href="group__c.html#ga25ffde10f6d05c6ee10a72cba20661b7">More...</a><br /></td></tr>
+<tr class="memitem:ga25ffde10f6d05c6ee10a72cba20661b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga25ffde10f6d05c6ee10a72cba20661b7">rts_pulse_output_enable</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
+<tr class="memdesc:ga25ffde10f6d05c6ee10a72cba20661b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the pulse output.  <a href="group__openrts.html#ga25ffde10f6d05c6ee10a72cba20661b7">More...</a><br /></td></tr>
 <tr class="separator:ga25ffde10f6d05c6ee10a72cba20661b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab13f5dc4c1590c8b62ee99a39f555a97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gab13f5dc4c1590c8b62ee99a39f555a97">rts_pulse_output_disable</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
-<tr class="memdesc:gab13f5dc4c1590c8b62ee99a39f555a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the pulse output.  <a href="group__c.html#gab13f5dc4c1590c8b62ee99a39f555a97">More...</a><br /></td></tr>
+<tr class="memitem:gab13f5dc4c1590c8b62ee99a39f555a97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gab13f5dc4c1590c8b62ee99a39f555a97">rts_pulse_output_disable</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
+<tr class="memdesc:gab13f5dc4c1590c8b62ee99a39f555a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the pulse output.  <a href="group__openrts.html#gab13f5dc4c1590c8b62ee99a39f555a97">More...</a><br /></td></tr>
 <tr class="separator:gab13f5dc4c1590c8b62ee99a39f555a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga077cadffb99c505fc5c338975770cf05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga077cadffb99c505fc5c338975770cf05">rts_pulse_output_send_pulse</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, bool state, uint32_t micros)</td></tr>
-<tr class="memdesc:ga077cadffb99c505fc5c338975770cf05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> to output a pulse.  <a href="group__c.html#ga077cadffb99c505fc5c338975770cf05">More...</a><br /></td></tr>
+<tr class="memitem:ga077cadffb99c505fc5c338975770cf05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga077cadffb99c505fc5c338975770cf05">rts_pulse_output_send_pulse</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, bool state, uint32_t micros)</td></tr>
+<tr class="memdesc:ga077cadffb99c505fc5c338975770cf05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a> to output a pulse.  <a href="group__openrts.html#ga077cadffb99c505fc5c338975770cf05">More...</a><br /></td></tr>
 <tr class="separator:ga077cadffb99c505fc5c338975770cf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga828fc88c73c452a2ea0c2c32f77508da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga828fc88c73c452a2ea0c2c32f77508da">rts_pulse_output_close</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
-<tr class="memdesc:ga828fc88c73c452a2ea0c2c32f77508da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free resources allocated via a previous call to rts_pulse_output_init_*()  <a href="group__c.html#ga828fc88c73c452a2ea0c2c32f77508da">More...</a><br /></td></tr>
+<tr class="memitem:ga828fc88c73c452a2ea0c2c32f77508da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga828fc88c73c452a2ea0c2c32f77508da">rts_pulse_output_close</a> (struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output)</td></tr>
+<tr class="memdesc:ga828fc88c73c452a2ea0c2c32f77508da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free resources allocated via a previous call to rts_pulse_output_init_*()  <a href="group__openrts.html#ga828fc88c73c452a2ea0c2c32f77508da">More...</a><br /></td></tr>
 <tr class="separator:ga828fc88c73c452a2ea0c2c32f77508da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8a9e0325230d97d61ccbea915c89ec74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga8a9e0325230d97d61ccbea915c89ec74">rts_pulse_source_enable</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source)</td></tr>
-<tr class="memdesc:ga8a9e0325230d97d61ccbea915c89ec74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the pulse source.  <a href="group__c.html#ga8a9e0325230d97d61ccbea915c89ec74">More...</a><br /></td></tr>
+<tr class="memitem:ga8a9e0325230d97d61ccbea915c89ec74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga8a9e0325230d97d61ccbea915c89ec74">rts_pulse_source_enable</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source)</td></tr>
+<tr class="memdesc:ga8a9e0325230d97d61ccbea915c89ec74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the pulse source.  <a href="group__openrts.html#ga8a9e0325230d97d61ccbea915c89ec74">More...</a><br /></td></tr>
 <tr class="separator:ga8a9e0325230d97d61ccbea915c89ec74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga45cfff3972b1a810712084835660f78c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga45cfff3972b1a810712084835660f78c">rts_pulse_source_disable</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source)</td></tr>
-<tr class="memdesc:ga45cfff3972b1a810712084835660f78c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the pulse source.  <a href="group__c.html#ga45cfff3972b1a810712084835660f78c">More...</a><br /></td></tr>
+<tr class="memitem:ga45cfff3972b1a810712084835660f78c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga45cfff3972b1a810712084835660f78c">rts_pulse_source_disable</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source)</td></tr>
+<tr class="memdesc:ga45cfff3972b1a810712084835660f78c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the pulse source.  <a href="group__openrts.html#ga45cfff3972b1a810712084835660f78c">More...</a><br /></td></tr>
 <tr class="separator:ga45cfff3972b1a810712084835660f78c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga331d02f4adc1a5adeffeadfe03c0c9a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga331d02f4adc1a5adeffeadfe03c0c9a0">rts_pulse_source_update</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source)</td></tr>
-<tr class="memdesc:ga331d02f4adc1a5adeffeadfe03c0c9a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for new pulse data, should be called every loop()  <a href="group__c.html#ga331d02f4adc1a5adeffeadfe03c0c9a0">More...</a><br /></td></tr>
+<tr class="memitem:ga331d02f4adc1a5adeffeadfe03c0c9a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga331d02f4adc1a5adeffeadfe03c0c9a0">rts_pulse_source_update</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source)</td></tr>
+<tr class="memdesc:ga331d02f4adc1a5adeffeadfe03c0c9a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for new pulse data, should be called every loop()  <a href="group__openrts.html#ga331d02f4adc1a5adeffeadfe03c0c9a0">More...</a><br /></td></tr>
 <tr class="separator:ga331d02f4adc1a5adeffeadfe03c0c9a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf29fc3e4b2e446040c435f9400177934"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gaf29fc3e4b2e446040c435f9400177934">rts_pulse_source_attach</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *frame_builder)</td></tr>
-<tr class="memdesc:gaf29fc3e4b2e446040c435f9400177934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach an observer.  <a href="group__c.html#gaf29fc3e4b2e446040c435f9400177934">More...</a><br /></td></tr>
+<tr class="memitem:gaf29fc3e4b2e446040c435f9400177934"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gaf29fc3e4b2e446040c435f9400177934">rts_pulse_source_attach</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, struct <a class="el" href="structrts__frame__builder.html">rts_frame_builder</a> *frame_builder)</td></tr>
+<tr class="memdesc:gaf29fc3e4b2e446040c435f9400177934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach an observer.  <a href="group__openrts.html#gaf29fc3e4b2e446040c435f9400177934">More...</a><br /></td></tr>
 <tr class="separator:gaf29fc3e4b2e446040c435f9400177934"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaf1a44ffce736c880c87dac96b0e661d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gaaf1a44ffce736c880c87dac96b0e661d">rts_pulse_source_close</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source)</td></tr>
-<tr class="memdesc:gaaf1a44ffce736c880c87dac96b0e661d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free any resources allocated via a previous call to rts_pulse_source_init_*()  <a href="group__c.html#gaaf1a44ffce736c880c87dac96b0e661d">More...</a><br /></td></tr>
+<tr class="memitem:gaaf1a44ffce736c880c87dac96b0e661d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gaaf1a44ffce736c880c87dac96b0e661d">rts_pulse_source_close</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source)</td></tr>
+<tr class="memdesc:gaaf1a44ffce736c880c87dac96b0e661d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free any resources allocated via a previous call to rts_pulse_source_init_*()  <a href="group__openrts.html#gaaf1a44ffce736c880c87dac96b0e661d">More...</a><br /></td></tr>
 <tr class="separator:gaaf1a44ffce736c880c87dac96b0e661d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2face82e870c83ded1dafde15f7e76d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga2face82e870c83ded1dafde15f7e76d1">rts_radio_init_rfm69</a> (struct <a class="el" href="structrts__radio.html">rts_radio</a> *radio, struct spi_module *spi, bool use_pa_boost)</td></tr>
-<tr class="memdesc:ga2face82e870c83ded1dafde15f7e76d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__radio.html" title="Abstraction layer which configures radio modules for RTS.">rts_radio</a> to use an SX1231/RFM69 radio module.  <a href="group__c.html#ga2face82e870c83ded1dafde15f7e76d1">More...</a><br /></td></tr>
+<tr class="memitem:ga2face82e870c83ded1dafde15f7e76d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga2face82e870c83ded1dafde15f7e76d1">rts_radio_init_rfm69</a> (struct <a class="el" href="structrts__radio.html">rts_radio</a> *radio, struct spi_module *spi, bool use_pa_boost)</td></tr>
+<tr class="memdesc:ga2face82e870c83ded1dafde15f7e76d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__radio.html" title="Abstraction layer which configures radio modules for RTS.">rts_radio</a> to use an SX1231/RFM69 radio module.  <a href="group__openrts.html#ga2face82e870c83ded1dafde15f7e76d1">More...</a><br /></td></tr>
 <tr class="separator:ga2face82e870c83ded1dafde15f7e76d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0311a0c0f3512263cef2ea6c2e1a055f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga0311a0c0f3512263cef2ea6c2e1a055f">rts_radio_init_sx1278</a> (struct <a class="el" href="structrts__radio.html">rts_radio</a> *radio, struct spi_module *spi, bool use_pa_boost)</td></tr>
-<tr class="memdesc:ga0311a0c0f3512263cef2ea6c2e1a055f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__radio.html" title="Abstraction layer which configures radio modules for RTS.">rts_radio</a> to use an SX1278/RFM96 radio module.  <a href="group__c.html#ga0311a0c0f3512263cef2ea6c2e1a055f">More...</a><br /></td></tr>
+<tr class="memitem:ga0311a0c0f3512263cef2ea6c2e1a055f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga0311a0c0f3512263cef2ea6c2e1a055f">rts_radio_init_sx1278</a> (struct <a class="el" href="structrts__radio.html">rts_radio</a> *radio, struct spi_module *spi, bool use_pa_boost)</td></tr>
+<tr class="memdesc:ga0311a0c0f3512263cef2ea6c2e1a055f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__radio.html" title="Abstraction layer which configures radio modules for RTS.">rts_radio</a> to use an SX1278/RFM96 radio module.  <a href="group__openrts.html#ga0311a0c0f3512263cef2ea6c2e1a055f">More...</a><br /></td></tr>
 <tr class="separator:ga0311a0c0f3512263cef2ea6c2e1a055f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5c4eb3993da685313f6984b370c566d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga5c4eb3993da685313f6984b370c566d3">rts_radio_set_mode</a> (struct <a class="el" href="structrts__radio.html">rts_radio</a> *radio, enum <a class="el" href="group__c.html#ga307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a> mode)</td></tr>
-<tr class="memdesc:ga5c4eb3993da685313f6984b370c566d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the radio mode for the specified <a class="el" href="structrts__radio.html" title="Abstraction layer which configures radio modules for RTS.">rts_radio</a> module, eg.  <a href="group__c.html#ga5c4eb3993da685313f6984b370c566d3">More...</a><br /></td></tr>
+<tr class="memitem:ga5c4eb3993da685313f6984b370c566d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga5c4eb3993da685313f6984b370c566d3">rts_radio_set_mode</a> (struct <a class="el" href="structrts__radio.html">rts_radio</a> *radio, enum <a class="el" href="group__openrts.html#ga307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a> mode)</td></tr>
+<tr class="memdesc:ga5c4eb3993da685313f6984b370c566d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the radio mode for the specified <a class="el" href="structrts__radio.html" title="Abstraction layer which configures radio modules for RTS.">rts_radio</a> module, eg.  <a href="group__openrts.html#ga5c4eb3993da685313f6984b370c566d3">More...</a><br /></td></tr>
 <tr class="separator:ga5c4eb3993da685313f6984b370c566d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafd40f0657d24a152a50b94760dce812e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gafd40f0657d24a152a50b94760dce812e">rts_receiver_init</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *remote_store)</td></tr>
-<tr class="memdesc:gafd40f0657d24a152a50b94760dce812e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a>.  <a href="group__c.html#gafd40f0657d24a152a50b94760dce812e">More...</a><br /></td></tr>
+<tr class="memitem:gafd40f0657d24a152a50b94760dce812e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gafd40f0657d24a152a50b94760dce812e">rts_receiver_init</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *remote_store)</td></tr>
+<tr class="memdesc:gafd40f0657d24a152a50b94760dce812e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a>.  <a href="group__openrts.html#gafd40f0657d24a152a50b94760dce812e">More...</a><br /></td></tr>
 <tr class="separator:gafd40f0657d24a152a50b94760dce812e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ad4ce1fbb9688ada6fcb41eb5245859"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga6ad4ce1fbb9688ada6fcb41eb5245859">rts_receiver_set_frame_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum <a class="el" href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a>, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, void *user_data), void *user_data)</td></tr>
-<tr class="memdesc:ga6ad4ce1fbb9688ada6fcb41eb5245859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when new receiver events are received.  <a href="group__c.html#ga6ad4ce1fbb9688ada6fcb41eb5245859">More...</a><br /></td></tr>
+<tr class="memitem:ga6ad4ce1fbb9688ada6fcb41eb5245859"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga6ad4ce1fbb9688ada6fcb41eb5245859">rts_receiver_set_frame_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum <a class="el" href="group__openrts.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a>, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, void *user_data), void *user_data)</td></tr>
+<tr class="memdesc:ga6ad4ce1fbb9688ada6fcb41eb5245859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when new receiver events are received.  <a href="group__openrts.html#ga6ad4ce1fbb9688ada6fcb41eb5245859">More...</a><br /></td></tr>
 <tr class="separator:ga6ad4ce1fbb9688ada6fcb41eb5245859"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacad30b70597a760b6800352ed3326f61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gacad30b70597a760b6800352ed3326f61">rts_receiver_set_mode_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum <a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a>, void *user_data), void *user_data)</td></tr>
-<tr class="memdesc:gacad30b70597a760b6800352ed3326f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when the receiver mode changes.  <a href="group__c.html#gacad30b70597a760b6800352ed3326f61">More...</a><br /></td></tr>
+<tr class="memitem:gacad30b70597a760b6800352ed3326f61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gacad30b70597a760b6800352ed3326f61">rts_receiver_set_mode_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum <a class="el" href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a>, void *user_data), void *user_data)</td></tr>
+<tr class="memdesc:gacad30b70597a760b6800352ed3326f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when the receiver mode changes.  <a href="group__openrts.html#gacad30b70597a760b6800352ed3326f61">More...</a><br /></td></tr>
 <tr class="separator:gacad30b70597a760b6800352ed3326f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad8220ee59b348c4ed810237e95c468b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gad8220ee59b348c4ed810237e95c468b1">rts_receiver_set_mode</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, uint8_t mode)</td></tr>
-<tr class="memdesc:gad8220ee59b348c4ed810237e95c468b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the receiver mode.  <a href="group__c.html#gad8220ee59b348c4ed810237e95c468b1">More...</a><br /></td></tr>
+<tr class="memitem:gad8220ee59b348c4ed810237e95c468b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gad8220ee59b348c4ed810237e95c468b1">rts_receiver_set_mode</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, uint8_t mode)</td></tr>
+<tr class="memdesc:gad8220ee59b348c4ed810237e95c468b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the receiver mode.  <a href="group__openrts.html#gad8220ee59b348c4ed810237e95c468b1">More...</a><br /></td></tr>
 <tr class="separator:gad8220ee59b348c4ed810237e95c468b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabb156e720eb4e0891e1e2e5bfaff73f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gabb156e720eb4e0891e1e2e5bfaff73f1">rts_receiver_forget_all_remotes</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
-<tr class="memdesc:gabb156e720eb4e0891e1e2e5bfaff73f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function to forget all paired remotes by clearing the receiver's <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a>.  <a href="group__c.html#gabb156e720eb4e0891e1e2e5bfaff73f1">More...</a><br /></td></tr>
+<tr class="memitem:gabb156e720eb4e0891e1e2e5bfaff73f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gabb156e720eb4e0891e1e2e5bfaff73f1">rts_receiver_forget_all_remotes</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
+<tr class="memdesc:gabb156e720eb4e0891e1e2e5bfaff73f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function to forget all paired remotes by clearing the receiver's <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a>.  <a href="group__openrts.html#gabb156e720eb4e0891e1e2e5bfaff73f1">More...</a><br /></td></tr>
 <tr class="separator:gabb156e720eb4e0891e1e2e5bfaff73f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1561b9797fe677fadeb0117ea83b3177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga1561b9797fe677fadeb0117ea83b3177">rts_receiver_update</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
-<tr class="memdesc:ga1561b9797fe677fadeb0117ea83b3177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the receiver's <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> to check for new pulse data, should be called every loop() if the pulse source does not keep itself updated (eg.  <a href="group__c.html#ga1561b9797fe677fadeb0117ea83b3177">More...</a><br /></td></tr>
+<tr class="memitem:ga1561b9797fe677fadeb0117ea83b3177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga1561b9797fe677fadeb0117ea83b3177">rts_receiver_update</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
+<tr class="memdesc:ga1561b9797fe677fadeb0117ea83b3177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the receiver's <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> to check for new pulse data, should be called every loop() if the pulse source does not keep itself updated (eg.  <a href="group__openrts.html#ga1561b9797fe677fadeb0117ea83b3177">More...</a><br /></td></tr>
 <tr class="separator:ga1561b9797fe677fadeb0117ea83b3177"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga713e81bf47614d5cf50b8b6ab5d0a868"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga713e81bf47614d5cf50b8b6ab5d0a868">rts_remote_init</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *remote_store, struct <a class="el" href="structrts__timings.html">rts_timings</a> *timings)</td></tr>
-<tr class="memdesc:ga713e81bf47614d5cf50b8b6ab5d0a868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="structrts__remote.html" title="Simulates a physical RTS remote control.">rts_remote</a> struct.  <a href="group__c.html#ga713e81bf47614d5cf50b8b6ab5d0a868">More...</a><br /></td></tr>
+<tr class="memitem:ga713e81bf47614d5cf50b8b6ab5d0a868"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga713e81bf47614d5cf50b8b6ab5d0a868">rts_remote_init</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, struct <a class="el" href="structrts__pulse__output.html">rts_pulse_output</a> *pulse_output, struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *remote_store, struct <a class="el" href="structrts__timings.html">rts_timings</a> *timings)</td></tr>
+<tr class="memdesc:ga713e81bf47614d5cf50b8b6ab5d0a868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="structrts__remote.html" title="Simulates a physical RTS remote control.">rts_remote</a> struct.  <a href="group__openrts.html#ga713e81bf47614d5cf50b8b6ab5d0a868">More...</a><br /></td></tr>
 <tr class="separator:ga713e81bf47614d5cf50b8b6ab5d0a868"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2a109f38fb4fde769dbcf0b0d94a5a72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga2a109f38fb4fde769dbcf0b0d94a5a72">rts_remote_send_command</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, uint32_t address, enum <a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> command, bool repeated)</td></tr>
-<tr class="memdesc:ga2a109f38fb4fde769dbcf0b0d94a5a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a "button press" command.  <a href="group__c.html#ga2a109f38fb4fde769dbcf0b0d94a5a72">More...</a><br /></td></tr>
+<tr class="memitem:ga2a109f38fb4fde769dbcf0b0d94a5a72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga2a109f38fb4fde769dbcf0b0d94a5a72">rts_remote_send_command</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, uint32_t address, enum <a class="el" href="group__openrts.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a> command, bool repeated)</td></tr>
+<tr class="memdesc:ga2a109f38fb4fde769dbcf0b0d94a5a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a "button press" command.  <a href="group__openrts.html#ga2a109f38fb4fde769dbcf0b0d94a5a72">More...</a><br /></td></tr>
 <tr class="separator:ga2a109f38fb4fde769dbcf0b0d94a5a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1d7ef1ec7e0ff4347b6b2bd285c205c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga1d7ef1ec7e0ff4347b6b2bd285c205c3">rts_remote_send_frame</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, bool repeated)</td></tr>
-<tr class="memdesc:ga1d7ef1ec7e0ff4347b6b2bd285c205c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an RTS frame.  <a href="group__c.html#ga1d7ef1ec7e0ff4347b6b2bd285c205c3">More...</a><br /></td></tr>
+<tr class="memitem:ga1d7ef1ec7e0ff4347b6b2bd285c205c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga1d7ef1ec7e0ff4347b6b2bd285c205c3">rts_remote_send_frame</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, bool repeated)</td></tr>
+<tr class="memdesc:ga1d7ef1ec7e0ff4347b6b2bd285c205c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an RTS frame.  <a href="group__openrts.html#ga1d7ef1ec7e0ff4347b6b2bd285c205c3">More...</a><br /></td></tr>
 <tr class="separator:ga1d7ef1ec7e0ff4347b6b2bd285c205c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0b5d9329b4269cbf459cd1874c5918d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga0b5d9329b4269cbf459cd1874c5918d0">rts_remote_send_pulse</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, bool state, uint32_t micros)</td></tr>
-<tr class="memdesc:ga0b5d9329b4269cbf459cd1874c5918d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a single pulse to the internal <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a>.  <a href="group__c.html#ga0b5d9329b4269cbf459cd1874c5918d0">More...</a><br /></td></tr>
+<tr class="memitem:ga0b5d9329b4269cbf459cd1874c5918d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga0b5d9329b4269cbf459cd1874c5918d0">rts_remote_send_pulse</a> (struct <a class="el" href="structrts__remote.html">rts_remote</a> *remote, bool state, uint32_t micros)</td></tr>
+<tr class="memdesc:ga0b5d9329b4269cbf459cd1874c5918d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a single pulse to the internal <a class="el" href="structrts__pulse__output.html" title="Provides an interface for an output of RTS pulses, eg a GPIO or radio.">rts_pulse_output</a>.  <a href="group__openrts.html#ga0b5d9329b4269cbf459cd1874c5918d0">More...</a><br /></td></tr>
 <tr class="separator:ga0b5d9329b4269cbf459cd1874c5918d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafd495bd856ec66c5f7b4dba72bc54ca6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gafd495bd856ec66c5f7b4dba72bc54ca6">rts_remote_store_set_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address, uint16_t rolling_code)</td></tr>
-<tr class="memdesc:gafd495bd856ec66c5f7b4dba72bc54ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rolling code for this remote, create if doesn't exist.  <a href="group__c.html#gafd495bd856ec66c5f7b4dba72bc54ca6">More...</a><br /></td></tr>
+<tr class="memitem:gafd495bd856ec66c5f7b4dba72bc54ca6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gafd495bd856ec66c5f7b4dba72bc54ca6">rts_remote_store_set_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address, uint16_t rolling_code)</td></tr>
+<tr class="memdesc:gafd495bd856ec66c5f7b4dba72bc54ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rolling code for this remote, create if doesn't exist.  <a href="group__openrts.html#gafd495bd856ec66c5f7b4dba72bc54ca6">More...</a><br /></td></tr>
 <tr class="separator:gafd495bd856ec66c5f7b4dba72bc54ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab26b0afe0ab17f81af2a505ef4d05658"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gab26b0afe0ab17f81af2a505ef4d05658">rts_remote_store_get_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
-<tr class="memdesc:gab26b0afe0ab17f81af2a505ef4d05658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rolling code for this remote.  <a href="group__c.html#gab26b0afe0ab17f81af2a505ef4d05658">More...</a><br /></td></tr>
+<tr class="memitem:gab26b0afe0ab17f81af2a505ef4d05658"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gab26b0afe0ab17f81af2a505ef4d05658">rts_remote_store_get_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
+<tr class="memdesc:gab26b0afe0ab17f81af2a505ef4d05658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rolling code for this remote.  <a href="group__openrts.html#gab26b0afe0ab17f81af2a505ef4d05658">More...</a><br /></td></tr>
 <tr class="separator:gab26b0afe0ab17f81af2a505ef4d05658"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga558753287dc627e36b5216f5217e7177"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga558753287dc627e36b5216f5217e7177">rts_remote_store_next_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
-<tr class="memdesc:ga558753287dc627e36b5216f5217e7177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rolling code for this remote, then increment and persist.  <a href="group__c.html#ga558753287dc627e36b5216f5217e7177">More...</a><br /></td></tr>
+<tr class="memitem:ga558753287dc627e36b5216f5217e7177"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga558753287dc627e36b5216f5217e7177">rts_remote_store_next_code</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
+<tr class="memdesc:ga558753287dc627e36b5216f5217e7177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rolling code for this remote, then increment and persist.  <a href="group__openrts.html#ga558753287dc627e36b5216f5217e7177">More...</a><br /></td></tr>
 <tr class="separator:ga558753287dc627e36b5216f5217e7177"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ecf66e04d8462b100b142cecc6a338d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga6ecf66e04d8462b100b142cecc6a338d">rts_remote_store_known_remote</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
-<tr class="memdesc:ga6ecf66e04d8462b100b142cecc6a338d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this is a known remote address.  <a href="group__c.html#ga6ecf66e04d8462b100b142cecc6a338d">More...</a><br /></td></tr>
+<tr class="memitem:ga6ecf66e04d8462b100b142cecc6a338d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga6ecf66e04d8462b100b142cecc6a338d">rts_remote_store_known_remote</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
+<tr class="memdesc:ga6ecf66e04d8462b100b142cecc6a338d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this is a known remote address.  <a href="group__openrts.html#ga6ecf66e04d8462b100b142cecc6a338d">More...</a><br /></td></tr>
 <tr class="separator:ga6ecf66e04d8462b100b142cecc6a338d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga93d26435ee32bda67ad0958cd08bfbfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga93d26435ee32bda67ad0958cd08bfbfb">rts_remote_store_forget</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
-<tr class="memdesc:ga93d26435ee32bda67ad0958cd08bfbfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget a specific remote.  <a href="group__c.html#ga93d26435ee32bda67ad0958cd08bfbfb">More...</a><br /></td></tr>
+<tr class="memitem:ga93d26435ee32bda67ad0958cd08bfbfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga93d26435ee32bda67ad0958cd08bfbfb">rts_remote_store_forget</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store, uint32_t remote_address)</td></tr>
+<tr class="memdesc:ga93d26435ee32bda67ad0958cd08bfbfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget a specific remote.  <a href="group__openrts.html#ga93d26435ee32bda67ad0958cd08bfbfb">More...</a><br /></td></tr>
 <tr class="separator:ga93d26435ee32bda67ad0958cd08bfbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaba1b041180b813756605331bba63a006"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gaba1b041180b813756605331bba63a006">rts_remote_store_clear</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
-<tr class="memdesc:gaba1b041180b813756605331bba63a006"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all remotes and rolling codes.  <a href="group__c.html#gaba1b041180b813756605331bba63a006">More...</a><br /></td></tr>
+<tr class="memitem:gaba1b041180b813756605331bba63a006"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gaba1b041180b813756605331bba63a006">rts_remote_store_clear</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
+<tr class="memdesc:gaba1b041180b813756605331bba63a006"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all remotes and rolling codes.  <a href="group__openrts.html#gaba1b041180b813756605331bba63a006">More...</a><br /></td></tr>
 <tr class="separator:gaba1b041180b813756605331bba63a006"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga55de60ac69a0b8576e52214fc51d22fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga55de60ac69a0b8576e52214fc51d22fe">rts_remote_store_close</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
-<tr class="memdesc:ga55de60ac69a0b8576e52214fc51d22fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free any resources allocated via a previous call to rts_remote_store_init*()  <a href="group__c.html#ga55de60ac69a0b8576e52214fc51d22fe">More...</a><br /></td></tr>
+<tr class="memitem:ga55de60ac69a0b8576e52214fc51d22fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga55de60ac69a0b8576e52214fc51d22fe">rts_remote_store_close</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
+<tr class="memdesc:ga55de60ac69a0b8576e52214fc51d22fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close and free any resources allocated via a previous call to rts_remote_store_init*()  <a href="group__openrts.html#ga55de60ac69a0b8576e52214fc51d22fe">More...</a><br /></td></tr>
 <tr class="separator:ga55de60ac69a0b8576e52214fc51d22fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga52529ac5fcf5001a80dd19e3d490bf47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga52529ac5fcf5001a80dd19e3d490bf47">rts_remote_store_init_memory</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
-<tr class="memdesc:ga52529ac5fcf5001a80dd19e3d490bf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in memory.  <a href="group__c.html#ga52529ac5fcf5001a80dd19e3d490bf47">More...</a><br /></td></tr>
+<tr class="memitem:ga52529ac5fcf5001a80dd19e3d490bf47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga52529ac5fcf5001a80dd19e3d490bf47">rts_remote_store_init_memory</a> (struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *store)</td></tr>
+<tr class="memdesc:ga52529ac5fcf5001a80dd19e3d490bf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a> which stores remotes and rolling codes in memory.  <a href="group__openrts.html#ga52529ac5fcf5001a80dd19e3d490bf47">More...</a><br /></td></tr>
 <tr class="separator:ga52529ac5fcf5001a80dd19e3d490bf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -336,7 +336,7 @@ struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a></td>
+          <td class="memname">enum <a class="el" href="group__openrts.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -375,7 +375,7 @@ struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__c.html#ga307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a></td>
+          <td class="memname">enum <a class="el" href="group__openrts.html#ga307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -399,7 +399,7 @@ struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a></td>
+          <td class="memname">enum <a class="el" href="group__openrts.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -427,7 +427,7 @@ struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a></td>
+          <td class="memname">enum <a class="el" href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -463,7 +463,7 @@ struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum <a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a>&#160;</td>
+          <td class="paramtype">enum <a class="el" href="group__openrts.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a>&#160;</td>
           <td class="paramname"><em>command</em>, </td>
         </tr>
         <tr>
@@ -1323,7 +1323,7 @@ struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum <a class="el" href="group__c.html#ga307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a>&#160;</td>
+          <td class="paramtype">enum <a class="el" href="group__openrts.html#ga307d23bc496f860a9ff57bde0ca15336">rts_radio_mode</a>&#160;</td>
           <td class="paramname"><em>mode</em>&#160;</td>
         </tr>
         <tr>
@@ -1421,7 +1421,7 @@ struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void(*)(enum <a class="el" href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a>, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, void *user_data)&#160;</td>
+          <td class="paramtype">void(*)(enum <a class="el" href="group__openrts.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a>, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, void *user_data)&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -1473,7 +1473,7 @@ struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void(*)(enum <a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a>, void *user_data)&#160;</td>
+          <td class="paramtype">void(*)(enum <a class="el" href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a>, void *user_data)&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -1705,7 +1705,7 @@ struct <a class="el" href="structrts__timings.html">rts_timings</a> *&#160;</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum <a class="el" href="group__c.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a>&#160;</td>
+          <td class="paramtype">enum <a class="el" href="group__openrts.html#ga2dc6d8f19dc54273cf451709d2e9d164">rts_command</a>&#160;</td>
           <td class="paramname"><em>command</em>, </td>
         </tr>
         <tr>

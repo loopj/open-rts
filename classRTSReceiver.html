@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('classRTSReceiver.html',''); initResiza
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
-  <div class="headertitle"><div class="title">RTSReceiver Class Reference<div class="ingroups"><a class="el" href="group__cpp.html">C++ Bindings</a></div></div></div>
+  <div class="headertitle"><div class="title">RTSReceiver Class Reference<div class="ingroups"><a class="el" href="group__openrtsxx.html">Open RTS C++ Bindings</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -108,10 +108,10 @@ $(document).ready(function(){initNavTree('classRTSReceiver.html',''); initResiza
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a97dd881bccba70ccbc84ab1a6362f11d"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSReceiver.html#a97dd881bccba70ccbc84ab1a6362f11d">FrameCallback</a>) (enum <a class="el" href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a> event, <a class="el" href="classRTSFrame.html">RTSFrame</a> *frame, void *userData)</td></tr>
+<tr class="memitem:a97dd881bccba70ccbc84ab1a6362f11d"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSReceiver.html#a97dd881bccba70ccbc84ab1a6362f11d">FrameCallback</a>) (enum <a class="el" href="group__openrts.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a> event, <a class="el" href="classRTSFrame.html">RTSFrame</a> *frame, void *userData)</td></tr>
 <tr class="memdesc:a97dd881bccba70ccbc84ab1a6362f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame event callback function type.  <a href="classRTSReceiver.html#a97dd881bccba70ccbc84ab1a6362f11d">More...</a><br /></td></tr>
 <tr class="separator:a97dd881bccba70ccbc84ab1a6362f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa39edf8c055581aa10052917cb861307"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSReceiver.html#aa39edf8c055581aa10052917cb861307">ModeCallback</a>) (enum <a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a> mode, void *userData)</td></tr>
+<tr class="memitem:aa39edf8c055581aa10052917cb861307"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSReceiver.html#aa39edf8c055581aa10052917cb861307">ModeCallback</a>) (enum <a class="el" href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a> mode, void *userData)</td></tr>
 <tr class="memdesc:aa39edf8c055581aa10052917cb861307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode change callback function type.  <a href="classRTSReceiver.html#aa39edf8c055581aa10052917cb861307">More...</a><br /></td></tr>
 <tr class="separator:aa39edf8c055581aa10052917cb861307"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -126,7 +126,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab25cb27257009387162a8e52289db65f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSReceiver.html#ab25cb27257009387162a8e52289db65f">setModeCallback</a> (<a class="el" href="classRTSReceiver.html#aa39edf8c055581aa10052917cb861307">ModeCallback</a> callback, void *userData=nullptr)</td></tr>
 <tr class="memdesc:ab25cb27257009387162a8e52289db65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when the receiver mode changes.  <a href="classRTSReceiver.html#ab25cb27257009387162a8e52289db65f">More...</a><br /></td></tr>
 <tr class="separator:ab25cb27257009387162a8e52289db65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50c8505117994d4afa79e21b03474781"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSReceiver.html#a50c8505117994d4afa79e21b03474781">setMode</a> (enum <a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a> mode)</td></tr>
+<tr class="memitem:a50c8505117994d4afa79e21b03474781"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTSReceiver.html#a50c8505117994d4afa79e21b03474781">setMode</a> (enum <a class="el" href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a> mode)</td></tr>
 <tr class="memdesc:a50c8505117994d4afa79e21b03474781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the receiver mode.  <a href="classRTSReceiver.html#a50c8505117994d4afa79e21b03474781">More...</a><br /></td></tr>
 <tr class="separator:a50c8505117994d4afa79e21b03474781"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ee5b4e7299a04f1e5497766b37f3b2f"><td class="memItemLeft" align="right" valign="top"><a id="a6ee5b4e7299a04f1e5497766b37f3b2f" name="a6ee5b4e7299a04f1e5497766b37f3b2f"></a>
@@ -140,23 +140,23 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forgetAllRemotes</b> 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header related_structrts__receiver"><td colspan="2" onclick="javascript:toggleInherit('related_structrts__receiver')"><img src="closed.png" alt="-"/>&#160;Related Functions inherited from <a class="el" href="structrts__receiver.html">rts_receiver</a></td></tr>
-<tr class="memitem:gafd40f0657d24a152a50b94760dce812e inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gafd40f0657d24a152a50b94760dce812e">rts_receiver_init</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *remote_store)</td></tr>
-<tr class="memdesc:gafd40f0657d24a152a50b94760dce812e inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a>.  <a href="group__c.html#gafd40f0657d24a152a50b94760dce812e">More...</a><br /></td></tr>
+<tr class="memitem:gafd40f0657d24a152a50b94760dce812e inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gafd40f0657d24a152a50b94760dce812e">rts_receiver_init</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, struct <a class="el" href="structrts__remote__store.html">rts_remote_store</a> *remote_store)</td></tr>
+<tr class="memdesc:gafd40f0657d24a152a50b94760dce812e inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__receiver.html" title="Simulates a physical RTS receiver device, such as a shade or drapery motor.">rts_receiver</a>.  <a href="group__openrts.html#gafd40f0657d24a152a50b94760dce812e">More...</a><br /></td></tr>
 <tr class="separator:gafd40f0657d24a152a50b94760dce812e inherit related_structrts__receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ad4ce1fbb9688ada6fcb41eb5245859 inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga6ad4ce1fbb9688ada6fcb41eb5245859">rts_receiver_set_frame_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum <a class="el" href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a>, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, void *user_data), void *user_data)</td></tr>
-<tr class="memdesc:ga6ad4ce1fbb9688ada6fcb41eb5245859 inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when new receiver events are received.  <a href="group__c.html#ga6ad4ce1fbb9688ada6fcb41eb5245859">More...</a><br /></td></tr>
+<tr class="memitem:ga6ad4ce1fbb9688ada6fcb41eb5245859 inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga6ad4ce1fbb9688ada6fcb41eb5245859">rts_receiver_set_frame_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum <a class="el" href="group__openrts.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a>, struct <a class="el" href="structrts__frame.html">rts_frame</a> *frame, void *user_data), void *user_data)</td></tr>
+<tr class="memdesc:ga6ad4ce1fbb9688ada6fcb41eb5245859 inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when new receiver events are received.  <a href="group__openrts.html#ga6ad4ce1fbb9688ada6fcb41eb5245859">More...</a><br /></td></tr>
 <tr class="separator:ga6ad4ce1fbb9688ada6fcb41eb5245859 inherit related_structrts__receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacad30b70597a760b6800352ed3326f61 inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gacad30b70597a760b6800352ed3326f61">rts_receiver_set_mode_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum <a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a>, void *user_data), void *user_data)</td></tr>
-<tr class="memdesc:gacad30b70597a760b6800352ed3326f61 inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when the receiver mode changes.  <a href="group__c.html#gacad30b70597a760b6800352ed3326f61">More...</a><br /></td></tr>
+<tr class="memitem:gacad30b70597a760b6800352ed3326f61 inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gacad30b70597a760b6800352ed3326f61">rts_receiver_set_mode_callback</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, void(*callback)(enum <a class="el" href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a>, void *user_data), void *user_data)</td></tr>
+<tr class="memdesc:gacad30b70597a760b6800352ed3326f61 inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function to call when the receiver mode changes.  <a href="group__openrts.html#gacad30b70597a760b6800352ed3326f61">More...</a><br /></td></tr>
 <tr class="separator:gacad30b70597a760b6800352ed3326f61 inherit related_structrts__receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad8220ee59b348c4ed810237e95c468b1 inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gad8220ee59b348c4ed810237e95c468b1">rts_receiver_set_mode</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, uint8_t mode)</td></tr>
-<tr class="memdesc:gad8220ee59b348c4ed810237e95c468b1 inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the receiver mode.  <a href="group__c.html#gad8220ee59b348c4ed810237e95c468b1">More...</a><br /></td></tr>
+<tr class="memitem:gad8220ee59b348c4ed810237e95c468b1 inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gad8220ee59b348c4ed810237e95c468b1">rts_receiver_set_mode</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver, uint8_t mode)</td></tr>
+<tr class="memdesc:gad8220ee59b348c4ed810237e95c468b1 inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the receiver mode.  <a href="group__openrts.html#gad8220ee59b348c4ed810237e95c468b1">More...</a><br /></td></tr>
 <tr class="separator:gad8220ee59b348c4ed810237e95c468b1 inherit related_structrts__receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabb156e720eb4e0891e1e2e5bfaff73f1 inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#gabb156e720eb4e0891e1e2e5bfaff73f1">rts_receiver_forget_all_remotes</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
-<tr class="memdesc:gabb156e720eb4e0891e1e2e5bfaff73f1 inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function to forget all paired remotes by clearing the receiver's <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a>.  <a href="group__c.html#gabb156e720eb4e0891e1e2e5bfaff73f1">More...</a><br /></td></tr>
+<tr class="memitem:gabb156e720eb4e0891e1e2e5bfaff73f1 inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gabb156e720eb4e0891e1e2e5bfaff73f1">rts_receiver_forget_all_remotes</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
+<tr class="memdesc:gabb156e720eb4e0891e1e2e5bfaff73f1 inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function to forget all paired remotes by clearing the receiver's <a class="el" href="structrts__remote__store.html" title="Provides an interface for a datastore which contains details about remote controls and rolling codes.">rts_remote_store</a>.  <a href="group__openrts.html#gabb156e720eb4e0891e1e2e5bfaff73f1">More...</a><br /></td></tr>
 <tr class="separator:gabb156e720eb4e0891e1e2e5bfaff73f1 inherit related_structrts__receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1561b9797fe677fadeb0117ea83b3177 inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__c.html#ga1561b9797fe677fadeb0117ea83b3177">rts_receiver_update</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
-<tr class="memdesc:ga1561b9797fe677fadeb0117ea83b3177 inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the receiver's <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> to check for new pulse data, should be called every loop() if the pulse source does not keep itself updated (eg.  <a href="group__c.html#ga1561b9797fe677fadeb0117ea83b3177">More...</a><br /></td></tr>
+<tr class="memitem:ga1561b9797fe677fadeb0117ea83b3177 inherit related_structrts__receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga1561b9797fe677fadeb0117ea83b3177">rts_receiver_update</a> (struct <a class="el" href="structrts__receiver.html">rts_receiver</a> *receiver)</td></tr>
+<tr class="memdesc:ga1561b9797fe677fadeb0117ea83b3177 inherit related_structrts__receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruct the receiver's <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> to check for new pulse data, should be called every loop() if the pulse source does not keep itself updated (eg.  <a href="group__openrts.html#ga1561b9797fe677fadeb0117ea83b3177">More...</a><br /></td></tr>
 <tr class="separator:ga1561b9797fe677fadeb0117ea83b3177 inherit related_structrts__receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -177,7 +177,7 @@ button held" are sent to the event callback you attach with <a class="el" href="
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* RTSReceiver::FrameCallback) (enum <a class="el" href="group__c.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a> event, <a class="el" href="classRTSFrame.html">RTSFrame</a> *frame, void *userData)</td>
+          <td class="memname">typedef void(* RTSReceiver::FrameCallback) (enum <a class="el" href="group__openrts.html#gaa591089885a2aef8ea967bcb1b462615">rts_receiver_event</a> event, <a class="el" href="classRTSFrame.html">RTSFrame</a> *frame, void *userData)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -201,7 +201,7 @@ button held" are sent to the event callback you attach with <a class="el" href="
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* RTSReceiver::ModeCallback) (enum <a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a> mode, void *userData)</td>
+          <td class="memname">typedef void(* RTSReceiver::ModeCallback) (enum <a class="el" href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a> mode, void *userData)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -339,7 +339,7 @@ button held" are sent to the event callback you attach with <a class="el" href="
         <tr>
           <td class="memname">void RTSReceiver::setMode </td>
           <td>(</td>
-          <td class="paramtype">enum <a class="el" href="group__c.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a>&#160;</td>
+          <td class="paramtype">enum <a class="el" href="group__openrts.html#ga95b9ffaba40b365472722c9736fdb05d">rts_receiver_mode</a>&#160;</td>
           <td class="paramname"><em>mode</em></td><td>)</td>
           <td></td>
         </tr>
@@ -377,8 +377,9 @@ button held" are sent to the event callback you attach with <a class="el" href="
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/bindings/cpp/<a class="el" href="RTSReceiver_8hpp_source.html">RTSReceiver.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/openrtsxx/<a class="el" href="RTSReceiver_8hpp_source.html">RTSReceiver.hpp</a></li>
+<li>src/openrtsxx/RTSReceiver.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
