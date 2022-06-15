@@ -15,12 +15,13 @@ jobs:
 
     strategy:
       matrix:
-        example: ["examples/arduino/sniffer"]
+        example: ["examples/arduino/sniffer", "examples/arduino/remote", "examples/arduino/receiver"]
         arduino-platform: ["esp32:esp32"]
 
         include:
           - arduino-platform: "esp32:esp32"
-            fqbn: "esp32:esp32:esp32"
+            fqbn: "esp32:esp32:sparkfun_lora_gateway_1-channel"
+            board-define: "OPENRTS_BOARD_SPARKFUN_LORA_GATEWAY"
 
     runs-on: ubuntu-latest
 
@@ -40,10 +41,11 @@ jobs:
         run: |
           arduino-cli config init
           arduino-cli config add board_manager.additional_urls https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+          arduino-cli config add board_manager.additional_urls https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
           arduino-cli core update-index
           arduino-cli core install ${{ matrix.arduino-platform }}
 
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
       - name: Compile Sketch
-        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} --build-property compiler.cpp.extra_flags="-DOPENRTS_BOARD_SPARKFUN_LORA_GATEWAY" --library="$PWD" ${{matrix.example}}
+        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} --build-property compiler.cpp.extra_flags="-D${{ matrix.board-define }}" --library="$PWD" ${{matrix.example}}
