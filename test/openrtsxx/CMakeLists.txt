@@ -7,6 +7,12 @@ add_executable(test_openrtsxx EXCLUDE_FROM_ALL
     test_RTSRemote.cpp
 )
 
-target_link_libraries(test_openrtsxx unity openrtsxx)
-target_include_directories(test_openrtsxx PRIVATE .)
+target_link_libraries(test_openrtsxx
+    unity openrtsxx
+)
+
+target_include_directories(test_openrtsxx
+    PRIVATE .
+)
+
 add_test(test_openrtsxx_test test_openrtsxx)

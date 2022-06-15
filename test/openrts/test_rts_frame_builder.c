@@ -1,6 +1,6 @@
 #include <unity.h>
 
-#include "fixtures.h"
+#include "../fixtures.h"
 
 #include <openrts/rts_frame_builder.h>
 #include <openrts/rts_remote.h>

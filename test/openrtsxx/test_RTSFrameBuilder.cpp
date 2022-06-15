@@ -1,9 +1,9 @@
 #include <unity.h>
 
-#include "fixtures.h"
-
 #include <openrtsxx/RTSFrameBuilder.hpp>
 #include <openrtsxx/RTSRemote.hpp>
+
+#include "../fixtures.h"
 
 static int callbackCount = 0;
 

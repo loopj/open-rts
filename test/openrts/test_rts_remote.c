@@ -1,6 +1,6 @@
 #include <unity.h>
 
-#include "fixtures.h"
+#include "../fixtures.h"
 #include <openrts/rts_remote.h>
 
 static uint16_t dummy_store_rolling_code = 0;

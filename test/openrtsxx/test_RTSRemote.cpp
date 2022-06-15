@@ -1,10 +1,10 @@
 #include <unity.h>
 
-#include "fixtures.h"
-
 #include <openrtsxx/RTSPulseOutput.hpp>
 #include <openrtsxx/RTSRemote.hpp>
 #include <openrtsxx/RTSRemoteStore.hpp>
+
+#include "../fixtures.h"
 
 static uint16_t pulseCount = 0;
 
