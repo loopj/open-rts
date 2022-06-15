@@ -1,0 +1,33 @@
+name: Build ESP-IDF Example Apps
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - src/**
+      - examples/espidf/**
+      - .github/workflows/build_espidf_examples.yml
+
+jobs:
+  build-examples:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        example:
+          - sniffer
+          - remote
+          - receiver
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Build example
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v4.4
+          target: esp32
+          path: examples/espidf/${{ matrix.example }}

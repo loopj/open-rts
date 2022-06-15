@@ -1,7 +1,7 @@
 # Open RTS
 
 [![GitHub](https://img.shields.io/github/license/loopj/open-rts)](https://github.com/loopj/open-rts/blob/main/LICENSE)
-[![Build Status](https://github.com/loopj/open-rts/actions/workflows/run_unit_tests.yml/badge.svg)](https://github.com/loopj/open-rts/actions/workflows/run_unit_tests.yml)
+[![Build Status](https://github.com/loopj/open-rts/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/loopj/open-rts/actions/workflows/unit_tests.yml)
 
 Open RTS is a C library (with optional C++ bindings), which provides a full implementation of the Somfy RTS protocol designed for creating your own remotes, receivers, repeaters, or bridges on embedded hardware, such as Arduino or ESP8266/ESP32 devices.
 
