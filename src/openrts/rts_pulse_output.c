@@ -1,6 +1,6 @@
-#include "rts_pulse_output.h"
-
 #include <string.h>
+
+#include "rts_pulse_output.h"
 
 void rts_pulse_output_enable(struct rts_pulse_output *pulse_output)
 {

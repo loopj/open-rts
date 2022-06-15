@@ -1,10 +1,14 @@
 #ifndef RTS_PULSE_SOURCE_H
 #define RTS_PULSE_SOURCE_H
 
-#include "rts_frame_builder.h"
-
 #include <stdbool.h>
 #include <stdint.h>
+
+#include "rts_frame_builder.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /**
  * @file
@@ -44,10 +48,6 @@ struct rts_pulse_source {
         int user_data_int;
     };
 };
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * Enable the pulse source
@@ -97,12 +97,12 @@ void rts_pulse_source_attach(struct rts_pulse_source *pulse_source,
  */
 void rts_pulse_source_close(struct rts_pulse_source *pulse_source);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // RTS_PULSE_SOURCE_H

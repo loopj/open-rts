@@ -5,6 +5,10 @@
 
 #include "../../hal/spi_module.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @file
  */
@@ -118,10 +122,6 @@ enum {
     SX1278_PA_DAC_DISABLED = 0x04,
 };
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /**
  * @brief Initialize an SPI-attached SX1278/RFM96 radio module
  *
@@ -147,12 +147,12 @@ void sx1278_set_rx_bandwidth(struct sx1278 *radio, int bw);
 void sx1278_set_transmit_power(struct sx1278 *radio, int power);
 void sx1278_set_mode(struct sx1278 *radio, int mode);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // SX1278_H

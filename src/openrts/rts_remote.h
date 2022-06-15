@@ -1,12 +1,16 @@
 #ifndef RTS_REMOTE_H
 #define RTS_REMOTE_H
 
+#include <stdint.h>
+
 #include "rts_frame.h"
 #include "rts_pulse_output.h"
 #include "rts_remote_store.h"
 #include "rts_timings.h"
 
-#include <stdint.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /**
  * @file
@@ -31,10 +35,6 @@ struct rts_remote {
     struct rts_remote_store *remote_store;
     struct rts_timings *timings;
 };
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * Initialize the rts_remote struct
@@ -99,12 +99,12 @@ void rts_remote_send_frame(struct rts_remote *remote, struct rts_frame *frame,
 void rts_remote_send_pulse(struct rts_remote *remote, bool state,
                            uint32_t micros);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // RTS_REMOTE_H

@@ -3,6 +3,10 @@
 
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @file
  */
@@ -11,10 +15,6 @@
  * @addtogroup ookradio
  * @{
  */
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * Hardware abstraction layer for userland SPI drivers
@@ -92,12 +92,12 @@ void spi_write(struct spi_module *spi, uint8_t reg, uint8_t val);
 void spi_write_masked(struct spi_module *spi, uint8_t reg, uint8_t mask,
                       uint8_t val);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // SPI_MODULE_H

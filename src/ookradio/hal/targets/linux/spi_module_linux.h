@@ -3,6 +3,10 @@
 
 #include "../../spi_module.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @file
  */
@@ -11,10 +15,6 @@
  * @addtogroup ookradio
  * @{
  */
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * @brief Initialize an spi_module struct using Linux spidev
@@ -32,12 +32,12 @@ extern "C" {
  */
 int spi_module_init_linux(struct spi_module *spi_module, const char *device);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // SPI_MODULE_LINUX_H

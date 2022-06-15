@@ -5,6 +5,10 @@
 
 #include "../../hal/spi_module.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @file
  */
@@ -154,10 +158,6 @@ enum {
     RFM69_TEST_PA_2_BOOST  = 0x7C,
 };
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /**
  * @brief Initialize an SPI-attached RFM69 radio module
  *
@@ -180,12 +180,12 @@ void rfm69_set_rx_bandwidth(struct rfm69 *radio, uint32_t bw);
 void rfm69_set_transmit_power(struct rfm69 *radio, int8_t power);
 void rfm69_set_mode(struct rfm69 *radio, uint8_t mode);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // RFM69_H

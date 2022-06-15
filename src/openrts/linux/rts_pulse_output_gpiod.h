@@ -3,6 +3,10 @@
 
 #include "../rts_pulse_output.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @file
  */
@@ -11,10 +15,6 @@
  * @addtogroup openrts
  * @{
  */
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * Initialize an rts_pulse_output which sends pulses to the specified
@@ -36,12 +36,12 @@ extern "C" {
 void rts_pulse_output_init_gpiod(struct rts_pulse_output *pulse_output,
                                  char *device, uint8_t data_pin);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // RTS_PULSE_OUTPUT_GPIOD_H

@@ -1,8 +1,7 @@
-#include "rts_remote.h"
+#include <stddef.h>
 
 #include "rts_pulse_output.h"
-
-#include <stddef.h>
+#include "rts_remote.h"
 
 #define INITIAL_PREAMBLE_COUNT 2
 #define REPEAT_PREAMBLE_COUNT  7

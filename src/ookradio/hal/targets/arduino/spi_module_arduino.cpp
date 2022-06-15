@@ -1,10 +1,10 @@
 #if defined(ARDUINO)
 
-#include "../../../errors.h"
+#include <Arduino.h>
 
+#include "../../../errors.h"
 #include "spi_module_arduino.hpp"
 
-#include <Arduino.h>
 
 static int spi_module_transfer_arduino(struct spi_module *spi_module,
                                        uint8_t *tx_buffer, uint8_t *rx_buffer,

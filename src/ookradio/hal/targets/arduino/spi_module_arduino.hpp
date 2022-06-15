@@ -1,9 +1,9 @@
 #ifndef SPI_MODULE_ARDUINO_H
 #define SPI_MODULE_ARDUINO_H
 
-#include "../../spi_module.h"
-
 #include <SPI.h>
+
+#include "../../spi_module.h"
 
 /**
  * @file

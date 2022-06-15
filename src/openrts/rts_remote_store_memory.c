@@ -1,7 +1,5 @@
 #include <stdlib.h>
 
-#include "config.h"
-
 #include "rts_remote_store_memory.h"
 
 static int8_t remote_index(struct rts_remote_store *store,

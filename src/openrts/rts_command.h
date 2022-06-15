@@ -1,6 +1,10 @@
 #ifndef RTS_COMMAND_H
 #define RTS_COMMAND_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @file
  */
@@ -30,10 +34,6 @@ enum rts_command {
     RTS_COMMAND_FLAG       = 0xA, ///< Flag button pressed (Soliris)
 };
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /**
  * @brief Get a string representation of the given rts_command
  *
@@ -42,12 +42,12 @@ extern "C" {
  */
 const char *rts_command_to_string(enum rts_command command);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // RTS_COMMAND_H

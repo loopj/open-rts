@@ -2,9 +2,8 @@
 
 #if OPENRTS_HAS_GPIOD
 
-#include <stddef.h>
-
 #include <gpiod.h>
+#include <stddef.h>
 #include <time.h>
 
 #include "rts_pulse_output_gpiod.h"

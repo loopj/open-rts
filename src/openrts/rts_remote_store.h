@@ -6,6 +6,10 @@
 
 #include "errors.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @file
  */
@@ -36,10 +40,6 @@ struct rts_remote_store {
         int user_data_int;
     };
 };
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * Set the rolling code for this remote, create if doesn't exist
@@ -120,12 +120,12 @@ void rts_remote_store_clear(struct rts_remote_store *store);
  */
 void rts_remote_store_close(struct rts_remote_store *store);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // RTS_REMOTE_STORE_H

@@ -2,12 +2,12 @@
 
 #if OPENRTS_HAS_GPIOD
 
-#include "rts_pulse_source_gpiod.h"
-
 #include <gpiod.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+
+#include "rts_pulse_source_gpiod.h"
 
 // TODO: Check return codes in gpiod_* etc
 

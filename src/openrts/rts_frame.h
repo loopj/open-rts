@@ -1,12 +1,14 @@
 #ifndef RTS_FRAME_H
 #define RTS_FRAME_H
 
-#include "rts_command.h"
-
 #include <stdbool.h>
 #include <stdint.h>
 
-#define RTS_FRAME_BYTES 7
+#include "rts_command.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /**
  * @file
@@ -16,6 +18,9 @@
  * @addtogroup openrts
  * @{
  */
+
+// Number of bytes in a raw RTS frame payload
+#define RTS_FRAME_BYTES 7
 
 /**
  * Represents the message "payload" sent by RTS remote controls.
@@ -55,10 +60,6 @@ struct rts_frame {
      */
     uint32_t remote_address : 24;
 };
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * Initialize an rts_frame with typical payload. We'll generate a sensible
@@ -126,12 +127,12 @@ void rts_frame_deobfuscate_bytes(uint8_t *dest, const uint8_t *src);
  */
 uint8_t rts_frame_generate_checksum(const uint8_t *bytes);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // RTS_FRAME_H

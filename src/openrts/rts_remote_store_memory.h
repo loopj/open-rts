@@ -3,7 +3,9 @@
 
 #include "rts_remote_store.h"
 
-#define MAX_REMOTES 16
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /**
  * @file
@@ -14,19 +16,18 @@
  * @{
  */
 
+// Maximum number of remotes a memory or mmap store can hold
+#define RTS_MAX_REMOTES 16
+
 // Internal struct to hold remotes/rolling codes
 struct rts_remote_store_memory_data {
     int file_handle;
     struct {
         uint8_t num_remotes;
-        uint32_t remote_addresses[MAX_REMOTES];
-        uint16_t rolling_codes[MAX_REMOTES];
+        uint32_t remote_addresses[RTS_MAX_REMOTES];
+        uint16_t rolling_codes[RTS_MAX_REMOTES];
     } * store;
 };
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * Initialize an rts_remote_store which stores remotes and rolling codes in
@@ -52,12 +53,12 @@ int8_t rts_remote_store_forget_memory(struct rts_remote_store *store,
 
 int8_t rts_remote_store_clear_memory(struct rts_remote_store *store);
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
 /**
  * @}
  */
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // RTS_REMOTE_STORE_MEMORY_H

@@ -3,10 +3,6 @@
 
 #include "RTSRadio.hpp"
 
-#if defined(ARDUINO)
-#include <SPI.h>
-#endif
-
 class RTSRadio_RFM69 : public RTSRadio
 {
   public:
