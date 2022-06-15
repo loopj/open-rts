@@ -1,0 +1,49 @@
+name: Build Arduino Example Apps
+
+# Here we tell GitHub to run the workflow when a commit
+# is pushed or a Pull Request is opened.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - src/**
+      - examples/arduino/**
+      - .github/workflows/build_arduino_examples.yml
+
+jobs:
+  build-examples:
+
+    strategy:
+      matrix:
+        example: ["examples/arduino/sniffer"]
+        arduino-platform: ["esp32:esp32"]
+
+        include:
+          - arduino-platform: "esp32:esp32"
+            fqbn: "esp32:esp32:esp32"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # First of all, we clone the repo using the `checkout` action.
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # We use the `arduino/setup-arduino-cli` action to install and
+      # configure the Arduino CLI on the system.
+      - name: Setup Arduino CLI
+        uses: arduino/setup-arduino-cli@v1
+
+      # We then install the platform, which one will be determined
+      # dynamically by the build matrix.
+      - name: Install platform
+        run: |
+          arduino-cli config init
+          arduino-cli config add board_manager.additional_urls https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+          arduino-cli core update-index
+          arduino-cli core install ${{ matrix.arduino-platform }}
+
+      # Finally, we compile the sketch, using the FQBN that was set
+      # in the build matrix.
+      - name: Compile Sketch
+        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} --build-property compiler.cpp.extra_flags="-DOPENRTS_BOARD_SPARKFUN_LORA_GATEWAY" --library="$PWD" ${{matrix.example}}
