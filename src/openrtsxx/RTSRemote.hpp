@@ -1,7 +1,7 @@
 #ifndef RTS_REMOTE_HPP
 #define RTS_REMOTE_HPP
 
-#include "openrts/rts_remote.h"
+#include <openrts/rts_remote.h>
 
 #include "RTSFrame.hpp"
 #include "RTSPulseOutput.hpp"

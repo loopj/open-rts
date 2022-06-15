@@ -1,7 +1,3 @@
-#include "openrts/config.h"
-
-#if OPENRTS_INCLUDE_CPP_BINDINGS
-
 #include "RTSPulseOutput.hpp"
 
 RTSPulseOutput::~RTSPulseOutput()
@@ -31,5 +27,3 @@ RTSPulseOutput::RTSPulseOutput()
     rts_pulse_output::disable    = nullptr;
     rts_pulse_output::close      = nullptr;
 }
-
-#endif // OPENRTS_INCLUDE_CPP_BINDINGS

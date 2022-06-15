@@ -1,7 +1,7 @@
 #ifndef RTS_RECEIVER_HPP
 #define RTS_RECEIVER_HPP
 
-#include "openrts/rts_receiver.h"
+#include <openrts/rts_receiver.h>
 
 #include "RTSFrame.hpp"
 #include "RTSPulseSource.hpp"

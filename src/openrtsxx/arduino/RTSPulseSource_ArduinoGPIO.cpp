@@ -1,6 +1,6 @@
-#include "openrts/config.h"
+#include <openrts/config.h>
 
-#if OPENRTS_INCLUDE_CPP_BINDINGS && OPENRTS_HAS_ARDUINO_GPIO
+#if OPENRTS_HAS_ARDUINO_GPIO
 
 #include <Arduino.h>
 
@@ -76,4 +76,4 @@ RTSPulseSource_ArduinoGPIO::RTSPulseSource_ArduinoGPIO(uint8_t dataPin)
     interruptInstance = this;
 }
 
-#endif // #if OPENRTS_INCLUDE_CPP_BINDINGS && OPENRTS_HAS_ARDUINO_GPIO
+#endif // OPENRTS_HAS_ARDUINO_GPIO

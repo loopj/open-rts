@@ -15,6 +15,15 @@ target_sources(openrts PRIVATE
     rts_timings.c
 )
 
+target_include_directories(openrts
+    INTERFACE ..
+    PRIVATE .
+)
+
+target_link_libraries(openrts
+    PRIVATE ookradio
+)
+
 # Include ESP-IDF pulse_output, pulse_source, and remote_store when available
 if(ESP_PLATFORM)
     target_sources(openrts PRIVATE
@@ -46,9 +55,3 @@ if(OPENRTS_HAS_GPIOD)
         OPENRTS_HAS_GPIOD
     )
 endif()
-
-target_link_libraries(openrts PUBLIC ookradio)
-target_include_directories(openrts
-    INTERFACE ..
-    PRIVATE .
-)

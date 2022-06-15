@@ -1,7 +1,7 @@
 #ifndef RTS_FRAME_BUILDER_HPP
 #define RTS_FRAME_BUILDER_HPP
 
-#include "openrts/rts_frame_builder.h"
+#include <openrts/rts_frame_builder.h>
 
 #include "RTSFrame.hpp"
 

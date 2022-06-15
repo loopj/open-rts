@@ -1,7 +1,3 @@
-#include "openrts/config.h"
-
-#if OPENRTS_INCLUDE_CPP_BINDINGS
-
 #include "RTSPulseSource.hpp"
 
 RTSPulseSource::~RTSPulseSource()
@@ -36,5 +32,3 @@ RTSPulseSource::RTSPulseSource()
     rts_pulse_source::update  = nullptr;
     rts_pulse_source::close   = nullptr;
 }
-
-#endif // OPENRTS_INCLUDE_CPP_BINDINGS

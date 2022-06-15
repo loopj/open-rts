@@ -1,7 +1,7 @@
 #ifndef RTS_RADIO_HPP
 #define RTS_RADIO_HPP
 
-#include "openrts/rts_radio.h"
+#include <openrts/rts_radio.h>
 
 /**
  * @file

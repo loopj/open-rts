@@ -69,15 +69,6 @@
 #endif
 
 //
-// Include C++ bindings by default if we're being built by a C++ compiler
-//
-// Uncomment the following line to disable:
-// #define OPENRTS_INCLUDE_CPP_BINDINGS 0
-#if defined(__cplusplus) && !defined(OPENRTS_INCLUDE_CPP_BINDINGS)
-#define OPENRTS_INCLUDE_CPP_BINDINGS 1
-#endif
-
-//
 // Include the radio library by default
 //
 // Uncomment the following line to disable:

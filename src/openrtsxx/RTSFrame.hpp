@@ -1,7 +1,7 @@
 #ifndef RTS_FRAME_HPP
 #define RTS_FRAME_HPP
 
-#include "openrts/rts_frame.h"
+#include <openrts/rts_frame.h>
 
 /**
  * @file

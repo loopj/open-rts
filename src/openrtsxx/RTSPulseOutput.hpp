@@ -1,7 +1,7 @@
 #ifndef RTS_PULSE_OUTPUT_HPP
 #define RTS_PULSE_OUTPUT_HPP
 
-#include "openrts/rts_pulse_output.h"
+#include <openrts/rts_pulse_output.h>
 
 /**
  * @file

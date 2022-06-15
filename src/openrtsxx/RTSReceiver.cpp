@@ -1,7 +1,3 @@
-#include "openrts/config.h"
-
-#if OPENRTS_INCLUDE_CPP_BINDINGS
-
 #include "RTSReceiver.hpp"
 
 RTSReceiver::RTSReceiver(RTSPulseSource *pulseSource,
@@ -56,5 +52,3 @@ void RTSReceiver::modeCallbackWrapper(enum rts_receiver_mode mode,
     RTSReceiver *inst = (RTSReceiver *)userData;
     inst->modeCallback(mode, inst->modeCallbackUserData);
 }
-
-#endif // OPENRTS_INCLUDE_CPP_BINDINGS

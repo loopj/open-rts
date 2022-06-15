@@ -1,7 +1,3 @@
-#include "openrts/config.h"
-
-#if OPENRTS_INCLUDE_CPP_BINDINGS
-
 #include "RTSFrame.hpp"
 
 RTSFrame::RTSFrame(rts_command command, uint16_t rollingCode,
@@ -42,5 +38,3 @@ uint8_t RTSFrame::generateChecksum(uint8_t *bytes)
 {
     return rts_frame_generate_checksum(bytes);
 }
-
-#endif // OPENRTS_INCLUDE_CPP_BINDINGS

@@ -1,9 +1,9 @@
 #include <unity.h>
 
-#include "../fixtures.h"
-
 #include <openrts/rts_frame_builder.h>
 #include <openrts/rts_remote.h>
+
+#include "../fixtures.h"
 
 static void TEST_ASSERT_EQUAL_RTS_FRAME_BYTES(struct rts_frame *expected,
                                               struct rts_frame *actual)

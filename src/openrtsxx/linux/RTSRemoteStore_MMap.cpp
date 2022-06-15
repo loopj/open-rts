@@ -1,8 +1,8 @@
-#include "openrts/config.h"
+#include <openrts/config.h>
 
-#if OPENRTS_INCLUDE_CPP_BINDINGS && OPENRTS_HAS_MMAP
+#if OPENRTS_HAS_MMAP
 
-#include "openrts/linux/rts_remote_store_mmap.h"
+#include <openrts/linux/rts_remote_store_mmap.h>
 
 #include "RTSRemoteStore_MMap.hpp"
 

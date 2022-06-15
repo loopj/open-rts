@@ -1,7 +1,3 @@
-#include "openrts/config.h"
-
-#if OPENRTS_INCLUDE_CPP_BINDINGS
-
 #include "RTSRadio.hpp"
 
 #if defined(ARDUINO)
@@ -28,5 +24,3 @@ struct spi_module *RTSRadio::defaultSPIModule(uint8_t chipSelect)
     return nullptr;
 #endif
 }
-
-#endif // OPENRTS_INCLUDE_CPP_BINDINGS

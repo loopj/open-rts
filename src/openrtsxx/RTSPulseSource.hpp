@@ -1,7 +1,7 @@
 #ifndef RTS_PULSE_SOURCE_HPP
 #define RTS_PULSE_SOURCE_HPP
 
-#include "openrts/rts_pulse_source.h"
+#include <openrts/rts_pulse_source.h>
 
 #include "RTSFrameBuilder.hpp"
 
