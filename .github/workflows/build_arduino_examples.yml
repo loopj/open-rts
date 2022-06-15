@@ -21,7 +21,7 @@ jobs:
         include:
           - arduino-platform: "esp32:esp32"
             fqbn: "esp32:esp32:sparkfun_lora_gateway_1-channel"
-            board-define: "OPENRTS_BOARD_SPARKFUN_LORA_GATEWAY"
+            board-defines: "-DOPENRTS_BOARD_SPARKFUN_LORA_GATEWAY -DOPENRTS_BUTTON_2=23 -DOPENRTS_BUTTON_3=19 -DOPENRTS_BUTTON_4=18"
 
     runs-on: ubuntu-latest
 
@@ -48,4 +48,9 @@ jobs:
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
       - name: Compile Sketch
-        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} --build-property compiler.cpp.extra_flags="-D${{ matrix.board-define }}" --library="$PWD" ${{matrix.example}}
+        run: |
+          arduino-cli compile \
+            --fqbn ${{ matrix.fqbn }} \
+            --build-property compiler.cpp.extra_flags="${{ matrix.board-defines }}" \
+            --library="$PWD" \
+            ${{matrix.example}}
