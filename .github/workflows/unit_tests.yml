@@ -1,0 +1,34 @@
+name: Run Unit Tests
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - src/**
+      - test/**
+      - .github/workflows/unit_tests.yml
+
+jobs:
+  run-unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Build tests
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make test_openrts test_openrtsxx
+
+      - name: Run openrts unit tests
+        run: |
+          ./build/test/openrts/test_openrts
+
+      - name: Run openrtsxx unit tests
+        run: |
+          ./build/test/openrtsxx/test_openrtsxx
