@@ -4,7 +4,7 @@ var dir_aac9107d8043893249ba5398edc0a255 =
     [ "linux", "dir_ca22f92a0ec475a63bede8992e6f36c5.html", "dir_ca22f92a0ec475a63bede8992e6f36c5" ],
     [ "boards.h", "boards_8h.html", null ],
     [ "config.h", "config_8h_source.html", null ],
-    [ "errors.h", "errors_8h_source.html", null ],
+    [ "errors.h", "openrts_2errors_8h_source.html", null ],
     [ "hal.h", "hal_8h_source.html", null ],
     [ "rts_command.h", "rts__command_8h.html", "rts__command_8h" ],
     [ "rts_frame.h", "rts__frame_8h.html", null ],

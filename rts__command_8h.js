@@ -11,5 +11,6 @@ var rts__command_8h =
       [ "RTS_COMMAND_PROG", "group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164ae2e44d311e49eeb6349eb60b41ac2f99", null ],
       [ "RTS_COMMAND_SUN_FLAG", "group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a2ad51e428b1f9ca2d4f7f48bb7c2d282", null ],
       [ "RTS_COMMAND_FLAG", "group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a9519c21df799d8153ebd6e2a43f52996", null ]
-    ] ]
+    ] ],
+    [ "rts_command_to_string", "group__openrts.html#ga40b1fccabf6770b5e76379c54200186d", null ]
 ];

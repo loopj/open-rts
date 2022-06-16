@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "rfm69", "structrfm69.html", "structrfm69" ],
     [ "rts_frame", "structrts__frame.html", "structrts__frame" ],
     [ "rts_frame_builder", "structrts__frame__builder.html", "structrts__frame__builder" ],
     [ "rts_pulse_output", "structrts__pulse__output.html", "structrts__pulse__output" ],
@@ -16,5 +17,7 @@ var annotated_dup =
     [ "RTSRadio", "classRTSRadio.html", "classRTSRadio" ],
     [ "RTSReceiver", "classRTSReceiver.html", "classRTSReceiver" ],
     [ "RTSRemote", "classRTSRemote.html", "classRTSRemote" ],
-    [ "RTSRemoteStore", "classRTSRemoteStore.html", "classRTSRemoteStore" ]
+    [ "RTSRemoteStore", "classRTSRemoteStore.html", "classRTSRemoteStore" ],
+    [ "spi_module", "structspi__module.html", "structspi__module" ],
+    [ "sx1278", "structsx1278.html", "structsx1278" ]
 ];

@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "rfm69", "structrfm69.html", null ],
     [ "rts_frame", "structrts__frame.html", [
       [ "RTSFrame", "classRTSFrame.html", null ]
     ] ],
@@ -24,5 +25,7 @@ var hierarchy =
     [ "rts_remote_store", "structrts__remote__store.html", [
       [ "RTSRemoteStore", "classRTSRemoteStore.html", null ]
     ] ],
-    [ "rts_timings", "structrts__timings.html", null ]
+    [ "rts_timings", "structrts__timings.html", null ],
+    [ "spi_module", "structspi__module.html", null ],
+    [ "sx1278", "structsx1278.html", null ]
 ];

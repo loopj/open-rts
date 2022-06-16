@@ -1,24 +1,9 @@
 var searchData=
 [
-  ['rts_5fcommand_5fdown_0',['RTS_COMMAND_DOWN',['../group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a917c5c8d3a9648f16b672966ca1f7a99',1,'rts_command.h']]],
-  ['rts_5fcommand_5fflag_1',['RTS_COMMAND_FLAG',['../group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a9519c21df799d8153ebd6e2a43f52996',1,'rts_command.h']]],
-  ['rts_5fcommand_5fmy_2',['RTS_COMMAND_MY',['../group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a09fa728837a8d64fb7f4bafcbde12805',1,'rts_command.h']]],
-  ['rts_5fcommand_5fmy_5fdown_3',['RTS_COMMAND_MY_DOWN',['../group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a1a825c8e7b1fa2cf97cbb7fb861c7bd0',1,'rts_command.h']]],
-  ['rts_5fcommand_5fmy_5fup_4',['RTS_COMMAND_MY_UP',['../group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a715b4ac33fd2c69f0d475350dccdb802',1,'rts_command.h']]],
-  ['rts_5fcommand_5fmy_5fup_5fdown_5',['RTS_COMMAND_MY_UP_DOWN',['../group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164aed2cb4fe313d305bf1cad965aa7a2db5',1,'rts_command.h']]],
-  ['rts_5fcommand_5fprog_6',['RTS_COMMAND_PROG',['../group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164ae2e44d311e49eeb6349eb60b41ac2f99',1,'rts_command.h']]],
-  ['rts_5fcommand_5fsun_5fflag_7',['RTS_COMMAND_SUN_FLAG',['../group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a2ad51e428b1f9ca2d4f7f48bb7c2d282',1,'rts_command.h']]],
-  ['rts_5fcommand_5fup_8',['RTS_COMMAND_UP',['../group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164a3a90f83ed959783ef12b278d767c3859',1,'rts_command.h']]],
-  ['rts_5fcommand_5fup_5fdown_9',['RTS_COMMAND_UP_DOWN',['../group__openrts.html#gga2dc6d8f19dc54273cf451709d2e9d164af9ef17d36e1c8053e13516f18fe67455',1,'rts_command.h']]],
-  ['rts_5fradio_5fmode_5freceive_10',['RTS_RADIO_MODE_RECEIVE',['../group__openrts.html#gga307d23bc496f860a9ff57bde0ca15336a92b2151744028824c9ff3867acf604ae',1,'rts_radio.h']]],
-  ['rts_5fradio_5fmode_5fstandby_11',['RTS_RADIO_MODE_STANDBY',['../group__openrts.html#gga307d23bc496f860a9ff57bde0ca15336a709e6461ce74ad1d3a97fe10631e76bd',1,'rts_radio.h']]],
-  ['rts_5fradio_5fmode_5ftransmit_12',['RTS_RADIO_MODE_TRANSMIT',['../group__openrts.html#gga307d23bc496f860a9ff57bde0ca15336a5a2fd52a32e6e5ded54d751aa65d9585',1,'rts_radio.h']]],
-  ['rts_5freceiver_5fevent_5fhold_13',['RTS_RECEIVER_EVENT_HOLD',['../group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615aa0d7ec27fdfde4ad520bcb6ff8d1dd8e',1,'rts_receiver.h']]],
-  ['rts_5freceiver_5fevent_5fhold_5f2_14',['RTS_RECEIVER_EVENT_HOLD_2',['../group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615abb0eb0a9cc4038f710cd4dec72e59ee6',1,'rts_receiver.h']]],
-  ['rts_5freceiver_5fevent_5fhold_5f3_15',['RTS_RECEIVER_EVENT_HOLD_3',['../group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615a2e7d7181e13b07c03d8b1c8f584a6afa',1,'rts_receiver.h']]],
-  ['rts_5freceiver_5fevent_5fnone_16',['RTS_RECEIVER_EVENT_NONE',['../group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615a20ffa88b0309d238199eb5b0a624de0a',1,'rts_receiver.h']]],
-  ['rts_5freceiver_5fevent_5fpress_17',['RTS_RECEIVER_EVENT_PRESS',['../group__openrts.html#ggaa591089885a2aef8ea967bcb1b462615a4701110312e3952d07bc480545f5f246',1,'rts_receiver.h']]],
-  ['rts_5freceiver_5fmode_5fcommand_18',['RTS_RECEIVER_MODE_COMMAND',['../group__openrts.html#gga95b9ffaba40b365472722c9736fdb05da51a77a887a7ab7ff270872946e7839ea',1,'rts_receiver.h']]],
-  ['rts_5freceiver_5fmode_5foff_19',['RTS_RECEIVER_MODE_OFF',['../group__openrts.html#gga95b9ffaba40b365472722c9736fdb05dae296a12c397ad0f4cdb6fae91807402d',1,'rts_receiver.h']]],
-  ['rts_5freceiver_5fmode_5fprogramming_20',['RTS_RECEIVER_MODE_PROGRAMMING',['../group__openrts.html#gga95b9ffaba40b365472722c9736fdb05daaa909fc78742ee14a0c611aa2a7bca01',1,'rts_receiver.h']]]
+  ['ookradio_5ferr_5finvalid_5fhandle_0',['OOKRADIO_ERR_INVALID_HANDLE',['../group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960aed8e0a7a743e67bd7d371fc5f8dbf85e',1,'errors.h']]],
+  ['ookradio_5ferr_5finvalid_5fmodule_1',['OOKRADIO_ERR_INVALID_MODULE',['../group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960a59293858c0a3bea0a48ba78e34b7724d',1,'errors.h']]],
+  ['ookradio_5ferr_5finvalid_5fspi_2',['OOKRADIO_ERR_INVALID_SPI',['../group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960a920db1ac3de5ab2636b3e5f79b655724',1,'errors.h']]],
+  ['ookradio_5ferr_5fnone_3',['OOKRADIO_ERR_NONE',['../group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960ae21ad7222e98bfaeba5cba3387f33b12',1,'errors.h']]],
+  ['ookradio_5ferr_5fspi_5finit_5ffailed_4',['OOKRADIO_ERR_SPI_INIT_FAILED',['../group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960a40805afa261970794b6d9675ae74d4db',1,'errors.h']]],
+  ['ookradio_5ferr_5fspi_5ftransfer_5ffailed_5',['OOKRADIO_ERR_SPI_TRANSFER_FAILED',['../group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960a04ab87bfab861b74b836e0eb70de9d43',1,'errors.h']]]
 ];

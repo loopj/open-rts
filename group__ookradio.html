@@ -98,13 +98,519 @@ $(document).ready(function(){initNavTree('group__ookradio.html',''); initResizab
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">OOK Radio Library</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>A collection of userland SPI drivers for "OOK" radio modules.  
-</p>
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrfm69.html">rfm69</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An SPI-attached SX1231 or RFM69 radio module.  <a href="structrfm69.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsx1278.html">sx1278</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An SPI-attached SX1278 or RFM96 radio module.  <a href="structsx1278.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspi__module.html">spi_module</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware abstraction layer for userland SPI drivers.  <a href="structspi__module.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gaf9bdc3014f3d54c426b6d2df10de4960"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960ae21ad7222e98bfaeba5cba3387f33b12">OOKRADIO_ERR_NONE</a> = 0
+, <br />
+&#160;&#160;<a class="el" href="group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960aed8e0a7a743e67bd7d371fc5f8dbf85e">OOKRADIO_ERR_INVALID_HANDLE</a> = -1
+, <br />
+&#160;&#160;<a class="el" href="group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960a920db1ac3de5ab2636b3e5f79b655724">OOKRADIO_ERR_INVALID_SPI</a> = -2
+, <br />
+&#160;&#160;<a class="el" href="group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960a59293858c0a3bea0a48ba78e34b7724d">OOKRADIO_ERR_INVALID_MODULE</a> = -3
+, <br />
+&#160;&#160;<a class="el" href="group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960a40805afa261970794b6d9675ae74d4db">OOKRADIO_ERR_SPI_INIT_FAILED</a> = -4
+, <br />
+&#160;&#160;<a class="el" href="group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960a04ab87bfab861b74b836e0eb70de9d43">OOKRADIO_ERR_SPI_TRANSFER_FAILED</a> = -5
+<br />
+ }</td></tr>
+<tr class="separator:gaf9bdc3014f3d54c426b6d2df10de4960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga8045dad5008fd2d1a5e8f0e96673cd0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#ga8045dad5008fd2d1a5e8f0e96673cd0a">rfm69_init</a> (struct <a class="el" href="structrfm69.html">rfm69</a> *radio, struct <a class="el" href="structspi__module.html">spi_module</a> *spi, bool use_pa_boost)</td></tr>
+<tr class="memdesc:ga8045dad5008fd2d1a5e8f0e96673cd0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an SPI-attached RFM69 radio module.  <a href="group__ookradio.html#ga8045dad5008fd2d1a5e8f0e96673cd0a">More...</a><br /></td></tr>
+<tr class="separator:ga8045dad5008fd2d1a5e8f0e96673cd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8ccaf0eb1c0ba59ba1227d96d714f52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#gac8ccaf0eb1c0ba59ba1227d96d714f52">sx1278_init</a> (struct <a class="el" href="structsx1278.html">sx1278</a> *radio, struct <a class="el" href="structspi__module.html">spi_module</a> *spi, bool use_pa_boost)</td></tr>
+<tr class="memdesc:gac8ccaf0eb1c0ba59ba1227d96d714f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an SPI-attached SX1278/RFM96 radio module.  <a href="group__ookradio.html#gac8ccaf0eb1c0ba59ba1227d96d714f52">More...</a><br /></td></tr>
+<tr class="separator:gac8ccaf0eb1c0ba59ba1227d96d714f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0ff1caa8620ab44a1afaa91453d3114"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#gac0ff1caa8620ab44a1afaa91453d3114">spi_read</a> (struct <a class="el" href="structspi__module.html">spi_module</a> *spi, uint8_t reg)</td></tr>
+<tr class="memdesc:gac0ff1caa8620ab44a1afaa91453d3114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a byte from the spi device at the specified register address.  <a href="group__ookradio.html#gac0ff1caa8620ab44a1afaa91453d3114">More...</a><br /></td></tr>
+<tr class="separator:gac0ff1caa8620ab44a1afaa91453d3114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfb504daf9056d791c3cfa8710be7f4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#gabfb504daf9056d791c3cfa8710be7f4d">spi_write</a> (struct <a class="el" href="structspi__module.html">spi_module</a> *spi, uint8_t reg, uint8_t val)</td></tr>
+<tr class="memdesc:gabfb504daf9056d791c3cfa8710be7f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a byte to the spi device at the specified register address.  <a href="group__ookradio.html#gabfb504daf9056d791c3cfa8710be7f4d">More...</a><br /></td></tr>
+<tr class="separator:gabfb504daf9056d791c3cfa8710be7f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15ee1876e285483b890f341b1562956d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#ga15ee1876e285483b890f341b1562956d">spi_write_masked</a> (struct <a class="el" href="structspi__module.html">spi_module</a> *spi, uint8_t reg, uint8_t mask, uint8_t val)</td></tr>
+<tr class="memdesc:ga15ee1876e285483b890f341b1562956d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write some bits of val to the spi device at the specified register address, using a bitmask.  <a href="group__ookradio.html#ga15ee1876e285483b890f341b1562956d">More...</a><br /></td></tr>
+<tr class="separator:ga15ee1876e285483b890f341b1562956d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9797ffedc257bc3f47a911fd666d38eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#ga9797ffedc257bc3f47a911fd666d38eb">spi_module_init_arduino</a> (struct <a class="el" href="structspi__module.html">spi_module</a> *<a class="el" href="structspi__module.html">spi_module</a>, SPIClass *spi_device)</td></tr>
+<tr class="memdesc:ga9797ffedc257bc3f47a911fd666d38eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> struct using Arduino's SPI interface.  <a href="group__ookradio.html#ga9797ffedc257bc3f47a911fd666d38eb">More...</a><br /></td></tr>
+<tr class="separator:ga9797ffedc257bc3f47a911fd666d38eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c07b520f5c2867e175ce4ebf31d62b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#ga5c07b520f5c2867e175ce4ebf31d62b0">spi_module_init_espidf</a> (struct <a class="el" href="structspi__module.html">spi_module</a> *<a class="el" href="structspi__module.html">spi_module</a>, spi_host_device_t host_device)</td></tr>
+<tr class="memdesc:ga5c07b520f5c2867e175ce4ebf31d62b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> struct using the ESP-IDF SPI interface.  <a href="group__ookradio.html#ga5c07b520f5c2867e175ce4ebf31d62b0">More...</a><br /></td></tr>
+<tr class="separator:ga5c07b520f5c2867e175ce4ebf31d62b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae867eedf0c4a7442563c247c78ffb7e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#gaae867eedf0c4a7442563c247c78ffb7e">spi_module_init_linux</a> (struct <a class="el" href="structspi__module.html">spi_module</a> *<a class="el" href="structspi__module.html">spi_module</a>, const char *device)</td></tr>
+<tr class="memdesc:gaae867eedf0c4a7442563c247c78ffb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> struct using Linux spidev.  <a href="group__ookradio.html#gaae867eedf0c4a7442563c247c78ffb7e">More...</a><br /></td></tr>
+<tr class="separator:gaae867eedf0c4a7442563c247c78ffb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >A collection of userland SPI drivers for "OOK" radio modules. </p>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gaf9bdc3014f3d54c426b6d2df10de4960" name="gaf9bdc3014f3d54c426b6d2df10de4960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf9bdc3014f3d54c426b6d2df10de4960">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaf9bdc3014f3d54c426b6d2df10de4960ae21ad7222e98bfaeba5cba3387f33b12" name="ggaf9bdc3014f3d54c426b6d2df10de4960ae21ad7222e98bfaeba5cba3387f33b12"></a>OOKRADIO_ERR_NONE&#160;</td><td class="fielddoc"><p >All good. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaf9bdc3014f3d54c426b6d2df10de4960aed8e0a7a743e67bd7d371fc5f8dbf85e" name="ggaf9bdc3014f3d54c426b6d2df10de4960aed8e0a7a743e67bd7d371fc5f8dbf85e"></a>OOKRADIO_ERR_INVALID_HANDLE&#160;</td><td class="fielddoc"><p >The radio pointer is NULL. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaf9bdc3014f3d54c426b6d2df10de4960a920db1ac3de5ab2636b3e5f79b655724" name="ggaf9bdc3014f3d54c426b6d2df10de4960a920db1ac3de5ab2636b3e5f79b655724"></a>OOKRADIO_ERR_INVALID_SPI&#160;</td><td class="fielddoc"><p >The <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> pointer is NULL. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaf9bdc3014f3d54c426b6d2df10de4960a59293858c0a3bea0a48ba78e34b7724d" name="ggaf9bdc3014f3d54c426b6d2df10de4960a59293858c0a3bea0a48ba78e34b7724d"></a>OOKRADIO_ERR_INVALID_MODULE&#160;</td><td class="fielddoc"><p >The attached SPI module could not be identified. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaf9bdc3014f3d54c426b6d2df10de4960a40805afa261970794b6d9675ae74d4db" name="ggaf9bdc3014f3d54c426b6d2df10de4960a40805afa261970794b6d9675ae74d4db"></a>OOKRADIO_ERR_SPI_INIT_FAILED&#160;</td><td class="fielddoc"><p >SPI init failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaf9bdc3014f3d54c426b6d2df10de4960a04ab87bfab861b74b836e0eb70de9d43" name="ggaf9bdc3014f3d54c426b6d2df10de4960a04ab87bfab861b74b836e0eb70de9d43"></a>OOKRADIO_ERR_SPI_TRANSFER_FAILED&#160;</td><td class="fielddoc"><p >SPI transfer failed. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga8045dad5008fd2d1a5e8f0e96673cd0a" name="ga8045dad5008fd2d1a5e8f0e96673cd0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8045dad5008fd2d1a5e8f0e96673cd0a">&#9670;&nbsp;</a></span>rfm69_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rfm69_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structrfm69.html">rfm69</a> *&#160;</td>
+          <td class="paramname"><em>radio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structspi__module.html">spi_module</a> *&#160;</td>
+          <td class="paramname"><em>spi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_pa_boost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize an SPI-attached RFM69 radio module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radio</td><td>the <a class="el" href="structrfm69.html" title="An SPI-attached SX1231 or RFM69 radio module.">rfm69</a> struct to initialize </td></tr>
+    <tr><td class="paramname">spi</td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> we are connecting through </td></tr>
+    <tr><td class="paramname">use_pa_boost</td><td>is this radio module using the PA_BOOST pin? The should typically be set to true</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>OOKRADIO_ERR_NONE if initialized successfully </dd></dl>
+
+</div>
+</div>
+<a id="gac8ccaf0eb1c0ba59ba1227d96d714f52" name="gac8ccaf0eb1c0ba59ba1227d96d714f52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8ccaf0eb1c0ba59ba1227d96d714f52">&#9670;&nbsp;</a></span>sx1278_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sx1278_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsx1278.html">sx1278</a> *&#160;</td>
+          <td class="paramname"><em>radio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structspi__module.html">spi_module</a> *&#160;</td>
+          <td class="paramname"><em>spi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_pa_boost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize an SPI-attached SX1278/RFM96 radio module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radio</td><td>the <a class="el" href="structsx1278.html" title="An SPI-attached SX1278 or RFM96 radio module.">sx1278</a> struct to initialize </td></tr>
+    <tr><td class="paramname">spi</td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> we are connecting through </td></tr>
+    <tr><td class="paramname">use_pa_boost</td><td>is this radio module using the PA_BOOST pin? The should typically be set to true</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>OOKRADIO_ERR_NONE if initialized successfully </dd></dl>
+
+</div>
+</div>
+<a id="gac0ff1caa8620ab44a1afaa91453d3114" name="gac0ff1caa8620ab44a1afaa91453d3114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac0ff1caa8620ab44a1afaa91453d3114">&#9670;&nbsp;</a></span>spi_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t spi_read </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__module.html">spi_module</a> *&#160;</td>
+          <td class="paramname"><em>spi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read a byte from the spi device at the specified register address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spi</td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> to read from </td></tr>
+    <tr><td class="paramname">reg</td><td>the register address to read from</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the value returned from the device </dd></dl>
+
+</div>
+</div>
+<a id="gabfb504daf9056d791c3cfa8710be7f4d" name="gabfb504daf9056d791c3cfa8710be7f4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfb504daf9056d791c3cfa8710be7f4d">&#9670;&nbsp;</a></span>spi_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spi_write </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__module.html">spi_module</a> *&#160;</td>
+          <td class="paramname"><em>spi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a byte to the spi device at the specified register address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spi</td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> to write to </td></tr>
+    <tr><td class="paramname">reg</td><td>the register address to write to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga15ee1876e285483b890f341b1562956d" name="ga15ee1876e285483b890f341b1562956d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga15ee1876e285483b890f341b1562956d">&#9670;&nbsp;</a></span>spi_write_masked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spi_write_masked </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__module.html">spi_module</a> *&#160;</td>
+          <td class="paramname"><em>spi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write some bits of val to the spi device at the specified register address, using a bitmask. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spi</td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> to write to </td></tr>
+    <tr><td class="paramname">reg</td><td>the register address to write to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9797ffedc257bc3f47a911fd666d38eb" name="ga9797ffedc257bc3f47a911fd666d38eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9797ffedc257bc3f47a911fd666d38eb">&#9670;&nbsp;</a></span>spi_module_init_arduino()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spi_module_init_arduino </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__module.html">spi_module</a> *&#160;</td>
+          <td class="paramname"><em>spi_module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SPIClass *&#160;</td>
+          <td class="paramname"><em>spi_device</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize an <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> struct using Arduino's SPI interface. </p>
+<dl class="section note"><dt>Note</dt><dd>Only available on Arduino builds</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a></td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> struct to initialize </td></tr>
+    <tr><td class="paramname">spi_device</td><td>a pointer to the Arduino SPI device to use, e.g. <code>&amp;SPI</code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>OOKRADIO_ERR_NONE if successful</li>
+<li>OOKRADIO_ERR_SPI_INIT_FAILED if unsuccessful </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ga5c07b520f5c2867e175ce4ebf31d62b0" name="ga5c07b520f5c2867e175ce4ebf31d62b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5c07b520f5c2867e175ce4ebf31d62b0">&#9670;&nbsp;</a></span>spi_module_init_espidf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spi_module_init_espidf </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__module.html">spi_module</a> *&#160;</td>
+          <td class="paramname"><em>spi_module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">spi_host_device_t&#160;</td>
+          <td class="paramname"><em>host_device</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize an <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> struct using the ESP-IDF SPI interface. </p>
+<dl class="section note"><dt>Note</dt><dd>Only available on ESP-IDF (ESP32, etc) builds</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a></td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> struct to initialize </td></tr>
+    <tr><td class="paramname">host_device</td><td>the SPI host device to use, e.g. <code>HSPI_HOST</code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>OOKRADIO_ERR_NONE if successful</li>
+<li>OOKRADIO_ERR_SPI_INIT_FAILED if unsuccessful </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="gaae867eedf0c4a7442563c247c78ffb7e" name="gaae867eedf0c4a7442563c247c78ffb7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaae867eedf0c4a7442563c247c78ffb7e">&#9670;&nbsp;</a></span>spi_module_init_linux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spi_module_init_linux </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structspi__module.html">spi_module</a> *&#160;</td>
+          <td class="paramname"><em>spi_module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>device</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize an <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> struct using Linux spidev. </p>
+<dl class="section note"><dt>Note</dt><dd>Only available on Linux builds, spidev must be enabled</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a></td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> struct to initialize </td></tr>
+    <tr><td class="paramname">device</td><td>the spi device to use, e.g. <code>/dev/spidev0.1</code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>OOKRADIO_ERR_NONE if successful</li>
+<li>OOKRADIO_ERR_SPI_INIT_FAILED if unsuccessful </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

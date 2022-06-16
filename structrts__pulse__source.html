@@ -115,12 +115,12 @@ $(document).ready(function(){initNavTree('structrts__pulse__source.html',''); in
 Related Functions</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p >(Note that these are not member functions.) </p>
 </td></tr>
-<tr class="memitem:a0739f646f14a3628a130e80120dec3fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__source.html#a0739f646f14a3628a130e80120dec3fe">rts_pulse_source_init_espidf_gpio</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, uint8_t data_pin)</td></tr>
-<tr class="memdesc:a0739f646f14a3628a130e80120dec3fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> which receives pulses from the specified ESP-IDF GPIO pin.  <a href="structrts__pulse__source.html#a0739f646f14a3628a130e80120dec3fe">More...</a><br /></td></tr>
-<tr class="separator:a0739f646f14a3628a130e80120dec3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa898334853d0f0180a97fa4c093bff9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrts__pulse__source.html#aa898334853d0f0180a97fa4c093bff9b">rts_pulse_source_init_gpiod</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, char *device, uint8_t data_pin)</td></tr>
-<tr class="memdesc:aa898334853d0f0180a97fa4c093bff9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> which receives pulses from the specified Linux gpiod device.  <a href="structrts__pulse__source.html#aa898334853d0f0180a97fa4c093bff9b">More...</a><br /></td></tr>
-<tr class="separator:aa898334853d0f0180a97fa4c093bff9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0739f646f14a3628a130e80120dec3fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga0739f646f14a3628a130e80120dec3fe">rts_pulse_source_init_espidf_gpio</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, uint8_t data_pin)</td></tr>
+<tr class="memdesc:ga0739f646f14a3628a130e80120dec3fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> which receives pulses from the specified ESP-IDF GPIO pin.  <a href="group__openrts.html#ga0739f646f14a3628a130e80120dec3fe">More...</a><br /></td></tr>
+<tr class="separator:ga0739f646f14a3628a130e80120dec3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa898334853d0f0180a97fa4c093bff9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#gaa898334853d0f0180a97fa4c093bff9b">rts_pulse_source_init_gpiod</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source, char *device, uint8_t data_pin)</td></tr>
+<tr class="memdesc:gaa898334853d0f0180a97fa4c093bff9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> which receives pulses from the specified Linux gpiod device.  <a href="group__openrts.html#gaa898334853d0f0180a97fa4c093bff9b">More...</a><br /></td></tr>
+<tr class="separator:gaa898334853d0f0180a97fa4c093bff9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8a9e0325230d97d61ccbea915c89ec74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__openrts.html#ga8a9e0325230d97d61ccbea915c89ec74">rts_pulse_source_enable</a> (struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *pulse_source)</td></tr>
 <tr class="memdesc:ga8a9e0325230d97d61ccbea915c89ec74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the pulse source.  <a href="group__openrts.html#ga8a9e0325230d97d61ccbea915c89ec74">More...</a><br /></td></tr>
 <tr class="separator:ga8a9e0325230d97d61ccbea915c89ec74"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,115 +139,10 @@ Related Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Provides an interface for a source of RTS pulses, eg a GPIO or radio. </p>
-<p >Bundled implementations are provided for Linux/Raspberry Pi gpiod (<a class="el" href="structrts__pulse__source.html#aa898334853d0f0180a97fa4c093bff9b" title="Initialize an rts_pulse_source which receives pulses from the specified Linux gpiod device.">rts_pulse_source_init_gpiod</a>).</p>
+<p >Bundled implementations are provided for Linux/Raspberry Pi gpiod (<a class="el" href="group__openrts.html#gaa898334853d0f0180a97fa4c093bff9b" title="Initialize an rts_pulse_source which receives pulses from the specified Linux gpiod device.">rts_pulse_source_init_gpiod</a>).</p>
 <p >Implementations must define the enable, disable, and update functions and set the function pointers in the <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> struct.</p>
 <p >When a new pulse is detected in rts_pulse_source_update, implementations should call rts_frame_builder_handle_pulse on the observer. </p>
-</div><h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a0739f646f14a3628a130e80120dec3fe" name="a0739f646f14a3628a130e80120dec3fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0739f646f14a3628a130e80120dec3fe">&#9670;&nbsp;</a></span>rts_pulse_source_init_espidf_gpio()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_pulse_source_init_espidf_gpio </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *&#160;</td>
-          <td class="paramname"><em>pulse_source</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>data_pin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialize an <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> which receives pulses from the specified ESP-IDF GPIO pin. </p>
-<dl class="section note"><dt>Note</dt><dd>Only available on ESP8266/ESP32 devices</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pulse_source</td><td>the <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> struct to initialize </td></tr>
-    <tr><td class="paramname">data_pin</td><td>the GPIO pin to monitor </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa898334853d0f0180a97fa4c093bff9b" name="aa898334853d0f0180a97fa4c093bff9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa898334853d0f0180a97fa4c093bff9b">&#9670;&nbsp;</a></span>rts_pulse_source_init_gpiod()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rts_pulse_source_init_gpiod </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structrts__pulse__source.html">rts_pulse_source</a> *&#160;</td>
-          <td class="paramname"><em>pulse_source</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>device</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>data_pin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialize an <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> which receives pulses from the specified Linux gpiod device. </p>
-<dl class="section note"><dt>Note</dt><dd><ul>
-<li>Can be enabled on Linux systems by defining the <code>OPENRTS_HAS_GPIOD</code> macro</li>
-<li>Make sure the libgpiod-dev (&gt;= 1.5) package is available on your system, eg <code>sudo apt install libgpiod-dev</code></li>
-<li>Don't forget to link libgpiod when building (<code>-lgpiod</code>)</li>
-</ul>
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pulse_source</td><td>the <a class="el" href="structrts__pulse__source.html" title="Provides an interface for a source of RTS pulses, eg a GPIO or radio.">rts_pulse_source</a> struct to initialize </td></tr>
-    <tr><td class="paramname">device</td><td>the device file to use with gpiod, eg "/dev/gpiochip0" </td></tr>
-    <tr><td class="paramname">data_pin</td><td>the GPIO offset to monitor, typically the GPIO pin number </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
+</div><hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/openrts/<a class="el" href="rts__pulse__source_8h_source.html">rts_pulse_source.h</a></li>
 <li>src/openrts/espidf/<a class="el" href="rts__pulse__source__espidf__gpio_8h_source.html">rts_pulse_source_espidf_gpio.h</a></li>
 <li>src/openrts/linux/<a class="el" href="rts__pulse__source__gpiod_8h_source.html">rts_pulse_source_gpiod.h</a></li>

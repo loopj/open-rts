@@ -18,16 +18,16 @@ var group__openrts =
       [ "rts_frame_builder_set_callback", "group__openrts.html#ga610780004e4d229af371f0a3512fa102", null ]
     ] ],
     [ "rts_pulse_output", "structrts__pulse__output.html", [
-      [ "rts_pulse_output_init_espidf_gpio", "structrts__pulse__output.html#af6c20b47f3c8f0bd80492edbb122e905", null ],
-      [ "rts_pulse_output_init_gpiod", "structrts__pulse__output.html#a534578efdd276bbda622e2bc1a4e2440", null ],
+      [ "rts_pulse_output_init_espidf_gpio", "group__openrts.html#gaf6c20b47f3c8f0bd80492edbb122e905", null ],
+      [ "rts_pulse_output_init_gpiod", "group__openrts.html#ga534578efdd276bbda622e2bc1a4e2440", null ],
       [ "rts_pulse_output_enable", "group__openrts.html#ga25ffde10f6d05c6ee10a72cba20661b7", null ],
       [ "rts_pulse_output_disable", "group__openrts.html#gab13f5dc4c1590c8b62ee99a39f555a97", null ],
       [ "rts_pulse_output_send_pulse", "group__openrts.html#ga077cadffb99c505fc5c338975770cf05", null ],
       [ "rts_pulse_output_close", "group__openrts.html#ga828fc88c73c452a2ea0c2c32f77508da", null ]
     ] ],
     [ "rts_pulse_source", "structrts__pulse__source.html", [
-      [ "rts_pulse_source_init_espidf_gpio", "structrts__pulse__source.html#a0739f646f14a3628a130e80120dec3fe", null ],
-      [ "rts_pulse_source_init_gpiod", "structrts__pulse__source.html#aa898334853d0f0180a97fa4c093bff9b", null ],
+      [ "rts_pulse_source_init_espidf_gpio", "group__openrts.html#ga0739f646f14a3628a130e80120dec3fe", null ],
+      [ "rts_pulse_source_init_gpiod", "group__openrts.html#gaa898334853d0f0180a97fa4c093bff9b", null ],
       [ "rts_pulse_source_enable", "group__openrts.html#ga8a9e0325230d97d61ccbea915c89ec74", null ],
       [ "rts_pulse_source_disable", "group__openrts.html#ga45cfff3972b1a810712084835660f78c", null ],
       [ "rts_pulse_source_update", "group__openrts.html#ga331d02f4adc1a5adeffeadfe03c0c9a0", null ],
@@ -54,8 +54,8 @@ var group__openrts =
       [ "rts_remote_send_pulse", "group__openrts.html#ga0b5d9329b4269cbf459cd1874c5918d0", null ]
     ] ],
     [ "rts_remote_store", "structrts__remote__store.html", [
-      [ "rts_remote_store_init_nvs", "structrts__remote__store.html#afefe1fed614ea5110fed6eb69d2d9cdd", null ],
-      [ "rts_remote_store_init_mmap", "structrts__remote__store.html#a947e08504299d8fe5812ec0c18a699c3", null ],
+      [ "rts_remote_store_init_nvs", "group__openrts.html#gafefe1fed614ea5110fed6eb69d2d9cdd", null ],
+      [ "rts_remote_store_init_mmap", "group__openrts.html#ga947e08504299d8fe5812ec0c18a699c3", null ],
       [ "rts_remote_store_set_code", "group__openrts.html#gafd495bd856ec66c5f7b4dba72bc54ca6", null ],
       [ "rts_remote_store_get_code", "group__openrts.html#gab26b0afe0ab17f81af2a505ef4d05658", null ],
       [ "rts_remote_store_next_code", "group__openrts.html#ga558753287dc627e36b5216f5217e7177", null ],
@@ -104,6 +104,13 @@ var group__openrts =
       [ "RTS_RECEIVER_MODE_PROGRAMMING", "group__openrts.html#gga95b9ffaba40b365472722c9736fdb05daaa909fc78742ee14a0c611aa2a7bca01", null ],
       [ "RTS_RECEIVER_MODE_COMMAND", "group__openrts.html#gga95b9ffaba40b365472722c9736fdb05da51a77a887a7ab7ff270872946e7839ea", null ]
     ] ],
+    [ "rts_command_to_string", "group__openrts.html#ga40b1fccabf6770b5e76379c54200186d", null ],
+    [ "rts_pulse_output::rts_pulse_output_init_espidf_gpio", "group__openrts.html#gaf6c20b47f3c8f0bd80492edbb122e905", null ],
+    [ "rts_pulse_source::rts_pulse_source_init_espidf_gpio", "group__openrts.html#ga0739f646f14a3628a130e80120dec3fe", null ],
+    [ "rts_remote_store::rts_remote_store_init_nvs", "group__openrts.html#gafefe1fed614ea5110fed6eb69d2d9cdd", null ],
+    [ "rts_pulse_output::rts_pulse_output_init_gpiod", "group__openrts.html#ga534578efdd276bbda622e2bc1a4e2440", null ],
+    [ "rts_pulse_source::rts_pulse_source_init_gpiod", "group__openrts.html#gaa898334853d0f0180a97fa4c093bff9b", null ],
+    [ "rts_remote_store::rts_remote_store_init_mmap", "group__openrts.html#ga947e08504299d8fe5812ec0c18a699c3", null ],
     [ "rts_frame::rts_frame_init", "group__openrts.html#gab5571a1d421a1148d309f2858a83613f", null ],
     [ "rts_frame::rts_frame_from_bytes", "group__openrts.html#ga4223460f69635b1c97a7c9f2dd42dfb5", null ],
     [ "rts_frame::rts_frame_to_bytes", "group__openrts.html#gabee4ad16c735ef07839cbc12f9282b96", null ],
