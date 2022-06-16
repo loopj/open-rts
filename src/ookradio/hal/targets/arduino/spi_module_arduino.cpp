@@ -33,7 +33,7 @@ static int spi_module_transfer_arduino(struct spi_module *spi_module,
 
 int spi_module_init_arduino(struct spi_module *spi_module, SPIClass *spi)
 {
-    // TODO: Do we need this? SPI.begin says it does this
+    // Set chip select pin as output
     pinMode(spi_module->cs_pin, OUTPUT);
 
     // Initialize the SPI bus

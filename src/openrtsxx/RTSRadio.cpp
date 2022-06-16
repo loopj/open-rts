@@ -10,13 +10,19 @@ void RTSRadio::setMode(enum rts_radio_mode mode)
 }
 
 #if defined(ARDUINO)
-struct spi_module *RTSRadio::initArduinoSPI(uint8_t chipSelect, SPIClass *spiDevice){
+RTSRadio::RTSRadio(uint8_t chipSelect, SPIClass *spiDevice) :
+    chipSelect(chipSelect),
+    spiDevice(spiDevice)
+{
+
+}
+
+void RTSRadio::begin()
+{
     spi.cs_pin = chipSelect;
     spi.clock  = 1000000;
     spi.mode   = 0;
 
     spi_module_init_arduino(&spi, spiDevice);
-
-    return &spi;
 }
 #endif

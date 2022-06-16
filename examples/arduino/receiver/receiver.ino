@@ -80,6 +80,7 @@ void frameCallback(enum rts_receiver_event event, RTSFrame *frame, void *userDat
     Serial.println(frame->remote_address, HEX);
     Serial.print("Rolling Code: 0x");
     Serial.println(frame->rolling_code, HEX);
+    Serial.println();
 }
 
 void modeCallback(enum rts_receiver_mode mode, void *userData) {
@@ -140,6 +141,7 @@ void setup() {
     pinMode(OPENRTS_LED, OUTPUT);
 
     // Configure radio
+    radio.begin();
     radio.setMode(RTS_RADIO_MODE_RECEIVE);
 
     // Set callbacks for new frames and mode change events

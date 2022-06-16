@@ -59,6 +59,7 @@ void setup() {
     while(!Serial) yield();
 
     // Configure radio
+    radio.begin();
     radio.setMode(RTS_RADIO_MODE_RECEIVE);
 
     // Connect pulses to the framebuilder

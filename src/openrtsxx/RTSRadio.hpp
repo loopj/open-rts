@@ -31,8 +31,12 @@ class RTSRadio : protected rts_radio
 
   protected:
     #if defined(ARDUINO)
-    struct spi_module *initArduinoSPI(uint8_t chipSelect, SPIClass *spiDevice);
+    RTSRadio(uint8_t chipSelect, SPIClass *spiDevice);
+    void begin();
+
     struct spi_module spi = {};
+    uint8_t chipSelect;
+    SPIClass *spiDevice;
     #endif
 };
 

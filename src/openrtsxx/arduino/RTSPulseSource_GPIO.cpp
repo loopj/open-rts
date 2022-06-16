@@ -27,7 +27,7 @@ void RTSPulseSource_GPIO::enableFn(struct rts_pulse_source *pulse_source)
     RTSPulseSource_GPIO *inst =
         (RTSPulseSource_GPIO *)pulse_source->user_data_ptr;
 
-    pinMode(inst->dataPin, INPUT);
+    pinMode(inst->dataPin, INPUT_PULLUP);
     attachInterrupt(digitalPinToInterrupt(inst->dataPin), isr0, CHANGE);
 }
 

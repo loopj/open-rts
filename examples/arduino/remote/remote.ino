@@ -67,6 +67,7 @@ void setup() {
     pinMode(OPENRTS_LED, OUTPUT);
 
     // Configure radio
+    radio.begin();
     radio.setMode(RTS_RADIO_MODE_TRANSMIT);
 }
 
