@@ -8,6 +8,15 @@ extern "C" {
 #endif
 
 /**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
+
+/**
  * Initialize an rts_remote_store which stores remotes and rolling codes in
  * a memory-mapped file on POSIX systems.
  *
@@ -18,6 +27,10 @@ extern "C" {
  */
 void rts_remote_store_init_mmap(struct rts_remote_store *store,
                                 const char *filename);
+
+/**
+ * @}
+ */
 
 #ifdef __cplusplus
 } // extern "C"

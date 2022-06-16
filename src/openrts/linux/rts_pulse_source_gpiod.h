@@ -8,6 +8,15 @@ extern "C" {
 #endif
 
 /**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
+
+/**
  * Initialize an rts_pulse_source which receives pulses from the specified
  * Linux gpiod device.
  *
@@ -26,6 +35,10 @@ extern "C" {
  */
 void rts_pulse_source_init_gpiod(struct rts_pulse_source *pulse_source,
                                  char *device, uint8_t data_pin);
+
+/**
+ * @}
+ */
 
 #ifdef __cplusplus
 } // extern "C"

@@ -1,5 +1,5 @@
-#ifndef OPEN_RTS_CONFIG_H
-#define OPEN_RTS_CONFIG_H
+#ifndef OPENRTS_CONFIG_H
+#define OPENRTS_CONFIG_H
 
 //
 // Include ESP-IDF non-volatile storage rts_remote_store by default when
@@ -77,4 +77,4 @@
 #define OPENRTS_INCLUDE_RADIO 1
 #endif
 
-#endif // OPEN_RTS_CONFIG_H
+#endif // OPENRTS_CONFIG_H

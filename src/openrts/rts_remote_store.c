@@ -1,8 +1,7 @@
-#include "rts_remote_store.h"
-
 #include <string.h>
 
 #include "errors.h"
+#include "rts_remote_store.h"
 
 void rts_remote_store_set_code(struct rts_remote_store *store,
                                uint32_t remote_address, uint16_t rolling_code)

@@ -1,10 +1,26 @@
-#ifndef RTS_RADIO_SX1278_H
-#define RTS_RADIO_SX1278_H
+#ifndef SX1278_H
+#define SX1278_H
 
 #include <stdbool.h>
 
 #include "../../hal/spi_module.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup ookradio
+ * @{
+ */
+
+/**
+ * An SPI-attached SX1278 or RFM96 radio module
+ */
 struct sx1278 {
     struct spi_module *spi_module;
     bool use_pa_boost;
@@ -106,12 +122,21 @@ enum {
     SX1278_PA_DAC_DISABLED = 0x04,
 };
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
+/**
+ * @brief Initialize an SPI-attached SX1278/RFM96 radio module
+ *
+ * @relates sx1278
+ *
+ * @param radio the sx1278 struct to initialize
+ * @param spi the spi_module we are connecting through
+ * @param use_pa_boost is this radio module using the PA_BOOST pin?
+ *                     The should typically be set to true
+ *
+ * @return OOKRADIO_ERR_NONE if initialized successfully
+ */
 void sx1278_init(struct sx1278 *radio, struct spi_module *spi,
                  bool use_pa_boost);
+
 void sx1278_set_long_range_mode(struct sx1278 *radio, bool long_range_mode);
 void sx1278_set_data_mode(struct sx1278 *radio, int mode);
 void sx1278_set_modulation_type(struct sx1278 *radio, int modulation);
@@ -122,8 +147,12 @@ void sx1278_set_rx_bandwidth(struct sx1278 *radio, int bw);
 void sx1278_set_transmit_power(struct sx1278 *radio, int power);
 void sx1278_set_mode(struct sx1278 *radio, int mode);
 
+/**
+ * @}
+ */
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
 
-#endif // RTS_RADIO_SX1278_H
+#endif // SX1278_H

@@ -1,16 +1,23 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_FRAME_BUILDER_H
 #define RTS_FRAME_BUILDER_H
+
+#include <stdint.h>
 
 #include "rts_frame.h"
 #include "rts_timings.h"
 
-#include <stdint.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * Assembles pulses received via #rts_frame_builder_handle_pulse, into a
@@ -76,10 +83,6 @@ struct rts_frame_builder {
     uint32_t frame_first_seen;
 };
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /**
  * Initialize an rts_frame_builder with the specified timings.
  *
@@ -122,10 +125,12 @@ void rts_frame_builder_set_callback(struct rts_frame_builder *builder,
                                                      void *user_data),
                                     void *user_data);
 
+/**
+ * @}
+ */
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
 
 #endif // RTS_FRAME_BUILDER_H
-
-// @}

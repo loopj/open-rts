@@ -1,5 +1,6 @@
 #if defined(ESP_PLATFORM)
 
+#include "../../../errors.h"
 #include "spi_module_espidf.h"
 
 static int transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
@@ -13,10 +14,10 @@ static int transfer(struct spi_module *spi_module, uint8_t *tx_buffer,
 
     esp_err_t status = spi_device_transmit(spi_module->user_data_ptr, &t);
     if(status != ESP_OK) {
-        return -1;
+        return OOKRADIO_ERR_SPI_TRANSFER_FAILED;
     }
 
-    return 0;
+    return OOKRADIO_ERR_NONE;
 }
 
 int spi_module_init_espidf(struct spi_module *spi_module,
@@ -35,10 +36,10 @@ int spi_module_init_espidf(struct spi_module *spi_module,
                        (spi_device_handle_t *)(&spi_module->user_data_ptr));
 
     if(status != ESP_OK) {
-        return -1;
+        return OOKRADIO_ERR_SPI_INIT_FAILED;
     }
 
-    return 0;
+    return OOKRADIO_ERR_NONE;
 }
 
 #endif

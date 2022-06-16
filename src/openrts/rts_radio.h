@@ -1,13 +1,20 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_RADIO_H
 #define RTS_RADIO_H
 
 #include <ookradio.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * The transceiver mode to enter
@@ -33,10 +40,6 @@ struct rts_radio {
         struct sx1278 sx1278;
     };
 };
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * Initialize an rts_radio to use an SX1231/RFM69 radio module.
@@ -73,10 +76,12 @@ void rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi,
  */
 void rts_radio_set_mode(struct rts_radio *radio, enum rts_radio_mode mode);
 
+/**
+ * @}
+ */
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
 
 #endif // RTS_RADIO_H
-
-/// @}

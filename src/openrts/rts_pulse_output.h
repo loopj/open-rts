@@ -1,14 +1,21 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_PULSE_OUTPUT_H
 #define RTS_PULSE_OUTPUT_H
 
 #include <stdbool.h>
 #include <stdint.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * Provides an interface for an output of RTS pulses, eg a GPIO or radio.
@@ -32,10 +39,6 @@ struct rts_pulse_output {
         int user_data_int;
     };
 };
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * Enable the pulse output
@@ -77,10 +80,12 @@ void rts_pulse_output_send_pulse(struct rts_pulse_output *pulse_output,
  */
 void rts_pulse_output_close(struct rts_pulse_output *pulse_output);
 
+/**
+ * @}
+ */
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
 
 #endif // RTS_PULSE_OUTPUT_H
-
-/// @}

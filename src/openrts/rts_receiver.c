@@ -1,8 +1,7 @@
-#include "rts_receiver.h"
+#include <stddef.h>
 
 #include "hal.h"
-
-#include <stddef.h>
+#include "rts_receiver.h"
 
 #define HOLD_DURATION               2000
 #define HOLD_2_DURATION             4000

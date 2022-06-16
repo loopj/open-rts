@@ -2,12 +2,12 @@
 
 #if OPENRTS_HAS_GPIOD
 
-#include "rts_pulse_source_gpiod.h"
-
 #include <gpiod.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+
+#include "rts_pulse_source_gpiod.h"
 
 // TODO: Check return codes in gpiod_* etc
 
@@ -20,7 +20,7 @@ static uint64_t micros()
 
 static void rts_pulse_source_enable_gpiod(struct rts_pulse_source *pulse_source)
 {
-    gpiod_line_request_input(pulse_source->user_data_ptr, "open_rts");
+    gpiod_line_request_input(pulse_source->user_data_ptr, "openrts");
 }
 
 static void

@@ -6,12 +6,14 @@
 class RTSRadio_SX1278 : public RTSRadio
 {
   public:
-    RTSRadio_SX1278(uint8_t chipSelect, bool paBoost = true)
+    #if defined(ARDUINO)
+    RTSRadio_SX1278(uint8_t chipSelect, bool paBoost = true, SPIClass *spiDevice=&SPI)
     {
-        rts_radio_init_sx1278(this, defaultSPIModule(chipSelect), paBoost);
+        rts_radio_init_sx1278(this, initArduinoSPI(chipSelect, spiDevice), paBoost);
     }
+    #endif
 
-    RTSRadio_SX1278(uint8_t chipSelect, bool paBoost, spi_module *spi)
+    RTSRadio_SX1278(spi_module *spi, bool paBoost = true)
     {
         rts_radio_init_sx1278(this, spi, paBoost);
     }

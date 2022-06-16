@@ -3,6 +3,15 @@
 
 #include "../rts_remote_store.h"
 
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -22,5 +31,9 @@ void rts_remote_store_init_nvs(struct rts_remote_store *store);
 #ifdef __cplusplus
 } // extern "C"
 #endif
+
+/**
+ * @}
+ */
 
 #endif // RTS_REMOTE_STORE_NVS_H

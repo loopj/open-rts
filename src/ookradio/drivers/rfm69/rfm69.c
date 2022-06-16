@@ -1,9 +1,14 @@
+#include "../../errors.h"
 #include "rfm69.h"
 
-// TODO: Return error code if sensible init fails
-// E.g. check SPI is not NULL, and check "version" register
-void rfm69_init(struct rfm69 *radio, struct spi_module *spi, bool use_pa_boost)
+int rfm69_init(struct rfm69 *radio, struct spi_module *spi, bool use_pa_boost)
 {
+    if(!radio)
+        return OOKRADIO_ERR_INVALID_HANDLE;
+
+    if(!spi)
+        return OOKRADIO_ERR_INVALID_SPI;
+
     radio->spi_module   = spi;
     radio->use_pa_boost = use_pa_boost;
     radio->power        = 0;
@@ -11,22 +16,38 @@ void rfm69_init(struct rfm69 *radio, struct spi_module *spi, bool use_pa_boost)
 
     spi->write_mask = 0x80;
     spi->read_mask  = 0x00;
+
+    uint8_t version = spi_read(radio->spi_module, RFM69_REG_VERSION);
+    if(version != RFM69_VERSION && version != SX1231_VERSION) {
+        return OOKRADIO_ERR_INVALID_MODULE;
+    }
+
+    return OOKRADIO_ERR_NONE;
 }
 
 void rfm69_set_data_mode(struct rfm69 *radio, uint8_t mode)
 {
+    if(!radio)
+        return;
+
     spi_write_masked(radio->spi_module, RFM69_REG_DATA_MODUL, RFM69_DATA_MODE,
                      mode);
 }
 
 void rfm69_set_modulation_type(struct rfm69 *radio, uint8_t modulation)
 {
+    if(!radio)
+        return;
+
     spi_write_masked(radio->spi_module, RFM69_REG_DATA_MODUL,
                      RFM69_MODULATION_TYPE, modulation);
 }
 
 void rfm69_set_frequency(struct rfm69 *radio, unsigned long freq)
 {
+    if(!radio)
+        return;
+
     freq /= RFM69_FSTEP;
     spi_write(radio->spi_module, RFM69_REG_FRF_MSB, freq >> 16);
     spi_write(radio->spi_module, RFM69_REG_FRF_MID, freq >> 8);
@@ -35,6 +56,9 @@ void rfm69_set_frequency(struct rfm69 *radio, unsigned long freq)
 
 void rfm69_set_bitrate(struct rfm69 *radio, uint16_t bitrate)
 {
+    if(!radio)
+        return;
+
     int bitrate_bps = RFM69_FXOSC / bitrate;
     spi_write(radio->spi_module, RFM69_REG_BITRATE_MSB, bitrate_bps >> 8);
     spi_write(radio->spi_module, RFM69_REG_BITRATE_LSB, bitrate_bps);
@@ -42,6 +66,9 @@ void rfm69_set_bitrate(struct rfm69 *radio, uint16_t bitrate)
 
 void rfm69_set_rx_bandwidth(struct rfm69 *radio, uint32_t rxBw)
 {
+    if(!radio)
+        return;
+
     uint8_t bwMant = RFM69_RX_BW_MANT_24;
     uint8_t bwExp  = 5;
 
@@ -127,6 +154,9 @@ void rfm69_set_rx_bandwidth(struct rfm69 *radio, uint32_t rxBw)
 
 void rfm69_set_transmit_power(struct rfm69 *radio, int8_t power)
 {
+    if(!radio)
+        return;
+
     if (radio->use_pa_boost) {
         if (power <= 10) {
             // -2 to 13 dBm, PA1 is enough
@@ -152,6 +182,9 @@ void rfm69_set_transmit_power(struct rfm69 *radio, int8_t power)
 
 void rfm69_set_mode(struct rfm69 *radio, uint8_t mode)
 {
+    if(!radio)
+        return;
+
     if (mode == radio->mode)
         return;
 

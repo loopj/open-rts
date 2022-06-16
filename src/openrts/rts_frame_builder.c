@@ -1,8 +1,7 @@
-#include "rts_frame_builder.h"
+#include <string.h>
 
 #include "hal.h"
-
-#include <string.h>
+#include "rts_frame_builder.h"
 
 enum {
     AWAITING_SYNC = 0,

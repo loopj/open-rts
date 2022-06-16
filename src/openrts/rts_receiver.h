@@ -1,9 +1,3 @@
-/**
- * @file
- * @addtogroup openrts
- *  @{
- */
-
 #ifndef RTS_RECEIVER_H
 #define RTS_RECEIVER_H
 
@@ -11,6 +5,19 @@
 #include "rts_frame_builder.h"
 #include "rts_pulse_source.h"
 #include "rts_remote_store.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * @file
+ */
+
+/**
+ * @addtogroup openrts
+ * @{
+ */
 
 /**
  * De-duplicated "frame" events.
@@ -79,10 +86,6 @@ struct rts_receiver {
     uint8_t event_fired;
     uint8_t rolling_code_window;
 };
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * Initialize an rts_receiver.
@@ -162,10 +165,12 @@ void rts_receiver_forget_all_remotes(struct rts_receiver *receiver);
  */
 void rts_receiver_update(struct rts_receiver *receiver);
 
+/**
+ * @}
+ */
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
 
 #endif // RTS_RECEIVER_H
-
-/// @}

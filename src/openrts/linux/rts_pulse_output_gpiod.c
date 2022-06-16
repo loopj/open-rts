@@ -2,9 +2,8 @@
 
 #if OPENRTS_HAS_GPIOD
 
-#include <stddef.h>
-
 #include <gpiod.h>
+#include <stddef.h>
 #include <time.h>
 
 #include "rts_pulse_output_gpiod.h"
@@ -12,14 +11,14 @@
 static void rts_pulse_output_enable_gpiod(struct rts_pulse_output *pulse_output)
 {
     gpiod_line_request_output((struct gpiod_line *)pulse_output->user_data_ptr,
-                              "open_rts", false);
+                              "openrts", false);
 }
 
 static void
 rts_pulse_output_disable_gpiod(struct rts_pulse_output *pulse_output)
 {
     gpiod_line_request_input((struct gpiod_line *)pulse_output->user_data_ptr,
-                             "open_rts");
+                             "openrts");
 }
 
 static void

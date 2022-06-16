@@ -1,6 +1,6 @@
-#include "rts_pulse_source.h"
-
 #include <string.h>
+
+#include "rts_pulse_source.h"
 
 void rts_pulse_source_attach(struct rts_pulse_source *pulse_source,
                              struct rts_frame_builder *frame_builder)
