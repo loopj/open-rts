@@ -3,10 +3,10 @@
 
 #include "../RTSPulseSource.hpp"
 
-class RTSPulseSource_ArduinoGPIO : public RTSPulseSource
+class RTSPulseSource_GPIO : public RTSPulseSource
 {
   public:
-    RTSPulseSource_ArduinoGPIO(uint8_t dataPin);
+    RTSPulseSource_GPIO(uint8_t dataPin);
 
   private:
     uint8_t dataPin;
@@ -19,7 +19,7 @@ class RTSPulseSource_ArduinoGPIO : public RTSPulseSource
     static void disableFn(struct rts_pulse_source *pulse_source);
     static void updateFn(struct rts_pulse_source *pulse_source);
 
-    static RTSPulseSource_ArduinoGPIO *interruptInstance;
+    static RTSPulseSource_GPIO *interruptInstance;
 };
 
 #endif // RTS_PULSE_SOURCE_ARDUINO_GPIO_HPP

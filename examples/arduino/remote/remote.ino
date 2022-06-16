@@ -50,7 +50,7 @@ RTSRemoteStore_Memory remoteStore;
 
 // Set up remote
 uint32_t remoteAddress = 0xC0FFEE;
-RTSRemote remote(new RTSPulseOutput_ArduinoGPIO(OPENRTS_RADIO_DATA), &remoteStore);
+RTSRemote remote(new RTSPulseOutput_GPIO(OPENRTS_RADIO_DATA), &remoteStore);
 uint8_t lastCommand = 0;
 
 void setup() {

@@ -3,10 +3,10 @@
 
 #include "../RTSPulseOutput.hpp"
 
-class RTSPulseOutput_ArduinoGPIO : public RTSPulseOutput
+class RTSPulseOutput_GPIO : public RTSPulseOutput
 {
   public:
-    RTSPulseOutput_ArduinoGPIO(uint8_t dataPin);
+    RTSPulseOutput_GPIO(uint8_t dataPin);
     uint8_t dataPin;
 };
 

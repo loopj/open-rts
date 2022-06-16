@@ -29,7 +29,7 @@ RTSRadio_SX1278 radio(OPENRTS_RADIO_CS);
 #endif
 
 // Pulse source and frame builder
-RTSPulseSource_ArduinoGPIO pulseSource(OPENRTS_RADIO_DATA);
+RTSPulseSource_GPIO pulseSource(OPENRTS_RADIO_DATA);
 RTSFrameBuilder frameBuilder;
 
 // Print frames to Serial when received

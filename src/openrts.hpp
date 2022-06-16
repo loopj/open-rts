@@ -31,8 +31,8 @@
 
 // Arduino
 #if OPENRTS_HAS_ARDUINO_GPIO
-#include "openrtsxx/arduino/RTSPulseOutput_ArduinoGPIO.hpp"
-#include "openrtsxx/arduino/RTSPulseSource_ArduinoGPIO.hpp"
+#include "openrtsxx/arduino/RTSPulseOutput_GPIO.hpp"
+#include "openrtsxx/arduino/RTSPulseSource_GPIO.hpp"
 #endif
 
 // ESP-IDF (ESP32)

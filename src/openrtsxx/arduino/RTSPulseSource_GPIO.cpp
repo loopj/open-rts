@@ -4,7 +4,7 @@
 
 #include <Arduino.h>
 
-#include "RTSPulseSource_ArduinoGPIO.hpp"
+#include "RTSPulseSource_GPIO.hpp"
 
 #if defined(ARDUINO_ARCH_ESP32) || defined(ESP8266)
 #define INTERRUPT_ATTR IRAM_ATTR
@@ -12,38 +12,38 @@
 #define INTERRUPT_ATTR
 #endif
 
-RTSPulseSource_ArduinoGPIO *RTSPulseSource_ArduinoGPIO::interruptInstance =
+RTSPulseSource_GPIO *RTSPulseSource_GPIO::interruptInstance =
     NULL;
 
-void INTERRUPT_ATTR RTSPulseSource_ArduinoGPIO::isr0()
+void INTERRUPT_ATTR RTSPulseSource_GPIO::isr0()
 {
     if (interruptInstance) {
         interruptInstance->interruptReady = true;
     }
 }
 
-void RTSPulseSource_ArduinoGPIO::enableFn(struct rts_pulse_source *pulse_source)
+void RTSPulseSource_GPIO::enableFn(struct rts_pulse_source *pulse_source)
 {
-    RTSPulseSource_ArduinoGPIO *inst =
-        (RTSPulseSource_ArduinoGPIO *)pulse_source->user_data_ptr;
+    RTSPulseSource_GPIO *inst =
+        (RTSPulseSource_GPIO *)pulse_source->user_data_ptr;
 
     pinMode(inst->dataPin, INPUT);
     attachInterrupt(digitalPinToInterrupt(inst->dataPin), isr0, CHANGE);
 }
 
-void RTSPulseSource_ArduinoGPIO::disableFn(
+void RTSPulseSource_GPIO::disableFn(
     struct rts_pulse_source *pulse_source)
 {
-    RTSPulseSource_ArduinoGPIO *inst =
-        (RTSPulseSource_ArduinoGPIO *)pulse_source->user_data_ptr;
+    RTSPulseSource_GPIO *inst =
+        (RTSPulseSource_GPIO *)pulse_source->user_data_ptr;
 
     detachInterrupt(digitalPinToInterrupt(inst->dataPin));
 }
 
-void RTSPulseSource_ArduinoGPIO::updateFn(struct rts_pulse_source *pulse_source)
+void RTSPulseSource_GPIO::updateFn(struct rts_pulse_source *pulse_source)
 {
-    RTSPulseSource_ArduinoGPIO *inst =
-        (RTSPulseSource_ArduinoGPIO *)pulse_source->user_data_ptr;
+    RTSPulseSource_GPIO *inst =
+        (RTSPulseSource_GPIO *)pulse_source->user_data_ptr;
 
     if (inst->interruptReady) {
         bool state                  = !digitalRead(inst->dataPin);
@@ -60,7 +60,7 @@ void RTSPulseSource_ArduinoGPIO::updateFn(struct rts_pulse_source *pulse_source)
     }
 }
 
-RTSPulseSource_ArduinoGPIO::RTSPulseSource_ArduinoGPIO(uint8_t dataPin)
+RTSPulseSource_GPIO::RTSPulseSource_GPIO(uint8_t dataPin)
 {
     this->dataPin = dataPin;
 

@@ -52,7 +52,7 @@ RTSRemoteStore_EEPROM remoteStore;
 RTSRemoteStore_Memory remoteStore;
 #endif
 
-RTSReceiver receiver(new RTSPulseSource_ArduinoGPIO(OPENRTS_RADIO_DATA), &remoteStore);
+RTSReceiver receiver(new RTSPulseSource_GPIO(OPENRTS_RADIO_DATA), &remoteStore);
 
 void frameCallback(enum rts_receiver_event event, RTSFrame *frame, void *userData) {
     Serial.println("Got an RTS event!");
