@@ -11,8 +11,8 @@ class RTSRadio_SX1278 : public RTSRadio
     {
     }
 
-    RTSRadio_SX1278(uint8_t chipSelect, SPIModule *spiModule=&DEFAULT_SPI_MODULE) :
-        RTSRadio(chipSelect, spiModule)
+    RTSRadio_SX1278(uint8_t chipSelect) :
+        RTSRadio(chipSelect)
     {
     }
 

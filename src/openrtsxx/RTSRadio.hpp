@@ -45,6 +45,25 @@ class ArduinoSPI : public SPIModule
 ArduinoSPI DEFAULT_SPI_MODULE;
 #endif
 
+#if defined(__linux__)
+class LinuxSPI : public SPIModule
+{
+  public:
+    LinuxSPI(const char *spiDevice) :
+        spiDevice(spiDevice)
+    {
+    }
+
+    void begin()
+    {
+        spi_module_init_linux(this, spiDevice);
+    }
+
+  private:
+    const char *spiDevice;
+};
+#endif
+
 /**
  * Abstraction layer which configures radio modules for RTS.
  */
@@ -67,9 +86,9 @@ class RTSRadio : protected rts_radio
     {
     }
 
-    RTSRadio(uint8_t chipSelect, SPIModule *spiModule) :
-        spiModule(spiModule)
+    RTSRadio(uint8_t chipSelect)
     {
+        this->spiModule = &DEFAULT_SPI_MODULE;
         this->spiModule->cs_pin = chipSelect;
     }
 

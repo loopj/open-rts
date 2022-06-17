@@ -11,8 +11,8 @@ class RTSRadio_RFM69 : public RTSRadio
     {
     }
 
-    RTSRadio_RFM69(uint8_t chipSelect, SPIModule *spiModule=&DEFAULT_SPI_MODULE) :
-        RTSRadio(chipSelect, spiModule)
+    RTSRadio_RFM69(uint8_t chipSelect) :
+        RTSRadio(chipSelect)
     {
     }
 
