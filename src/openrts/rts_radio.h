@@ -30,7 +30,11 @@ enum rts_radio_mode {
  */
 struct rts_radio {
     void (*set_mode)(struct rts_radio *radio, enum rts_radio_mode mode);
-    void *module;
+
+    union {
+        struct rfm69 rfm69;
+        struct sx1278 sx1278;
+    };
 };
 
 /**
@@ -41,7 +45,7 @@ struct rts_radio {
  * @param radio the rts_radio struct to initialize
  * @param spi the spi module to communicate with
  */
-void rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi, struct rfm69 *rfm69);
+struct rfm69 *rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi);
 
 /**
  * Initialize an rts_radio to use an SX1278/RFM96 radio module.
@@ -51,7 +55,7 @@ void rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi, struc
  * @param radio the rts_radio struct to initialize
  * @param spi the spi module to communicate with
  */
-void rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi, struct sx1278 *sx1278);
+struct sx1278 *rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi);
 
 /**
  * Set the radio mode for the specified rts_radio module, eg. standby, receive,

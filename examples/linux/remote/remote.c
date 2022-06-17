@@ -45,14 +45,12 @@ void init_radio()
 
     // Initialize radio
     #if defined(OPENRTS_RADIO_TYPE_RFM69)
-    static struct rfm69 rfm69;
-    rts_radio_init_rfm69(&radio, &spi, &rfm69);
+    rts_radio_init_rfm69(&radio, &spi);
     #elif defined(OPENRTS_RADIO_TYPE_SX1278)
-    static struct sx1278 sx1278;
-    rts_radio_init_sx1278(&radio, &spi, &sx1278);
+    rts_radio_init_sx1278(&radio, &spi);
     #endif
 
-    // Switch to receive mode
+    // Switch to transmit mode
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_TRANSMIT);
 }
 
