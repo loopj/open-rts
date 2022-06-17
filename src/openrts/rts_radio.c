@@ -34,6 +34,8 @@ struct rfm69 *rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *s
 
     // Set up function hooks
     radio->set_mode = rts_radio_set_mode_rfm69;
+
+    return &radio->rfm69;
 }
 
 static void rts_radio_set_mode_sx1278(struct rts_radio *radio, enum rts_radio_mode mode)
@@ -70,6 +72,8 @@ struct sx1278 *rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module 
 
     // Set up function hooks
     radio->set_mode = rts_radio_set_mode_sx1278;
+
+    return &radio->sx1278;
 }
 
 void rts_radio_set_mode(struct rts_radio *radio, enum rts_radio_mode mode)

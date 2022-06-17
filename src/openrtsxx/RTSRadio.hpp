@@ -3,10 +3,6 @@
 
 #include <openrts/rts_radio.h>
 
-#if defined(ARDUINO)
-#include <SPI.h>
-#endif
-
 /**
  * @file
  */
@@ -15,6 +11,39 @@
  * @addtogroup openrtsxx
  * @{
  */
+
+class SPIModule : public spi_module
+{
+  public:
+    SPIModule()
+    {
+        clock = 1000000;
+        mode = 0;
+    }
+
+    virtual void begin() = 0;
+};
+
+#if defined(ARDUINO)
+class ArduinoSPI : public SPIModule
+{
+  public:
+    ArduinoSPI(SPIClass *spiClass=&SPI) :
+        spiClass(spiClass)
+    {
+    }
+
+    void begin()
+    {
+        spi_module_init_arduino(this, spiClass);
+    }
+
+  private:
+    SPIClass *spiClass;
+};
+
+ArduinoSPI DEFAULT_SPI_MODULE;
+#endif
 
 /**
  * Abstraction layer which configures radio modules for RTS.
@@ -27,17 +56,29 @@ class RTSRadio : protected rts_radio
      *
      * @param mode the rts_radio_mode to enter
      */
-    void setMode(enum rts_radio_mode mode);
+    void setMode(enum rts_radio_mode mode)
+    {
+        rts_radio_set_mode(this, mode);
+    }
 
   protected:
-    #if defined(ARDUINO)
-    RTSRadio(uint8_t chipSelect, SPIClass *spiDevice);
-    void begin();
+    RTSRadio(SPIModule *spiModule) :
+        spiModule(spiModule)
+    {
+    }
 
-    struct spi_module spi = {};
-    uint8_t chipSelect;
-    SPIClass *spiDevice;
-    #endif
+    RTSRadio(uint8_t chipSelect, SPIModule *spiModule) :
+        spiModule(spiModule)
+    {
+        this->spiModule->cs_pin = chipSelect;
+    }
+
+    void begin()
+    {
+        spiModule->begin();
+    }
+
+    SPIModule *spiModule;
 };
 
 /**
