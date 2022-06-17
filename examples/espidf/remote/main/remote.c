@@ -61,9 +61,11 @@ void init_radio()
 
     // Initialize radio
     #if defined(OPENRTS_RADIO_TYPE_RFM69)
-    rts_radio_init_rfm69(&radio, &spi, true);
+    static struct rfm69 rfm69;
+    rts_radio_init_rfm69(&radio, &spi, &rfm69);
     #elif defined(OPENRTS_RADIO_TYPE_SX1278)
-    rts_radio_init_sx1278(&radio, &spi, true);
+    static struct sx1278 sx1278;
+    rts_radio_init_sx1278(&radio, &spi, &sx1278);
     #endif
 
     rts_radio_set_mode(&radio, RTS_RADIO_MODE_TRANSMIT);

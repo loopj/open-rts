@@ -1,12 +1,13 @@
 #ifndef RTS_RADIO_RFM69_HPP
 #define RTS_RADIO_RFM69_HPP
 
+#if defined(ARDUINO)
+
 #include "RTSRadio.hpp"
 
 class RTSRadio_RFM69 : public RTSRadio
 {
   public:
-    #if defined(ARDUINO)
     RTSRadio_RFM69(uint8_t chipSelect, SPIClass *spiDevice=&SPI) :
         RTSRadio(chipSelect, spiDevice)
     {
@@ -16,14 +17,13 @@ class RTSRadio_RFM69 : public RTSRadio
     void begin()
     {
         RTSRadio::begin();
-        rts_radio_init_rfm69(this, &spi);
+        rts_radio_init_rfm69(this, &spi, &rfm69);
     }
-    #else
-    RTSRadio_RFM69(spi_module *spi)
-    {
-        rts_radio_init_rfm69(this, spi);
-    }
-    #endif
+
+  private:
+    struct rfm69 rfm69;
 };
+
+#endif // defined(ARDUINO)
 
 #endif // RTS_RADIO_RFM69_HPP
