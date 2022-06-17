@@ -2,11 +2,9 @@
 
 // TODO: Return error code if sensible init fails
 // E.g. check SPI is not NULL, and check "version" register
-void sx1278_init(struct sx1278 *radio, struct spi_module *spi,
-                 bool use_pa_boost)
+void sx1278_init(struct sx1278 *radio, struct spi_module *spi)
 {
     radio->spi_module   = spi;
-    radio->use_pa_boost = use_pa_boost;
     radio->power        = 0;
     radio->mode         = -1;
 
@@ -131,9 +129,9 @@ void sx1278_set_rx_bandwidth(struct sx1278 *radio, int rxBw)
                      SX1278_RX_BW_MANT | SX1278_RX_BW_EXP, bwMant | bwExp);
 }
 
-void sx1278_set_transmit_power(struct sx1278 *radio, int power)
+void sx1278_set_transmit_power(struct sx1278 *radio, int power, bool use_pa_boost)
 {
-    if (radio->use_pa_boost) {
+    if (use_pa_boost) {
         // Transmit using the PA_BOOST pin
         spi_write_masked(radio->spi_module, SX1278_REG_PA_CONFIG,
                          SX1278_PA_SELECT, SX1278_PA_SELECT_PA_BOOST);

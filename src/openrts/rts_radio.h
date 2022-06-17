@@ -48,10 +48,8 @@ struct rts_radio {
  *
  * @param radio the rts_radio struct to initialize
  * @param spi the spi module to communicate with
- * @param use_pa_boost is this module using PA_BOOST for transmission
  */
-void rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi,
-                          bool use_pa_boost);
+void rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi);
 
 /**
  * Initialize an rts_radio to use an SX1278/RFM96 radio module.
@@ -60,10 +58,8 @@ void rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi,
  *
  * @param radio the rts_radio struct to initialize
  * @param spi the spi module to communicate with
- * @param use_pa_boost is this module using PA_BOOST for transmission
  */
-void rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi,
-                           bool use_pa_boost);
+void rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi);
 
 /**
  * Set the radio mode for the specified rts_radio module, eg. standby, receive,

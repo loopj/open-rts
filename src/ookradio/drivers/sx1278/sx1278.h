@@ -23,7 +23,6 @@ extern "C" {
  */
 struct sx1278 {
     struct spi_module *spi_module;
-    bool use_pa_boost;
     int power;
     int mode;
 };
@@ -129,13 +128,10 @@ enum {
  *
  * @param radio the sx1278 struct to initialize
  * @param spi the spi_module we are connecting through
- * @param use_pa_boost is this radio module using the PA_BOOST pin?
- *                     The should typically be set to true
  *
  * @return OOKRADIO_ERR_NONE if initialized successfully
  */
-void sx1278_init(struct sx1278 *radio, struct spi_module *spi,
-                 bool use_pa_boost);
+void sx1278_init(struct sx1278 *radio, struct spi_module *spi);
 
 void sx1278_set_long_range_mode(struct sx1278 *radio, bool long_range_mode);
 void sx1278_set_data_mode(struct sx1278 *radio, int mode);
@@ -144,7 +140,7 @@ void sx1278_set_bit_sync_on(struct sx1278 *radio, bool bit_sync_on);
 void sx1278_set_frequency(struct sx1278 *radio, int freq);
 void sx1278_set_bitrate(struct sx1278 *radio, int bitrate);
 void sx1278_set_rx_bandwidth(struct sx1278 *radio, int bw);
-void sx1278_set_transmit_power(struct sx1278 *radio, int power);
+void sx1278_set_transmit_power(struct sx1278 *radio, int power, bool use_pa_boost);
 void sx1278_set_mode(struct sx1278 *radio, int mode);
 
 /**

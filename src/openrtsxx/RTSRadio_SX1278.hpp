@@ -7,9 +7,8 @@ class RTSRadio_SX1278 : public RTSRadio
 {
   public:
     #if defined(ARDUINO)
-    RTSRadio_SX1278(uint8_t chipSelect, bool paBoost = true, SPIClass *spiDevice=&SPI) :
-        RTSRadio(chipSelect, spiDevice),
-        paBoost(paBoost)
+    RTSRadio_SX1278(uint8_t chipSelect, SPIClass *spiDevice=&SPI) :
+        RTSRadio(chipSelect, spiDevice)
     {
 
     }
@@ -17,18 +16,13 @@ class RTSRadio_SX1278 : public RTSRadio
     void begin()
     {
         RTSRadio::begin();
-        rts_radio_init_sx1278(this, &spi, paBoost);
+        rts_radio_init_sx1278(this, &spi);
     }
     #else
-    RTSRadio_SX1278(spi_module *spi, bool paBoost = true)
+    RTSRadio_SX1278(spi_module *spi)
     {
-        rts_radio_init_sx1278(this, spi, paBoost);
+        rts_radio_init_sx1278(this, spi);
     }
-    #endif
-
-  private:
-    #if defined(ARDUINO)
-    bool paBoost;
     #endif
 };
 

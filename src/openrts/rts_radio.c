@@ -2,10 +2,9 @@
 
 #define RTS_FREQUENCY 433420000
 
-void rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi,
-                          bool use_pa_boost)
+void rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi)
 {
-    rfm69_init(&radio->rfm69, spi, use_pa_boost);
+    rfm69_init(&radio->rfm69, spi);
 
     // Configure radio for RTS
     rfm69_set_data_mode(&radio->rfm69, RFM69_DATA_MODE_CONTINUOUS);
@@ -13,15 +12,14 @@ void rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi,
     rfm69_set_frequency(&radio->rfm69, RTS_FREQUENCY);
     rfm69_set_bitrate(&radio->rfm69, 1200);
     rfm69_set_rx_bandwidth(&radio->rfm69, 83300);
-    rfm69_set_transmit_power(&radio->rfm69, 20);
+    rfm69_set_transmit_power(&radio->rfm69, 20, true);
 
     radio->type = RTS_RADIO_MODULE_RFM69;
 }
 
-void rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi,
-                           bool use_pa_boost)
+void rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi)
 {
-    sx1278_init(&radio->sx1278, spi, use_pa_boost);
+    sx1278_init(&radio->sx1278, spi);
 
     // Configure radio for RTS
     sx1278_set_long_range_mode(&radio->sx1278, SX1278_LONG_RANGE_MODE_OFF);
@@ -31,7 +29,7 @@ void rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi,
     sx1278_set_frequency(&radio->sx1278, RTS_FREQUENCY);
     sx1278_set_bitrate(&radio->sx1278, 1200);
     sx1278_set_rx_bandwidth(&radio->sx1278, 62500);
-    sx1278_set_transmit_power(&radio->sx1278, 20);
+    sx1278_set_transmit_power(&radio->sx1278, 20, true);
 
     radio->type = RTS_RADIO_MODULE_SX1278;
 }
