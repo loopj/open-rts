@@ -17,11 +17,8 @@ class RTSRadio_SX1278 : public RTSRadio
     void begin()
     {
         RTSRadio::begin();
-        rts_radio_init_sx1278(this, &spi, &sx1278);
+        rts_radio_init_sx1278(this, &spi);
     }
-
-  private:
-    struct sx1278 sx1278;
 };
 
 #endif // defined(ARDUINO)

@@ -17,11 +17,8 @@ class RTSRadio_RFM69 : public RTSRadio
     void begin()
     {
         RTSRadio::begin();
-        rts_radio_init_rfm69(this, &spi, &rfm69);
+        rts_radio_init_rfm69(this, &spi);
     }
-
-  private:
-    struct rfm69 rfm69;
 };
 
 #endif // defined(ARDUINO)

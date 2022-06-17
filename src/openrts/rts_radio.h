@@ -1,11 +1,11 @@
 #ifndef RTS_RADIO_H
 #define RTS_RADIO_H
 
+#include <ookradio.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include <ookradio.h>
 
 /**
  * @file
