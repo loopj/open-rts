@@ -5,13 +5,27 @@ declare -A board_flags=()
 declare -A board_ports=()
 
 # SparkFun LoRa Gateway (w/RFM69 module)
-board_fqbns["sparkfun-lora"]="esp32:esp32:sparkfun_lora_gateway_1-channel"
-board_ports["sparkfun-lora"]="/dev/ttyUSB0"
-board_flags["sparkfun-lora"]="
+board_fqbns["sparkfun"]="esp32:esp32:sparkfun_lora_gateway_1-channel"
+board_ports["sparkfun"]="/dev/ttyUSB0"
+board_flags["sparkfun"]="
     -DOPENRTS_BOARD_SPARKFUN_LORA_GATEWAY
     -DOPENRTS_BUTTON_2=23
     -DOPENRTS_BUTTON_3=19
     -DOPENRTS_BUTTON_4=18
+"
+
+# LILYGO TTGO LoRa32 (V2.1)
+board_fqbns["ttgo"]="esp32:esp32:ttgo-lora32"
+board_ports["ttgo"]="/dev/ttyACM0"
+board_flags["ttgo"]="
+    -DOPENRTS_BOARD_TTGO_LORA32_V21
+"
+
+# Heltec WiFi LoRa 32 (V2)
+board_fqbns["heltec"]="esp32:esp32:heltec_wifi_lora_32_V2"
+board_ports["heltec"]="/dev/ttyUSB0"
+board_flags["heltec"]="
+    -DOPENRTS_BOARD_HELTEC_WIFI_LORA_32_V2
 "
 
 # Adafruit HUZZAH32
