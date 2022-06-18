@@ -20,7 +20,7 @@ var searchData=
   ['spi_5fwrite_5fmasked_17',['spi_write_masked',['../group__ookradio.html#ga15ee1876e285483b890f341b1562956d',1,'spi_module']]],
   ['sx1278_18',['sx1278',['../structsx1278.html',1,'']]],
   ['sx1278_2eh_19',['sx1278.h',['../sx1278_8h.html',1,'']]],
-  ['sx1278_5finit_20',['sx1278_init',['../group__ookradio.html#gac8ccaf0eb1c0ba59ba1227d96d714f52',1,'sx1278']]],
+  ['sx1278_5finit_20',['sx1278_init',['../group__ookradio.html#gade61ba204159d380b04643162b314a7a',1,'sx1278']]],
   ['symbol_21',['symbol',['../structrts__timings.html#acc161d1d2515ba7d267d800598a20bbe',1,'rts_timings']]],
   ['sync_5fhigh_22',['sync_high',['../structrts__timings.html#ad8cba16a55ad5e406bd6c155d6d3f3a1',1,'rts_timings']]],
   ['sync_5flow_23',['sync_low',['../structrts__timings.html#a353992ae5dfd0d451bff0c88aa9e6f1b',1,'rts_timings']]]

@@ -35,8 +35,8 @@ var group__openrts =
       [ "rts_pulse_source_close", "group__openrts.html#gaaf1a44ffce736c880c87dac96b0e661d", null ]
     ] ],
     [ "rts_radio", "structrts__radio.html", [
-      [ "rts_radio_init_rfm69", "group__openrts.html#ga2face82e870c83ded1dafde15f7e76d1", null ],
-      [ "rts_radio_init_sx1278", "group__openrts.html#ga0311a0c0f3512263cef2ea6c2e1a055f", null ],
+      [ "rts_radio_init_rfm69", "group__openrts.html#gaf086bf077de983348db06ca52950528a", null ],
+      [ "rts_radio_init_sx1278", "group__openrts.html#gaba162473221a2f5c33a7593bb24a5ef7", null ],
       [ "rts_radio_set_mode", "group__openrts.html#ga5c4eb3993da685313f6984b370c566d3", null ]
     ] ],
     [ "rts_receiver", "structrts__receiver.html", [
@@ -129,8 +129,8 @@ var group__openrts =
     [ "rts_pulse_source::rts_pulse_source_update", "group__openrts.html#ga331d02f4adc1a5adeffeadfe03c0c9a0", null ],
     [ "rts_pulse_source::rts_pulse_source_attach", "group__openrts.html#gaf29fc3e4b2e446040c435f9400177934", null ],
     [ "rts_pulse_source::rts_pulse_source_close", "group__openrts.html#gaaf1a44ffce736c880c87dac96b0e661d", null ],
-    [ "rts_radio::rts_radio_init_rfm69", "group__openrts.html#ga2face82e870c83ded1dafde15f7e76d1", null ],
-    [ "rts_radio::rts_radio_init_sx1278", "group__openrts.html#ga0311a0c0f3512263cef2ea6c2e1a055f", null ],
+    [ "rts_radio::rts_radio_init_rfm69", "group__openrts.html#gaf086bf077de983348db06ca52950528a", null ],
+    [ "rts_radio::rts_radio_init_sx1278", "group__openrts.html#gaba162473221a2f5c33a7593bb24a5ef7", null ],
     [ "rts_radio::rts_radio_set_mode", "group__openrts.html#ga5c4eb3993da685313f6984b370c566d3", null ],
     [ "rts_receiver::rts_receiver_init", "group__openrts.html#gafd40f0657d24a152a50b94760dce812e", null ],
     [ "rts_receiver::rts_receiver_set_frame_callback", "group__openrts.html#ga6ad4ce1fbb9688ada6fcb41eb5245859", null ],

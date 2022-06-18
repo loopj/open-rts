@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['rfm69_5finit_0',['rfm69_init',['../group__ookradio.html#ga8045dad5008fd2d1a5e8f0e96673cd0a',1,'rfm69']]],
+  ['rfm69_5finit_0',['rfm69_init',['../group__ookradio.html#gab4390c2179c18f63c79286d6356cc7ae',1,'rfm69']]],
   ['rts_5fcommand_5fto_5fstring_1',['rts_command_to_string',['../group__openrts.html#ga40b1fccabf6770b5e76379c54200186d',1,'rts_command_to_string(enum rts_command command):&#160;rts_command.c'],['../group__openrts.html#ga40b1fccabf6770b5e76379c54200186d',1,'rts_command_to_string(enum rts_command command):&#160;rts_command.c']]],
   ['rts_5fframe_5fbuilder_5fhandle_5fpulse_2',['rts_frame_builder_handle_pulse',['../group__openrts.html#ga0a7bdbe14a80d21cbd6294bf30ff6933',1,'rts_frame_builder']]],
   ['rts_5fframe_5fbuilder_5finit_3',['rts_frame_builder_init',['../group__openrts.html#ga548d086f646014651fe55561383da6da',1,'rts_frame_builder']]],
@@ -24,8 +24,8 @@ var searchData=
   ['rts_5fpulse_5fsource_5finit_5fespidf_5fgpio_21',['rts_pulse_source_init_espidf_gpio',['../group__openrts.html#ga0739f646f14a3628a130e80120dec3fe',1,'rts_pulse_source']]],
   ['rts_5fpulse_5fsource_5finit_5fgpiod_22',['rts_pulse_source_init_gpiod',['../group__openrts.html#gaa898334853d0f0180a97fa4c093bff9b',1,'rts_pulse_source']]],
   ['rts_5fpulse_5fsource_5fupdate_23',['rts_pulse_source_update',['../group__openrts.html#ga331d02f4adc1a5adeffeadfe03c0c9a0',1,'rts_pulse_source']]],
-  ['rts_5fradio_5finit_5frfm69_24',['rts_radio_init_rfm69',['../group__openrts.html#ga2face82e870c83ded1dafde15f7e76d1',1,'rts_radio']]],
-  ['rts_5fradio_5finit_5fsx1278_25',['rts_radio_init_sx1278',['../group__openrts.html#ga0311a0c0f3512263cef2ea6c2e1a055f',1,'rts_radio']]],
+  ['rts_5fradio_5finit_5frfm69_24',['rts_radio_init_rfm69',['../group__openrts.html#gaf086bf077de983348db06ca52950528a',1,'rts_radio']]],
+  ['rts_5fradio_5finit_5fsx1278_25',['rts_radio_init_sx1278',['../group__openrts.html#gaba162473221a2f5c33a7593bb24a5ef7',1,'rts_radio']]],
   ['rts_5fradio_5fset_5fmode_26',['rts_radio_set_mode',['../group__openrts.html#ga5c4eb3993da685313f6984b370c566d3',1,'rts_radio']]],
   ['rts_5freceiver_5fforget_5fall_5fremotes_27',['rts_receiver_forget_all_remotes',['../group__openrts.html#gabb156e720eb4e0891e1e2e5bfaff73f1',1,'rts_receiver']]],
   ['rts_5freceiver_5finit_28',['rts_receiver_init',['../group__openrts.html#gafd40f0657d24a152a50b94760dce812e',1,'rts_receiver']]],

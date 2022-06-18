@@ -141,12 +141,12 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga8045dad5008fd2d1a5e8f0e96673cd0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#ga8045dad5008fd2d1a5e8f0e96673cd0a">rfm69_init</a> (struct <a class="el" href="structrfm69.html">rfm69</a> *radio, struct <a class="el" href="structspi__module.html">spi_module</a> *spi, bool use_pa_boost)</td></tr>
-<tr class="memdesc:ga8045dad5008fd2d1a5e8f0e96673cd0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an SPI-attached RFM69 radio module.  <a href="group__ookradio.html#ga8045dad5008fd2d1a5e8f0e96673cd0a">More...</a><br /></td></tr>
-<tr class="separator:ga8045dad5008fd2d1a5e8f0e96673cd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac8ccaf0eb1c0ba59ba1227d96d714f52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#gac8ccaf0eb1c0ba59ba1227d96d714f52">sx1278_init</a> (struct <a class="el" href="structsx1278.html">sx1278</a> *radio, struct <a class="el" href="structspi__module.html">spi_module</a> *spi, bool use_pa_boost)</td></tr>
-<tr class="memdesc:gac8ccaf0eb1c0ba59ba1227d96d714f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an SPI-attached SX1278/RFM96 radio module.  <a href="group__ookradio.html#gac8ccaf0eb1c0ba59ba1227d96d714f52">More...</a><br /></td></tr>
-<tr class="separator:gac8ccaf0eb1c0ba59ba1227d96d714f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4390c2179c18f63c79286d6356cc7ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#gab4390c2179c18f63c79286d6356cc7ae">rfm69_init</a> (struct <a class="el" href="structrfm69.html">rfm69</a> *radio, struct <a class="el" href="structspi__module.html">spi_module</a> *spi)</td></tr>
+<tr class="memdesc:gab4390c2179c18f63c79286d6356cc7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an SPI-attached RFM69 radio module.  <a href="group__ookradio.html#gab4390c2179c18f63c79286d6356cc7ae">More...</a><br /></td></tr>
+<tr class="separator:gab4390c2179c18f63c79286d6356cc7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade61ba204159d380b04643162b314a7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#gade61ba204159d380b04643162b314a7a">sx1278_init</a> (struct <a class="el" href="structsx1278.html">sx1278</a> *radio, struct <a class="el" href="structspi__module.html">spi_module</a> *spi)</td></tr>
+<tr class="memdesc:gade61ba204159d380b04643162b314a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an SPI-attached SX1278/RFM96 radio module.  <a href="group__ookradio.html#gade61ba204159d380b04643162b314a7a">More...</a><br /></td></tr>
+<tr class="separator:gade61ba204159d380b04643162b314a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac0ff1caa8620ab44a1afaa91453d3114"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ookradio.html#gac0ff1caa8620ab44a1afaa91453d3114">spi_read</a> (struct <a class="el" href="structspi__module.html">spi_module</a> *spi, uint8_t reg)</td></tr>
 <tr class="memdesc:gac0ff1caa8620ab44a1afaa91453d3114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a byte from the spi device at the specified register address.  <a href="group__ookradio.html#gac0ff1caa8620ab44a1afaa91453d3114">More...</a><br /></td></tr>
 <tr class="separator:gac0ff1caa8620ab44a1afaa91453d3114"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,8 +198,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga8045dad5008fd2d1a5e8f0e96673cd0a" name="ga8045dad5008fd2d1a5e8f0e96673cd0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8045dad5008fd2d1a5e8f0e96673cd0a">&#9670;&nbsp;</a></span>rfm69_init()</h2>
+<a id="gab4390c2179c18f63c79286d6356cc7ae" name="gab4390c2179c18f63c79286d6356cc7ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4390c2179c18f63c79286d6356cc7ae">&#9670;&nbsp;</a></span>rfm69_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,13 +217,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structspi__module.html">spi_module</a> *&#160;</td>
-          <td class="paramname"><em>spi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>use_pa_boost</em>&#160;</td>
+          <td class="paramname"><em>spi</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -242,8 +236,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">radio</td><td>the <a class="el" href="structrfm69.html" title="An SPI-attached SX1231 or RFM69 radio module.">rfm69</a> struct to initialize </td></tr>
-    <tr><td class="paramname">spi</td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> we are connecting through </td></tr>
-    <tr><td class="paramname">use_pa_boost</td><td>is this radio module using the PA_BOOST pin? The should typically be set to true</td></tr>
+    <tr><td class="paramname">spi</td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> we are connecting through</td></tr>
   </table>
   </dd>
 </dl>
@@ -251,8 +244,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gac8ccaf0eb1c0ba59ba1227d96d714f52" name="gac8ccaf0eb1c0ba59ba1227d96d714f52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac8ccaf0eb1c0ba59ba1227d96d714f52">&#9670;&nbsp;</a></span>sx1278_init()</h2>
+<a id="gade61ba204159d380b04643162b314a7a" name="gade61ba204159d380b04643162b314a7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade61ba204159d380b04643162b314a7a">&#9670;&nbsp;</a></span>sx1278_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,13 +263,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structspi__module.html">spi_module</a> *&#160;</td>
-          <td class="paramname"><em>spi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>use_pa_boost</em>&#160;</td>
+          <td class="paramname"><em>spi</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -295,8 +282,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">radio</td><td>the <a class="el" href="structsx1278.html" title="An SPI-attached SX1278 or RFM96 radio module.">sx1278</a> struct to initialize </td></tr>
-    <tr><td class="paramname">spi</td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> we are connecting through </td></tr>
-    <tr><td class="paramname">use_pa_boost</td><td>is this radio module using the PA_BOOST pin? The should typically be set to true</td></tr>
+    <tr><td class="paramname">spi</td><td>the <a class="el" href="structspi__module.html" title="Hardware abstraction layer for userland SPI drivers.">spi_module</a> we are connecting through</td></tr>
   </table>
   </dd>
 </dl>

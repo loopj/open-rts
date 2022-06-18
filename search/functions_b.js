@@ -13,5 +13,5 @@ var searchData=
   ['spi_5fread_10',['spi_read',['../group__ookradio.html#gac0ff1caa8620ab44a1afaa91453d3114',1,'spi_module']]],
   ['spi_5fwrite_11',['spi_write',['../group__ookradio.html#gabfb504daf9056d791c3cfa8710be7f4d',1,'spi_module']]],
   ['spi_5fwrite_5fmasked_12',['spi_write_masked',['../group__ookradio.html#ga15ee1876e285483b890f341b1562956d',1,'spi_module']]],
-  ['sx1278_5finit_13',['sx1278_init',['../group__ookradio.html#gac8ccaf0eb1c0ba59ba1227d96d714f52',1,'sx1278']]]
+  ['sx1278_5finit_13',['sx1278_init',['../group__ookradio.html#gade61ba204159d380b04643162b314a7a',1,'sx1278']]]
 ];

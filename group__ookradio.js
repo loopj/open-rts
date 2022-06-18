@@ -1,10 +1,10 @@
 var group__ookradio =
 [
     [ "rfm69", "structrfm69.html", [
-      [ "rfm69_init", "group__ookradio.html#ga8045dad5008fd2d1a5e8f0e96673cd0a", null ]
+      [ "rfm69_init", "group__ookradio.html#gab4390c2179c18f63c79286d6356cc7ae", null ]
     ] ],
     [ "sx1278", "structsx1278.html", [
-      [ "sx1278_init", "group__ookradio.html#gac8ccaf0eb1c0ba59ba1227d96d714f52", null ]
+      [ "sx1278_init", "group__ookradio.html#gade61ba204159d380b04643162b314a7a", null ]
     ] ],
     [ "spi_module", "structspi__module.html", [
       [ "spi_read", "group__ookradio.html#gac0ff1caa8620ab44a1afaa91453d3114", null ],
@@ -25,8 +25,8 @@ var group__ookradio =
       [ "OOKRADIO_ERR_SPI_INIT_FAILED", "group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960a40805afa261970794b6d9675ae74d4db", null ],
       [ "OOKRADIO_ERR_SPI_TRANSFER_FAILED", "group__ookradio.html#ggaf9bdc3014f3d54c426b6d2df10de4960a04ab87bfab861b74b836e0eb70de9d43", null ]
     ] ],
-    [ "rfm69::rfm69_init", "group__ookradio.html#ga8045dad5008fd2d1a5e8f0e96673cd0a", null ],
-    [ "sx1278::sx1278_init", "group__ookradio.html#gac8ccaf0eb1c0ba59ba1227d96d714f52", null ],
+    [ "rfm69::rfm69_init", "group__ookradio.html#gab4390c2179c18f63c79286d6356cc7ae", null ],
+    [ "sx1278::sx1278_init", "group__ookradio.html#gade61ba204159d380b04643162b314a7a", null ],
     [ "spi_module::spi_read", "group__ookradio.html#gac0ff1caa8620ab44a1afaa91453d3114", null ],
     [ "spi_module::spi_write", "group__ookradio.html#gabfb504daf9056d791c3cfa8710be7f4d", null ],
     [ "spi_module::spi_write_masked", "group__ookradio.html#ga15ee1876e285483b890f341b1562956d", null ],
