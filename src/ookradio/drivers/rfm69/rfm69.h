@@ -23,7 +23,6 @@ extern "C" {
  */
 struct rfm69 {
     struct spi_module *spi_module;
-    bool use_pa_boost;
     int power;
     int mode;
 };
@@ -165,19 +164,17 @@ enum {
  *
  * @param radio the rfm69 struct to initialize
  * @param spi the spi_module we are connecting through
- * @param use_pa_boost is this radio module using the PA_BOOST pin?
- *                     The should typically be set to true
  *
  * @return OOKRADIO_ERR_NONE if initialized successfully
  */
-int rfm69_init(struct rfm69 *radio, struct spi_module *spi, bool use_pa_boost);
+int rfm69_init(struct rfm69 *radio, struct spi_module *spi);
 
 void rfm69_set_data_mode(struct rfm69 *radio, uint8_t mode);
 void rfm69_set_modulation_type(struct rfm69 *radio, uint8_t modulation);
 void rfm69_set_frequency(struct rfm69 *radio, unsigned long freq);
 void rfm69_set_bitrate(struct rfm69 *radio, uint16_t bitrate);
 void rfm69_set_rx_bandwidth(struct rfm69 *radio, uint32_t bw);
-void rfm69_set_transmit_power(struct rfm69 *radio, int8_t power);
+void rfm69_set_transmit_power(struct rfm69 *radio, int8_t power, bool high_power);
 void rfm69_set_mode(struct rfm69 *radio, uint8_t mode);
 
 /**

@@ -25,16 +25,12 @@ enum rts_radio_mode {
     RTS_RADIO_MODE_TRANSMIT, ///< Transmit mode
 };
 
-enum rts_radio_module {
-    RTS_RADIO_MODULE_RFM69,
-    RTS_RADIO_MODULE_SX1278,
-};
-
 /**
  * Abstraction layer which configures radio modules for RTS.
  */
 struct rts_radio {
-    enum rts_radio_module type;
+    void (*set_mode)(struct rts_radio *radio, enum rts_radio_mode mode);
+
     union {
         struct rfm69 rfm69;
         struct sx1278 sx1278;
@@ -48,10 +44,8 @@ struct rts_radio {
  *
  * @param radio the rts_radio struct to initialize
  * @param spi the spi module to communicate with
- * @param use_pa_boost is this module using PA_BOOST for transmission
  */
-void rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi,
-                          bool use_pa_boost);
+struct rfm69 *rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi);
 
 /**
  * Initialize an rts_radio to use an SX1278/RFM96 radio module.
@@ -60,10 +54,8 @@ void rts_radio_init_rfm69(struct rts_radio *radio, struct spi_module *spi,
  *
  * @param radio the rts_radio struct to initialize
  * @param spi the spi module to communicate with
- * @param use_pa_boost is this module using PA_BOOST for transmission
  */
-void rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi,
-                           bool use_pa_boost);
+struct sx1278 *rts_radio_init_sx1278(struct rts_radio *radio, struct spi_module *spi);
 
 /**
  * Set the radio mode for the specified rts_radio module, eg. standby, receive,

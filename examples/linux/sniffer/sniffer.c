@@ -27,16 +27,14 @@ struct rts_pulse_source pulse_source;
 void init_radio()
 {
     // Initialize SPI module
-    struct spi_module spi = {
-        .clock = 1000000,
-    };
+    static struct spi_module spi = {.clock = 1000000};
     spi_module_init_linux(&spi, OPENRTS_SPI_DEVICE);
 
     // Initialize radio
     #if defined(OPENRTS_RADIO_TYPE_RFM69)
-    rts_radio_init_rfm69(&radio, &spi, true);
+    rts_radio_init_rfm69(&radio, &spi);
     #elif defined(OPENRTS_RADIO_TYPE_SX1278)
-    rts_radio_init_sx1278(&radio, &spi, true);
+    rts_radio_init_sx1278(&radio, &spi);
     #endif
 
     // Switch to receive mode

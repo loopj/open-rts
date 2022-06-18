@@ -6,30 +6,21 @@
 class RTSRadio_RFM69 : public RTSRadio
 {
   public:
-    #if defined(ARDUINO)
-    RTSRadio_RFM69(uint8_t chipSelect, bool paBoost = true, SPIClass *spiDevice=&SPI) :
-        RTSRadio(chipSelect, spiDevice),
-        paBoost(paBoost)
+    RTSRadio_RFM69(SPIModule *spiModule) :
+        RTSRadio(spiModule)
     {
+    }
 
+    RTSRadio_RFM69(uint8_t chipSelect) :
+        RTSRadio(chipSelect)
+    {
     }
 
     void begin()
     {
         RTSRadio::begin();
-        rts_radio_init_rfm69(this, &spi, paBoost);
+        rts_radio_init_rfm69(this, spiModule);
     }
-    #else
-    RTSRadio_RFM69(spi_module *spi, bool paBoost = true)
-    {
-        rts_radio_init_rfm69(this, spi, paBoost);
-    }
-    #endif
-
-  private:
-    #if defined(ARDUINO)
-    bool paBoost;
-    #endif
 };
 
 #endif // RTS_RADIO_RFM69_HPP

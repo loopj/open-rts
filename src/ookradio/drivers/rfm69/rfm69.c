@@ -1,7 +1,7 @@
 #include "../../errors.h"
 #include "rfm69.h"
 
-int rfm69_init(struct rfm69 *radio, struct spi_module *spi, bool use_pa_boost)
+int rfm69_init(struct rfm69 *radio, struct spi_module *spi)
 {
     if(!radio)
         return OOKRADIO_ERR_INVALID_HANDLE;
@@ -10,7 +10,6 @@ int rfm69_init(struct rfm69 *radio, struct spi_module *spi, bool use_pa_boost)
         return OOKRADIO_ERR_INVALID_SPI;
 
     radio->spi_module   = spi;
-    radio->use_pa_boost = use_pa_boost;
     radio->power        = 0;
     radio->mode         = -1;
 
@@ -152,12 +151,13 @@ void rfm69_set_rx_bandwidth(struct rfm69 *radio, uint32_t rxBw)
                      RFM69_RX_BW_MANT | RFM69_RX_BW_EXP, bwMant | bwExp);
 }
 
-void rfm69_set_transmit_power(struct rfm69 *radio, int8_t power)
+void rfm69_set_transmit_power(struct rfm69 *radio, int8_t power, bool high_power)
 {
     if(!radio)
         return;
 
-    if (radio->use_pa_boost) {
+    if (high_power) {
+        // High power module (RFM69HW/RFM69HCW)
         if (power <= 10) {
             // -2 to 13 dBm, PA1 is enough
             spi_write(radio->spi_module, RFM69_REG_PA_LEVEL,
@@ -172,7 +172,7 @@ void rfm69_set_transmit_power(struct rfm69 *radio, int8_t power)
                       RFM69_PA1_ON | RFM69_PA2_ON | (power + 11));
         }
     } else {
-        // low power module, use only PA0
+        // Low power module, use only PA0 (RFM69W/RFM69CW)
         spi_write(radio->spi_module, RFM69_REG_PA_LEVEL,
                   RFM69_PA0_ON | (power + 18));
     }

@@ -5,7 +5,6 @@ target_sources(openrtsxx PRIVATE
     RTSFrameBuilder.cpp
     RTSPulseOutput.cpp
     RTSPulseSource.cpp
-    RTSRadio.cpp
     RTSReceiver.cpp
     RTSRemote.cpp
     RTSRemoteStore_Memory.cpp
