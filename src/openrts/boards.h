@@ -76,6 +76,7 @@
 #define OPENRTS_RADIO_RST  4
 #define OPENRTS_RADIO_DATA 0
 #define OPENRTS_LED        13
+#define OPENRTS_OLED_TYPE_SH1107 // If 128x64 OLED FeatherWing attached
 #elif defined(OPENRTS_BOARD_ADAFRUIT_32U4_RFM69)
 // Adafruit Feather 32u4 RFM69HCW Packet Radio - 433MHz
 #define OPENRTS_RADIO_TYPE_RFM69
@@ -83,6 +84,7 @@
 #define OPENRTS_RADIO_RST  4
 #define OPENRTS_RADIO_DATA 0
 #define OPENRTS_LED        13
+#define OPENRTS_OLED_TYPE_SH1107 // If 128x64 OLED FeatherWing attached
 #elif defined(OPENRTS_BOARD_RASPBERRY_PI_RFM69_BONNET)
 // Raspberry Pi with Adafruit RFM69HCW Transceiver Radio Bonnet - 433 MHz
 #define OPENRTS_RADIO_TYPE_RFM69

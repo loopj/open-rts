@@ -42,6 +42,7 @@ board_flags["featheresp32"]="
     -DOPENRTS_BUTTON_2=32
     -DOPENRTS_BUTTON_3=14
     -DOPENRTS_BUTTON_4=0
+    -DOPENRTS_OLED_TYPE_SH1107
 "
 
 # Adafruit Feather 32u4 RFM69HCW

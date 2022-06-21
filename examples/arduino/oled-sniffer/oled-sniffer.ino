@@ -1,11 +1,36 @@
+/*
+ * OLED Frame Sniffer Example
+ *
+ * This example receives pulses from a 433MHz radio module, assembles them
+ * into RTS Frames, then prints the remote address and command onto an
+ * attached 128x64 OLED screen.
+ *
+ * This example doesn't care about remote addresses, rolling codes, or frame
+ * deduplication, just prints every assembled frame.
+ *
+ * You'll need to install the U8g2 library.
+ */
+
+//
+// Uncomment one of these to use a predefined board config
+// Alternatively you'll need to define the pins manually
+//
+
+// #define OPENRTS_BOARD_TTGO_LORA32_V21
+// #define OPENRTS_BOARD_HELTEC_WIFI_LORA_32_V2
+// #define OPENRTS_BOARD_ADAFRUIT_M0_RFM69      // Connected to 128x64 OLED FeatherWing
+// #define OPENRTS_BOARD_ADAFRUIT_32U4_RFM69    // Connected to 128x64 OLED FeatherWing
+
 #include <openrts.hpp>
 #include <U8g2lib.h>
 
 // Supported OLEDs
 #if defined(OPENRTS_OLED_TYPE_SH1107)
-U8G2 display = U8G2_SH1107_64X128_1_HW_I2C(U8G2_R1);
+U8G2 display = U8G2_SH1107_64X128_F_HW_I2C(U8G2_R1);
 #elif defined(OPENRTS_OLED_TYPE_SSD1306) && defined(OPENRTS_OLED_RST)
-U8G2 display = U8G2_SSD1306_128X64_NONAME_F_HW_I2C(U8G2_R0, OPENRTS_OLED_RST, OPENRTS_OLED_SCL, OPENRTS_OLED_SDA);
+U8G2 display = U8G2_SSD1306_128X64_NONAME_F_HW_I2C(U8G2_R0, OPENRTS_OLED_RST,
+                                                   OPENRTS_OLED_SCL,
+                                                   OPENRTS_OLED_SDA);
 #elif defined(OPENRTS_OLED_TYPE_SSD1306)
 U8G2 display = U8G2_SSD1306_128X64_NONAME_F_HW_I2C(U8G2_R0);
 #endif
