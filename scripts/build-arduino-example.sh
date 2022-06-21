@@ -15,7 +15,7 @@ board_flags["sparkfun"]="
 "
 
 # LILYGO TTGO LoRa32 (V2.1)
-board_fqbns["ttgo"]="esp32:esp32:ttgo-lora32"
+board_fqbns["ttgo"]="esp32:esp32:ttgo-lora32:Revision=TTGO_LoRa32_v21new"
 board_ports["ttgo"]="/dev/ttyACM0"
 board_flags["ttgo"]="
     -DOPENRTS_BOARD_TTGO_LORA32_V21
@@ -42,6 +42,7 @@ board_flags["featheresp32"]="
     -DOPENRTS_BUTTON_2=32
     -DOPENRTS_BUTTON_3=14
     -DOPENRTS_BUTTON_4=0
+    -DOPENRTS_OLED_TYPE_SH1107
 "
 
 # Adafruit Feather 32u4 RFM69HCW
