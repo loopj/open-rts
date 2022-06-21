@@ -52,6 +52,7 @@
 #define OPENRTS_RADIO_RST  23
 #define OPENRTS_RADIO_DATA 32
 #define OPENRTS_LED        25
+#define OPENRTS_OLED_TYPE_SSD1306
 #elif defined(OPENRTS_BOARD_HELTEC_WIFI_LORA_32_V2)
 // Heltec WiFi LoRa 32 (V2) - 433MHz
 #define OPENRTS_RADIO_TYPE_SX1278
@@ -63,6 +64,10 @@
 #define OPENRTS_RADIO_DATA 34
 #define OPENRTS_BUTTON_1   0
 #define OPENRTS_LED        25
+#define OPENRTS_OLED_TYPE_SSD1306
+#define OPENRTS_OLED_RST   16
+#define OPENRTS_OLED_SCL   15
+#define OPENRTS_OLED_SDA   4
 #elif defined(OPENRTS_BOARD_ADAFRUIT_M0_RFM69)
 // Adafruit Feather M0 RFM69HCW Packet Radio - 433MHz
 // TODO: Double check these pins

@@ -15,7 +15,7 @@ board_flags["sparkfun"]="
 "
 
 # LILYGO TTGO LoRa32 (V2.1)
-board_fqbns["ttgo"]="esp32:esp32:ttgo-lora32"
+board_fqbns["ttgo"]="esp32:esp32:ttgo-lora32:Revision=TTGO_LoRa32_v21new"
 board_ports["ttgo"]="/dev/ttyACM0"
 board_flags["ttgo"]="
     -DOPENRTS_BOARD_TTGO_LORA32_V21
