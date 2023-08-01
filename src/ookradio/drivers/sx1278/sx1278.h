@@ -48,6 +48,7 @@ enum {
     SX1278_REG_PACKET_CONFIG_2 = 0x31,
     SX1278_REG_IRQ_FLAGS_1     = 0x3E,
     SX1278_REG_DIO_MAPPING_1   = 0x40,
+    SX1278_REG_VERSION         = 0x42,
     SX1278_REG_PA_DAC          = 0x4D,
 };
 
