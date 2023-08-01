@@ -16,7 +16,6 @@ This open-source, non-commercial library is not affiliated, associated, authoriz
 - Connect your shades to home automation systems, like Vantage
 - Build an automation that closes your shades at sunset
 
-
 ## What hardware do I need?
 
 1. A device capable of running this code
@@ -25,7 +24,6 @@ This open-source, non-commercial library is not affiliated, associated, authoriz
 There are some awesome off-the-shelf devices that can do both of these, such as the [Adafruit Feather M0 RFM69HCW](https://www.adafruit.com/product/3177), the [Heltec WiFi LoRa 32](https://heltec.org/project/wifi-lora-32/), or [LILYGO TTGO LoRa32](http://www.lilygo.cn/prod_view.aspx?TypeId=50003&Id=1319&FId=t3:50003:3).
 
 Alternatively you can take a 433Mhz OOK-capable radio module (eg. CC1101, RFM69, RFM96, SX1231, SX1278) and attach to a microcontroller.
-
 
 ## Key components
 
