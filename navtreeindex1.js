@@ -32,5 +32,6 @@ var NAVTREEINDEX1 =
 "structspi__module.html#a912461c04085e703ba6725755fbd5809":[3,0,2,9],
 "structsx1278.html":[3,0,1],
 "sx1278_8h.html":[5,0,0,0,0,1,0],
-"sx1278_8h_source.html":[5,0,0,0,0,1,0]
+"sx1278_8h_source.html":[5,0,0,0,0,1,0],
+"topics.html":[3]
 };

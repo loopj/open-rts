@@ -47,7 +47,7 @@ var searchData=
   ['rts_5fremote_5fstore_5fknown_5fremote_44',['rts_remote_store_known_remote',['../group__openrts.html#ga6ecf66e04d8462b100b142cecc6a338d',1,'rts_remote_store']]],
   ['rts_5fremote_5fstore_5fnext_5fcode_45',['rts_remote_store_next_code',['../group__openrts.html#ga558753287dc627e36b5216f5217e7177',1,'rts_remote_store']]],
   ['rts_5fremote_5fstore_5fset_5fcode_46',['rts_remote_store_set_code',['../group__openrts.html#gafd495bd856ec66c5f7b4dba72bc54ca6',1,'rts_remote_store']]],
-  ['rtsframe_47',['RTSFrame',['../classRTSFrame.html#a9b798240fe4e449f8e5042a0ad864b59',1,'RTSFrame::RTSFrame(rts_command command, uint16_t rollingCode, uint32_t remoteAddress)'],['../classRTSFrame.html#ad7ab0b118836ddd717714916528865c0',1,'RTSFrame::RTSFrame(uint8_t *bytes)'],['../classRTSFrame.html#a2fc6ea8ab09011f6d68eb1881c49bfd7',1,'RTSFrame::RTSFrame(rts_frame *frame)']]],
+  ['rtsframe_47',['rtsframe',['../classRTSFrame.html#a9b798240fe4e449f8e5042a0ad864b59',1,'RTSFrame::RTSFrame(rts_command command, uint16_t rollingCode, uint32_t remoteAddress)'],['../classRTSFrame.html#ad7ab0b118836ddd717714916528865c0',1,'RTSFrame::RTSFrame(uint8_t *bytes)'],['../classRTSFrame.html#a2fc6ea8ab09011f6d68eb1881c49bfd7',1,'RTSFrame::RTSFrame(rts_frame *frame)']]],
   ['rtsframebuilder_48',['RTSFrameBuilder',['../classRTSFrameBuilder.html#a88f8c0ad56b747d930ade3022902445d',1,'RTSFrameBuilder']]],
   ['rtsreceiver_49',['RTSReceiver',['../classRTSReceiver.html#ac10fac75373d4832d0dea768a68de814',1,'RTSReceiver']]],
   ['rtsremote_50',['RTSRemote',['../classRTSRemote.html#aad8c636cf65cbe3a13842295d02c95d1',1,'RTSRemote']]]

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mode_0',['mode',['../structspi__module.html#a0de4b35ffbf80b1a8e1d324e2208e011',1,'spi_module']]],
-  ['modecallback_1',['ModeCallback',['../classRTSReceiver.html#aa39edf8c055581aa10052917cb861307',1,'RTSReceiver']]]
+  ['key_20components_0',['Key components',['../index.html#autotoc_md3',1,'']]],
+  ['knownremote_1',['knownRemote',['../classRTSRemoteStore.html#ab6979a6c6315a3ce11a4c11035043a90',1,'RTSRemoteStore']]]
 ];

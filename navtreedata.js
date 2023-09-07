@@ -32,7 +32,7 @@ var NAVTREE =
       [ "rts_frame_builder / RTSFrameBuilder", "index.html#autotoc_md5", null ],
       [ "rts_receiver / RTSReceiver", "index.html#autotoc_md6", null ]
     ] ],
-    [ "Modules", "modules.html", "modules" ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
@@ -58,7 +58,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"RTSFrameBuilder_8hpp.html",
+"Open__RTS_8h_source.html",
 "spi__module__linux_8h.html"
 ];
 
